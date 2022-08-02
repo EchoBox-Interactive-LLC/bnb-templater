@@ -15,6 +15,8 @@ class Listing(db.Model):
     price = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(200), nullable=False)
 
+    user = db.replationship('User', back_populates='listings')
+
     def to_dict(self):
         return {
             'id': self.id,
