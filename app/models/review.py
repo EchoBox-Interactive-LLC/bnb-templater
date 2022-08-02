@@ -13,6 +13,7 @@ class Review(db.Model):
     updated_at = db.Column(db.String(255), nullable=False)
 
     user = db.relationship('User', back_populates='reviews')
+    listing = db.relationship('Listing', back_populates='reviews')
 
 
     def to_dict(self):

@@ -13,6 +13,7 @@ class Booking(db.Model):
     updated_at = db.Column(db.String(200), nullable=False)
 
     user = db.relationship('User', back_populates='bookings')
+    listing = db.relationship('Listing', back_populates='bookings')
 
     def to_dict(self):
         return {
