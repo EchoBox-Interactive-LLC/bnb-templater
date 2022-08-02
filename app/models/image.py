@@ -1,3 +1,4 @@
+from codecs import backslashreplace_errors
 from .db import db
 
 class Image(db.Model):
@@ -7,6 +8,8 @@ class Image(db.Model):
     listing_id = db.Column(db.Integer, db.ForeignKey(
         'listings.id',  ondelete="CASCADE"), nullable=False)
     url = db.Column(db.String(255), nullable=False)
+
+    listing = db.relationship('Listing', back_populates='images')
 
     def to_dict(self):
         return {
