@@ -10,7 +10,7 @@ class Review(db.Model):
         'listings.id', ondelete="CASCADE"), nullable=False)
     review = db.Column(db.String(200), nullable=False)
     rating = db.Column(db.Float, nullable=False)
-    updated_at = db.Column(db.String(200), nullable=False)
+    updated_at = db.Column(db.String(255), nullable=False)
 
 
     def to_dict(self):

@@ -1,4 +1,3 @@
-from codecs import backslashreplace_errors
 from .db import db
 
 class Image(db.Model):
