@@ -16,7 +16,7 @@ class Listing(db.Model):
     updated_at = db.Column(db.String(200), nullable=False)
 
     user = db.relationship('User', back_populates='listings')
-    images = db.relationship('Image', back_populates='listings')
+    images = db.relationship('Image', back_populates='listing')
 
     def to_dict(self):
         return {
