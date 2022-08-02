@@ -16,9 +16,9 @@ class Listing(db.Model):
     updated_at = db.Column(db.String(255), nullable=False)
 
     user = db.relationship('User', back_populates='listings')
-    images = db.relationship('Image', back_populates='listing')
-    bookings = db.relationship('Booking', back_populates='listing')
-    reviews = db.relationship('Review', back_populates='listing')
+    images = db.relationship('Image', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
+    bookings = db.relationship('Booking', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
+    reviews = db.relationship('Review', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
 
     def to_dict(self):
         return {
