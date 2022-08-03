@@ -153,21 +153,21 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
   let newState = { ...state };
   switch (action.type) {
-    case CREATE_EVENT:
-      const event = action.payload;
-      newState[event.id] = event;
+    case CREATE_LISTING:
+      const listing = action.payload;
+      newState[listing.id] = listing;
       return newState;
-    case READ_EVENT:
+    case READ_LISTING:
       newState = {};
-      action.payload.events.forEach((event) => {
-        newState[event.id] = event;
+      action.payload.events.forEach((listing) => {
+        newState[listing.id] = listing;
       });
       return newState;
-    case UPDATE_EVENT:
+    case UPDATE_LISTING:
       newState[action.payload.id] = action.payload;
       return newState;
-    case DELETE_EVENT:
-      delete newState[action.eventId];
+    case DELETE_LISTING:
+      delete newState[action.listingId];
       return newState;
     default:
       return state;
