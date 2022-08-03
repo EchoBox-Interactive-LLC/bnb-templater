@@ -31,5 +31,7 @@ class Listing(db.Model):
             'state': self.state,
             'country': self.country,
             'price': self.price,
-            'updated_at': self.updated_at
+            'updated_at': self.updated_at,
+
+            'images': [image.to_dict() for image in self.images]
         }
