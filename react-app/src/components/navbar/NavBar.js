@@ -17,21 +17,21 @@ const NavBar = () => {
     <nav >
       {!user && (
         <div className="nav-bar">
-          <h3>CloneBnB</h3>
-          <p>
+          <h2 className="nav-item">CloneBnB</h2>
+          <p className="nav-item">
             <NavLink to="/" exact={true} activeClassName="active">
               Home
             </NavLink>
           </p>
-          <button onClick={demoLogIn}>
+          <button className="nav-item" onClick={demoLogIn}>
           Demo User
         </button>
-          <p>
+          <p className="nav-item">
             <NavLink to="/login" exact={true} activeClassName="active">
               Login
             </NavLink>
           </p>
-          <p>
+          <p className="nav-item">
             <NavLink to="/sign-up" exact={true} activeClassName="active">
               Sign Up
             </NavLink>
@@ -40,13 +40,13 @@ const NavBar = () => {
       )}
     {user && (
       <div className="nav-bar">
-        <h3>CloneBnB</h3>
-        <p>
+        <h2 className="nav-item">CloneBnB</h2>
+        <p className="nav-item">
           <NavLink to="/" exact={true} activeClassName="active">
             Home
           </NavLink>
         </p>
-        <p>
+        <p className="nav-item">
           <LogoutButton />
         </p>
       </div>

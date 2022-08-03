@@ -7,7 +7,7 @@ function ListingCard({ listing }) {
 
   return (
     <div className="card-container">
-      <img src={listing.images[0].url} alt={listing.title}/>
+      <img className="listing-img" src={listing.images[0].url} alt={listing.title}/>
       <h1>{listing.title}</h1>
       <h3>{listing.city}</h3>
       <h3>{listing.state}</h3>
