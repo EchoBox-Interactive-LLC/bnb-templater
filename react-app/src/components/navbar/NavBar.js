@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import LogoutButton from "./auth/LogoutButton";
-import { login } from "../store/session";
+import LogoutButton from "../auth/LogoutButton";
+import { login } from "../../store/session";
+import "./navBar.css"
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -13,9 +14,9 @@ const NavBar = () => {
   };
 
   return (
-    <nav>
+    <nav >
       {!user && (
-        <div>
+        <div className="nav-bar">
           <h3>CloneBnB</h3>
           <p>
             <NavLink to="/" exact={true} activeClassName="active">
@@ -38,7 +39,7 @@ const NavBar = () => {
         </div>
       )}
     {user && (
-      <div>
+      <div className="nav-bar">
         <h3>CloneBnB</h3>
         <p>
           <NavLink to="/" exact={true} activeClassName="active">
