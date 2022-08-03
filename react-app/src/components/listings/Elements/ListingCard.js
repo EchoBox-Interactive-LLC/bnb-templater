@@ -1,10 +1,11 @@
 import React from "react";
+import "./listingCard.css"
 
 
 function ListingCard({ listing }) {
 
   return (
-    <div>
+    <div className="card-container">
       <h1>{listing.title}</h1>
       <h3>{listing.city}</h3>
       <h3>{listing.state}</h3>
