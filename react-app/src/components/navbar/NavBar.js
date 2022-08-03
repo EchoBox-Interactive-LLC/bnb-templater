@@ -14,15 +14,14 @@ const NavBar = () => {
   };
 
   return (
-    <nav >
+    <nav>
       {!user && (
         <div className="nav-bar">
-          <h2 className="nav-item">CloneBnB</h2>
           <p className="nav-item">
-            <NavLink to="/" exact={true} activeClassName="active">
-              Home
-            </NavLink>
-          </p>
+          <NavLink to="/" exact={true} activeClassName="active">
+            CloneBnB
+          </NavLink>
+        </p>
           <button className="nav-item" onClick={demoLogIn}>
           Demo User
         </button>
@@ -40,10 +39,14 @@ const NavBar = () => {
       )}
     {user && (
       <div className="nav-bar">
-        <h2 className="nav-item">CloneBnB</h2>
         <p className="nav-item">
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            CloneBnB
+          </NavLink>
+        </p>
+        <p className="nav-item">
+          <NavLink to="/create" exact={true} activeClassName="active">
+            Post Listing
           </NavLink>
         </p>
         <p className="nav-item">
