@@ -159,7 +159,7 @@ export default function reducer(state = initialState, action) {
       return newState;
     case READ_LISTING:
       newState = {};
-      action.payload.events.forEach((listing) => {
+      action.payload.listings.forEach((listing) => {
         newState[listing.id] = listing;
       });
       return newState;
