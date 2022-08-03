@@ -50,13 +50,13 @@ class ListingForm(FlaskForm):
   updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
-  class UpdateListingForm(FlaskForm):
-    user_id = IntegerField('User_Id', validators=[DataRequired()])
-    title = StringField('Title', validators=[DataRequired(), title_length])
-    description = StringField('Description', validators=[DataRequired(), description_length])
-    address = StringField('Address', validators=[DataRequired(), address_length])
-    city = StringField('City', validators=[DataRequired(), city_length])
-    state = StringField('State', validators=[DataRequired(), state_length])
-    country = StringField('Country', validators=[DataRequired(), country_length])
-    price = FloatField('Price', validators=[DataRequired(), price_non_zero])
-    updated_at = StringField('Update_At', validators=[DataRequired()])
+class UpdateListingForm(FlaskForm):
+  user_id = IntegerField('User_Id', validators=[DataRequired()])
+  title = StringField('Title', validators=[DataRequired(), title_length])
+  description = StringField('Description', validators=[DataRequired(), description_length])
+  address = StringField('Address', validators=[DataRequired(), address_length])
+  city = StringField('City', validators=[DataRequired(), city_length])
+  state = StringField('State', validators=[DataRequired(), state_length])
+  country = StringField('Country', validators=[DataRequired(), country_length])
+  price = FloatField('Price', validators=[DataRequired(), price_non_zero])
+  updated_at = StringField('Update_At', validators=[DataRequired()])
