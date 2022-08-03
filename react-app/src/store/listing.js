@@ -7,86 +7,61 @@ const DELETE_LISTING = "listing/DELETE_LISTING";
 
 /********************** ACTION CREATORS **************************/
 
-const createListing = listing => ({
+const createListing = (listing) => ({
   type: CREATE_LISTING,
   payload: listing,
 });
 
-const readListing = listings => ({
+const readListing = (listings) => ({
   type: READ_LISTING,
   payload: listings,
 });
 
-const updateListing = listing => ({
+const updateListing = (listing) => ({
   type: UPDATE_LISTING,
   payload: listing,
 });
 
-const deleteListing = listingId => ({
+const deleteListing = (listingId) => ({
   type: DELETE_LISTING,
 });
 
 /***************************** THUNKS ***************************************/
 
-export const makeEvent =
+export const makeListing =
   (
     user_id,
-    category,
-    name,
-    image,
-    date,
+    title,
     description,
-    price,
-    occupancy,
-    street_address,
+    address,
     city,
     state,
-    zipCode
+    country,
+    price,
+    updated_at
   ) =>
-  async dispatch => {
-    const imageData = new FormData();
-    imageData.append("image", image);
-
-    const imageRes = await fetch(`/api/images/`, {
-      method: "POST",
-      body: imageData,
-    });
-
-    if (imageRes.ok) {
-      image = await imageRes.json();
-    } else if (imageRes.status < 500) {
-      const data = await imageRes.json();
-      if (data.errors) {
-        return [data.errors];
-      }
-    } else {
-      return ["An error occurred. Please try again."];
-    }
-
-    const response = await fetch("/api/events/", {
+  async (dispatch) => {
+    const response = await fetch("/api/listings/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user_id,
-        category,
-        name,
-        image: image.url,
-        date,
+        title,
         description,
-        price,
-        occupancy,
-        street_address,
+        address,
         city,
         state,
-        zipCode,
+        country,
+        price,
+        updated_at
       }),
     });
 
     if (response.ok) {
       const data = await response.json();
-      dispatch(createEvent(data));
+      dispatch(createListing(data));
       return data;
     } else if (response.status < 500) {
       const data = await response.json();
@@ -98,12 +73,12 @@ export const makeEvent =
     }
   };
 
-export const acquireEvents = () => async dispatch => {
-  const response = await fetch("/api/events/");
+export const retrieveListings = () => async (dispatch) => {
+  const response = await fetch("/api/listings/");
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(readEvent(data));
+    dispatch(readListing(data));
     return data;
   } else if (response.status < 500) {
     const data = await response.json();
@@ -115,69 +90,41 @@ export const acquireEvents = () => async dispatch => {
   }
 };
 
-export const editEvent =
+export const editListing =
   (
-    event_id,
+    listing_id,
     user_id,
-    category,
-    name,
-    image,
-    date,
+    title,
     description,
-    price,
-    occupancy,
-    street_address,
+    address,
     city,
     state,
-    zipCode
+    country,
+    price,
+    updated_at
   ) =>
-  async dispatch => {
-    if (typeof image === "object") {
-      const imageData = new FormData();
-      imageData.append("image", image);
-
-      const imageRes = await fetch(`/api/images/`, {
-        method: "POST",
-        body: imageData,
-      });
-
-      if (imageRes.ok) {
-        image = await imageRes.json();
-        image = image.url;
-      } else if (imageRes.status < 500) {
-        const data = await imageRes.json();
-        if (data.errors) {
-          return data.errors;
-        }
-      } else {
-        return ["An error occurred. Please try again."];
-      }
-    }
-
-    const response = await fetch(`/api/events/${event_id}`, {
+  async (dispatch) => {
+    const response = await fetch(`/api/listings/${listing_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user_id,
-        category,
-        name,
-        image,
-        date,
+        title,
         description,
-        price,
-        occupancy,
-        street_address,
+        address,
         city,
         state,
-        zipCode,
+        country,
+        price,
+        updated_at
       }),
     });
 
     if (response.ok) {
       const data = await response.json();
-      dispatch(updateEvent(data));
+      dispatch(updateListing(data));
       return data;
     } else if (response.status < 500) {
       const data = await response.json();
@@ -189,13 +136,13 @@ export const editEvent =
     }
   };
 
-export const removeEvent = eventId => async dispatch => {
-  const response = await fetch(`/api/events/${eventId}`, {
+export const removeListing = (listingId) => async (dispatch) => {
+  const response = await fetch(`/api/listings/${listingId}`, {
     method: "DELETE",
   });
 
   if (response.ok) {
-    dispatch(deleteEvent(eventId));
+    dispatch(deleteListing(listingId));
   }
 };
 
@@ -212,7 +159,7 @@ export default function reducer(state = initialState, action) {
       return newState;
     case READ_EVENT:
       newState = {};
-      action.payload.events.forEach(event => {
+      action.payload.events.forEach((event) => {
         newState[event.id] = event;
       });
       return newState;
