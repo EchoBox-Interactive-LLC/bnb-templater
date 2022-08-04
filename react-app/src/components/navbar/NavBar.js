@@ -46,7 +46,7 @@ const NavBar = () => {
         </p>
         <p className="nav-item">
           <NavLink to="/create" exact={true} activeClassName="active">
-            Post Listing
+            New Listing
           </NavLink>
         </p>
         <p className="nav-item">

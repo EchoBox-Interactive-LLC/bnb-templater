@@ -44,6 +44,10 @@ function CreateListingForm() {
       history.push(`listing/${listing.id}`);
       return;
     }
+
+    if (Array.isArray(listing)) {
+      setErrors(listing);
+    };
   };
 
   return (
@@ -51,16 +55,13 @@ function CreateListingForm() {
       <div>
         <h1>Create A Listing</h1>
         <form onSubmit={submit}>
-          {errors.length > 0 && (
             <div>
               <ul className="errors">
-                {errors &&
-                  errors.map((error) => {
+              {errors.length > 0 && errors.map((error) => {
                     return <li key={error}>{error}</li>;
                   })}
               </ul>
             </div>
-          )}
           <div>
             <label htmlFor="title">Title</label>
             <input

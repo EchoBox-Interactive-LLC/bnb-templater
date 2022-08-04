@@ -15,7 +15,7 @@ def get_listings():
 @listing_routes.route('/<int:id>/')
 def get_listing(id):
     listing = Listing.query.get(id)
-    if not listing.to_dict:
+    if not listing.to_dict():
         return {"errors": "Listing Not Found!"}, 404
     else:
         return {"listing": listing.to_dict()}
