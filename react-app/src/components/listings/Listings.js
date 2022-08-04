@@ -9,7 +9,7 @@ function Listings() {
 
   useEffect(() => {
     dispatch(retrieveListings());
-  }, [dispatch]);
+  }, [dispatch, listings.length]);
 
   return (
     <main>

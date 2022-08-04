@@ -41,7 +41,7 @@ function CreateListingForm() {
       )
     );
     if (listing.id) {
-      history.push(`listing/${listing.id}`);
+      history.push(`listings/${listing.id}`);
       return;
     }
 

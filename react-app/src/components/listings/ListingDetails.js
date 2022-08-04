@@ -25,7 +25,7 @@ function ListingDetails() {
         setShowDeleteButton(true);
       }
     }
-  }, [user.id]);
+  }, [listing, user.id]);
 
   const updateListing = () => {
     return;
@@ -55,10 +55,10 @@ function ListingDetails() {
         </div>
       )}
       {!listing && <h1>This Listing Does Not Exist</h1>}
-      {showUpdateButton && (
+      {showUpdateButton && listing && (
         <button onClick={updateListing}>Update Listing</button>
       )}
-      {showDeleteButton && (
+      {showDeleteButton && listing && (
         <button onClick={deleteListing}>Delete Listing</button>
       )}
     </main>
