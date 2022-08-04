@@ -55,7 +55,7 @@ def update_listing(id):
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         listing = Listing.query.get(id)
-        if Listing.user_id != form.data['user_id']:
+        if listing.user_id != form.data['user_id']:
             return {'errors': "This is not your listing and therefore you are unathorized to edit it."}, 401
 
         listing.user_id = form.data['user_id'],

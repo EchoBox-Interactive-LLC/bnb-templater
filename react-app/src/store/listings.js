@@ -118,9 +118,11 @@ export const editListing =
         state,
         country,
         price,
-        updated_at
+        updated_at,
       }),
     });
+
+    // console.log(JSON.stringify(response.body))
 
     if (response.ok) {
       const data = await response.json();
