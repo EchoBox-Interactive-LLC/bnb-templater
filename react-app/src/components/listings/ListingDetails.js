@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { removeListing, retrieveListings } from "../../store/listings";
+import { retrieveReviews } from "../../store/reviews";
 import UpdateListingForm from "./forms/UpdateListingForm";
+import ReviewCard from "../reviews/elements/ReviewCard";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -11,6 +13,7 @@ function ListingDetails() {
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
+  const reviews = useSelector((state) => state.reviews);
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -18,6 +21,10 @@ function ListingDetails() {
 
   useEffect(() => {
     dispatch(retrieveListings());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(retrieveReviews());
   }, [dispatch]);
 
   useEffect(() => {
@@ -68,6 +75,10 @@ function ListingDetails() {
           {showDeleteButton && listing && (
             <button onClick={deleteListing}>Delete Listing</button>
           )}
+          <div>
+            <h1>Review Zone</h1>
+            <p>{reviews}</p>
+          </div>
         </div>
       )}
       {showUpdateForm && (
