@@ -74,7 +74,7 @@ def update_listing(id):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@listing_routes.route('/:id', methods=["DELETE"])
+@listing_routes.route('/<int:id>', methods=["DELETE"])
 @login_required
 def delete_listing(id):
     listing = Listing.query.filter(Listing.id == id)
