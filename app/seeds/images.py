@@ -12,7 +12,7 @@ def seed_images():
     image4 = Image(
           listing_id=4, url="https://static.dezeen.com/uploads/2021/05/lookout-house-faulkner-architects-truckee-california-roundup_dezeen_2364_hero-b-852x480.jpg")
     image5 = Image(
-          listing_id=5, url="http://cdn.cnn.com/cnnnext/dam/assets/191003174352-01-architectural-digest-instagram.jpg")
+          listing_id=5, url="https://cdn.onekindesign.com/wp-content/uploads/2019/12/Rustic-Contemporary-A-Frame-Todd-Gordon-Mather-Architect-01-1-Kindesign.jpg")
 
     db.session.add(image1)
     db.session.add(image2)
