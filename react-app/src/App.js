@@ -10,7 +10,6 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import Listings from './components/listings/Listings'
 import CreateListingForm from './components/listings/forms/CreateListingForm';
-import UpdateListingForm from './components/listings/forms/UpdateListingForm';
 import ListingDetails from './components/listings/ListingDetails';
 import Footer from './components/footer/Footer';
 
@@ -53,9 +52,6 @@ function App() {
         </Route>
         <ProtectedRoute path='/create' exact={true} >
           <CreateListingForm />
-        </ProtectedRoute>
-        <ProtectedRoute path='/listings/:listingId/update' exact={true} >
-          <UpdateListingForm />
         </ProtectedRoute>
       </Switch>
       <Footer />

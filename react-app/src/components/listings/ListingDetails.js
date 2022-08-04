@@ -13,6 +13,7 @@ function ListingDetails() {
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   useEffect(() => {
     dispatch(retrieveListings());
