@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { editListing } from "../../../store/listings";
 
 function UpdateListingForm({ listing, setShowUpdateForm }) {
@@ -8,7 +8,6 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.session.user.id);
   const updated_at = new Date().toDateString();
-  const { listingId } = useParams();
 
   const [title, setTitle] = useState((listing && listing.title) || "");
   const [description, setDescription] = useState((listing && listing.description) || "");
@@ -30,7 +29,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
 
     listing = await dispatch(
       editListing(
-        listingId,
+        listing.id,
         userId,
         title,
         description,
@@ -42,8 +41,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
         updated_at
       )
     );
+
     if (listing.id) {
-      history.push(`listings/${listing.id}`);
+      setShowUpdateForm(false)
+      history.push(`${listing.id}`);
       return;
     }
 
