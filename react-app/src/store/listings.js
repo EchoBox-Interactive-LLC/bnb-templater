@@ -122,8 +122,6 @@ export const editListing =
       }),
     });
 
-    // console.log(JSON.stringify(response.body))
-
     if (response.ok) {
       const data = await response.json();
       dispatch(updateListing(data));
