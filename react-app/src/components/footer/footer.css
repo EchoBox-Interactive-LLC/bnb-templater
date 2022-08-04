@@ -9,9 +9,8 @@ main {
 }
 
 footer {
-  border-top: 2px solid grey;
+  border-top: 2px solid rgb(174, 174, 174);
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid rgb(174, 174, 174);
   align-items: center;
 }
