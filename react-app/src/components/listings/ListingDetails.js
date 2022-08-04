@@ -12,18 +12,30 @@ function ListingDetails () {
   const user = useSelector((state) => state.session.user)
 
   useEffect(() => {
-    (async () => {
-      if (!listing) {
-        const checkValidListing = await fetch(`api/listings/${listingId}`);
-        if (checkValidListing.ok) return
-        else history.push("/invalid-listing")
-      }
-    })();
     dispatch(retrieveListings());
-  }, [dispatch]);
+  }, [dispatch, listingId, history]);
 
   return(
-    <h1>Listing Details Page</h1>
+    <main>
+      <h1>Listing Details Page</h1>
+      {listing && (
+        <div>
+          <h1>{listing.title}</h1>
+          <p>{listing.city}</p>
+          <p>{listing.state}</p>
+          <p>{listing.country}</p>
+          <img
+          src={listing.images[0].url}
+          alt={listing.title}
+        />
+        <p>{listing.description}</p>
+        <p>$<span>{listing.price}</span>night</p>
+        </div>
+      )}
+      {!listing && (
+        <h1>This Listing Does Not Exist</h1>
+      )}
+    </main>
   )
 };
 

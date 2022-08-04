@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import Listings from './components/listings/Listings'
 import CreateListingForm from './components/listings/forms/CreateListingForm';
 import ListingDetails from './components/listings/ListingDetails';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +54,7 @@ function App() {
           <CreateListingForm />
         </ProtectedRoute>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
