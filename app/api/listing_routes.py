@@ -48,7 +48,7 @@ def create_listing():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@listing_routes.route("/<int:id>", methods=["PUT"])
+@listing_routes.route("/<int:id>/update/", methods=["PUT"])
 @login_required
 def update_listing(id):
     form = UpdateListingForm()

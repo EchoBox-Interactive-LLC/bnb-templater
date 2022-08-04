@@ -9,7 +9,7 @@ function UpdateListingForm() {
   const userId = useSelector((state) => state.session.user.id);
   const updated_at = new Date().toDateString();
   const { listingId } = useParams();
-  const listing = useSelector((state) => state.listings[listingId]);
+  let listing = useSelector((state) => state.listings[listingId]);
 
   const [title, setTitle] = useState((listing && listing.title) || "");
   const [description, setDescription] = useState((listing && listing.description) || "");
@@ -29,8 +29,9 @@ function UpdateListingForm() {
       return;
     }
 
-    let listing = await dispatch(
+    listing = await dispatch(
       editListing(
+        listingId,
         userId,
         title,
         description,
