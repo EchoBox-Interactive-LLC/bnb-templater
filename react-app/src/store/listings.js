@@ -104,13 +104,12 @@ export const editListing =
     updated_at
   ) =>
   async (dispatch) => {
-    const response = await fetch(`/api/listings/${listing_id}/`, {
+    const response = await fetch(`/api/listings/${listing_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        listing_id,
         user_id,
         title,
         description,
@@ -119,7 +118,7 @@ export const editListing =
         state,
         country,
         price,
-        updated_at
+        updated_at,
       }),
     });
 
