@@ -41,3 +41,38 @@ def create_review():
         return review.to_dict()
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@review_routes.route("/<int:id>", methods=["PUT"])
+@login_required
+def update_listing(id):
+    form = UpdateReviewForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        review = Review.query.get(id)
+        if review.user_id != form.data['user_id']:
+            return {'errors': "This is not your review and therefore you are unathorized to edit it."}, 401
+
+        review.user_id = form.data['user_id'],
+        review.title=form.data['title'],
+        review.description=form.data['description'],
+        review.address=form.data['address'],
+        review.city=form.data['city'],
+        review.state=form.data['state'],
+        review.country=form.data['country'],
+        review.price=form.data['price'],
+        review.updated_at=form.data['updated_at']
+
+        db.session.commit()
+        return review.to_dict()
+
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@review_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_review(id):
+    review = Review.query.filter(Review.id == id)
+    review.delete()
+    db.session.commit()
+    return {'message': 'Your review has been deleted'}
