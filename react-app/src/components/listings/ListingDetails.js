@@ -28,7 +28,7 @@ function ListingDetails() {
   }, [listing, user.id]);
 
   const updateListing = () => {
-    return;
+    history.push(`/listings/${listingId}/update`)
   };
 
   const deleteListing = () => {
