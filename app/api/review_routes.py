@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, request
 from flask_login import login_required
 from app.api.auth_routes import validation_errors_to_error_messages
 from app.models import db, Review
+from app.forms.review_form import ReviewForm, UpdateReviewForm
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -27,20 +28,16 @@ def create_review():
 
     if form.validate_on_submit():
 
-        listing = Listing(
+        review = Review(
             user_id=form.data['user_id'],
-            title=form.data['title'],
-            description=form.data['description'],
-            address=form.data['address'],
-            city=form.data['city'],
-            state=form.data['state'],
-            country=form.data['country'],
-            price=form.data['price'],
+            listing_id=form.data['listing_id'],
+            review=form.data['review'],
+            rating=form.data['rating'],
             updated_at=form.data['updated_at']
         )
 
-        db.session.add(listing)
+        db.session.add(review)
         db.session.commit()
-        return listing.to_dict()
+        return review.to_dict()
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
