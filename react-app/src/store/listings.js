@@ -104,7 +104,7 @@ export const editListing =
     updated_at
   ) =>
   async (dispatch) => {
-    const response = await fetch(`/api/listings/${listing_id}/update/`, {
+    const response = await fetch(`/api/listings/${listing_id}/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

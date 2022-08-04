@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { removeListing, retrieveListings } from "../../store/listings";
+import UpdateListingForm from "./forms/UpdateListingForm";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -20,47 +21,57 @@ function ListingDetails() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (listing) {
-      if (user.id === listing.user_id) {
-        setShowUpdateButton(true);
-        setShowDeleteButton(true);
-      }
+    if (!user) {
+      return
     }
-  }, [listing, user.id]);
+      if (listing) {
+        if (user.id === listing.user_id) {
+          setShowUpdateButton(true);
+          setShowDeleteButton(true);
+        }
+      }
+  }, [listing, user]);
 
   const updateListing = () => {
-    history.push(`/listings/${listingId}/update`)
+    setShowUpdateForm(true);
   };
 
   const deleteListing = () => {
-    dispatch(removeListing(listingId))
-    history.push("/")
+    dispatch(removeListing(listingId));
+    history.push("/");
   };
 
   return (
     <main>
-      <h1>Listing Details Page</h1>
-      {listing && (
+      {!showUpdateForm && (
         <div>
-          <h1>{listing.title}</h1>
-          <p>{listing.city}</p>
-          <p>{listing.state}</p>
-          <p>{listing.country}</p>
-          {listing.images[0] && (
-            <img src={listing.images[0].url} alt={listing.title} />
+          <h1>Listing Details Page</h1>
+          {listing && (
+            <div>
+              <h1>{listing.title}</h1>
+              <p>{listing.city}</p>
+              <p>{listing.state}</p>
+              <p>{listing.country}</p>
+              {listing.images[0] && (
+                <img src={listing.images[0].url} alt={listing.title} />
+              )}
+              <p>{listing.description}</p>
+              <p>
+                $<span>{listing.price}</span>night
+              </p>
+            </div>
           )}
-          <p>{listing.description}</p>
-          <p>
-            $<span>{listing.price}</span>night
-          </p>
+          {!listing && <h1>This Listing Does Not Exist</h1>}
+          {showUpdateButton && listing && (
+            <button onClick={updateListing}>Update Listing</button>
+          )}
+          {showDeleteButton && listing && (
+            <button onClick={deleteListing}>Delete Listing</button>
+          )}
         </div>
       )}
-      {!listing && <h1>This Listing Does Not Exist</h1>}
-      {showUpdateButton && listing && (
-        <button onClick={updateListing}>Update Listing</button>
-      )}
-      {showDeleteButton && listing && (
-        <button onClick={deleteListing}>Delete Listing</button>
+      {showUpdateForm && (
+        <UpdateListingForm setShowUpdateForm={setShowUpdateForm} listing={listing} />
       )}
     </main>
   );
