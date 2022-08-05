@@ -16,12 +16,13 @@ function ListingDetails() {
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
-    (review) => review.listing_id == listingId);
+    (review) => review.listing_id === +listingId);
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
+
 
   useEffect(() => {
     dispatch(retrieveListings());

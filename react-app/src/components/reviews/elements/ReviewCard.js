@@ -2,26 +2,30 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { removeReview } from "../../../store/reviews";
+import { Modal } from "../../modal/modal";
+import UpdateReviewModal from "./UpdateReviewModal";
 import "./reviewCard.css";
 
 function ReviewCard({ review }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
+  const reviewId = review.id
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showUpdateReviewModal, setShowUpdateReviewModal] = useState(false);
 
   useEffect(() => {
     if (!user) {
-      return
+      return;
     }
-      if (review) {
-        if (user.id === review.user_id) {
-          setShowUpdateButton(true);
-          setShowDeleteButton(true);
-        }
+    if (review) {
+      if (user.id === review.user_id) {
+        setShowUpdateButton(true);
+        setShowDeleteButton(true);
       }
+    }
   }, [review, user]);
 
   const niceDate = (date) => {
@@ -56,7 +60,7 @@ function ReviewCard({ review }) {
   };
 
   const updateReview = () => {
-
+    setShowUpdateReviewModal(true);
   };
 
   const deleteReview = () => {
@@ -69,11 +73,19 @@ function ReviewCard({ review }) {
       <p>{niceDate(review.updated_at)}</p>
       <h4>{review.review}</h4>
       {showUpdateButton && user && review && (
-            <button onClick={updateReview}>Update Review</button>
-          )}
-          {showDeleteButton && user && review && (
-            <button onClick={deleteReview}>Delete Review</button>
-          )}
+        <button onClick={updateReview}>Update Review</button>
+      )}
+      {showDeleteButton && user && review && (
+        <button onClick={deleteReview}>Delete Review</button>
+      )}
+      {showUpdateReviewModal && user && (
+        <Modal onClose={() => setShowUpdateReviewModal(false)}>
+          <UpdateReviewModal
+            setShowUpdateReviewModal={setShowUpdateReviewModal}
+            reviewId={reviewId}
+          />
+        </Modal>
+      )}
     </div>
   );
 }
