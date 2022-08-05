@@ -142,7 +142,6 @@ export const removeListing = (listingId) => async (dispatch) => {
     method: "DELETE",
   });
   
-
   if (response.ok) {
     dispatch(deleteListing(listingId));
   }
