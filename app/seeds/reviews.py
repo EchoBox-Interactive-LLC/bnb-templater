@@ -16,11 +16,21 @@ def seed_reviews():
     user_id=2, listing_id=1, review="I was a bit dissapointed by this listing as it did not live up to what I was expecting.",
     rating=2, updated_at=datetime.now()
   )
+  review4 = Review(
+    user_id=3, listing_id=1, review="Best vacation I have ever had. I would come back and stay at this place anytime. So dreamy!",
+    rating=5, updated_at=datetime.now()
+  )
+  review5 = Review(
+    user_id=3, listing_id=1, review="The place is really nice. The location is great and we had a fabulous time here.",
+    rating=3, updated_at=datetime.now()
+  )
 
 
   db.session.add(review1)
   db.session.add(review2)
   db.session.add(review3)
+  db.session.add(review4)
+  db.session.add(review5)
 
   db.session.commit()
 
