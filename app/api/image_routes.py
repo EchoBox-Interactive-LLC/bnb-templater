@@ -13,10 +13,33 @@ def get_images():
     return {'images': [image.to_dict() for image in images]}
 
 
-# @image_routes.route('/<int:id>/')
-# def get_image(id):
-#     review = Review.query.get(id)
-#     if not review.to_dict():
-#         return {"errors": "Review Not Found!"}, 404
-#     else:
-#         return {"review": review.to_dict()}
+@image_routes.route('/<int:id>/')
+def get_image(id):
+    image =Image.query.get(id)
+    if not image.to_dict():
+        return {"errors": "Image Not Found!"}, 404
+    else:
+        return {"image": image.to_dict()}
+
+
+@image_routes.route('/', methods=["POST"])
+@login_required
+def create_image():
+    form = ImageForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+
+        review = Image(
+            user_id=form.data['user_id'],
+            listing_id=form.data['listing_id'],
+            review=form.data['review'],
+            rating=form.data['rating'],
+            updated_at=form.data['updated_at']
+        )
+
+        db.session.add(review)
+        db.session.commit()
+        return review.to_dict()
+
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
