@@ -5,6 +5,8 @@ import { removeListing, retrieveListings } from "../../store/listings";
 import { retrieveReviews } from "../../store/reviews";
 import UpdateListingForm from "./forms/UpdateListingForm";
 import ReviewCard from "../reviews/elements/ReviewCard";
+import { Modal } from "../modal/modal";
+import CreateReviewModal from "../reviews/elements/CreateReviewModal";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -18,6 +20,7 @@ function ListingDetails() {
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
+  const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -49,7 +52,7 @@ function ListingDetails() {
   };
 
   const createReview = () => {
-
+    setShowCreateReviewModal(true)
   };
 
   return (
@@ -82,6 +85,11 @@ function ListingDetails() {
           {user && (
             <button onClick={createReview}>Add Review</button>
           )}
+          {showCreateReviewModal && user && (
+                    <Modal onClose={() => setShowCreateReviewModal(false)}>
+                        <CreateReviewModal ssetShowCreateReviewModal={setShowCreateReviewModal} />
+                    </Modal>
+                )}
           <div>
             {reviews.length > 0 && (reviews.map((review) => {
               return <ReviewCard key={review.id} review={review}/>
