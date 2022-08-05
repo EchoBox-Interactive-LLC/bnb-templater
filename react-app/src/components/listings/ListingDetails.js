@@ -73,10 +73,10 @@ function ListingDetails() {
             </div>
           )}
           {!listing && <h1>This Listing Does Not Exist</h1>}
-          {showUpdateButton && listing && (
+          {showUpdateButton && user && listing && (
             <button onClick={updateListing}>Update Listing</button>
           )}
-          {showDeleteButton && listing && (
+          {showDeleteButton && user && listing && (
             <button onClick={deleteListing}>Delete Listing</button>
           )}
           {user && (

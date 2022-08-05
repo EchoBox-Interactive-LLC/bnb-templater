@@ -68,10 +68,10 @@ function ReviewCard({ review }) {
     <div className="review-card-container">
       <p>{niceDate(review.updated_at)}</p>
       <h4>{review.review}</h4>
-      {showUpdateButton && review && (
+      {showUpdateButton && user && review && (
             <button onClick={updateReview}>Update Review</button>
           )}
-          {showDeleteButton && review && (
+          {showDeleteButton && user && review && (
             <button onClick={deleteReview}>Delete Review</button>
           )}
     </div>
