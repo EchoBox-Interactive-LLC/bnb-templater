@@ -24,7 +24,7 @@ function ListingDetails() {
 
   useEffect(() => {
     dispatch(retrieveListings());
-  }, [dispatch]);
+  }, [dispatch, reviews.length]);
 
   useEffect(() => {
     dispatch(retrieveReviews());
@@ -48,7 +48,7 @@ function ListingDetails() {
 
   const deleteListing = () => {
     dispatch(removeListing(listingId));
-    history.push("/");
+    history.push(`/`);
   };
 
   const createReview = () => {
@@ -87,7 +87,7 @@ function ListingDetails() {
           )}
           {showCreateReviewModal && user && (
                     <Modal onClose={() => setShowCreateReviewModal(false)}>
-                        <CreateReviewModal ssetShowCreateReviewModal={setShowCreateReviewModal} />
+                        <CreateReviewModal setShowCreateReviewModal={setShowCreateReviewModal} />
                     </Modal>
                 )}
           <div>

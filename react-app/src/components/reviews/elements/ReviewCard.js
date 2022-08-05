@@ -61,7 +61,7 @@ function ReviewCard({ review }) {
 
   const deleteReview = () => {
     dispatch(removeReview(review.id));
-    history.push("/");
+    history.push(`/listings/${review.listing_id}`);
   };
 
   return (
