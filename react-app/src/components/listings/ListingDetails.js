@@ -25,7 +25,7 @@ function ListingDetails() {
 
   useEffect(() => {
     dispatch(retrieveReviews());
-  }, [dispatch]);
+  }, [dispatch, reviews.length]);
 
   useEffect(() => {
     if (!user) {
@@ -46,6 +46,10 @@ function ListingDetails() {
   const deleteListing = () => {
     dispatch(removeListing(listingId));
     history.push("/");
+  };
+
+  const createReview = () => {
+
   };
 
   return (
@@ -74,6 +78,9 @@ function ListingDetails() {
           )}
           {showDeleteButton && listing && (
             <button onClick={deleteListing}>Delete Listing</button>
+          )}
+          {user && (
+            <button onClick={createReview}>Add Review</button>
           )}
           <div>
             {reviews.length > 0 && (reviews.map((review) => {
