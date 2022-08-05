@@ -76,9 +76,8 @@ function ListingDetails() {
             <button onClick={deleteListing}>Delete Listing</button>
           )}
           <div>
-            <h1>Review Zone</h1>
             {reviews.length > 0 && (reviews.map((review) => {
-              return <ReviewCard review={review}/>
+              return <ReviewCard key={review.id} review={review}/>
             }))}
           </div>
         </div>
