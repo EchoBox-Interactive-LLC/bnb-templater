@@ -12,6 +12,9 @@ class Review(db.Model):
     rating = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 
+    # server_default=func.now(), onupdate=func.now()
+    # from sqlalchemy.sql import func
+
     user = db.relationship('User', back_populates='reviews')
     listing = db.relationship('Listing', back_populates='reviews')
 
