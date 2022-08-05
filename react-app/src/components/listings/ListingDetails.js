@@ -15,7 +15,8 @@ function ListingDetails() {
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
-  const reviews = Object.values(useSelector((state) => state.reviews));
+  const reviews = Object.values(useSelector((state) => state.reviews)).filter(
+    (review) => review.listing_id == listingId);
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -32,14 +33,14 @@ function ListingDetails() {
 
   useEffect(() => {
     if (!user) {
-      return
+      return;
     }
-      if (listing) {
-        if (user.id === listing.user_id) {
-          setShowUpdateButton(true);
-          setShowDeleteButton(true);
-        }
+    if (listing) {
+      if (user.id === listing.user_id) {
+        setShowUpdateButton(true);
+        setShowDeleteButton(true);
       }
+    }
   }, [listing, user]);
 
   const updateListing = () => {
@@ -52,7 +53,7 @@ function ListingDetails() {
   };
 
   const createReview = () => {
-    setShowCreateReviewModal(true)
+    setShowCreateReviewModal(true);
   };
 
   return (
@@ -82,23 +83,27 @@ function ListingDetails() {
           {showDeleteButton && user && listing && (
             <button onClick={deleteListing}>Delete Listing</button>
           )}
-          {user && (
-            <button onClick={createReview}>Add Review</button>
-          )}
+          {user && <button onClick={createReview}>Add Review</button>}
           {showCreateReviewModal && user && (
-                    <Modal onClose={() => setShowCreateReviewModal(false)}>
-                        <CreateReviewModal setShowCreateReviewModal={setShowCreateReviewModal} />
-                    </Modal>
-                )}
+            <Modal onClose={() => setShowCreateReviewModal(false)}>
+              <CreateReviewModal
+                setShowCreateReviewModal={setShowCreateReviewModal}
+              />
+            </Modal>
+          )}
           <div>
-            {reviews.length > 0 && (reviews.map((review) => {
-              return <ReviewCard key={review.id} review={review}/>
-            }))}
+            {reviews.length > 0 &&
+              reviews.map((review) => {
+                return <ReviewCard key={review.id} review={review} />;
+              })}
           </div>
         </div>
       )}
       {showUpdateForm && (
-        <UpdateListingForm setShowUpdateForm={setShowUpdateForm} listing={listing} />
+        <UpdateListingForm
+          setShowUpdateForm={setShowUpdateForm}
+          listing={listing}
+        />
       )}
     </main>
   );
