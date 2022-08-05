@@ -154,7 +154,6 @@ export default function reducer(state = initialState, action) {
       newState[action.payload.id] = action.payload;
       return newState;
     case DELETE_REVIEW:
-      console.log(action.payload)
       delete newState[action.payload];
       return newState;
     default:
