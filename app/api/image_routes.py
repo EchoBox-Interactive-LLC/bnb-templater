@@ -3,6 +3,7 @@ from flask import Blueprint, redirect, request
 from flask_login import login_required
 from app.api.auth_routes import validation_errors_to_error_messages
 from app.models import db, Image
+from app.forms.image_form import ImageForm
 
 image_routes = Blueprint('images', __name__)
 
@@ -30,16 +31,22 @@ def create_image():
 
     if form.validate_on_submit():
 
-        review = Image(
-            user_id=form.data['user_id'],
+        image = Image(
             listing_id=form.data['listing_id'],
-            review=form.data['review'],
-            rating=form.data['rating'],
-            updated_at=form.data['updated_at']
+            url=form.data['url'],
         )
 
-        db.session.add(review)
+        db.session.add(image)
         db.session.commit()
-        return review.to_dict()
+        return image.to_dict()
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@image_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_image(id):
+    image = Image.query.filter(Image.id == id)
+    image.delete()
+    db.session.commit()
+    return {'message': 'Your image has been deleted'}
