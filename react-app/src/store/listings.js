@@ -24,6 +24,7 @@ const updateListing = (listing) => ({
 
 const deleteListing = (listingId) => ({
   type: DELETE_LISTING,
+  payload: listingId,
 });
 
 /***************************** THUNKS ***************************************/
@@ -122,8 +123,6 @@ export const editListing =
       }),
     });
 
-    // console.log(JSON.stringify(response.body))
-
     if (response.ok) {
       const data = await response.json();
       dispatch(updateListing(data));
@@ -169,7 +168,7 @@ export default function reducer(state = initialState, action) {
       newState[action.payload.id] = action.payload;
       return newState;
     case DELETE_LISTING:
-      delete newState[action.listingId];
+      delete newState[action.payload];
       return newState;
     default:
       return state;

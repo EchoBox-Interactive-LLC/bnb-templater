@@ -37,7 +37,7 @@ function CreateListingForm() {
         state,
         country,
         price,
-        updated_at
+        updated_at,
       )
     );
     if (listing.id) {
