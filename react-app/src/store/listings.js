@@ -141,6 +141,7 @@ export const removeListing = (listingId) => async (dispatch) => {
   const response = await fetch(`/api/listings/${listingId}`, {
     method: "DELETE",
   });
+  
 
   if (response.ok) {
     dispatch(deleteListing(listingId));
