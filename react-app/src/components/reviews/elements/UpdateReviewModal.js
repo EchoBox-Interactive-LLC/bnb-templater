@@ -7,13 +7,14 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
   const dispatch = useDispatch();
 
   const userId = useSelector((state) => state.session.user.id);
-  const reviewInfo = Object.values(useSelector((state) => state.reviews)).filter(
-    (review) => review.id === reviewId);
+  const reviewInfo = Object.values(
+    useSelector((state) => state.reviews)
+  ).filter((review) => review.id === reviewId)[0];
   const updated_at = new Date().toDateString();
   const { listingId } = useParams();
 
-  const [review, setReview] = useState((reviewInfo.review) || "");
-  const [rating, setRating] = useState((reviewInfo.rating) || "");
+  const [review, setReview] = useState(reviewInfo.review || "");
+  const [rating, setRating] = useState(reviewInfo.rating || "");
   const [errors, setErrors] = useState([]);
 
   const submit = async (e) => {
@@ -40,7 +41,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
 
   const closeModal = () => {
     setShowUpdateReviewModal(false);
-  }
+  };
 
   return (
     <main>
@@ -73,7 +74,9 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
               onChange={(e) => setRating(e.target.value)}
             />
           </div>
-          <button onClick={closeModal} type="button">Cancel</button>
+          <button onClick={closeModal} type="button">
+            Cancel
+          </button>
           <button type="submit">Submit</button>
         </form>
       </div>
