@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ReviewCard({ listing }) {
+function ReviewCard({ review }) {
   return (
     <div></div>
     // <div className="review-card-container">

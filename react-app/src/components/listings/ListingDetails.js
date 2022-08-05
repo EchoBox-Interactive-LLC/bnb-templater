@@ -13,7 +13,7 @@ function ListingDetails() {
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
   const user = useSelector((state) => state.session.user);
-  const reviews = useSelector((state) => state.reviews);
+  const reviews = Object.values(useSelector((state) => state.reviews));
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -77,6 +77,9 @@ function ListingDetails() {
           )}
           <div>
             <h1>Review Zone</h1>
+            {reviews.length > 0 && (reviews.map((review) => {
+              return <ReviewCard review={review}/>
+            }))}
           </div>
         </div>
       )}
