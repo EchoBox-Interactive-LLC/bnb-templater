@@ -77,7 +77,6 @@ function ListingDetails() {
           )}
           <div>
             <h1>Review Zone</h1>
-            <p>{reviews}</p>
           </div>
         </div>
       )}
