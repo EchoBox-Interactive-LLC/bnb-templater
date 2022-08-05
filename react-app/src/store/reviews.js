@@ -24,6 +24,7 @@ const updateReview = (review) => ({
 
 const deleteReview = (reviewId) => ({
   type: DELETE_REVIEW,
+  payload: reviewId,
 });
 
 /***************************** THUNKS ***************************************/
@@ -153,7 +154,8 @@ export default function reducer(state = initialState, action) {
       newState[action.payload.id] = action.payload;
       return newState;
     case DELETE_REVIEW:
-      delete newState[action.reviewId];
+      console.log(action.payload)
+      delete newState[action.payload];
       return newState;
     default:
       return state;
