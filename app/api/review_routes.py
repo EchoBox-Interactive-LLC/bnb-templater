@@ -54,13 +54,8 @@ def update_listing(id):
             return {'errors': "This is not your review and therefore you are unathorized to edit it."}, 401
 
         review.user_id = form.data['user_id'],
-        review.title=form.data['title'],
-        review.description=form.data['description'],
-        review.address=form.data['address'],
-        review.city=form.data['city'],
-        review.state=form.data['state'],
-        review.country=form.data['country'],
-        review.price=form.data['price'],
+        review.review = form.data['review'],
+        review.rating = form.data['rating'],
         review.updated_at=form.data['updated_at']
 
         db.session.commit()
