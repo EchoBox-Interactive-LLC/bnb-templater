@@ -25,6 +25,7 @@ const deleteImage = (imageId) => ({
 
 export const makeImage =
   (
+    user_id,
     listing_id,
     url
   ) =>
@@ -92,7 +93,7 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case CREATE_IMAGE:
       const image = action.payload;
-      newState[image.id] = review;
+      newState[image.id] = image;
       return newState;
     case READ_IMAGE:
       newState = {};

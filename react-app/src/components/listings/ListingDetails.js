@@ -7,6 +7,7 @@ import UpdateListingForm from "./forms/UpdateListingForm";
 import ReviewCard from "../reviews/elements/ReviewCard";
 import { Modal } from "../modal/modal";
 import CreateReviewModal from "../reviews/elements/CreateReviewModal";
+import CreateImageModal from "../image_things/CreateImageModal";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function ListingDetails() {
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
+  const [showCreateImageModal, setShowCreateImageModal] = useState(false);
 
 
   useEffect(() => {
@@ -57,6 +59,10 @@ function ListingDetails() {
     setShowCreateReviewModal(true);
   };
 
+  const createImage = () => {
+    setShowCreateImageModal(true);
+  };
+
   return (
     <main>
       {!showUpdateForm && (
@@ -89,6 +95,14 @@ function ListingDetails() {
             <Modal onClose={() => setShowCreateReviewModal(false)}>
               <CreateReviewModal
                 setShowCreateReviewModal={setShowCreateReviewModal}
+              />
+            </Modal>
+          )}
+          {user && <button onClick={createImage}>Add an Image</button>}
+          {showCreateImageModal && user && (
+            <Modal onClose={() => setShowCreateImageModal(false)}>
+              <CreateImageModal
+                setShowCreateImageModal={setShowCreateImageModal}
               />
             </Modal>
           )}
