@@ -8,6 +8,7 @@ import ReviewCard from "../reviews/elements/ReviewCard";
 import { Modal } from "../modal/modal";
 import CreateReviewModal from "../reviews/elements/CreateReviewModal";
 import CreateImageModal from "../image_things/CreateImageModal";
+import { retrieveImage } from "../../store/images";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function ListingDetails() {
 
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
+  const images = useSelector((state) => state.images)
   const user = useSelector((state) => state.session.user);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
     (review) => review.listing_id === +listingId);
@@ -25,10 +27,9 @@ function ListingDetails() {
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
   const [showCreateImageModal, setShowCreateImageModal] = useState(false);
 
-
   useEffect(() => {
     dispatch(retrieveListings());
-  }, [dispatch, reviews.length]);
+  }, [dispatch, reviews.length, images]);
 
   useEffect(() => {
     dispatch(retrieveReviews());
