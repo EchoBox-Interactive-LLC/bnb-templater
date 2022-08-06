@@ -38,11 +38,16 @@ const NavBar = () => {
             Demo User
           </button>
           <div className="user-menu">
-            <Hamburger />
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNvWDvQb_rCtRL-p_w329CtzHmfzfWP0FIw&usqp=CAU"
-              alt="default avatar"
-            />
+            <div className="hamburger-icon">
+              <Hamburger />
+            </div>
+            <div>
+              <img
+                className="avatar-icon"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNvWDvQb_rCtRL-p_w329CtzHmfzfWP0FIw&usqp=CAU"
+                alt="default avatar"
+              />
+            </div>
           </div>
         </div>
       )}
@@ -55,9 +60,19 @@ const NavBar = () => {
               CloneBnB
             </NavLink>
           </p>
-          <div>
-            <Hamburger />
-            {user && <img src={user.avatar} alt="user avatar" />}
+          <div className="user-menu">
+            <div className="hamburger-icon">
+              <Hamburger />
+            </div>
+            {user && (
+              <div>
+                <img
+                  className="avatar-icon"
+                  src={user.avatar}
+                  alt="user avatar"
+                />
+              </div>
+            )}
           </div>
           <p className="nav-item">
             <NavLink to="/create" exact={true} activeClassName="active">

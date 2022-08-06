@@ -31,3 +31,13 @@
 .user-menu:hover {
   box-shadow: 0 10px 15px rgb(96, 94, 94);
 }
+
+.hamburger-icon {
+  transform: scale(0.53);
+}
+
+.avatar-icon {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
