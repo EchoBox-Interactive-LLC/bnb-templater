@@ -29,30 +29,30 @@ function ReviewCard({ review }) {
   }, [review, user]);
 
   const niceDate = (date) => {
-    let year = date.split("-")[0];
-    let month = date.split("-")[1];
+    let month = date.split(" ")[1];
+    let year = date.split(" ")[3];
     switch (month) {
-      case "01":
+      case "Jan":
         return `January ${year}`;
-      case "02":
+      case "Feb":
         return `February ${year}`;
-      case "03":
+      case "Mar":
         return `March ${year}`;
-      case "04":
+      case "Apr":
         return `April ${year}`;
-      case "05":
+      case "May":
         return `May ${year}`;
-      case "06":
+      case "Jun":
         return `June ${year}`;
-      case "07":
+      case "Jul":
         return `July ${year}`;
-      case "08":
+      case "Aug":
         return `August ${year}`;
-      case "09":
+      case "Sep":
         return `September ${year}`;
-      case "10":
+      case "Oct":
         return `October ${year}`;
-      case "11":
+      case "Nov":
         return `November ${year}`;
       default:
         return `December ${year}`;
