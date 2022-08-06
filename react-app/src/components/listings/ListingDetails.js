@@ -43,6 +43,7 @@ function ListingDetails() {
       if (user.id === listing.user_id) {
         setShowUpdateButton(true);
         setShowDeleteButton(true);
+        setUserCheck(true);
       }
     }
   }, [listing, user]);
@@ -63,14 +64,6 @@ function ListingDetails() {
   const createImage = () => {
     setShowCreateImageModal(true);
   };
-
-  const checkUser = () => {
-    if (user.id === listing.user_id) {
-      setUserCheck(true)
-    } else {
-      setUserCheck(false)
-    }
-  }
 
 
   return (
