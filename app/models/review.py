@@ -12,6 +12,8 @@ class Review(db.Model):
     rating = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 
+    # TO CREATE A DEFAULT VALUE, THIS WAY updated_at CAN BE TAKEN CARE OF BY THE BACK END ENTIERLY
+    # NO NEED TO CREATE DATES IN THE FRONT END SEND THEM BACK TO THE DB
     # server_default=func.now(), onupdate=func.now()
     # from sqlalchemy.sql import func
 
@@ -26,5 +28,7 @@ class Review(db.Model):
             'listing_id': self.listing_id,
             'review': self.review,
             'rating':self.rating,
-            'updated_at': self.updated_at
+            'updated_at': self.updated_at,
+
+            'user': [self.user.to_dict()]
         }
