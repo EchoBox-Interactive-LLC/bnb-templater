@@ -1,28 +1,27 @@
 from app.models import db, Review
-from datetime import datetime
 
 
 # Adds a few reviews
 def seed_reviews():
   review1 = Review(
     user_id=1, listing_id=3, review="This place rules! We had so much fun staying here.",
-    rating=4, updated_at=datetime.now()
+    rating=4, updated_at='Fri Aug 05 2022'
   )
   review2 = Review(
     user_id=1, listing_id=4, review="Fantastic location and so close to the Lake. Also, just a quick drive to the slopes",
-    rating=4, updated_at=datetime.now()
+    rating=4, updated_at='Fri Aug 05 2022'
   )
   review3 = Review(
     user_id=2, listing_id=1, review="I was a bit dissapointed by this listing as it did not live up to what I was expecting.",
-    rating=2, updated_at=datetime.now()
+    rating=2, updated_at='Fri Aug 05 2022'
   )
   review4 = Review(
     user_id=3, listing_id=1, review="Best vacation I have ever had. I would come back and stay at this place anytime. So dreamy!",
-    rating=5, updated_at=datetime.now()
+    rating=5, updated_at='Fri Aug 05 2022'
   )
   review5 = Review(
     user_id=3, listing_id=1, review="The place is really nice. The location is great and we had a fabulous time here.",
-    rating=3, updated_at=datetime.now()
+    rating=3, updated_at='Fri Aug 05 2022'
   )
 
 

@@ -55,6 +55,7 @@ export const makeReview =
     if (response.ok) {
       const data = await response.json();
       dispatch(createReview(data));
+      console.log("\n\n Review Data: ", data, "\n\n")
       return data;
     } else if (response.status < 500) {
       const data = await response.json();

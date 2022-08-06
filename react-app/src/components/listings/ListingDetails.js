@@ -8,7 +8,6 @@ import ReviewCard from "../reviews/elements/ReviewCard";
 import { Modal } from "../modal/modal";
 import CreateReviewModal from "../reviews/elements/CreateReviewModal";
 import CreateImageModal from "../image_things/CreateImageModal";
-import { retrieveImage } from "../../store/images";
 
 function ListingDetails() {
   const dispatch = useDispatch();

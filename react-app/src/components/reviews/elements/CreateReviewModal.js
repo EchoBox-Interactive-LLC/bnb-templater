@@ -26,6 +26,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
     let reviewData = await dispatch(
       makeReview(userId, listingId, review, rating, updated_at)
     );
+
     if (reviewData.id) {
       setShowCreateReviewModal(false);
       return;
