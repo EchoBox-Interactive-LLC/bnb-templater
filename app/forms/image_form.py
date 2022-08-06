@@ -11,7 +11,7 @@ def url_regex(form, field):
       raise ValidationError('Image url cannot be empty.')
 
   if not (re.search(regex, url)):
-      raise ValidationError('Image url has to start with https:// and must end with .jpeg .jpg and .png')
+      raise ValidationError('Image url has to start with https:// and must end with .jpeg .jpg or .png')
 
 def url_length(form, field):
   url = field.data
