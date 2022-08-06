@@ -13,18 +13,19 @@ function Listings() {
 
   return (
     <main>
-      <h1>This will be the listing page!</h1>
-      {listings.length > 0 && (
-        <div>
-          {listings.map((listing) => {
-            return (
-              <div key={listing.id}>
-                <ListingCard listing={listing} />
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <div>
+        {listings.length > 0 && (
+          <div>
+            {listings.map((listing) => {
+              return (
+                <div key={listing.id}>
+                  <ListingCard listing={listing} />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </main>
   );
 }

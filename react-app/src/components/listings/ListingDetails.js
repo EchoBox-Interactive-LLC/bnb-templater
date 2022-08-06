@@ -25,6 +25,7 @@ function ListingDetails() {
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
   const [showCreateImageModal, setShowCreateImageModal] = useState(false);
+  const [userCheck, setUserCheck] = useState(false);
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -63,11 +64,19 @@ function ListingDetails() {
     setShowCreateImageModal(true);
   };
 
+  const checkUser = () => {
+    if (user.id === listing.user_id) {
+      setUserCheck(true)
+    } else {
+      setUserCheck(false)
+    }
+  }
+
+
   return (
     <main>
       {!showUpdateForm && (
         <div>
-          <h1>Listing Details Page</h1>
           {listing && (
             <div>
               <h1>{listing.title}</h1>
@@ -75,6 +84,18 @@ function ListingDetails() {
               <p>{listing.state}</p>
               <p>{listing.country}</p>
               {listing.images[0] && (
+                <img src={listing.images[0].url} alt={listing.title} />
+              )}
+              {listing.images[1] && (
+                <img src={listing.images[0].url} alt={listing.title} />
+              )}
+              {listing.images[2] && (
+                <img src={listing.images[0].url} alt={listing.title} />
+              )}
+              {listing.images[3] && (
+                <img src={listing.images[0].url} alt={listing.title} />
+              )}
+              {listing.images[4] && (
                 <img src={listing.images[0].url} alt={listing.title} />
               )}
               <p>{listing.description}</p>
@@ -98,8 +119,8 @@ function ListingDetails() {
               />
             </Modal>
           )}
-          {user && <button onClick={createImage}>Add an Image</button>}
-          {showCreateImageModal && user && (
+          {user && userCheck && <button onClick={createImage}>Add an Image</button>}
+          {showCreateImageModal && user && userCheck && (
             <Modal onClose={() => setShowCreateImageModal(false)}>
               <CreateImageModal
                 setShowCreateImageModal={setShowCreateImageModal}
