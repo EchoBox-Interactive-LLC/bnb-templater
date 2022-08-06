@@ -8,3 +8,26 @@
 .nav-item {
   padding: 8px;
 }
+
+#demo-user {
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px 18px;
+}
+
+#demo-user:hover {
+  background-color: rgb(245, 245, 245);
+  border-radius: 25px;
+}
+
+.user-menu {
+  border: 1px solid rgb(178, 176, 176);
+  border-radius: 25px;
+}
+
+.user-menu:hover {
+  box-shadow: 0 10px 15px rgb(96, 94, 94);
+}
