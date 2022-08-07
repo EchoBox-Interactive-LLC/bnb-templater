@@ -3,6 +3,7 @@
   justify-content: space-between;
   border-bottom: 2px solid rgb(174, 174, 174);
   align-items: center;
+  padding: 20px 40px;
 }
 
 .nav-item {
@@ -26,6 +27,9 @@
 .user-menu {
   border: 1px solid rgb(178, 176, 176);
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .user-menu:hover {
@@ -33,11 +37,11 @@
 }
 
 .hamburger-icon {
-  transform: scale(0.53);
+  transform: scale(0.52);
 }
 
 .avatar-icon {
-  width: 50px;
+  width: 42px;
   height: auto;
   border-radius: 50%;
 }
