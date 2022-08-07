@@ -40,6 +40,7 @@
 
 .hamburger-icon {
   transform: scale(0.52);
+  z-index: 1;
 }
 
 .avatar-icon {

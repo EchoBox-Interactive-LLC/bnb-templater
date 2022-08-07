@@ -5,13 +5,14 @@ import { NavLink } from "react-router-dom";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
 import { Modal } from "../modal/modal";
+import "./userMenu.css";
 
 const UserMenu = ({ user }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   return (
-    <main>
+    <div className="user-menu-container">
       <p className="user-menu-item">
         <NavLink to="/login" exact={true} activeClassName="active">
           Login
@@ -22,7 +23,7 @@ const UserMenu = ({ user }) => {
           Sign Up
         </NavLink>
       </p>
-    </main>
+    </div>
   );
 };
 
