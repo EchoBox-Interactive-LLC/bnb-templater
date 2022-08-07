@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import LogoutButton from "../auth/LogoutButton";
 import { login } from "../../store/session";
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
+import UserMenu from "./UserMenu";
 import "./navBar.css";
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
 
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
   };
+
+  const openUserMenu = () => {
+    if (!showUserMenu) return setShowUserMenu(true);
+  };
+
+  const closeUserMenu = (e) => {
+    if (
+      e.target.classList.contains("user-menu") ||
+      e.target.classList.contains("hamburger-icon") ||
+      e.target.classList.contains("avatar-icon")
+    )
+      return;
+    setShowUserMenu(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", closeUserMenu);
+    return () => document.removeEventListener("mousedown", closeUserMenu);
+  }, [showUserMenu]);
 
   return (
     <nav>
@@ -37,7 +59,7 @@ const NavBar = () => {
           <button className="nav-item" id="demo-user" onClick={demoLogIn}>
             Demo User
           </button>
-          <div className="user-menu">
+          <div onClick={openUserMenu} className="user-menu">
             <div className="hamburger-icon">
               <Hamburger />
             </div>
@@ -60,7 +82,7 @@ const NavBar = () => {
               CloneBnB
             </NavLink>
           </p>
-          <div className="user-menu">
+          <div onClick={openUserMenu} className="user-menu">
             <div className="hamburger-icon">
               <Hamburger />
             </div>
@@ -84,6 +106,7 @@ const NavBar = () => {
           </p>
         </div>
       )}
+      {showUserMenu && <UserMenu user={user} />}
     </nav>
   );
 };
