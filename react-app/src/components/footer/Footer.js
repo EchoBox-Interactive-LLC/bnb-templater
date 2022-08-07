@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer>
-      <h4>This is the lonely footer</h4>
+      <h4>This is the lonely footer!</h4>
     </footer>
   )
 };
