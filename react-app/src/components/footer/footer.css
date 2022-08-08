@@ -21,4 +21,23 @@ footer {
 
 .footer-flex {
   display: flex;
+  justify-content: space-between;
+}
+
+.footer-flex-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 85px;
+}
+
+#language {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 10px;
+  margin-right: -40px;
 }
