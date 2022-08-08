@@ -2,5 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: 30px 45px;
-  gap: 25px;
+  gap: 30px;
+  justify-content: center;
 }
