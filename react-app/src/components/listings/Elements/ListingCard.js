@@ -8,7 +8,7 @@ function ListingCard({ listing, reviews }) {
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
 
   if (rating === "NaN") {
-    rating = "No Reviews"
+    rating = "New"
   }
 
   return (
