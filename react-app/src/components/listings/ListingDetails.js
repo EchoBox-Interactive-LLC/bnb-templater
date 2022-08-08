@@ -96,22 +96,26 @@ function ListingDetails() {
                   <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
                 </div>
               </div>
-              <div className="image-container">
-                {listing.images[0] && (
-                  <img id="image-one" src={listing.images[0].url} alt={listing.title} />
-                )}
-                {listing.images[1] && (
-                  <img id="image-two" src={listing.images[1].url} alt={listing.title} />
-                )}
-                {listing.images[2] && (
-                  <img id="image-three" src={listing.images[2].url} alt={listing.title} />
-                )}
-                {listing.images[3] && (
-                  <img id="image-four" src={listing.images[3].url} alt={listing.title} />
-                )}
-                {listing.images[4] && (
-                  <img id="image-five" src={listing.images[4].url} alt={listing.title} />
-                )}
+             
+                <div className="image-container-main">
+                  {listing.images[0] && (
+                    <img id="image-one" src={listing.images[0].url} alt={listing.title} />
+                  )}
+                  <div className="image-container-right">
+                    {listing.images[1] && (
+                      <img id="image-two" src={listing.images[1].url} alt={listing.title} />
+                    )}
+                    {listing.images[2] && (
+                      <img id="image-three" src={listing.images[2].url} alt={listing.title} />
+                    )}
+                    {listing.images[3] && (
+                      <img id="image-four" src={listing.images[3].url} alt={listing.title} />
+                    )}
+                    {listing.images[4] && (
+                      <img id="image-five" src={listing.images[4].url} alt={listing.title} />
+                    )}
+                  
+                </div>
               </div>
               <p>{listing.description}</p>
               <p>
