@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
@@ -13,20 +12,11 @@ import "./navBar.css";
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
-
-  const LoginModalFunc = () => {
-    setShowLoginModal(true);
-  };
-
-  const SignUpModalFunc = () => {
-    setShowSignUpModal(true);
-  };
 
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
@@ -71,16 +61,7 @@ const NavBar = () => {
               CloneBnB
             </NavLink>
           </p>
-          <p className="nav-item">
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
-            </NavLink>
-          </p>
-          <p className="nav-item">
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
-            </NavLink>
-          </p>
+          <div className="nav-bar-right">
           <button className="nav-item" id="demo-user" onClick={demoLogIn}>
             Demo User
           </button>
@@ -97,6 +78,7 @@ const NavBar = () => {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNvWDvQb_rCtRL-p_w329CtzHmfzfWP0FIw&usqp=CAU"
                 alt="default avatar"
               />
+            </div>
             </div>
           </div>
           {showLoginModal && (
