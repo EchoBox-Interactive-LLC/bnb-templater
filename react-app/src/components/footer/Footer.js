@@ -3,8 +3,11 @@ import "./footer.css";
 
 function Footer() {
 
+  // let footer = document.getElementsByClassName('footer');
+  // footer.classList.add('sticky-footer');
+
   return (
-    <footer className="footer">
+    <footer className="sticky-footer">
       <h4>This is the lonely footer!</h4>
     </footer>
   )

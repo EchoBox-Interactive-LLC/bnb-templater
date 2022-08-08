@@ -18,10 +18,6 @@ function Listings() {
     dispatch(retrieveReviews());
   }, [dispatch, reviews.length]);
 
-  // let footer = document.getElementsByTagName('footer');
-  // footer.classList.add('sticky-footer');
-
-
   return (
     <main>
       <div>
