@@ -21,7 +21,7 @@ function ListingDetails() {
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
     (review) => review.listing_id === +listingId);
 
-  const listingReviews = reviews.filter((review) => review.listing_id === listingId)
+  const listingReviews = reviews.filter((review) => review.listing_id === +listingId)
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0)) / (ratings.length)).toFixed(2);
 
@@ -76,9 +76,9 @@ function ListingDetails() {
 
   let reviewsContent
   if (reviews.length === 1) {
-    reviewsContent = "review"
+    reviewsContent = " review"
   } else {
-    reviewsContent = "reviews"
+    reviewsContent = " reviews"
   }
 
   return (
@@ -88,11 +88,11 @@ function ListingDetails() {
           {listing && (
             <div className="page-container">
               <div className="top-info">
-                <h1>{listing.title}</h1>
+                <h1 id="title">{listing.title}</h1>
                 <div className="flex-info">
                   <h3 id="rating">⭑ {rating}</h3>
                   <h3 id="num-of-reviews">• {reviews.length}</h3>
-                  <h3>{reviewsContent}</h3>
+                  <h3 id="review-word">{reviewsContent}</h3>
                   <h3 id="location">{` • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
                 </div>
               </div>
