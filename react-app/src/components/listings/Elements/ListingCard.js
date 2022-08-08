@@ -5,21 +5,18 @@ import "./listingCard.css";
 function ListingCard({ listing }) {
   return (
     <div className="card-container">
-      {listing.images[0] && (
-        <Link to={`/listings/${listing.id}`}>
+      <Link className="listing-link" to={`/listings/${listing.id}`}>
+        {listing.images[0] && (
           <img
             className="listing-img"
             src={listing.images[0].url}
             alt={listing.title}
           />
-        </Link>
-      )}
-      <Link to={`/listings/${listing.id}`}>
-        <h1>{listing.title}</h1>
+        )}
+        <div className="listing-location">
+          <h3 id="location">{`${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+        </div>
       </Link>
-      <h3>{listing.city}</h3>
-      <h3>{listing.state}</h3>
-      <h3>{listing.country}</h3>
     </div>
   );
 }
