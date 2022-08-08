@@ -4,7 +4,7 @@ import "./footer.css";
 function Footer() {
 
   return (
-    <footer>
+    <footer className="footer">
       <h4>This is the lonely footer!</h4>
     </footer>
   )

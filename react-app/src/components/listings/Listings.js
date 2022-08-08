@@ -6,7 +6,7 @@ import ListingCard from "../listings/Elements/ListingCard";
 import "./listings.css";
 
 function Listings() {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const reviews = Object.values(useSelector((state) => state.reviews));
   const listings = Object.values(useSelector((state) => state.listings));
 
@@ -17,6 +17,10 @@ function Listings() {
   useEffect(() => {
     dispatch(retrieveReviews());
   }, [dispatch, reviews.length]);
+
+  // let footer = document.getElementsByTagName('footer');
+  // footer.classList.add('sticky-footer');
+
 
   return (
     <main>
