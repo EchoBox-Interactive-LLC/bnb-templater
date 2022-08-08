@@ -9,6 +9,7 @@ import { login } from "../../store/session";
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
 import UserMenu from "./UserMenu";
 import "./navBar.css";
+import logo from "../../images/Urbnb-Icon.png";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ const NavBar = () => {
         <div className="nav-bar">
           <p className="nav-item">
             <NavLink to="/" exact={true} activeClassName="active">
-              CloneBnB
+              <img id="logo-image" src={logo} alt="Urbnb Logo" />
             </NavLink>
           </p>
           <div className="nav-bar-right">
@@ -99,7 +100,7 @@ const NavBar = () => {
         <div className="nav-bar">
           <p className="nav-item">
             <NavLink to="/" exact={true} activeClassName="active">
-              CloneBnB
+              <img id="logo-image" src={logo} alt="Urbnb Logo" />
             </NavLink>
           </p>
           <div

@@ -14,6 +14,11 @@
   padding: 8px;
 }
 
+#logo-image {
+  width: 35px;
+  height: auto;
+}
+
 #demo-user {
   font-size: 15px;
   font-weight: 500;
