@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
@@ -13,6 +14,7 @@ import logo from "../../images/Urbnb-Icon.png";
 
 const NavBar = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -21,6 +23,10 @@ const NavBar = () => {
 
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
+  };
+
+  const createNewListing = () => {
+    history.push("/create");
   };
 
   const closeUserMenu = (e) => {
@@ -107,27 +113,32 @@ const NavBar = () => {
               <img id="logo-image" src={logo} alt="Urbnb Logo" />
             </NavLink>
           </p>
-          <div
-            onClick={() => setShowUserMenu(!showUserMenu)}
-            className="user-menu"
-          >
-            <div className="hamburger-icon">
-              <Hamburger />
-            </div>
-            {user && (
-              <div className="div-avatar-icon">
-                <img
-                  className="avatar-icon"
-                  src={user.avatar}
-                  alt="user avatar"
-                />
-              </div>
-            )}
-          </div>
-          <div className="nav-item">
-            <NavLink to="/create" exact={true} activeClassName="active">
+          <div className="nav-bar-right">
+            <button
+              className="nav-item"
+              id="demo-user"
+              onClick={createNewListing}
+            >
               New Listing
-            </NavLink>
+            </button>
+
+            <div
+              onClick={() => setShowUserMenu(!showUserMenu)}
+              className="user-menu"
+            >
+              <div className="hamburger-icon">
+                <Hamburger />
+              </div>
+              {user && (
+                <div className="div-avatar-icon">
+                  <img
+                    className="avatar-icon"
+                    src={user.avatar}
+                    alt="user avatar"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
