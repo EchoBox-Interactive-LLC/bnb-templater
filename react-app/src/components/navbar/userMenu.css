@@ -49,6 +49,7 @@
 
 .user-menu-div {
   height: 50px;
+  margin-left: -1px;
   justify-self: center;
 }
 
