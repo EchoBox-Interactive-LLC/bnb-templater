@@ -8,7 +8,10 @@ function Footer() {
 
   return (
     <footer className="sticky-footer">
-      <h4>This is the lonely footer!</h4>
+      <div className="footer-flex">
+        <h4>This is the lonely footer!</h4>
+        <h4>This is the lonely footer!</h4>
+      </div>
     </footer>
   )
 };

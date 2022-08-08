@@ -9,14 +9,16 @@ main {
 }
 
 footer {
-  border-top: 2px solid rgb(174, 174, 174);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-top: 1px solid rgb(174, 174, 174);
+  background-color: white;
 }
 
 .sticky-footer {
   position: sticky;
   bottom: 0;
   width: 100vw;
+}
+
+.footer-flex {
+  display: flex;
 }
