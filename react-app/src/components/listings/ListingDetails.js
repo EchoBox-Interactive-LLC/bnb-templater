@@ -8,6 +8,7 @@ import ReviewCard from "../reviews/elements/ReviewCard";
 import { Modal } from "../modal/modal";
 import CreateReviewModal from "../reviews/elements/CreateReviewModal";
 import CreateImageModal from "../image_things/CreateImageModal";
+import "./listingDetails.css";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -19,6 +20,14 @@ function ListingDetails() {
   const user = useSelector((state) => state.session.user);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
     (review) => review.listing_id === +listingId);
+
+  const listingReviews = reviews.filter((review) => review.listing_id === listingId)
+  const ratings = listingReviews.map((rating) => (rating.rating))
+  let rating = ((ratings.reduce((a, b) => a + b, 0)) / (ratings.length)).toFixed(2);
+
+  if (rating === "NaN") {
+    rating = "New"
+  }
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -65,38 +74,52 @@ function ListingDetails() {
     setShowCreateImageModal(true);
   };
 
+  let reviewsContent
+  if (reviews.length === 1) {
+    reviewsContent = "review"
+  } else {
+    reviewsContent = "reviews"
+  }
 
   return (
     <main>
       {!showUpdateForm && (
         <div>
           {listing && (
-            <div>
-              <h1>{listing.title}</h1>
-              <p>{listing.city}</p>
-              <p>{listing.state}</p>
-              <p>{listing.country}</p>
-              {listing.images[0] && (
-                <img src={listing.images[0].url} alt={listing.title} />
-              )}
-              {listing.images[1] && (
-                <img src={listing.images[0].url} alt={listing.title} />
-              )}
-              {listing.images[2] && (
-                <img src={listing.images[0].url} alt={listing.title} />
-              )}
-              {listing.images[3] && (
-                <img src={listing.images[0].url} alt={listing.title} />
-              )}
-              {listing.images[4] && (
-                <img src={listing.images[0].url} alt={listing.title} />
-              )}
+            <div className="page-container">
+              <div className="top-info">
+                <h1>{listing.title}</h1>
+                <div className="flex-info">
+                  <h3 id="rating">⭑ {rating}</h3>
+                  <h3 id="num-of-reviews">• {reviews.length}</h3>
+                  <h3>{reviewsContent}</h3>
+                  <h3 id="location">{` • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+                </div>
+              </div>
+              <div className="image-container">
+                {listing.images[0] && (
+                  <img src={listing.images[0].url} alt={listing.title} />
+                )}
+                {listing.images[1] && (
+                  <img src={listing.images[1].url} alt={listing.title} />
+                )}
+                {listing.images[2] && (
+                  <img src={listing.images[2].url} alt={listing.title} />
+                )}
+                {listing.images[3] && (
+                  <img src={listing.images[3].url} alt={listing.title} />
+                )}
+                {listing.images[4] && (
+                  <img src={listing.images[4].url} alt={listing.title} />
+                )}
+              </div>
               <p>{listing.description}</p>
               <p>
                 $<span>{listing.price}</span>night
               </p>
             </div>
           )}
+
           {!listing && <h1>This Listing Does Not Exist</h1>}
           {showUpdateButton && user && listing && (
             <button onClick={updateListing}>Update Listing</button>

@@ -1,0 +1,18 @@
+.page-container {
+    margin: 25px 85px;
+}
+
+.top-info {
+    border: 3px solid red;
+}
+
+#location {
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .flex-info {
+    display: flex;
+    align-items: center;
+  }
