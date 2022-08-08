@@ -90,27 +90,27 @@ function ListingDetails() {
               <div className="top-info">
                 <h1 id="title">{listing.title}</h1>
                 <div className="flex-info">
-                  <h3 id="rating">⭑ {rating}</h3>
+                  <h3 id="rating">⭑ {rating} </h3>
                   <h3 id="num-of-reviews">• {reviews.length}</h3>
                   <h3 id="review-word">{reviewsContent}</h3>
-                  <h3 id="location">{` • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+                  <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
                 </div>
               </div>
               <div className="image-container">
                 {listing.images[0] && (
-                  <img src={listing.images[0].url} alt={listing.title} />
+                  <img id="image-one" src={listing.images[0].url} alt={listing.title} />
                 )}
                 {listing.images[1] && (
-                  <img src={listing.images[1].url} alt={listing.title} />
+                  <img id="image-two" src={listing.images[1].url} alt={listing.title} />
                 )}
                 {listing.images[2] && (
-                  <img src={listing.images[2].url} alt={listing.title} />
+                  <img id="image-three" src={listing.images[2].url} alt={listing.title} />
                 )}
                 {listing.images[3] && (
-                  <img src={listing.images[3].url} alt={listing.title} />
+                  <img id="image-four" src={listing.images[3].url} alt={listing.title} />
                 )}
                 {listing.images[4] && (
-                  <img src={listing.images[4].url} alt={listing.title} />
+                  <img id="image-five" src={listing.images[4].url} alt={listing.title} />
                 )}
               </div>
               <p>{listing.description}</p>

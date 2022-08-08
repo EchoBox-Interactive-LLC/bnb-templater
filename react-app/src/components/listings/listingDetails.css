@@ -2,10 +2,6 @@
     margin: 25px 85px;
 }
 
-.top-info {
-    border: 3px solid red;
-}
-
 #title {
     color: rgb(52, 52, 52);
 }
@@ -14,18 +10,33 @@
     font-size: 17px;
     font-weight: 500;
     color: black;
-  }
+}
 
-  .flex-info {
+.flex-info {
     display: flex;
     align-items: center;
-  }
+    padding: 5px 0;
+}
 
-  #num-of-reviews {
+#num-of-reviews {
+    font-size: 17px;
     padding-left: 3px;
-  }
+}
 
-  #review-word {
-    padding-left: 3px;
-    padding-right: 3px;
-  }
+#review-word {
+    font-size: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#image-one {
+    width: 550px;
+    height: 425px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    object-fit: cover;
+}
+
+.image-container {
+    border: 3px solid red;
+}
