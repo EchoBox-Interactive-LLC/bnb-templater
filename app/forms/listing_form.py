@@ -24,8 +24,8 @@ def city_length(form, field):
 
 def state_length(form, field):
   state = field.data
-  if len(state) > 2:
-    raise ValidationError('State must be 2 characters or less.')
+  if len(state) > 50:
+    raise ValidationError('State must be 50 characters or less.')
 
 def country_length(form, field):
   state = field.data
