@@ -13,6 +13,12 @@
   display: flex;
 }
 
+.line-under-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .listing-link {
   text-decoration: none !important;
 }
@@ -21,6 +27,12 @@
   text-decoration: none !important;
    color: black;
    font-weight: 400;
+}
+
+#rating {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
 }
 
 #location {

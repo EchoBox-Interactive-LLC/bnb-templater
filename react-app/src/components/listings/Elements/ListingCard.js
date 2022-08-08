@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./listingCard.css";
 
-function ListingCard({ listing }) {
+function ListingCard({ listing, rating }) {
 
 
   return (
@@ -15,8 +15,13 @@ function ListingCard({ listing }) {
             alt={listing.title}
           />
         )}
+        <div className="line-under-img">
         <div className="listing-location">
           <h3 id="location">{`${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+        </div>
+        <div className="listing-rating">
+          <h3 id="rating">⭑{rating}</h3>
+        </div>
         </div>
         <div className="listing-price">
           <h3 id="price">
