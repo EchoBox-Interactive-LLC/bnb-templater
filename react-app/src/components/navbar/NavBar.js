@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
+import LoginForm from "../auth/LoginForm";
+import SignUpForm from "../auth/SignUpForm";
+import { Modal } from "../modal/modal";
 import { login } from "../../store/session";
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
 import UserMenu from "./UserMenu";
@@ -14,6 +17,16 @@ const NavBar = () => {
   const user = useSelector((state) => state.session.user);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+
+  const LoginModalFunc = () => {
+    setShowLoginModal(true);
+  };
+
+  const SignUpModalFunc = () => {
+    setShowSignUpModal(true);
+  };
 
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
@@ -21,13 +34,13 @@ const NavBar = () => {
 
   const closeUserMenu = (e) => {
     if (e.target.innerHTML === "Login") {
-      history.push("/login")
-      return setShowUserMenu(false)
+      setShowLoginModal(true)
+      return setShowUserMenu(false);
     }
 
     if (e.target.innerHTML === "Sign Up") {
-      history.push("/sign-up")
-      return setShowUserMenu(false)
+      setShowSignUpModal(true)
+      return setShowUserMenu(false);
     }
 
     if (
@@ -86,6 +99,16 @@ const NavBar = () => {
               />
             </div>
           </div>
+          {showLoginModal && (
+            <Modal>
+              <LoginForm />
+            </Modal>
+          )}
+          {showSignUpModal && (
+            <Modal>
+              <SignUpForm />
+            </Modal>
+          )}
         </div>
       )}
 
