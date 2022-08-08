@@ -7,11 +7,9 @@ function ListingCard({ listing, reviews }) {
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
 
-  if (rating == "NaN") {
-    rating = "No Reviews Yet"
+  if (rating === "NaN") {
+    rating = "No Reviews"
   }
-
-
 
   return (
     <div className="card-container">
@@ -28,7 +26,7 @@ function ListingCard({ listing, reviews }) {
             <h3 id="location">{`${listing.city}, ${listing.state}, ${listing.country}`}</h3>
           </div>
           <div className="listing-rating">
-            <h3 id="rating">⭑{rating}</h3>
+            <h3 id="rating">⭑ {rating}</h3>
           </div>
         </div>
         <div className="listing-price">
