@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./userMenu.css";
 
-const UserMenu = ({ user }) => {
+const UserMenu = () => {
   return (
     <div className="user-menu-container">
-      <button type="button" className="user-menu-item">
-        Login
-      </button>
-      <button type="button" className="user-menu-item">
-        Sign Up
-      </button>
+      <div className="user-menu-div">
+        <button id="log-in" type="button" className="user-menu-item">
+          Log in
+        </button>
+      </div>
+      <div className="user-menu-div">
+        <button id="sign-up" type="button" className="user-menu-item">
+          Sign up
+        </button>
+      </div>
     </div>
   );
 };

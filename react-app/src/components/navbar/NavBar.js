@@ -33,12 +33,12 @@ const NavBar = () => {
   };
 
   const closeUserMenu = (e) => {
-    if (e.target.innerHTML === "Login") {
+    if (e.target.innerHTML === "Log in") {
       setShowLoginModal(true)
       return setShowUserMenu(false);
     }
 
-    if (e.target.innerHTML === "Sign Up") {
+    if (e.target.innerHTML === "Sign up") {
       setShowSignUpModal(true)
       return setShowUserMenu(false);
     }
@@ -100,12 +100,12 @@ const NavBar = () => {
             </div>
           </div>
           {showLoginModal && (
-            <Modal>
+            <Modal onClose={() => setShowLoginModal(false)}>
               <LoginForm />
             </Modal>
           )}
           {showSignUpModal && (
-            <Modal>
+            <Modal onClose={() => setShowSignUpModal(false)}>
               <SignUpForm />
             </Modal>
           )}
