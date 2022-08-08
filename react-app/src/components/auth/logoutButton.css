@@ -1,0 +1,20 @@
+#logout-button {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  padding: 0 3px 0 18px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.user-menu-div-two {
+  height: 50px;
+  justify-self: center;
+}
+
+.user-menu-div-two:hover {
+  width: 252px;
+  margin-left: -1px;
+  background-color: rgb(243, 243, 243);
+}

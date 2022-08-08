@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import LogoutButton from "../auth/LogoutButton";
+import { logout } from "../../store/session";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
 import { Modal } from "../modal/modal";
@@ -25,13 +25,17 @@ const NavBar = () => {
 
   const closeUserMenu = (e) => {
     if (e.target.innerHTML === "Log in") {
-      setShowLoginModal(true)
+      setShowLoginModal(true);
       return setShowUserMenu(false);
     }
 
     if (e.target.innerHTML === "Sign up") {
-      setShowSignUpModal(true)
+      setShowSignUpModal(true);
       return setShowUserMenu(false);
+    }
+
+    if (e.target.innerHTML === "Log out") {
+      dispatch(logout());
     }
 
     if (
@@ -63,23 +67,23 @@ const NavBar = () => {
             </NavLink>
           </p>
           <div className="nav-bar-right">
-          <button className="nav-item" id="demo-user" onClick={demoLogIn}>
-            Demo User
-          </button>
-          <div
-            onClick={() => setShowUserMenu(!showUserMenu)}
-            className="user-menu"
-          >
-            <div className="hamburger-icon">
-              <Hamburger />
-            </div>
-            <div className="div-avatar-icon">
-              <img
-                className="avatar-icon"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNvWDvQb_rCtRL-p_w329CtzHmfzfWP0FIw&usqp=CAU"
-                alt="default avatar"
-              />
-            </div>
+            <button className="nav-item" id="demo-user" onClick={demoLogIn}>
+              Demo User
+            </button>
+            <div
+              onClick={() => setShowUserMenu(!showUserMenu)}
+              className="user-menu"
+            >
+              <div className="hamburger-icon">
+                <Hamburger />
+              </div>
+              <div className="div-avatar-icon">
+                <img
+                  className="avatar-icon"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNvWDvQb_rCtRL-p_w329CtzHmfzfWP0FIw&usqp=CAU"
+                  alt="default avatar"
+                />
+              </div>
             </div>
           </div>
           {showLoginModal && (
@@ -120,14 +124,11 @@ const NavBar = () => {
               </div>
             )}
           </div>
-          <p className="nav-item">
+          <div className="nav-item">
             <NavLink to="/create" exact={true} activeClassName="active">
               New Listing
             </NavLink>
-          </p>
-          <p className="nav-item">
-            <LogoutButton />
-          </p>
+          </div>
         </div>
       )}
       {showUserMenu && <UserMenu user={user} />}
