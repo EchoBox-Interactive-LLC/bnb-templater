@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./listingCard.css";
 
 function ListingCard({ listing }) {
+
+
   return (
     <div className="card-container">
       <Link className="listing-link" to={`/listings/${listing.id}`}>
@@ -15,6 +17,12 @@ function ListingCard({ listing }) {
         )}
         <div className="listing-location">
           <h3 id="location">{`${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+        </div>
+        <div className="listing-price">
+          <h3 id="price">
+            <span style={{fontWeight:"700"}}>${listing.price}</span>
+            <span> night</span>
+          </h3>
         </div>
       </Link>
     </div>

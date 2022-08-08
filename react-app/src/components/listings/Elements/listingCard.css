@@ -17,20 +17,10 @@
   text-decoration: none !important;
 }
 
-.listing-link:visited {
+#price{
   text-decoration: none !important;
-}
-
-.listing-link:hover {
-  text-decoration: none !important;
-}
-
-.listing-link:focus {
-  text-decoration: none !important;
-}
-
-.listing-link:active {
-  text-decoration: none !important;
+   color: black;
+   font-weight: 400;
 }
 
 #location {
