@@ -12,13 +12,13 @@ function BookingCard({ listing, reviews, rating }) {
   // Service free calc, using 3% for now
   let serviceFee;
   if (listing) {
-    serviceFee = Math.round((listing.price * .03))
+    serviceFee = Math.round(listing.price * 0.03);
   }
 
   // Calc for total amount
-  let total
+  let total;
   if (listing) {
-    total = serviceFee + 150 + listing.price
+    total = serviceFee + 150 + listing.price;
   }
 
   return (
@@ -34,23 +34,25 @@ function BookingCard({ listing, reviews, rating }) {
           </div>
         </div>
       </div>
-      <div className="middle-booking-section">
-        <div className="fee">
-          <p>Cleaning Fee</p>
+      <div>
+        <div className="middle-booking-section">
+          <div className="fee">
+            <p>Cleaning Fee</p>
+          </div>
+          <div id="rating">$150</div>
         </div>
-        <div id="rating">$150</div>
-      </div>
-      <div className="middle-booking-section">
-        <div className="fee">
-          <p>Service Fee</p>
+        <div className="middle-booking-section">
+          <div className="fee">
+            <p>Service Fee</p>
+          </div>
+          <div>${serviceFee}</div>
         </div>
-        <div>${serviceFee}</div>
-      </div>
-      <div className="total-booking-section">
-        <div id="total-fee">
-          <p>Total before taxes</p>
+        <div className="total-booking-section">
+          <div id="total-fee">
+            <p>Total before taxes</p>
+          </div>
+          <div>${total}</div>
         </div>
-        <div>${total}</div>
       </div>
     </div>
   );
