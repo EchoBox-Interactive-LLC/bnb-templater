@@ -140,29 +140,33 @@ function ListingDetails() {
                   )}
                 </div>
               </div>
-              <div className="hosted-by-section">
-                {listing.user && (
-                  <div>
-                    <div id="host">
-                      Entire home hosted by {listing.user[0].username}
-                    </div>
-                  </div>
-                )}
-                {listing.user && (
-                  <div>
-                    <img
-                      id="host-avatar"
-                      src={listing.user[0].avatar}
-                      alt="User Avatar"
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="description-section">
-                <div>{listing.description}</div>
-              </div>
+              <div className="listing-info">
               <div>
-                <BookingCard listing={listing}/>
+                <div className="hosted-by-section">
+                  {listing.user && (
+                    <div>
+                      <div id="host">
+                        Entire home hosted by {listing.user[0].username}
+                      </div>
+                    </div>
+                  )}
+                  {listing.user && (
+                    <div>
+                      <img
+                        id="host-avatar"
+                        src={listing.user[0].avatar}
+                        alt="User Avatar"
+                      />
+                    </div>
+                  )}
+                </div>
+               {listing && ( <div className="description-section">
+                  <div>{listing.description}</div>
+                </div>)}
+              </div>
+                <div className="booking-card-section">
+                  <BookingCard listing={listing} reviews={reviews} rating={rating}/>
+                </div>
               </div>
             </div>
           )}

@@ -88,14 +88,27 @@
     grid-area: image-five;
 }
 
+.listing-info {
+    padding-top: 60px;
+    padding-bottom: 75px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 100px 100px;
+    grid-template-areas: 
+      "hosted-by-section booking-card-section"
+      "description-section booking-card-section";
+}
+
 .hosted-by-section {
     display: flex;
-    width: 68%;
     height: auto;
     padding: 12px 0;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(209, 209, 209);
+    grid-area: hosted-image-section;
+    
 }
 
 #host {
@@ -111,10 +124,16 @@
 
 .description-section {
     display: flex;
-    width: 68%;
     height: auto;
     padding: 28px 0;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(209, 209, 209);
+    grid-area: description-section;
+}
+
+.booking-card-section {
+    padding-top: 50px;
+    grid-area: booking-card-section;
+    padding-left: 65px;
 }
