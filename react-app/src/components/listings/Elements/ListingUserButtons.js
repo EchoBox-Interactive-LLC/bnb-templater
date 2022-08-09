@@ -51,13 +51,13 @@ function ListingUserButton({ user, listing, listingId }) {
   };
 
   return (
-    <div>
+    <div className="listing-buttons-flexbox">
       {showUpdateButton && user && listing && (
-        <button onClick={updateListing}>Update Listing</button>
+        <button className="cool-button" onClick={updateListing}>Update Listing</button>
       )}
 
       {showDeleteButton && user && listing && (
-        <button onClick={deleteListing}>Delete Listing</button>
+        <button className="cool-button" onClick={deleteListing}>Delete Listing</button>
       )}
 
       {showCreateReviewModal && user && (
@@ -67,7 +67,7 @@ function ListingUserButton({ user, listing, listingId }) {
           />
         </Modal>
       )}
-      {user && userCheck && <button onClick={createImage}>Add an Image</button>}
+      {user && userCheck && <button className="cool-button" onClick={createImage}>Add an Image</button>}
       {showCreateImageModal && user && userCheck && (
         <Modal onClose={() => setShowCreateImageModal(false)}>
           <CreateImageModal setShowCreateImageModal={setShowCreateImageModal} />
@@ -79,7 +79,7 @@ function ListingUserButton({ user, listing, listingId }) {
           listing={listing}
         />
       )}
-      {user && (<button onClick={createReview}>Add Review</button>)}
+      {user && (<button className="cool-button" onClick={createReview}>Add Review</button>)}
     </div>
   );
 }
