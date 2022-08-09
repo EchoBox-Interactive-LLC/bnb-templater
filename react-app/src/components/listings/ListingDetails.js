@@ -8,6 +8,7 @@ import ReviewCard from "../reviews/elements/ReviewCard";
 import { Modal } from "../modal/modal";
 import CreateReviewModal from "../reviews/elements/CreateReviewModal";
 import CreateImageModal from "../image_things/CreateImageModal";
+import BookingCard from "../bookings/elements/BookingCard";
 import "./listingDetails.css";
 
 function ListingDetails() {
@@ -142,25 +143,29 @@ function ListingDetails() {
               <div className="hosted-by-section">
                 {listing.user && (
                   <div>
-                    <div id="host">Entire home hosted by {listing.user[0].username}</div>
+                    <div id="host">
+                      Entire home hosted by {listing.user[0].username}
+                    </div>
                   </div>
                 )}
                 {listing.user && (
                   <div>
-                    <img id="host-avatar" src={listing.user[0].avatar} alt="User Avatar" />
+                    <img
+                      id="host-avatar"
+                      src={listing.user[0].avatar}
+                      alt="User Avatar"
+                    />
                   </div>
                 )}
               </div>
               <div className="description-section">
-              <div>{listing.description}</div>
+                <div>{listing.description}</div>
               </div>
               <div>
-                <span style={{ fontWeight: "bold" }}>${listing.price}</span>{" "}
-                night
+                <BookingCard listing={listing}/>
               </div>
             </div>
           )}
-          
 
           {!listing && <h1>This Listing Does Not Exist</h1>}
           {showUpdateButton && user && listing && (
