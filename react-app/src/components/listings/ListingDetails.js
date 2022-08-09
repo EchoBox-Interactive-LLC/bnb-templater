@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { retrieveListings } from "../../store/listings";
@@ -29,7 +29,7 @@ function ListingDetails() {
     rating = "New";
   }
   
-  const [showUpdateForm, setShowUpdateForm] = useState(false);
+ 
  
 
   useEffect(() => {
@@ -49,7 +49,6 @@ function ListingDetails() {
 
   return (
     <main>
-      {!showUpdateForm && (
         <div>
           {listing && (
             <div className="page-container">
@@ -125,8 +124,8 @@ function ListingDetails() {
                {listing && ( <div className="description-section">
                   <div>{listing.description}</div>
                 </div>)}
-                <div>
-                  <ListingUserButtons user={user} listing={listing} listingId={listingId} setShowUpdateForm={setShowUpdateForm} showUpdateForm={showUpdateForm}/>
+               <div className="listing-buttons-section">
+                  <ListingUserButtons user={user} listing={listing} listingId={listingId}/>
                 </div>
               </div>
                 <div className="booking-card-section">
@@ -143,7 +142,6 @@ function ListingDetails() {
               })}
           </div>
         </div>
-      )}
     </main>
   );
 }

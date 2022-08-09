@@ -44,6 +44,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    margin-bottom: 75px;
 }
 
 .image-container-right {
@@ -133,9 +134,14 @@
     grid-area: description-section;
 }
 
+.listing-buttons-section {
+    border: 2px solid red;
+    height: 150px;
+}
+
 .booking-card-section {
-    padding-top: 50px;
     grid-area: booking-card-section;
     padding-left: 65px;
     min-width: 150px;
+    margin-top: -80px;
 }
