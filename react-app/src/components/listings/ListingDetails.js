@@ -135,12 +135,12 @@ function ListingDetails() {
             </div>
           )}
           {!listing && <h1>This Listing Does Not Exist</h1>}
-          <div>
+          {reviews.length > 0 && (<div className="reviews-container">
             {reviews.length > 0 &&
               reviews.map((review) => {
                 return <ReviewCard key={review.id} review={review} />;
               })}
-          </div>
+          </div>)}
         </div>
     </main>
   );
