@@ -18,7 +18,7 @@ def seed_listings():
         user_id=2, title='South Lake Tahoe Home', description="Near Stateline and all the fun actitivies. Would be an incredible place to stay if you are looking for some fun night life! Also close to Heavenly.",
         address="4042 Sunrise Ln", city="South Lake Tahoe", state="California", country="USA", price=375.00, updated_at='Fri Aug 05 2022')
     listing6 = Listing(
-        user_id=1, title='Tahoe Dreaming', description="Enjoy this stylish Tahoe Cabin during your next vacation. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah.",
+        user_id=1, title='Tahoe Dreaming', description="Enjoy this stylish Tahoe Cabin during your next vacation. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah.",
         address="4140 Cedar Ave", city="South Lake Tahoe", state="California", country="USA", price=300.00, updated_at='Fri Aug 05 2022')
     listing7 = Listing(
         user_id=1, title='Los Angeles Views', description="A masterpiece in the heart of The Beverly Hills",

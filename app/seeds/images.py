@@ -14,13 +14,48 @@ def seed_images():
       image5 = Image(
             listing_id=5, url="https://cdn.onekindesign.com/wp-content/uploads/2019/12/Rustic-Contemporary-A-Frame-Todd-Gordon-Mather-Architect-01-1-Kindesign.jpg")
       image6 = Image(
-            listing_id=7, url="https://images2.dwell.com/photos/6063391372700811264/6960606578859773952/original.jpg?auto=format&q=35&w=1760")
+            listing_id=6, url="https://images2.dwell.com/photos/6063391372700811264/6960606578859773952/original.jpg?auto=format&q=35&w=1760")
       image7 = Image(
-            listing_id=7, url="https://images2.dwell.com/photos/6063391372700811264/6960606578636521472/original.jpg?auto=format&q=35&w=1920")
+            listing_id=6, url="https://images2.dwell.com/photos/6063391372700811264/6960606578636521472/original.jpg?auto=format&q=35&w=1920")
       image8 = Image(
-            listing_id=7, url="https://images2.dwell.com/photos/6063391372700811264/6960606578885816320/original.jpg?auto=format&q=35&w=1920")
+            listing_id=6, url="https://images2.dwell.com/photos/6063391372700811264/6960606578885816320/original.jpg?auto=format&q=35&w=1920")
       image9 = Image(
-            listing_id=7, url="https://images2.dwell.com/photos/6063391372700811264/6960606578555686912/original.jpg?auto=format&q=35&w=1920")
+            listing_id=6, url="https://images2.dwell.com/photos/6063391372700811264/6960606578555686912/original.jpg?auto=format&q=35&w=1920")
+      image10 = Image(
+            listing_id=6, url="https://www.yankodesign.com/images/design_news/2022/08/rocky-cabin/rock_cabin_yanko_design_01.jpg")      
+      image11 = Image(
+          listing_id=7, url="https://images2.dwell.com/photos/6388426360393183232/6710725544614907904/original.jpg?auto=format&q=35&w=1920")
+      image12 = Image(
+          listing_id=7, url="https://images2.dwell.com/photos/6388426360393183232/6710727028838793216/original.jpg?auto=format&q=35&w=1920")
+      image13 = Image(
+          listing_id=7, url="https://images2.dwell.com/photos/6388426360393183232/6710726119247089664/original.jpg?auto=format&q=35&w=1920")
+      image14 = Image(
+          listing_id=7, url="https://images2.dwell.com/photos/6388426360393183232/6710726793933574144/original.jpg?auto=format&q=35&w=1920")
+      image15 = Image(
+          listing_id=7, url="https://images2.dwell.com/photos/6388426360393183232/6710726325308084224/original.jpg?auto=format&q=35&w=1920")
+      image16 = Image(
+          listing_id=7, url="https://images.dwell.com/photos/6063391372700811264/6143768332550578176/large.jpg")      
+      image17 = Image(
+          listing_id=8, url="https://images2.dwell.com/photos/6942315682404519936/6948196258694057984/original.jpg?auto=format&q=35&w=1920")    
+      image18 = Image(
+          listing_id=8, url="https://images2.dwell.com/photos/6942315682404519936/6948194722747629568/original.jpg?auto=format&q=35&w=1920")
+      image19 = Image(
+          listing_id=8, url="https://images2.dwell.com/photos/6942315682404519936/6948185169737924608/original.jpg?auto=format&q=35&w=1920")
+      image20 = Image(
+          listing_id=8, url="https://images2.dwell.com/photos/6942315682404519936/6948184495836049408/original.jpg?auto=format&q=35&w=1920")
+      image21 = Image(
+          listing_id=8, url="https://a0.muscache.com/im/pictures/d03d9889-b6c3-42f5-ad84-2c6c4b7a57b2.jpg?im_w=2560")
+      image22 = Image(
+          listing_id=9, url="https://images2.dwell.com/photos/6488407258118639616/6572030182743273472/original.jpg?auto=format&q=35&w=1920")
+      image23 = Image(
+          listing_id=9, url="https://images2.dwell.com/photos/6488407258118639616/6572030140772483072/original.jpg?auto=format&q=35&w=1920")
+      image24 = Image(
+          listing_id=9, url="https://images2.dwell.com/photos/6488407258118639616/6572030153657384960/original.jpg?auto=format&q=35&w=1920")
+      image25 = Image(
+          listing_id=9, url="https://images2.dwell.com/photos/6488407258118639616/6572030162906484736/original.jpg?auto=format&q=35&w=1920")
+      image26 = Image(
+          listing_id=9, url="https://images.milledcdn.com/2019-12-08/O1siF4jxClB_hni7/ofHMnFT7eMjW.jpg")    
+      
 
       db.session.add(image1)
       db.session.add(image2)
@@ -31,6 +66,23 @@ def seed_images():
       db.session.add(image7)
       db.session.add(image8)
       db.session.add(image9)
+      db.session.add(image10)
+      db.session.add(image11)
+      db.session.add(image12)
+      db.session.add(image13)
+      db.session.add(image14)
+      db.session.add(image15)
+      db.session.add(image16)
+      db.session.add(image17)
+      db.session.add(image18)
+      db.session.add(image19)
+      db.session.add(image20)
+      db.session.add(image21)
+      db.session.add(image22)
+      db.session.add(image23)
+      db.session.add(image24)
+      db.session.add(image25)
+      db.session.add(image26)
 
 
       db.session.commit()
