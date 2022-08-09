@@ -16,17 +16,20 @@ function ListingDetails() {
 
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
-  const images = useSelector((state) => state.images)
+  const images = useSelector((state) => state.images);
   const user = useSelector((state) => state.session.user);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
-    (review) => review.listing_id === +listingId);
+    (review) => review.listing_id === +listingId
+  );
 
-  const listingReviews = reviews.filter((review) => review.listing_id === +listingId)
-  const ratings = listingReviews.map((rating) => (rating.rating))
-  let rating = ((ratings.reduce((a, b) => a + b, 0)) / (ratings.length)).toFixed(2);
+  const listingReviews = reviews.filter(
+    (review) => review.listing_id === +listingId
+  );
+  const ratings = listingReviews.map((rating) => rating.rating);
+  let rating = (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(2);
 
   if (rating === "NaN") {
-    rating = "New"
+    rating = "New";
   }
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
@@ -74,11 +77,11 @@ function ListingDetails() {
     setShowCreateImageModal(true);
   };
 
-  let reviewsContent
+  let reviewsContent;
   if (reviews.length === 1) {
-    reviewsContent = " review"
+    reviewsContent = " review";
   } else {
-    reviewsContent = " reviews"
+    reviewsContent = " reviews";
   }
 
   return (
@@ -96,33 +99,68 @@ function ListingDetails() {
                   <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
                 </div>
               </div>
-             
-                <div className="image-container-main">
-                  {listing.images[0] && (
-                    <img id="image-one" src={listing.images[0].url} alt={listing.title} />
+
+              <div className="image-container-main">
+                {listing.images[0] && (
+                  <img
+                    id="image-one"
+                    src={listing.images[0].url}
+                    alt={listing.title}
+                  />
+                )}
+                <div className="image-container-right">
+                  {listing.images[1] && (
+                    <img
+                      id="image-two"
+                      src={listing.images[1].url}
+                      alt={listing.title}
+                    />
                   )}
-                  <div className="image-container-right">
-                    {listing.images[1] && (
-                      <img id="image-two" src={listing.images[1].url} alt={listing.title} />
-                    )}
-                    {listing.images[2] && (
-                      <img id="image-three" src={listing.images[2].url} alt={listing.title} />
-                    )}
-                    {listing.images[3] && (
-                      <img id="image-four" src={listing.images[3].url} alt={listing.title} />
-                    )}
-                    {listing.images[4] && (
-                      <img id="image-five" src={listing.images[4].url} alt={listing.title} />
-                    )}
-                  
+                  {listing.images[2] && (
+                    <img
+                      id="image-three"
+                      src={listing.images[2].url}
+                      alt={listing.title}
+                    />
+                  )}
+                  {listing.images[3] && (
+                    <img
+                      id="image-four"
+                      src={listing.images[3].url}
+                      alt={listing.title}
+                    />
+                  )}
+                  {listing.images[4] && (
+                    <img
+                      id="image-five"
+                      src={listing.images[4].url}
+                      alt={listing.title}
+                    />
+                  )}
                 </div>
               </div>
-              <p>{listing.description}</p>
-              <p>
-                $<span>{listing.price}</span>night
-              </p>
+              <div className="hosted-by-section">
+                {listing.user && (
+                  <div>
+                    <div id="host">Entire home hosted by {listing.user[0].username}</div>
+                  </div>
+                )}
+                {listing.user && (
+                  <div>
+                    <img id="host-avatar" src={listing.user[0].avatar} alt="User Avatar" />
+                  </div>
+                )}
+              </div>
+              <div className="description-section">
+              <div>{listing.description}</div>
+              </div>
+              <div>
+                <span style={{ fontWeight: "bold" }}>${listing.price}</span>{" "}
+                night
+              </div>
             </div>
           )}
+          
 
           {!listing && <h1>This Listing Does Not Exist</h1>}
           {showUpdateButton && user && listing && (
@@ -139,7 +177,9 @@ function ListingDetails() {
               />
             </Modal>
           )}
-          {user && userCheck && <button onClick={createImage}>Add an Image</button>}
+          {user && userCheck && (
+            <button onClick={createImage}>Add an Image</button>
+          )}
           {showCreateImageModal && user && userCheck && (
             <Modal onClose={() => setShowCreateImageModal(false)}>
               <CreateImageModal

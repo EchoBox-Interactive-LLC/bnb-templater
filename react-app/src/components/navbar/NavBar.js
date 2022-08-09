@@ -10,7 +10,7 @@ import { login } from "../../store/session";
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
 import UserMenu from "./UserMenu";
 import "./navBar.css";
-import logo from "../../images/Urbnb-Icon.png";
+import logo from "../../images/Urbnb-Logo.png";
 
 const NavBar = () => {
   const dispatch = useDispatch();
