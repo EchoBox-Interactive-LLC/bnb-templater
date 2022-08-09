@@ -5,13 +5,14 @@
     box-shadow: 0 3px 5px rgb(212, 209, 209);
     padding: 18px 22px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-#reviews-num {
+.top-booking-section {
     display: flex;
-    font-size: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #rating {
@@ -19,5 +20,32 @@
 }
 
 #night-price > span {
+    font-size: 20px;
+}
+
+#reviews-num {
+    display: flex;
+    font-size: 15px;
+}
+
+.middle-booking-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fee {
+    font-size: 15px;
+}
+
+.total-booking-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid  rgb(209, 209, 209);
+    padding: 25px 0 10px 0;
+}
+
+#total-fee {
     font-size: 20px;
 }
