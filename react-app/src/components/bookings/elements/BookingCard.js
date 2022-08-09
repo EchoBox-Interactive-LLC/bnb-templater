@@ -16,8 +16,7 @@ function BookingCard({ listing, reviews, rating }) {
       </div>
       <div id="rating">⭑ {rating}</div>
       <div id="reviews-num">
-        <div>{reviews.length}</div>
-        <div id="review-word">{reviewsContent}</div>
+        <div>{reviews.length} {reviewsContent}</div>
       </div>
     </div>
   );
