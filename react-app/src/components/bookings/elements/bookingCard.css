@@ -3,4 +3,20 @@
     border: 1px solid  rgb(209, 209, 209);
     border-radius: 15px;
     box-shadow: 0 3px 5px rgb(212, 209, 209);
+    padding: 18px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#reviews-num {
+    font-size: 15px;
+}
+
+#rating {
+    font-size: 15px;
+}
+
+#night-price > span {
+    font-size: 20px;
 }

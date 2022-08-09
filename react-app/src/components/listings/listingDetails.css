@@ -89,11 +89,12 @@
 }
 
 .listing-info {
+    max-width: 90%;
     padding-top: 60px;
     padding-bottom: 75px;
     display: grid;
     align-items: center;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 70% 40%;
     grid-template-rows: 100px 100px;
     grid-template-areas: 
       "hosted-by-section booking-card-section"
@@ -136,4 +137,5 @@
     padding-top: 50px;
     grid-area: booking-card-section;
     padding-left: 65px;
+    min-width: 150px;
 }
