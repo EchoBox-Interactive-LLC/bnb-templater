@@ -172,12 +172,15 @@ function ListingDetails() {
           )}
 
           {!listing && <h1>This Listing Does Not Exist</h1>}
+
           {showUpdateButton && user && listing && (
             <button onClick={updateListing}>Update Listing</button>
           )}
+
           {showDeleteButton && user && listing && (
             <button onClick={deleteListing}>Delete Listing</button>
           )}
+          
           {user && <button onClick={createReview}>Add Review</button>}
           {showCreateReviewModal && user && (
             <Modal onClose={() => setShowCreateReviewModal(false)}>
