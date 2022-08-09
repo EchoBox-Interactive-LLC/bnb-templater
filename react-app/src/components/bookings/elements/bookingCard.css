@@ -15,8 +15,15 @@
     justify-content: space-between;
 }
 
+.booking-card-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 #rating {
     font-size: 15px;
+    padding-right: 5px;
 }
 
 #night-price > span {

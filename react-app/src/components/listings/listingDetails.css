@@ -150,3 +150,13 @@
     padding-top: 20px;
     border-top: 1px solid rgb(209, 209, 209);
 }
+
+.reviews-section-title {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+#rating-title {
+    padding: 0 5px;
+}

@@ -28,9 +28,6 @@ function ListingDetails() {
   if (rating === "NaN") {
     rating = "New";
   }
-  
- 
- 
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -49,59 +46,59 @@ function ListingDetails() {
 
   return (
     <main>
-        <div>
-          {listing && (
-            <div className="page-container">
-              <div className="top-info">
-                <h1 id="title">{listing.title}</h1>
-                <div className="flex-info">
-                  <h3 id="rating">⭑ {rating} </h3>
-                  <h3 id="num-of-reviews">• {reviews.length}</h3>
-                  <h3 id="review-word">{reviewsContent}</h3>
-                  <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
-                </div>
+      <div>
+        {listing && (
+          <div className="page-container">
+            <div className="top-info">
+              <h1 id="title">{listing.title}</h1>
+              <div className="flex-info">
+                <h3 id="rating">⭑ {rating} </h3>
+                <h3 id="num-of-reviews">• {reviews.length}</h3>
+                <h3 id="review-word">{reviewsContent}</h3>
+                <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
               </div>
+            </div>
 
-              <div className="image-container-main">
-                {listing.images[0] && (
+            <div className="image-container-main">
+              {listing.images[0] && (
+                <img
+                  id="image-one"
+                  src={listing.images[0].url}
+                  alt={listing.title}
+                />
+              )}
+              <div className="image-container-right">
+                {listing.images[1] && (
                   <img
-                    id="image-one"
-                    src={listing.images[0].url}
+                    id="image-two"
+                    src={listing.images[1].url}
                     alt={listing.title}
                   />
                 )}
-                <div className="image-container-right">
-                  {listing.images[1] && (
-                    <img
-                      id="image-two"
-                      src={listing.images[1].url}
-                      alt={listing.title}
-                    />
-                  )}
-                  {listing.images[2] && (
-                    <img
-                      id="image-three"
-                      src={listing.images[2].url}
-                      alt={listing.title}
-                    />
-                  )}
-                  {listing.images[3] && (
-                    <img
-                      id="image-four"
-                      src={listing.images[3].url}
-                      alt={listing.title}
-                    />
-                  )}
-                  {listing.images[4] && (
-                    <img
-                      id="image-five"
-                      src={listing.images[4].url}
-                      alt={listing.title}
-                    />
-                  )}
-                </div>
+                {listing.images[2] && (
+                  <img
+                    id="image-three"
+                    src={listing.images[2].url}
+                    alt={listing.title}
+                  />
+                )}
+                {listing.images[3] && (
+                  <img
+                    id="image-four"
+                    src={listing.images[3].url}
+                    alt={listing.title}
+                  />
+                )}
+                {listing.images[4] && (
+                  <img
+                    id="image-five"
+                    src={listing.images[4].url}
+                    alt={listing.title}
+                  />
+                )}
               </div>
-              <div className="listing-info">
+            </div>
+            <div className="listing-info">
               <div>
                 <div className="hosted-by-section">
                   {listing.user && (
@@ -121,27 +118,47 @@ function ListingDetails() {
                     </div>
                   )}
                 </div>
-               {listing && ( <div className="description-section">
-                  <div>{listing.description}</div>
-                </div>)}
-               <div className="listing-buttons-section">
-                  <ListingUserButtons user={user} listing={listing} listingId={listingId}/>
+                {listing && (
+                  <div className="description-section">
+                    <div>{listing.description}</div>
+                  </div>
+                )}
+                <div className="listing-buttons-section">
+                  <ListingUserButtons
+                    user={user}
+                    listing={listing}
+                    listingId={listingId}
+                  />
                 </div>
               </div>
-                <div className="booking-card-section">
-                  <BookingCard listing={listing} reviews={reviews} rating={rating}/>
+              <div className="booking-card-section">
+                <BookingCard
+                  listing={listing}
+                  reviews={reviews}
+                  rating={rating}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+        {!listing && <h1>This Listing Does Not Exist</h1>}
+        {reviews.length > 0 && (
+          <div className="reviews-container">
+            <div className="reviews-section-title">
+              <div id="rating-title">⭑ {rating}</div>
+              <div>
+                <div>
+                  • {reviews.length} {reviewsContent}
                 </div>
               </div>
             </div>
-          )}
-          {!listing && <h1>This Listing Does Not Exist</h1>}
-          {reviews.length > 0 && (<div className="reviews-container">
             {reviews.length > 0 &&
               reviews.map((review) => {
                 return <ReviewCard key={review.id} review={review} />;
               })}
-          </div>)}
-        </div>
+          </div>
+        )}
+      </div>
     </main>
   );
 }

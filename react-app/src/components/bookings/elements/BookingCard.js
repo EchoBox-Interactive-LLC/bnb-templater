@@ -27,11 +27,13 @@ function BookingCard({ listing, reviews, rating }) {
         <div id="night-price">
           <span style={{ fontWeight: "bold" }}>${listing.price}</span> night
         </div>
+        <div className="booking-card-right">
         <div id="rating">⭑ {rating}</div>
         <div id="reviews-num">
           <div>
-            {reviews.length} {reviewsContent}
+          • {reviews.length} {reviewsContent}
           </div>
+        </div>
         </div>
       </div>
       <div>
