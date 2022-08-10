@@ -2,3 +2,33 @@
   margin: 0;
   font-family: 'DM Sans', sans-serif;
 }
+
+.modal-top {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(234, 234, 234);
+  padding: 0 25px 0 10px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cancel {
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px 10px;
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+}
+
+.modal-cancel:hover {
+  background-color: rgb(244, 244, 244);
+}
+
+.modal-title {
+  font-size: 25px;
+  color: rgb(41, 41, 41)
+}

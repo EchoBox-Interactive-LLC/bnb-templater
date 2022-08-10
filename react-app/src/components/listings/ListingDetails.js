@@ -47,13 +47,7 @@ function ListingDetails() {
 
   return (
     <main>
-      {!listing && (
-        <div>
-          <FourOFour />
-        </div>
-      )}
-
-      {listing && (
+      {listing ? (
         <div>
           <div>
             {listing && (
@@ -184,6 +178,10 @@ function ListingDetails() {
               </div>
             )}
           </div>
+        </div>
+      ) : (
+        <div>
+          <FourOFour />
         </div>
       )}
     </main>
