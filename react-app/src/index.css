@@ -76,8 +76,19 @@
   flex-direction: column;
   align-items: flex-start;
   padding-left: 18px;
+  padding-right: 18px;
+}
+
+.errors {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 290px;
 }
 
 .errors::before {
   content: "⚠ ";
+}
+
+#sign-up-button {
+  padding: 10px 119px;
 }

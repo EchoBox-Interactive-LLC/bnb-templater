@@ -99,7 +99,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ))}
       </div>
       <div className="submit-flex">
-      <button className="submit-button" type="submit">Sign up</button>
+      <button className="submit-button" id="sign-up-button" type="submit">Sign up</button>
       </div>
     </form>
   );
