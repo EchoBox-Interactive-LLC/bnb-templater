@@ -13,10 +13,10 @@ function Footer() {
         <h4 className="footer-flex-left footer-item">© 2022 Urbnb, Inc.</h4>
         <div className="about">
           <h2 id="created-by">Created By John Voskuyl</h2>
-          <a href="https://www.linkedin.com/in/john-voskuyl-a2214083/">
+          <a href="https://github.com/jvos415">
             <img id="github" src={GitHub} alt="GitHub Logo" />
           </a>
-          <a href="https://github.com/jvos415">
+          <a href="https://www.linkedin.com/in/john-voskuyl-a2214083/">
             <img id="linkedin" src={LinkedIn} alt="LinkedIn Logo" />
           </a>
         </div>
