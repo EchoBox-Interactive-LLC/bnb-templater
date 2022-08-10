@@ -5,7 +5,7 @@ const READ_REVIEW = "review/READ_REVIEW";
 const UPDATE_REVIEW = "review/UPDATE_REVIEW";
 const DELETE_REVIEW = "review/DELETE_REVIEW";
 
-/********************** ACTIONS **************************/
+/********************** ACTIONS CREATORS **************************/
 
 const createReview = (review) => ({
   type: CREATE_REVIEW,
