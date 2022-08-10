@@ -15,7 +15,6 @@ import logo from "../../images/Urbnb-Logo.png";
 const NavBar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const userId = useSelector((state) => state.session.user.id);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -124,7 +123,7 @@ const NavBar = () => {
             </button>
             {showCreateListingModal && (
             <Modal onClose={() => setShowCreateListingModal(false)}>
-              <CreateListingForm userId={userId} setShowCreateListingModal={setShowCreateListingModal}/>
+              <CreateListingForm user={user} setShowCreateListingModal={setShowCreateListingModal}/>
             </Modal> )}
             <div
               onClick={() => setShowUserMenu(!showUserMenu)}

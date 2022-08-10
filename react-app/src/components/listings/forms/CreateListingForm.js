@@ -3,10 +3,16 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeListing } from "../../../store/listings";
 
-function CreateListingForm({ userId, setShowCreateListingModal }) {
+function CreateListingForm({ user, setShowCreateListingModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const updated_at = new Date().toDateString();
+
+  if (!user) {
+    history.push(`/`);
+  }
+
+  const userId = user.id
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -49,6 +55,10 @@ function CreateListingForm({ userId, setShowCreateListingModal }) {
       setErrors(listing);
     };
   };
+
+  const cancelNewListing = () => {
+    setShowCreateListingModal(false)
+  }
 
   return (
     <main>
@@ -125,6 +135,7 @@ function CreateListingForm({ userId, setShowCreateListingModal }) {
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
+          <button onClick={cancelNewListing} type="button">Cancel</button>
           <button type="submit">Submit</button>
         </form>
       </div>
