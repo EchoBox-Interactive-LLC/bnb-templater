@@ -18,6 +18,15 @@
     padding: 5px 0;
 }
 
+.no-images {
+    margin: 50px 0 100px 0;
+    font-size: 30px;
+}
+
+.no-images-blurb {
+    padding: 5px 0;
+}
+
 #num-of-reviews {
     font-size: 16px;
     padding-left: 3px;

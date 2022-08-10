@@ -28,10 +28,11 @@ function ListingDetails() {
   if (rating === "NaN") {
     rating = "New";
   }
-
+  
   useEffect(() => {
     dispatch(retrieveListings());
   }, [dispatch, reviews.length, images]);
+
 
   useEffect(() => {
     dispatch(retrieveReviews());
@@ -59,45 +60,58 @@ function ListingDetails() {
               </div>
             </div>
 
-            <div className="image-container-main">
-              {listing.images[0] && (
-                <img
-                  id="image-one"
-                  src={listing.images[0].url}
-                  alt={listing.title}
-                />
-              )}
-              <div className="image-container-right">
-                {listing.images[1] && (
-                  <img
-                    id="image-two"
-                    src={listing.images[1].url}
-                    alt={listing.title}
-                  />
-                )}
-                {listing.images[2] && (
-                  <img
-                    id="image-three"
-                    src={listing.images[2].url}
-                    alt={listing.title}
-                  />
-                )}
-                {listing.images[3] && (
-                  <img
-                    id="image-four"
-                    src={listing.images[3].url}
-                    alt={listing.title}
-                  />
-                )}
-                {listing.images[4] && (
-                  <img
-                    id="image-five"
-                    src={listing.images[4].url}
-                    alt={listing.title}
-                  />
-                )}
+            {/* if there are ARE NO images */}
+            {listing.images.length === 0 && (
+              <div className="no-images">
+                <h3 className="no-images-blurb">
+                  There are no images for this listing
+                </h3>
               </div>
-            </div>
+            )}
+
+            {/* if there ARE images */}
+            {listing.images.length > 0 && (
+              <div className="image-container-main">
+                {listing.images[0] && (
+                  <img
+                    id="image-one"
+                    src={listing.images[0].url}
+                    alt={listing.title}
+                  />
+                )}
+                <div className="image-container-right">
+                  {listing.images[1] && (
+                    <img
+                      id="image-two"
+                      src={listing.images[1].url}
+                      alt={listing.title}
+                    />
+                  )}
+                  {listing.images[2] && (
+                    <img
+                      id="image-three"
+                      src={listing.images[2].url}
+                      alt={listing.title}
+                    />
+                  )}
+                  {listing.images[3] && (
+                    <img
+                      id="image-four"
+                      src={listing.images[3].url}
+                      alt={listing.title}
+                    />
+                  )}
+                  {listing.images[4] && (
+                    <img
+                      id="image-five"
+                      src={listing.images[4].url}
+                      alt={listing.title}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="listing-info">
               <div>
                 <div className="hosted-by-section">
@@ -141,6 +155,7 @@ function ListingDetails() {
             </div>
           </div>
         )}
+
         {!listing && <h1>This Listing Does Not Exist</h1>}
 
         {/* this is the reviews section */}
