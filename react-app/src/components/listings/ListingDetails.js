@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { retrieveListings } from "../../store/listings";
 import { retrieveReviews } from "../../store/reviews";
 import ReviewCard from "../reviews/elements/ReviewCard";
@@ -10,6 +10,7 @@ import "./listingDetails.css";
 
 function ListingDetails() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
@@ -155,8 +156,6 @@ function ListingDetails() {
             </div>
           </div>
         )}
-
-        {!listing && <h1>This Listing Does Not Exist</h1>}
 
         {/* this is the reviews section */}
         {reviews.length > 0 && (

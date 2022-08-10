@@ -74,10 +74,12 @@ function ListingUserButton({ user, listing, listingId }) {
         </Modal>
       )}
       {showUpdateForm && (
-        <UpdateListingForm
-          setShowUpdateForm={setShowUpdateForm}
-          listing={listing}
-        />
+        <Modal onClose={() => setShowUpdateForm(false)}>
+          <UpdateListingForm
+            setShowUpdateForm={setShowUpdateForm}
+            listing={listing}
+          />
+        </Modal>
       )}
       {user && (<button className="cool-button" onClick={createReview}>Add Review</button>)}
     </div>
