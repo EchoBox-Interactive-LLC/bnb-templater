@@ -12,7 +12,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
     history.push(`/`);
   }
 
-  const userId = user.id
+  const userId = user.id;
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -42,39 +42,37 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
         state,
         country,
         price,
-        updated_at,
+        updated_at
       )
     );
     if (listing.id) {
       history.push(`listings/${listing.id}`);
-      setShowCreateListingModal(false)
+      setShowCreateListingModal(false);
       return;
     }
 
     if (Array.isArray(listing)) {
       setErrors(listing);
-    };
+    }
   };
 
   const cancelNewListing = () => {
-    setShowCreateListingModal(false)
-  }
+    setShowCreateListingModal(false);
+  };
 
   return (
     <main>
       <div>
-        <h1>Create A Listing</h1>
         <form onSubmit={submit}>
-            <div>
-              <ul className="errors">
-              {errors.length > 0 && errors.map((error) => {
-                    return <li key={error}>{error}</li>;
-                  })}
-              </ul>
-            </div>
+          <div className="modal-top">
+            <h3 className="modal-title">Create A Listing</h3>
+            <button className="modal-cancel" onClick={cancelNewListing} type="button">
+              X
+            </button>
+          </div>
           <div>
-            <label htmlFor="title">Title</label>
-            <input
+            <input className="input-field"
+              placeholder="Title"
               name="title"
               type="text"
               value={title}
@@ -82,8 +80,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="description">Description</label>
-            <textarea
+            <textarea className="input-field"
+              placeholder="Listing Description"
+              rows="4"
               name="description"
               type="text"
               value={description}
@@ -91,8 +90,8 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="address">Address</label>
-            <input
+            <input className="input-field"
+              placeholder="Address"
               name="address"
               type="text"
               value={address}
@@ -100,8 +99,8 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="city">City</label>
-            <input
+            <input className="input-field"
+              placeholder="City"
               name="city"
               type="text"
               value={city}
@@ -109,8 +108,8 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="state">State</label>
-            <input
+            <input className="input-field"
+              placeholder="State"
               name="state"
               type="text"
               value={state}
@@ -118,8 +117,8 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="country">Country</label>
-            <input
+            <input className="input-field"
+              placeholder="Country"
               name="country"
               type="text"
               value={country}
@@ -127,16 +126,22 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <label htmlFor="price">Price</label>
-            <input
+            <input className="input-field"
+              placeholder="Price"
               name="price"
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
-          <button onClick={cancelNewListing} type="button">Cancel</button>
-          <button type="submit">Submit</button>
+          <div className="error-container">
+        {errors.map((error, ind) => (
+          <div className="errors" key={ind}>{error}</div>
+        ))}
+      </div>
+      <div className="submit-flex">
+          <button className="submit-button" id="create-listing-button" type="submit">Submit</button>
+      </div>
         </form>
       </div>
     </main>
