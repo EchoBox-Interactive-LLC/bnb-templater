@@ -1,0 +1,11 @@
+.page-not-found-container {
+    margin: 5% 0;
+    display: flex;
+    justify-content: center;
+    padding: 5px 15px;
+}
+
+.page-not-found-title {
+    font-size: 50px;
+}
+

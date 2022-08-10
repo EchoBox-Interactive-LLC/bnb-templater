@@ -154,6 +154,10 @@
     margin-top: -80px;
 }
 
+.display-none {
+    display: none;
+}
+
 .reviews-container {
     margin: 0 6% 2% 6%;
     padding-top: 20px;

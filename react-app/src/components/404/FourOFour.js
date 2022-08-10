@@ -4,8 +4,8 @@ import "./fourOFour.css";
 function FourOFour() {
     return (
         <main>
-            <div>
-                <h1>404: Page Not Found!</h1>
+            <div className="page-not-found-container">
+                <h1 className="page-not-found-title">404: Page Not Found!</h1>
             </div>
         </main>
     );

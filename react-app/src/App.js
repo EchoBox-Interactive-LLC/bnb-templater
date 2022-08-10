@@ -34,10 +34,10 @@ function App() {
         <Route path="/listings/:listingId" exact={true}>
           <ListingDetails />
         </Route>
+        <Route path="">
+          <FourOFour />
+        </Route>
       </Switch>
-      <Route path="">
-        <FourOFour />
-      </Route>
       <Footer />
     </BrowserRouter>
   );
