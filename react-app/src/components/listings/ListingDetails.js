@@ -142,6 +142,8 @@ function ListingDetails() {
           </div>
         )}
         {!listing && <h1>This Listing Does Not Exist</h1>}
+
+        {/* this is the reviews section */}
         {reviews.length > 0 && (
           <div className="reviews-container">
             <div className="reviews-section-title">

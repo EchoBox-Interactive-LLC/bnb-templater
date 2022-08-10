@@ -74,17 +74,19 @@ function ReviewCard({ review }) {
         <div>
           <img id="user-avatar" src={review.user[0].avatar} alt="User Avatar" />
         </div>
-        <div>
-          <p>{review.user[0].username}</p>
+        <div className="review-title">
+          <div>
+            <p id="review-username">{review.user[0].username}</p>
+          </div>
+          <p id="nice-date">{niceDate(review.updated_at)}</p>
         </div>
-        <p>{niceDate(review.updated_at)}</p>
       </div>
-      <h4>{review.review}</h4>
+      <p id="review-blurb">{review.review}</p>
       {showUpdateButton && user && review && (
-        <button onClick={updateReview}>Update Review</button>
+        <button className="little-button" onClick={updateReview}>Update Review</button>
       )}
       {showDeleteButton && user && review && (
-        <button onClick={deleteReview}>Delete Review</button>
+        <button className="little-button" onClick={deleteReview}>Delete Review</button>
       )}
       {showUpdateReviewModal && user && (
         <Modal onClose={() => setShowUpdateReviewModal(false)}>
