@@ -41,3 +41,27 @@ footer {
   padding: 10px 10px;
   margin-right: -40px;
 }
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+ 
+}
+
+#created-by {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 10px;
+}
+
+#github {
+  width: 40px;
+  height: auto;
+  padding: 0 15px;
+}
+
+#linkedin {
+  width: 50px;
+  height: auto;
+}
