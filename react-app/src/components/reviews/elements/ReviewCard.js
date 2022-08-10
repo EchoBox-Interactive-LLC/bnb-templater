@@ -10,7 +10,7 @@ function ReviewCard({ review }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
-  const reviewId = review.id
+  const reviewId = review.id;
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -70,7 +70,15 @@ function ReviewCard({ review }) {
 
   return (
     <div className="review-card-container">
-      <p>{niceDate(review.updated_at)}</p>
+      <div className="review-heading">
+        <div>
+          <img id="user-avatar" src={review.user[0].avatar} alt="User Avatar" />
+        </div>
+        <div>
+          <p>{review.user[0].username}</p>
+        </div>
+        <p>{niceDate(review.updated_at)}</p>
+      </div>
       <h4>{review.review}</h4>
       {showUpdateButton && user && review && (
         <button onClick={updateReview}>Update Review</button>

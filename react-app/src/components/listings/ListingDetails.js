@@ -152,10 +152,12 @@ function ListingDetails() {
                 </div>
               </div>
             </div>
-            {reviews.length > 0 &&
-              reviews.map((review) => {
-                return <ReviewCard key={review.id} review={review} />;
-              })}
+            <div className="all-reviews-flex">
+              {reviews.length > 0 &&
+                reviews.map((review) => {
+                  return <ReviewCard key={review.id} review={review} />;
+                })}
+            </div>
           </div>
         )}
       </div>

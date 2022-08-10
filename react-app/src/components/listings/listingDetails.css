@@ -160,3 +160,9 @@
 #rating-title {
     padding: 0 5px;
 }
+
+.all-reviews-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
