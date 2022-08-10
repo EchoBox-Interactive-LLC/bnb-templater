@@ -94,12 +94,12 @@ const NavBar = () => {
           </div>
           {showLoginModal && (
             <Modal onClose={() => setShowLoginModal(false)}>
-              <LoginForm />
+              <LoginForm setShowLoginModal={setShowLoginModal}/>
             </Modal>
           )}
           {showSignUpModal && (
             <Modal onClose={() => setShowSignUpModal(false)}>
-              <SignUpForm />
+              <SignUpForm setShowSignUpModal={setShowSignUpModal}/>
             </Modal>
           )}
         </div>

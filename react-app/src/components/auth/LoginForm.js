@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
-const LoginForm = () => {
+const LoginForm = ({ setShowLoginModal }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,6 +28,10 @@ const LoginForm = () => {
 
   if (user) {
     return <Redirect to='/' />;
+  }
+
+  const cancelLogin = () => {
+    setShowLoginModal(false)
   }
 
   return (
@@ -56,6 +60,7 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
         />
+        <button onClick={cancelLogin} type='button'>Cancel</button>
         <button type='submit'>Login</button>
       </div>
     </form>

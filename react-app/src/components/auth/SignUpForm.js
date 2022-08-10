@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
-const SignUpForm = () => {
+const SignUpForm = ({ setShowSignUpModal }) => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -19,6 +19,8 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(["Password: The passwords entered do not match"])
     }
   };
 
@@ -40,6 +42,10 @@ const SignUpForm = () => {
 
   if (user) {
     return <Redirect to='/' />;
+  }
+
+  const cancelSignUp = () => {
+    setShowSignUpModal(false)
   }
 
   return (
@@ -86,6 +92,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
+      <button onClick={cancelSignUp} type='button'>Cancel</button>
       <button type='submit'>Sign Up</button>
     </form>
   );
