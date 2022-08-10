@@ -12,6 +12,7 @@
   height: 50px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 .modal-cancel {
@@ -21,14 +22,62 @@
   padding: 5px 10px;
   font-weight: 500;
   position: absolute;
-  left: 0;
+  left: 7px;
+  cursor: pointer;
 }
 
 .modal-cancel:hover {
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(238, 238, 238);
 }
 
 .modal-title {
   font-size: 25px;
   color: rgb(41, 41, 41)
+}
+
+.input-field {
+  margin: 10px 15px;
+  font-size: 18px;
+  width: 263px;
+  border-radius: 10px;
+  border: 1px solid rgb(208, 208, 208);
+  padding: 5px 15px;
+}
+
+.input-field:focus {
+  outline: none;
+  border: 2px solid black;
+}
+
+.submit-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: #FF385C;
+  cursor: pointer;
+  padding: 10px 127px;
+  font-size: 17px;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.submit-button:hover {
+  background-color: #fd1943;
+}
+
+.error-container {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 18px;
+}
+
+.errors::before {
+  content: "⚠ ";
 }

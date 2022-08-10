@@ -43,13 +43,8 @@ const LoginForm = ({ setShowLoginModal }) => {
         <h3 className="modal-title">Log in</h3>
       </div>
       <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
         <input
+          className="input-field"
           name="email"
           type="text"
           placeholder="Email"
@@ -58,15 +53,24 @@ const LoginForm = ({ setShowLoginModal }) => {
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
         <input
+          className="input-field"
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
         />
-        <button type="submit">Login</button>
+        <div className="error-container">
+          {errors.map((error, ind) => (
+            <div className="errors" key={ind}>{error}</div>
+          ))}
+        </div>
+        <div className="submit-flex">
+          <button className="submit-button" type="submit">
+            Log in
+          </button>
+        </div>
       </div>
     </form>
   );
