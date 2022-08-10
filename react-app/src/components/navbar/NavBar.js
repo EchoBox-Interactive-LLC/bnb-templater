@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
 import { Modal } from "../modal/modal";
 import { login } from "../../store/session";
 import { ReactComponent as Hamburger } from "../../images/hamburger.svg";
+import CreateListingForm from "../listings/forms/CreateListingForm";
 import UserMenu from "./UserMenu";
 import "./navBar.css";
 import logo from "../../images/Urbnb-Logo.png";
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const user = useSelector((state) => state.session.user);
+  const userId = useSelector((state) => state.session.user.id);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const [showCreateListingModal, setShowCreateListingModal] = useState(false);
 
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
   };
 
   const createNewListing = () => {
-    history.push("/create");
+    setShowCreateListingModal(true)
   };
 
   const closeUserMenu = (e) => {
@@ -121,7 +122,10 @@ const NavBar = () => {
             >
               New Listing
             </button>
-
+            {showCreateListingModal && (
+            <Modal onClose={() => setShowCreateListingModal(false)}>
+              <CreateListingForm userId={userId} setShowCreateListingModal={setShowCreateListingModal}/>
+            </Modal> )}
             <div
               onClick={() => setShowUserMenu(!showUserMenu)}
               className="user-menu"

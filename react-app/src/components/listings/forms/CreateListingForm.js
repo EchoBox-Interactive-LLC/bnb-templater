@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeListing } from "../../../store/listings";
 
-function CreateListingForm() {
+function CreateListingForm({ userId, setShowCreateListingModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.session.user.id);
   const updated_at = new Date().toDateString();
 
   const [title, setTitle] = useState("");
@@ -42,6 +41,7 @@ function CreateListingForm() {
     );
     if (listing.id) {
       history.push(`listings/${listing.id}`);
+      setShowCreateListingModal(false)
       return;
     }
 
