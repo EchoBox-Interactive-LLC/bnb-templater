@@ -42,27 +42,36 @@ function CreateImageModal({ setShowCreateImageModal }) {
   return (
     <main>
       <div>
-        <h1>Add an Image</h1>
         <form onSubmit={submit}>
-          <div>
-            <ul className="errors">
-              {errors.length > 0 &&
-                errors.map((error) => {
-                  return <li key={error}>{error}</li>;
-                })}
-            </ul>
+        <div className="modal-top">
+            <h3 className="modal-title">Add an Image</h3>
+            <button
+              className="modal-cancel"
+              onClick={closeModal}
+              type="button"
+            >
+              X
+            </button>
           </div>
           <div>
-            <label htmlFor="url">Image Url</label>
-            <input
+            <input className="input-field"
+              placeholder="Image Url"
               name="url"
               type="text"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
           </div>
-          <button onClick={closeModal} type="button">Cancel</button>
-          <button type="submit">Submit</button>
+          <div className="error-container">
+            {errors.map((error, ind) => (
+              <div className="errors" key={ind}>
+                {error}
+              </div>
+            ))}
+          </div>
+          <div className="submit-flex">
+          <button className="submit-button" id="add-image-button" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     </main>
