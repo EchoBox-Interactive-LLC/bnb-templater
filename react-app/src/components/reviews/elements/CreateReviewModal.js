@@ -47,6 +47,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
 
     if (reviewData.id) {
       setShowCreateReviewModal(false);
+      window.scrollTo(0, document.body.scrollHeight);
       return;
     }
 
