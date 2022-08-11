@@ -128,7 +128,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="title-error-box"
               className="input-field"
-              placeholder="Title"
+              placeholder="Title (Required)"
               name="title"
               type="text"
               value={title}
@@ -139,7 +139,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <textarea
               id="description-error-box"
               className="input-field"
-              placeholder="Listing Description"
+              placeholder="Listing Description (Required)"
               rows="4"
               name="description"
               type="text"
@@ -151,7 +151,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="address-error-box"
               className="input-field"
-              placeholder="Address"
+              placeholder="Address (Required)"
               name="address"
               type="text"
               value={address}
@@ -162,7 +162,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="city-error-box"
               className="input-field"
-              placeholder="City"
+              placeholder="City (Required)"
               name="city"
               type="text"
               value={city}
@@ -173,7 +173,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="state-error-box"
               className="input-field"
-              placeholder="State"
+              placeholder="State (Required)"
               name="state"
               type="text"
               value={state}
@@ -184,7 +184,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="country-error-box"
               className="input-field"
-              placeholder="Country"
+              placeholder="Country (Required)"
               name="country"
               type="text"
               value={country}
@@ -195,7 +195,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             <input
               id="price-error-box"
               className="input-field"
-              placeholder="Price"
+              placeholder="Price (Required)"
               name="price"
               type="number"
               value={price}

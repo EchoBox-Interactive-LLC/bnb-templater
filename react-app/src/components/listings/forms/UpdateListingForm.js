@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { editListing } from "../../../store/listings";
@@ -19,39 +19,56 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
   const [country, setCountry] = useState((listing && listing.country) || "");
   const [price, setPrice] = useState((listing && listing.price) || "");
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":")
-    })
-    errorTitles = errorTitles.map((error) => {
-      return error[0]
-    })
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Title") {
-        let titleClassAdd = document.getElementById("title-error-box")
-        titleClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Description") {
-        let descriptionClassAdd = document.getElementById("description-error-box")
-        descriptionClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Address") {
-        let addressClassAdd = document.getElementById("address-error-box")
-        addressClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "City") {
-        let cityClassAdd = document.getElementById("city-error-box")
-        cityClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "State") {
-        let stateClassAdd = document.getElementById("state-error-box")
-        stateClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Country") {
-        let countryClassAdd = document.getElementById("country-error-box")
-        countryClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Price") {
-        let priceClassAdd = document.getElementById("price-error-box")
-        priceClassAdd.classList.add("input-field-error");
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      let errorMsgs = errors.map((error) => {
+        return error.split(":");
+      });
+      errorMsgs = errorMsgs.map((error) => {
+        return error[1];
+      });
+      setErrorMessages(errorMsgs);
+
+      // Adding CSS to input fields that have errors
+      if (errors.length > 0) {
+        let errorTitles = errors.map((error) => {
+          return error.split(":");
+        });
+        errorTitles = errorTitles.map((error) => {
+          return error[0];
+        });
+        for (const errorTitle of errorTitles) {
+          if (errorTitle === "Title") {
+            let titleClassAdd = document.getElementById("title-error-box");
+            titleClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Description") {
+            let descriptionClassAdd = document.getElementById(
+              "description-error-box"
+            );
+            descriptionClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Address") {
+            let addressClassAdd = document.getElementById("address-error-box");
+            addressClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "City") {
+            let cityClassAdd = document.getElementById("city-error-box");
+            cityClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "State") {
+            let stateClassAdd = document.getElementById("state-error-box");
+            stateClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Country") {
+            let countryClassAdd = document.getElementById("country-error-box");
+            countryClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Price") {
+            let priceClassAdd = document.getElementById("price-error-box");
+            priceClassAdd.classList.add("input-field-error");
+          }
+        }
       }
     }
-  }
+  }, [errors]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -107,9 +124,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             </button>
           </div>
           <div>
-            <input id="title-error-box"
+            <input
+              id="title-error-box"
               className="input-field"
-              placeholder="Title"
+              placeholder="Title (Required)"
               name="title"
               type="text"
               value={title}
@@ -117,10 +135,11 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <textarea id="description-error-box"
+            <textarea
+              id="description-error-box"
               className="input-field"
               rows="4"
-              placeholder="Listing Description"
+              placeholder="Listing Description (Required)"
               name="description"
               type="text"
               value={description}
@@ -128,9 +147,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input id="address-error-box"
+            <input
+              id="address-error-box"
               className="input-field"
-              placeholder="Address"
+              placeholder="Address (Required)"
               name="address"
               type="text"
               value={address}
@@ -138,9 +158,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input id="city-error-box"
+            <input
+              id="city-error-box"
               className="input-field"
-              placeholder="City"
+              placeholder="City (Required)"
               name="city"
               type="text"
               value={city}
@@ -148,9 +169,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input id="state-error-box"
+            <input
+              id="state-error-box"
               className="input-field"
-              placeholder="State"
+              placeholder="State (Required)"
               name="state"
               type="text"
               value={state}
@@ -158,9 +180,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input id="country-error-box"
+            <input
+              id="country-error-box"
               className="input-field"
-              placeholder="Country"
+              placeholder="Country (Required)"
               name="country"
               type="text"
               value={country}
@@ -168,9 +191,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input id="price-error-box"
+            <input
+              id="price-error-box"
               className="input-field"
-              placeholder="Price"
+              placeholder="Price (Required)"
               name="price"
               type="number"
               value={price}
@@ -178,14 +202,20 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div className="error-container">
-            {errors.map((error, ind) => (
+            {errorMessages.map((error, ind) => (
               <div className="errors" key={ind}>
                 {error}
               </div>
             ))}
           </div>
           <div className="submit-flex">
-          <button className="submit-button" id="update-listing-button" type="submit">Submit Changes</button>
+            <button
+              className="submit-button"
+              id="update-listing-button"
+              type="submit"
+            >
+              Submit Changes
+            </button>
           </div>
         </form>
       </div>

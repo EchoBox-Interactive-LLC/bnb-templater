@@ -81,7 +81,7 @@ const LoginForm = ({ setShowLoginModal }) => {
           className="input-field"
           name="email"
           type="text"
-          placeholder="Email"
+          placeholder="Email (Required)"
           value={email}
           onChange={updateEmail}
         />
@@ -92,7 +92,7 @@ const LoginForm = ({ setShowLoginModal }) => {
           className="input-field"
           name="password"
           type="password"
-          placeholder="Password"
+          placeholder="Password (Required)"
           value={password}
           onChange={updatePassword}
         />
