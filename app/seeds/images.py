@@ -24,7 +24,7 @@ def seed_images():
       image34 = Image(
             listing_id=2, url="https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160_1280.jpg")
       image3 = Image(
-            listing_id=3, url="https://cdn.pixabay.com/photo/2017/08/01/12/43/kitchen-2565105_1280.jpg")
+            listing_id=3, url="https://img.sunset02.com/sites/default/files/styles/4_3_horizontal_inbody_900x506/public/image/2016/06/main/tahoe-house-exterior.jpg")
       image35 = Image(
             listing_id=3, url="https://cdn.pixabay.com/photo/2017/08/01/12/43/kitchen-2565105_1280.jpg")
       image36 = Image(
