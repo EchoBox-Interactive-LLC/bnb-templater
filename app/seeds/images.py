@@ -5,6 +5,14 @@ from app.models import db, Image
 def seed_images():
       image1 = Image(
             listing_id=1, url="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5502557042001/ec3aa163-cd5c-489e-8fb3-4df2bac0ea72/8180a666-b83c-41f3-956b-f2d57c1839b3/1280x720/match/image.jpg")
+      image27 = Image(
+            listing_id=1, url="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041__340.jpg")
+      image28 = Image(
+            listing_id=1, url="https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_1280.jpg")
+      image29 = Image(
+            listing_id=1, url="https://cdn.pixabay.com/photo/2017/03/28/12/10/chairs-2181947_1280.jpg")
+      image30 = Image(
+            listing_id=1, url="https://cdn.pixabay.com/photo/2016/09/19/17/20/home-1680800_1280.jpg")
       image2 = Image(
             listing_id=2, url="https://cdn.shopify.com/s/files/1/0043/8471/8938/products/164261622085018693_87180b38-8864-4843-bc05-fb80f617ef4e_812x.jpg?v=1648860022")
       image3 = Image(
@@ -83,6 +91,10 @@ def seed_images():
       db.session.add(image24)
       db.session.add(image25)
       db.session.add(image26)
+      db.session.add(image27)
+      db.session.add(image28)
+      db.session.add(image29)
+      db.session.add(image30)
 
 
       db.session.commit()
