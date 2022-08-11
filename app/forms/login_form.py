@@ -35,6 +35,6 @@ def email_regex(form, field):
 
 
 class LoginForm(FlaskForm):
-    email = StringField('email', validators=[DataRequired(), user_exists, email_regex])
+    email = StringField('email', validators=[DataRequired("Email is required"), user_exists, email_regex])
     password = StringField('password', validators=[
-                           DataRequired(), password_matches])
+                           DataRequired("Password is required"), password_matches])

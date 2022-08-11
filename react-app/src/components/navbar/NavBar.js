@@ -44,6 +44,9 @@ const NavBar = () => {
 
     if (e.target.innerHTML === "Log out") {
       dispatch(logout());
+      setShowSignUpModal(false);
+      setShowLoginModal(false);
+      history.push("/")
     }
 
     if (

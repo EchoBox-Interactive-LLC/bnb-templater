@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
@@ -7,27 +7,40 @@ const LoginForm = ({ setShowLoginModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.session.user);
- 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":")
-    })
-    errorTitles = errorTitles.map((error) => {
-      return error[0]
-    })
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Email") {
-        let emailClassAdd = document.getElementById("email-error-box")
-        emailClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Password") {
-        let passwordClassAdd = document.getElementById("password-error-box")
-        passwordClassAdd.classList.add("input-field-error");
+
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      let errorMsgs = errors.map((error) => {
+        return error.split(":");
+      });
+      errorMsgs = errorMsgs.map((error) => {
+        return error[1];
+      });
+      setErrorMessages(errorMsgs);
+
+      // Adding CSS to input fields that have errors
+      let errorTitles = errors.map((error) => {
+        return error.split(":");
+      });
+      errorTitles = errorTitles.map((error) => {
+        return error[0];
+      });
+      for (const errorTitle of errorTitles) {
+        if (errorTitle === "Email") {
+          let emailClassAdd = document.getElementById("email-error-box");
+          emailClassAdd.classList.add("input-field-error");
+        } else if (errorTitle === "Password") {
+          let passwordClassAdd = document.getElementById("password-error-box");
+          passwordClassAdd.classList.add("input-field-error");
+        }
       }
     }
-  }
+  }, [errors]);
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -35,7 +48,7 @@ const LoginForm = ({ setShowLoginModal }) => {
     if (data) {
       setErrors(data);
     }
-    history.push("/")
+    history.push("/");
   };
 
   const updateEmail = (e) => {
@@ -63,7 +76,8 @@ const LoginForm = ({ setShowLoginModal }) => {
         <h3 className="modal-title">Log in</h3>
       </div>
       <div>
-        <input id="email-error-box"
+        <input
+          id="email-error-box"
           className="input-field"
           name="email"
           type="text"
@@ -73,7 +87,8 @@ const LoginForm = ({ setShowLoginModal }) => {
         />
       </div>
       <div>
-        <input id="password-error-box"
+        <input
+          id="password-error-box"
           className="input-field"
           name="password"
           type="password"
@@ -82,8 +97,10 @@ const LoginForm = ({ setShowLoginModal }) => {
           onChange={updatePassword}
         />
         <div className="error-container">
-          {errors.map((error, ind) => (
-            <div className="errors" key={ind}>{error}</div>
+          {errorMessages.map((error, ind) => (
+            <div className="errors" key={ind}>
+              {error}
+            </div>
           ))}
         </div>
         <div className="submit-flex">

@@ -20,4 +20,4 @@ def url_length(form, field):
 
 class ImageForm(FlaskForm):
   listing_id = IntegerField('Listing_Id', validators=[DataRequired()])
-  url = StringField('Url', validators=[DataRequired(), url_regex, url_length])
+  url = StringField('Url', validators=[DataRequired("An image url is required"), url_regex, url_length])
