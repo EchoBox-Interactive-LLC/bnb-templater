@@ -49,6 +49,10 @@
   border: 2px solid black;
 }
 
+.input-field-error {
+  border: 2px solid red;
+}
+
 .submit-flex {
   display: flex;
   justify-content: center;

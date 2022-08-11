@@ -23,6 +23,47 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState([]);
 
+  const [titleError, setTitleError] = useState([]);
+  const [descriptionError, setDescriptionError] = useState([]);
+  const [addressError, setAddressError] = useState([]);
+  const [cityError, setCityError] = useState([]);
+  const [stateError, setStateError] = useState([]);
+  const [countryError, setCountryError] = useState([]);
+  const [priceError, setPriceError] = useState([]);
+
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":")
+    })
+    errorTitles = errorTitles.map((error) => {
+      return error[0]
+    })
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Title") {
+        let titleClassAdd = document.getElementById("title-error-box")
+        titleClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Description") {
+        let descriptionClassAdd = document.getElementById("description-error-box")
+        descriptionClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Address") {
+        let addressClassAdd = document.getElementById("address-error-box")
+        addressClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "City") {
+        let cityClassAdd = document.getElementById("city-error-box")
+        cityClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "State") {
+        let stateClassAdd = document.getElementById("state-error-box")
+        stateClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Country") {
+        let countryClassAdd = document.getElementById("country-error-box")
+        countryClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Price") {
+        let priceClassAdd = document.getElementById("price-error-box")
+        priceClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const submit = async (e) => {
     e.preventDefault();
     setErrors([]);
@@ -71,7 +112,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             </button>
           </div>
           <div>
-            <input className="input-field"
+            <input id="title-error-box" className="input-field"
               placeholder="Title"
               name="title"
               type="text"
@@ -80,7 +121,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <textarea className="input-field"
+            <textarea id="description-error-box" className="input-field"
               placeholder="Listing Description"
               rows="4"
               name="description"
@@ -90,7 +131,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input className="input-field"
+            <input id="address-error-box" className="input-field"
               placeholder="Address"
               name="address"
               type="text"
@@ -99,7 +140,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input className="input-field"
+            <input id="city-error-box" className="input-field"
               placeholder="City"
               name="city"
               type="text"
@@ -108,7 +149,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input className="input-field"
+            <input id="state-error-box" className="input-field"
               placeholder="State"
               name="state"
               type="text"
@@ -117,7 +158,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input className="input-field"
+            <input id="country-error-box" className="input-field"
               placeholder="Country"
               name="country"
               type="text"
@@ -126,7 +167,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input className="input-field"
+            <input id="price-error-box" className="input-field"
               placeholder="Price"
               name="price"
               type="number"
