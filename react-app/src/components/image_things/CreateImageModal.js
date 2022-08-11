@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { makeImage } from "../../store/images";
-
 
 function CreateImageModal({ setShowCreateImageModal }) {
   const dispatch = useDispatch();
@@ -12,21 +11,36 @@ function CreateImageModal({ setShowCreateImageModal }) {
 
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":")
-    })
-    errorTitles = errorTitles.map((error) => {
-      return error[0]
-    })
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Url") {
-        let urlClassAdd = document.getElementById("url-error-box")
-        urlClassAdd.classList.add("input-field-error");
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      let errorMsgs = errors.map((error) => {
+        return error.split(":");
+      });
+      errorMsgs = errorMsgs.map((error) => {
+        return error[1];
+      });
+      setErrorMessages(errorMsgs);
+
+      // Adding CSS to input fields that have errors
+      if (errors.length > 0) {
+        let errorTitles = errors.map((error) => {
+          return error.split(":");
+        });
+        errorTitles = errorTitles.map((error) => {
+          return error[0];
+        });
+        for (const errorTitle of errorTitles) {
+          if (errorTitle === "Url") {
+            let urlClassAdd = document.getElementById("url-error-box");
+            urlClassAdd.classList.add("input-field-error");
+          }
+        }
       }
     }
-  }
+  }, [errors]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -37,9 +51,7 @@ function CreateImageModal({ setShowCreateImageModal }) {
       return;
     }
 
-    let image = await dispatch(
-      makeImage(userId, listingId, url)
-    );
+    let image = await dispatch(makeImage(userId, listingId, url));
     if (image.id) {
       setShowCreateImageModal(false);
       return;
@@ -52,25 +64,23 @@ function CreateImageModal({ setShowCreateImageModal }) {
 
   const closeModal = () => {
     setShowCreateImageModal(false);
-  }
+  };
 
   return (
     <main>
       <div>
         <form onSubmit={submit}>
-        <div className="modal-top">
+          <div className="modal-top">
             <h3 className="modal-title">Add an Image</h3>
-            <button
-              className="modal-cancel"
-              onClick={closeModal}
-              type="button"
-            >
+            <button className="modal-cancel" onClick={closeModal} type="button">
               X
             </button>
           </div>
           <div>
-            <input id="url-error-box" className="input-field"
-              placeholder="Image Url"
+            <input
+              id="url-error-box"
+              className="input-field"
+              placeholder="Image Url (Required)"
               name="url"
               type="text"
               value={url}
@@ -78,19 +88,25 @@ function CreateImageModal({ setShowCreateImageModal }) {
             />
           </div>
           <div className="error-container">
-            {errors.map((error, ind) => (
+            {errorMessages.map((error, ind) => (
               <div className="errors" key={ind}>
                 {error}
               </div>
             ))}
           </div>
           <div className="submit-flex">
-          <button className="submit-button" id="add-image-button" type="submit">Submit</button>
+            <button
+              className="submit-button"
+              id="add-image-button"
+              type="submit"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
     </main>
-  )
+  );
 }
 
 export default CreateImageModal;

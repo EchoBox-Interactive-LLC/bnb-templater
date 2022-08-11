@@ -57,6 +57,6 @@ class UpdateListingForm(FlaskForm):
   address = StringField('Address', validators=[DataRequired("An address is required"), address_length])
   city = StringField('City', validators=[DataRequired("A city is required"), city_length])
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
-  country = StringField('Country', validators=[DataRequired(), country_length])
+  country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero])
   updated_at = StringField('Update_At', validators=[DataRequired()])

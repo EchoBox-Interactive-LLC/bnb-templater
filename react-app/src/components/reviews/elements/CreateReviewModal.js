@@ -89,7 +89,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             <textarea
               id="review-error-box"
               className="input-field"
-              placeholder="Write your review here"
+              placeholder="Write your review here (Required)"
               rows="4"
               name="review"
               type="text"
@@ -101,7 +101,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             <input
               id="rating-error-box"
               className="input-field"
-              placeholder="Rating"
+              placeholder="Rating (Required)"
               name="rating"
               type="number"
               value={rating}

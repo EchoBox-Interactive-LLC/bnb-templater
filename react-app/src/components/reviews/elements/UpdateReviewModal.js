@@ -91,7 +91,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
               id="review-error-box"
               className="input-field"
               rows="4"
-              placeholder="Write your review here"
+              placeholder="Write your review here (Required)"
               name="review"
               type="text"
               value={review}
@@ -102,7 +102,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             <input
               id="rating-error-box"
               className="input-field"
-              placeholder="Rating"
+              placeholder="Rating (Required)"
               name="rating"
               type="number"
               value={rating}

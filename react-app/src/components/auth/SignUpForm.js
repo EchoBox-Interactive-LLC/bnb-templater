@@ -111,7 +111,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
           id="username-error-box"
           className="input-field"
           type="text"
-          placeholder="Username"
+          placeholder="Username (Required)"
           name="username"
           onChange={updateUsername}
           value={username}
@@ -121,7 +121,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <input
           id="email-error-box"
           className="input-field"
-          placeholder="Email"
+          placeholder="Email (Required)"
           type="text"
           name="email"
           onChange={updateEmail}
@@ -132,7 +132,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <input
           id="password-error-box"
           className="input-field"
-          placeholder="Password"
+          placeholder="Password (Required)"
           type="password"
           name="password"
           onChange={updatePassword}
@@ -143,7 +143,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <input
           id="confirm-password-error-box"
           className="input-field"
-          placeholder="Confirm Password"
+          placeholder="Confirm Password (Required)"
           type="password"
           name="repeat_password"
           onChange={updateRepeatPassword}
