@@ -46,19 +46,22 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
   return (
     <main>
       <div>
-        <h1>Update Review</h1>
         <form onSubmit={submit}>
-          <div>
-            <ul className="errors">
-              {errors.length > 0 &&
-                errors.map((error) => {
-                  return <li key={error}>{error}</li>;
-                })}
-            </ul>
+        <div className="modal-top">
+            <h3 className="modal-title">Write A Review</h3>
+            <button
+              className="modal-cancel"
+              onClick={closeModal}
+              type="button"
+            >
+              X
+            </button>
           </div>
           <div>
-            <label htmlFor="review">Review</label>
             <textarea
+              className="input-field"
+              rows="4"
+              placeholder="Write your review here"
               name="review"
               type="text"
               value={review}
@@ -66,19 +69,26 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             />
           </div>
           <div>
-            <label htmlFor="rating">Rating</label>
             <input
+              className="input-field"
+              placeholder="Rating"
               name="rating"
               type="number"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
             />
           </div>
-          <button onClick={closeModal} type="button">
-            Cancel
-          </button>
-          <button type="submit">Submit</button>
-        </form>
+          <div className="error-container">
+            {errors.map((error, ind) => (
+              <div className="errors" key={ind}>
+                {error}
+              </div>
+            ))}
+          </div>
+          <div className="submit-flex">
+          <button className="submit-button" id="update-review-button" type="submit">Submit Changes</button>
+          </div>
+          </form>
       </div>
     </main>
   );
