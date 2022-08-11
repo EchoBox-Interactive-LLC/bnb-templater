@@ -21,6 +21,29 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":")
+    })
+    errorTitles = errorTitles.map((error) => {
+      return error[0]
+    })
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Username") {
+        let usernameClassAdd = document.getElementById("username-error-box")
+        usernameClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Email") {
+        let emailClassAdd = document.getElementById("email-error-box")
+        emailClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Password") {
+        let passwordClassAdd = document.getElementById("password-error-box")
+        passwordClassAdd.classList.add("input-field-error");
+        let confirmPasswordClassAdd = document.getElementById("confirm-password-error-box")
+        confirmPasswordClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
@@ -66,7 +89,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <h3 className="modal-title">Sign up</h3>
       </div>
       <div>
-        <input
+        <input id="username-error-box"
           className="input-field"
           type="text"
           placeholder="Username"
@@ -76,7 +99,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input
+        <input id="email-error-box"
           className="input-field"
           placeholder="Email"
           type="text"
@@ -86,7 +109,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input
+        <input id="password-error-box"
           className="input-field"
           placeholder="Password"
           type="password"
@@ -96,7 +119,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input
+        <input id="confirm-password-error-box"
           className="input-field"
           placeholder="Confirm Password"
           type="password"
