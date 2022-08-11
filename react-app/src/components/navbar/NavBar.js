@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/session";
 import LoginForm from "../auth/LoginForm";
@@ -14,6 +14,7 @@ import logo from "../../images/Urbnb-Logo.png";
 
 const NavBar = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -23,6 +24,7 @@ const NavBar = () => {
 
   const demoLogIn = () => {
     dispatch(login("demo@aa.io", "password"));
+    history.push("/")
   };
 
   const createNewListing = () => {

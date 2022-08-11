@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 
 const LoginForm = ({ setShowLoginModal }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
-
+ 
   if (errors.length > 0) {
     let errorTitles = errors.map((error) => {
       return error.split(":")
@@ -34,6 +35,7 @@ const LoginForm = ({ setShowLoginModal }) => {
     if (data) {
       setErrors(data);
     }
+    history.push("/")
   };
 
   const updateEmail = (e) => {
