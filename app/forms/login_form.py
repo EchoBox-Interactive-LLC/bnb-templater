@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
+import re
 
 
 def user_exists(form, field):
@@ -22,8 +23,18 @@ def password_matches(form, field):
     if not user.check_password(password):
         raise ValidationError('Password was incorrect.')
 
+def email_regex(form, field):
+  email = field.data
+  regex = ".*@.*..*"
+
+  if (email == None):
+      raise ValidationError('Email field cannot be empty.')
+
+  if not (re.search(regex, email)):
+      raise ValidationError('Email must be a valid email address with an "@" and a "."')        
+
 
 class LoginForm(FlaskForm):
-    email = StringField('email', validators=[DataRequired(), user_exists])
+    email = StringField('email', validators=[DataRequired(), user_exists, email_regex])
     password = StringField('password', validators=[
                            DataRequired(), password_matches])
