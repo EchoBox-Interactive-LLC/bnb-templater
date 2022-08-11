@@ -5,3 +5,12 @@
   gap: 30px;
   justify-content: center;
 }
+
+.welcome-container {
+  margin: 20px 12%;
+}
+
+.welcome {
+  font-size: 25px;
+  color: rgb(74, 74, 74)
+}

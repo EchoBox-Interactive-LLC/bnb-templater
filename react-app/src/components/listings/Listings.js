@@ -21,6 +21,11 @@ function Listings() {
   return (
     <main>
       <div>
+        <div className="welcome-container">
+          <h3 className="welcome">Welcome to Urbnb! After logging in, create a listing for other users
+          to view! You will be able to add images to your listing, update or listing and, if desired, delete your listing. A logged in user can leave a review on any listing.
+          Checkout the top right corner of the page to get started or click on a listing to view details.</h3>
+        </div>
         {listings.length > 0 && (
           <div className="listing-container">
             {listings.map((listing) => {
