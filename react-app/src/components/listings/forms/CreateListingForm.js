@@ -23,14 +23,6 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const [titleError, setTitleError] = useState([]);
-  const [descriptionError, setDescriptionError] = useState([]);
-  const [addressError, setAddressError] = useState([]);
-  const [cityError, setCityError] = useState([]);
-  const [stateError, setStateError] = useState([]);
-  const [countryError, setCountryError] = useState([]);
-  const [priceError, setPriceError] = useState([]);
-
   if (errors.length > 0) {
     let errorTitles = errors.map((error) => {
       return error.split(":")

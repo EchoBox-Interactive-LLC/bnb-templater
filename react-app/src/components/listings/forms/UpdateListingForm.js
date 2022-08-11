@@ -20,6 +20,39 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
   const [price, setPrice] = useState((listing && listing.price) || "");
   const [errors, setErrors] = useState([]);
 
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":")
+    })
+    errorTitles = errorTitles.map((error) => {
+      return error[0]
+    })
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Title") {
+        let titleClassAdd = document.getElementById("title-error-box")
+        titleClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Description") {
+        let descriptionClassAdd = document.getElementById("description-error-box")
+        descriptionClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Address") {
+        let addressClassAdd = document.getElementById("address-error-box")
+        addressClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "City") {
+        let cityClassAdd = document.getElementById("city-error-box")
+        cityClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "State") {
+        let stateClassAdd = document.getElementById("state-error-box")
+        stateClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Country") {
+        let countryClassAdd = document.getElementById("country-error-box")
+        countryClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Price") {
+        let priceClassAdd = document.getElementById("price-error-box")
+        priceClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const submit = async (e) => {
     e.preventDefault();
     setErrors([]);
@@ -74,7 +107,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             </button>
           </div>
           <div>
-            <input
+            <input id="title-error-box"
               className="input-field"
               placeholder="Title"
               name="title"
@@ -84,7 +117,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <textarea
+            <textarea id="description-error-box"
               className="input-field"
               rows="4"
               placeholder="Listing Description"
@@ -95,7 +128,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input
+            <input id="address-error-box"
               className="input-field"
               placeholder="Address"
               name="address"
@@ -105,7 +138,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input
+            <input id="city-error-box"
               className="input-field"
               placeholder="City"
               name="city"
@@ -115,7 +148,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input
+            <input id="state-error-box"
               className="input-field"
               placeholder="State"
               name="state"
@@ -125,7 +158,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input
+            <input id="country-error-box"
               className="input-field"
               placeholder="Country"
               name="country"
@@ -135,7 +168,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <input
+            <input id="price-error-box"
               className="input-field"
               placeholder="Price"
               name="price"
