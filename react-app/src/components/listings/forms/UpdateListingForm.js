@@ -10,7 +10,9 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
   const updated_at = new Date().toDateString();
 
   const [title, setTitle] = useState((listing && listing.title) || "");
-  const [description, setDescription] = useState((listing && listing.description) || "");
+  const [description, setDescription] = useState(
+    (listing && listing.description) || ""
+  );
   const [address, setAddress] = useState((listing && listing.address) || "");
   const [city, setCity] = useState((listing && listing.city) || "");
   const [state, setState] = useState((listing && listing.state) || "");
@@ -43,35 +45,38 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
     );
 
     if (listing.id) {
-      setShowUpdateForm(false)
+      setShowUpdateForm(false);
       history.push(`${listing.id}`);
       return;
     }
 
     if (Array.isArray(listing)) {
       setErrors(listing);
-    };
+    }
   };
 
   const cancelUpdateForm = () => {
-    setShowUpdateForm(false)
-  }
+    setShowUpdateForm(false);
+  };
 
   return (
     <main>
       <div>
-        <h1>Update Your Listing</h1>
         <form onSubmit={submit}>
-            <div>
-              <ul className="errors">
-              {errors.length > 0 && errors.map((error) => {
-                    return <li key={error}>{error}</li>;
-                  })}
-              </ul>
-            </div>
+          <div className="modal-top">
+            <h3 className="modal-title">Update Your Listing</h3>
+            <button
+              className="modal-cancel"
+              onClick={cancelUpdateForm}
+              type="button"
+            >
+              X
+            </button>
+          </div>
           <div>
-            <label htmlFor="title">Title</label>
             <input
+              className="input-field"
+              placeholder="Title"
               name="title"
               type="text"
               value={title}
@@ -79,8 +84,10 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="description">Description</label>
             <textarea
+              className="input-field"
+              rows="4"
+              placeholder="Listing Description"
               name="description"
               type="text"
               value={description}
@@ -88,8 +95,9 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="address">Address</label>
             <input
+              className="input-field"
+              placeholder="Address"
               name="address"
               type="text"
               value={address}
@@ -97,8 +105,9 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="city">City</label>
             <input
+              className="input-field"
+              placeholder="City"
               name="city"
               type="text"
               value={city}
@@ -106,8 +115,9 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="state">State</label>
             <input
+              className="input-field"
+              placeholder="State"
               name="state"
               type="text"
               value={state}
@@ -115,8 +125,9 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="country">Country</label>
             <input
+              className="input-field"
+              placeholder="Country"
               name="country"
               type="text"
               value={country}
@@ -124,16 +135,25 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             />
           </div>
           <div>
-            <label htmlFor="price">Price</label>
             <input
+              className="input-field"
+              placeholder="Price"
               name="price"
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
-          <button onClick={cancelUpdateForm} type="button">Cancel</button>
-          <button type="submit">Submit Changes</button>
+          <div className="error-container">
+            {errors.map((error, ind) => (
+              <div className="errors" key={ind}>
+                {error}
+              </div>
+            ))}
+          </div>
+          <div className="submit-flex">
+          <button className="submit-button" id="update-listing-button" type="submit">Submit Changes</button>
+          </div>
         </form>
       </div>
     </main>
