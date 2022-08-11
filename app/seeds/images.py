@@ -15,12 +15,44 @@ def seed_images():
             listing_id=1, url="https://cdn.pixabay.com/photo/2016/09/19/17/20/home-1680800_1280.jpg")
       image2 = Image(
             listing_id=2, url="https://cdn.shopify.com/s/files/1/0043/8471/8938/products/164261622085018693_87180b38-8864-4843-bc05-fb80f617ef4e_812x.jpg?v=1648860022")
+      image31 = Image(
+            listing_id=2, url="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg")
+      image32 = Image(
+            listing_id=2, url="https://cdn.pixabay.com/photo/2016/12/30/07/59/kitchen-1940174_1280.jpg")
+      image33 = Image(
+            listing_id=2, url="https://cdn.pixabay.com/photo/2017/08/06/15/31/door-2593482_1280.jpg")
+      image34 = Image(
+            listing_id=2, url="https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160_1280.jpg")
       image3 = Image(
-            listing_id=3, url="https://s.wsj.net/public/resources/images/OB-YL787_hodNev_H_20130807151336.jpg")
+            listing_id=3, url="https://cdn.pixabay.com/photo/2017/08/01/12/43/kitchen-2565105_1280.jpg")
+      image35 = Image(
+            listing_id=3, url="https://cdn.pixabay.com/photo/2017/08/01/12/43/kitchen-2565105_1280.jpg")
+      image36 = Image(
+            listing_id=3, url="https://cdn.pixabay.com/photo/2015/05/31/11/24/tap-791172_1280.jpg")
+      image37 = Image(
+            listing_id=3, url="https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg")
+      image38 = Image(
+            listing_id=3, url="https://cdn.pixabay.com/photo/2020/05/25/17/54/library-5219747_1280.jpg")
       image4 = Image(
             listing_id=4, url="https://static.dezeen.com/uploads/2021/05/lookout-house-faulkner-architects-truckee-california-roundup_dezeen_2364_hero-b-852x480.jpg")
+      image39 = Image(
+            listing_id=4, url="https://cdn.pixabay.com/photo/2016/11/18/13/02/bed-1834327_1280.jpg")
+      image40 = Image(
+            listing_id=4, url="https://cdn.pixabay.com/photo/2022/07/06/09/41/shutters-7304728_1280.jpg")
+      image41 = Image(
+            listing_id=4, url="https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg")
+      image42 = Image(
+            listing_id=4, url="https://cdn.pixabay.com/photo/2022/04/14/13/36/bedroom-7132435_1280.jpg")
       image5 = Image(
             listing_id=5, url="https://cdn.onekindesign.com/wp-content/uploads/2019/12/Rustic-Contemporary-A-Frame-Todd-Gordon-Mather-Architect-01-1-Kindesign.jpg")
+      image43 = Image(
+            listing_id=5, url="https://cdn.pixabay.com/photo/2018/06/14/21/15/bedroom-3475656_1280.jpg")
+      image44 = Image(
+            listing_id=5, url="https://cdn.pixabay.com/photo/2021/12/25/13/08/real-estate-6893060_1280.jpg")
+      image45 = Image(
+            listing_id=5, url="https://cdn.pixabay.com/photo/2022/01/04/05/29/kitchen-6914223_1280.jpg")
+      image46 = Image(
+            listing_id=5, url="https://cdn.pixabay.com/photo/2017/02/24/12/19/apartment-2094666_1280.jpg")
       image6 = Image(
             listing_id=6, url="https://images2.dwell.com/photos/6063391372700811264/6960606578859773952/original.jpg?auto=format&q=35&w=1760")
       image7 = Image(
@@ -95,6 +127,22 @@ def seed_images():
       db.session.add(image28)
       db.session.add(image29)
       db.session.add(image30)
+      db.session.add(image31)
+      db.session.add(image32)
+      db.session.add(image33)
+      db.session.add(image34)
+      db.session.add(image35)
+      db.session.add(image36)
+      db.session.add(image37)
+      db.session.add(image38)
+      db.session.add(image39)
+      db.session.add(image40)
+      db.session.add(image41)
+      db.session.add(image42)
+      db.session.add(image43)
+      db.session.add(image44)
+      db.session.add(image45)
+      db.session.add(image46)
 
 
       db.session.commit()

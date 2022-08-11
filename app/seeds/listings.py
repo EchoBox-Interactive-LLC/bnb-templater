@@ -9,7 +9,7 @@ def seed_listings():
         user_id=1, title='Tahoe Dreamhouse', description="This is a wonderful near Lake Tahoe! Great for a visit during winter or summer.",
         address="5588 N Lake Blvd", city="Carnelian Bay", state="California", country="USA", price=450.00, updated_at='Fri Aug 05 2022')
     listing3 = Listing(
-        user_id=1, title='Tahoe Cabin', description="Great Tahoe get away. This is a Tahoe Cabin that people dream about.",
+        user_id=2, title='Tahoe Cabin', description="Great Tahoe get away. This is a Tahoe Cabin that people dream about.",
         address="1585 Vivian Ln", city="Incline Village", state="Nevada", country="USA", price=400.00, updated_at='Fri Aug 05 2022')
     listing4 = Listing(
         user_id=2, title='Tahoe Lake House', description="Stay at this wonderful Tahoe dream house, you will not be dissapointed. One of kind home and one of a kind location.",
@@ -27,7 +27,7 @@ def seed_listings():
         user_id=3, title="Modern Beach Home in Portland", description="Enjoy a perfect vacation in Maine",
         address="23 Maple Street", city="Portland", state="Maine", country="USA", price=290.00, updated_at='Fri Aug 05 2022')
     listing9 = Listing(
-        user_id=1, title='Tiny home with a view', description="All you need for a stress free New York visit",
+        user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit",
         address="304 Thornton Ct", city="Edgewater", state="New Jersey", country="USA", price=290.00, updated_at='Fri Aug 05 2022')    
 
 
