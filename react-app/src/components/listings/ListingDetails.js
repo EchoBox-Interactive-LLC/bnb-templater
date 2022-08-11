@@ -15,7 +15,6 @@ function ListingDetails() {
   const { listingId } = useParams();
   const listing = useSelector((state) => state.listings[listingId]);
   const images = useSelector((state) => state.images);
-  const user = useSelector((state) => state.session.user);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
     (review) => review.listing_id === +listingId
   );
@@ -141,7 +140,6 @@ function ListingDetails() {
                     )}
                     <div className="listing-buttons-section">
                       <ListingUserButtons
-                        user={user}
                         listing={listing}
                         listingId={listingId}
                       />

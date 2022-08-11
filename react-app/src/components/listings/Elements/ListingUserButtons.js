@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UpdateListingForm from "../forms/UpdateListingForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "../../modal/modal";
 import { useHistory } from "react-router-dom";
 import CreateReviewModal from "../../reviews/elements/CreateReviewModal";
@@ -8,9 +8,10 @@ import { removeListing } from "../../../store/listings";
 import CreateImageModal from "../../image_things/CreateImageModal";
 import "./listingUserButtons.css";
 
-function ListingUserButton({ user, listing, listingId }) {
+function ListingUserButton({ listing, listingId }) {
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector((state) => state.session.user);
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showUpdateButton, setShowUpdateButton] = useState(false);
