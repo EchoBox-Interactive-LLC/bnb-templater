@@ -3,11 +3,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 
+import adveturer from "../../images/avatars/Urbnb-Adventurer.png";
+import avatarStandard from "../../images/avatars/Urbnb-Avatar.png";
+import couchPotatoe from "../../images/avatars/Urbnb-Couchpotatoe.png";
+import explorer from "../../images/avatars/Urbnb-Explorer.png";
+import traveler from "../../images/avatars/Urbnb-Traveler.png";
+import voyager from "../../images/avatars/Urbnb-Voyager.png";
+import wanderer from "../../images/avatars/Urbnb-Wanderer.png";
+
+
 const SignUpForm = ({ setShowSignUpModal }) => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState(avatarStandard);
   const [repeatPassword, setRepeatPassword] = useState("");
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -40,6 +50,10 @@ const SignUpForm = ({ setShowSignUpModal }) => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateAvatar = (e) => {
+    setAvatar(e.target.value);
+  };
+
   if (user) {
     return <Redirect to="/" />;
   }
@@ -57,7 +71,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <h3 className="modal-title">Sign up</h3>
       </div>
       <div>
-        <input className="input-field"
+        <input
+          className="input-field"
           type="text"
           placeholder="Username"
           name="username"
@@ -66,7 +81,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input className="input-field"
+        <input
+          className="input-field"
           placeholder="Email"
           type="text"
           name="email"
@@ -75,7 +91,22 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input className="input-field"
+        <select className="input-field" id="select-avatar" type="text" name="avatar" onChange={updateAvatar} value={avatar}>
+          <option value={adveturer}>Adventurer</option>
+          <option value={avatarStandard}>Standard Avatar</option>
+          <option value={couchPotatoe}>Couch Potatoe</option>
+          <option value={explorer}>Explorer</option>
+          <option value={traveler}>Traveler</option>
+          <option value={voyager}>Voyager</option>
+          <option value={wanderer}>Wanderer</option>
+        </select>
+        <div className="avatar-container">
+          <img id="avatar-img" src={avatar} alt="User Avatar"/>
+        </div>
+      </div>
+      <div>
+        <input
+          className="input-field"
           placeholder="Password"
           type="password"
           name="password"
@@ -84,7 +115,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input className="input-field"
+        <input
+          className="input-field"
           placeholder="Confirm Password"
           type="password"
           name="repeat_password"
@@ -95,11 +127,15 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div className="error-container">
         {errors.map((error, ind) => (
-          <div className="errors" key={ind}>{error}</div>
+          <div className="errors" key={ind}>
+            {error}
+          </div>
         ))}
       </div>
       <div className="submit-flex">
-      <button className="submit-button" id="sign-up-button" type="submit">Sign up</button>
+        <button className="submit-button" id="sign-up-button" type="submit">
+          Sign up
+        </button>
       </div>
     </form>
   );
