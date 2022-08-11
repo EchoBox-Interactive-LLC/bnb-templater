@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeListing } from "../../../store/listings";
@@ -22,39 +22,56 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
   const [country, setCountry] = useState("");
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":")
-    })
-    errorTitles = errorTitles.map((error) => {
-      return error[0]
-    })
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Title") {
-        let titleClassAdd = document.getElementById("title-error-box")
-        titleClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Description") {
-        let descriptionClassAdd = document.getElementById("description-error-box")
-        descriptionClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Address") {
-        let addressClassAdd = document.getElementById("address-error-box")
-        addressClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "City") {
-        let cityClassAdd = document.getElementById("city-error-box")
-        cityClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "State") {
-        let stateClassAdd = document.getElementById("state-error-box")
-        stateClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Country") {
-        let countryClassAdd = document.getElementById("country-error-box")
-        countryClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Price") {
-        let priceClassAdd = document.getElementById("price-error-box")
-        priceClassAdd.classList.add("input-field-error");
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      let errorMsgs = errors.map((error) => {
+        return error.split(":");
+      });
+      errorMsgs = errorMsgs.map((error) => {
+        return error[1];
+      });
+      setErrorMessages(errorMsgs);
+
+      // Adding CSS to input fields that have errors
+      if (errors.length > 0) {
+        let errorTitles = errors.map((error) => {
+          return error.split(":");
+        });
+        errorTitles = errorTitles.map((error) => {
+          return error[0];
+        });
+        for (const errorTitle of errorTitles) {
+          if (errorTitle === "Title") {
+            let titleClassAdd = document.getElementById("title-error-box");
+            titleClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Description") {
+            let descriptionClassAdd = document.getElementById(
+              "description-error-box"
+            );
+            descriptionClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Address") {
+            let addressClassAdd = document.getElementById("address-error-box");
+            addressClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "City") {
+            let cityClassAdd = document.getElementById("city-error-box");
+            cityClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "State") {
+            let stateClassAdd = document.getElementById("state-error-box");
+            stateClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Country") {
+            let countryClassAdd = document.getElementById("country-error-box");
+            countryClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Price") {
+            let priceClassAdd = document.getElementById("price-error-box");
+            priceClassAdd.classList.add("input-field-error");
+          }
+        }
       }
     }
-  }
+  }, [errors]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -99,12 +116,18 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
         <form onSubmit={submit}>
           <div className="modal-top">
             <h3 className="modal-title">Create A Listing</h3>
-            <button className="modal-cancel" onClick={cancelNewListing} type="button">
+            <button
+              className="modal-cancel"
+              onClick={cancelNewListing}
+              type="button"
+            >
               X
             </button>
           </div>
           <div>
-            <input id="title-error-box" className="input-field"
+            <input
+              id="title-error-box"
+              className="input-field"
               placeholder="Title"
               name="title"
               type="text"
@@ -113,7 +136,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <textarea id="description-error-box" className="input-field"
+            <textarea
+              id="description-error-box"
+              className="input-field"
               placeholder="Listing Description"
               rows="4"
               name="description"
@@ -123,7 +148,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input id="address-error-box" className="input-field"
+            <input
+              id="address-error-box"
+              className="input-field"
               placeholder="Address"
               name="address"
               type="text"
@@ -132,7 +159,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input id="city-error-box" className="input-field"
+            <input
+              id="city-error-box"
+              className="input-field"
               placeholder="City"
               name="city"
               type="text"
@@ -141,7 +170,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input id="state-error-box" className="input-field"
+            <input
+              id="state-error-box"
+              className="input-field"
               placeholder="State"
               name="state"
               type="text"
@@ -150,7 +181,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input id="country-error-box" className="input-field"
+            <input
+              id="country-error-box"
+              className="input-field"
               placeholder="Country"
               name="country"
               type="text"
@@ -159,7 +192,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-            <input id="price-error-box" className="input-field"
+            <input
+              id="price-error-box"
+              className="input-field"
               placeholder="Price"
               name="price"
               type="number"
@@ -168,13 +203,21 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div className="error-container">
-        {errors.map((error, ind) => (
-          <div className="errors" key={ind}>{error}</div>
-        ))}
-      </div>
-      <div className="submit-flex">
-          <button className="submit-button" id="create-listing-button" type="submit">Submit</button>
-      </div>
+            {errorMessages.map((error, ind) => (
+              <div className="errors" key={ind}>
+                {error}
+              </div>
+            ))}
+          </div>
+          <div className="submit-flex">
+            <button
+              className="submit-button"
+              id="create-listing-button"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </main>
