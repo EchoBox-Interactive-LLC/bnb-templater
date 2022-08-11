@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 
-import adveturer from "../../images/avatars/Urbnb-Adventurer.png";
-import avatarStandard from "../../images/avatars/Urbnb-Avatar.png";
-import couchPotatoe from "../../images/avatars/Urbnb-Couchpotatoe.png";
-import explorer from "../../images/avatars/Urbnb-Explorer.png";
-import traveler from "../../images/avatars/Urbnb-Traveler.png";
-import voyager from "../../images/avatars/Urbnb-Voyager.png";
-import wanderer from "../../images/avatars/Urbnb-Wanderer.png";
+// import adveturer from "../../images/avatars/Urbnb-Adventurer.png";
+// import avatarStandard from "../../images/avatars/Urbnb-Avatar.png";
+// import couchPotatoe from "../../images/avatars/Urbnb-Couchpotatoe.png";
+// import explorer from "../../images/avatars/Urbnb-Explorer.png";
+// import traveler from "../../images/avatars/Urbnb-Traveler.png";
+// import voyager from "../../images/avatars/Urbnb-Voyager.png";
+// import wanderer from "../../images/avatars/Urbnb-Wanderer.png";
 
 
 const SignUpForm = ({ setShowSignUpModal }) => {
@@ -17,7 +17,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [avatar, setAvatar] = useState(avatarStandard);
   const [repeatPassword, setRepeatPassword] = useState("");
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -48,10 +47,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
 
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
-  };
-
-  const updateAvatar = (e) => {
-    setAvatar(e.target.value);
   };
 
   if (user) {
@@ -89,20 +84,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
           onChange={updateEmail}
           value={email}
         ></input>
-      </div>
-      <div>
-        <select className="input-field" id="select-avatar" type="text" name="avatar" onChange={updateAvatar} value={avatar}>
-          <option value={adveturer}>Adventurer</option>
-          <option value={avatarStandard}>Standard Avatar</option>
-          <option value={couchPotatoe}>Couch Potatoe</option>
-          <option value={explorer}>Explorer</option>
-          <option value={traveler}>Traveler</option>
-          <option value={voyager}>Voyager</option>
-          <option value={wanderer}>Wanderer</option>
-        </select>
-        <div className="avatar-container">
-          <img id="avatar-img" src={avatar} alt="User Avatar"/>
-        </div>
       </div>
       <div>
         <input

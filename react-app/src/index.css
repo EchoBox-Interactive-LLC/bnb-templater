@@ -112,17 +112,3 @@
 #update-review-button {
   padding: 10px 86px;
 }
-
-.avatar-container {
-  display: flex;
-  justify-content: center;
-}
-
-#select-avatar {
-  min-width: 296px;
-}
-
-#avatar-img {
-  width: 70px;
-  height: auto;
-}
