@@ -13,6 +13,21 @@ function CreateImageModal({ setShowCreateImageModal }) {
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":")
+    })
+    errorTitles = errorTitles.map((error) => {
+      return error[0]
+    })
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Url") {
+        let urlClassAdd = document.getElementById("url-error-box")
+        urlClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const submit = async (e) => {
     e.preventDefault();
     setErrors([]);
@@ -54,7 +69,7 @@ function CreateImageModal({ setShowCreateImageModal }) {
             </button>
           </div>
           <div>
-            <input className="input-field"
+            <input id="url-error-box" className="input-field"
               placeholder="Image Url"
               name="url"
               type="text"

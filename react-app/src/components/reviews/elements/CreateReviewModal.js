@@ -14,6 +14,24 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
   const [rating, setRating] = useState("");
   const [errors, setErrors] = useState([]);
 
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":");
+    });
+    errorTitles = errorTitles.map((error) => {
+      return error[0];
+    });
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Review") {
+        let reviewClassAdd = document.getElementById("review-error-box");
+        reviewClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Rating") {
+        let ratingClassAdd = document.getElementById("rating-error-box");
+        ratingClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const submit = async (e) => {
     e.preventDefault();
     setErrors([]);
@@ -39,24 +57,20 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
 
   const closeModal = () => {
     setShowCreateReviewModal(false);
-  }
+  };
 
   return (
     <main>
       <div>
         <form onSubmit={submit}>
-        <div className="modal-top">
+          <div className="modal-top">
             <h3 className="modal-title">Write A Review</h3>
-            <button
-              className="modal-cancel"
-              onClick={closeModal}
-              type="button"
-            >
+            <button className="modal-cancel" onClick={closeModal} type="button">
               X
             </button>
           </div>
           <div>
-            <textarea
+            <textarea id="review-error-box"
               className="input-field"
               placeholder="Write your review here"
               rows="4"
@@ -67,7 +81,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             />
           </div>
           <div>
-            <input
+            <input id="rating-error-box"
               className="input-field"
               placeholder="Rating"
               name="rating"
@@ -84,7 +98,13 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             ))}
           </div>
           <div className="submit-flex">
-          <button className="submit-button" id="create-review-button" type="submit">Submit</button>
+            <button
+              className="submit-button"
+              id="create-review-button"
+              type="submit"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>

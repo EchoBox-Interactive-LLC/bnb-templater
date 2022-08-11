@@ -17,6 +17,24 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
   const [rating, setRating] = useState(reviewInfo.rating || "");
   const [errors, setErrors] = useState([]);
 
+  if (errors.length > 0) {
+    let errorTitles = errors.map((error) => {
+      return error.split(":");
+    });
+    errorTitles = errorTitles.map((error) => {
+      return error[0];
+    });
+    for (const errorTitle of errorTitles) {
+      if (errorTitle === "Review") {
+        let reviewClassAdd = document.getElementById("review-error-box");
+        reviewClassAdd.classList.add("input-field-error");
+      } else if (errorTitle === "Rating") {
+        let ratingClassAdd = document.getElementById("rating-error-box");
+        ratingClassAdd.classList.add("input-field-error");
+      }
+    }
+  }
+
   const submit = async (e) => {
     e.preventDefault();
     setErrors([]);
@@ -58,7 +76,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             </button>
           </div>
           <div>
-            <textarea
+            <textarea id="review-error-box"
               className="input-field"
               rows="4"
               placeholder="Write your review here"
@@ -69,7 +87,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             />
           </div>
           <div>
-            <input
+            <input id="rating-error-box"
               className="input-field"
               placeholder="Rating"
               name="rating"
