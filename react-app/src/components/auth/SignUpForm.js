@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
@@ -11,9 +11,9 @@ import { signUp } from "../../store/session";
 // import voyager from "../../images/avatars/Urbnb-Voyager.png";
 // import wanderer from "../../images/avatars/Urbnb-Wanderer.png";
 
-
 const SignUpForm = ({ setShowSignUpModal }) => {
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,28 +21,46 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":")
-    })
-    errorTitles = errorTitles.map((error) => {
-      return error[0]
-    })
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Username") {
-        let usernameClassAdd = document.getElementById("username-error-box")
-        usernameClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Email") {
-        let emailClassAdd = document.getElementById("email-error-box")
-        emailClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Password") {
-        let passwordClassAdd = document.getElementById("password-error-box")
-        passwordClassAdd.classList.add("input-field-error");
-        let confirmPasswordClassAdd = document.getElementById("confirm-password-error-box")
-        confirmPasswordClassAdd.classList.add("input-field-error");
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      if (errors.length > 0) {
+        let errorMsgs = errors.map((error) => {
+          return error.split(":");
+        });
+        errorMsgs = errorMsgs.map((error) => {
+          return error[1];
+        });
+        setErrorMessages(errorMsgs);
+
+        // Adding CSS to input fields that have errors
+        let errorTitles = errors.map((error) => {
+          return error.split(":");
+        });
+        errorTitles = errorTitles.map((error) => {
+          return error[0];
+        });
+        for (const errorTitle of errorTitles) {
+          if (errorTitle === "Username") {
+            let usernameClassAdd =
+              document.getElementById("username-error-box");
+            usernameClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Email") {
+            let emailClassAdd = document.getElementById("email-error-box");
+            emailClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Password") {
+            let passwordClassAdd =
+              document.getElementById("password-error-box");
+            passwordClassAdd.classList.add("input-field-error");
+            let confirmPasswordClassAdd = document.getElementById(
+              "confirm-password-error-box"
+            );
+            confirmPasswordClassAdd.classList.add("input-field-error");
+          }
+        }
       }
     }
-  }
+  }, [errors]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -89,7 +107,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <h3 className="modal-title">Sign up</h3>
       </div>
       <div>
-        <input id="username-error-box"
+        <input
+          id="username-error-box"
           className="input-field"
           type="text"
           placeholder="Username"
@@ -99,7 +118,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input id="email-error-box"
+        <input
+          id="email-error-box"
           className="input-field"
           placeholder="Email"
           type="text"
@@ -109,7 +129,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input id="password-error-box"
+        <input
+          id="password-error-box"
           className="input-field"
           placeholder="Password"
           type="password"
@@ -119,7 +140,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
-        <input id="confirm-password-error-box"
+        <input
+          id="confirm-password-error-box"
           className="input-field"
           placeholder="Confirm Password"
           type="password"
@@ -130,7 +152,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div className="error-container">
-        {errors.map((error, ind) => (
+        {errorMessages.map((error, ind) => (
           <div className="errors" key={ind}>
             {error}
           </div>

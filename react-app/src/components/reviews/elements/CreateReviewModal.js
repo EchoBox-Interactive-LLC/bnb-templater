@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { makeReview } from "../../../store/reviews";
@@ -13,24 +13,39 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
   const [review, setReview] = useState("");
   const [rating, setRating] = useState("");
   const [errors, setErrors] = useState([]);
+  const [errorMessages, setErrorMessages] = useState([]);
 
-  if (errors.length > 0) {
-    let errorTitles = errors.map((error) => {
-      return error.split(":");
-    });
-    errorTitles = errorTitles.map((error) => {
-      return error[0];
-    });
-    for (const errorTitle of errorTitles) {
-      if (errorTitle === "Review") {
-        let reviewClassAdd = document.getElementById("review-error-box");
-        reviewClassAdd.classList.add("input-field-error");
-      } else if (errorTitle === "Rating") {
-        let ratingClassAdd = document.getElementById("rating-error-box");
-        ratingClassAdd.classList.add("input-field-error");
+  useEffect(() => {
+    if (errors.length > 0) {
+      // Setting error messages
+      if (errors.length > 0) {
+        let errorMsgs = errors.map((error) => {
+          return error.split(":");
+        });
+        errorMsgs = errorMsgs.map((error) => {
+          return error[1];
+        });
+        setErrorMessages(errorMsgs);
+
+        // Adding CSS to input fields that have errors
+        let errorTitles = errors.map((error) => {
+          return error.split(":");
+        });
+        errorTitles = errorTitles.map((error) => {
+          return error[0];
+        });
+        for (const errorTitle of errorTitles) {
+          if (errorTitle === "Review") {
+            let reviewClassAdd = document.getElementById("review-error-box");
+            reviewClassAdd.classList.add("input-field-error");
+          } else if (errorTitle === "Rating") {
+            let ratingClassAdd = document.getElementById("rating-error-box");
+            ratingClassAdd.classList.add("input-field-error");
+          }
+        }
       }
     }
-  }
+  }, [errors]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -71,7 +86,8 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             </button>
           </div>
           <div>
-            <textarea id="review-error-box"
+            <textarea
+              id="review-error-box"
               className="input-field"
               placeholder="Write your review here"
               rows="4"
@@ -82,7 +98,8 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             />
           </div>
           <div>
-            <input id="rating-error-box"
+            <input
+              id="rating-error-box"
               className="input-field"
               placeholder="Rating"
               name="rating"
@@ -92,7 +109,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             />
           </div>
           <div className="error-container">
-            {errors.map((error, ind) => (
+            {errorMessages.map((error, ind) => (
               <div className="errors" key={ind}>
                 {error}
               </div>
