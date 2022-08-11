@@ -83,8 +83,6 @@ export const signUp = (username, email, password) => async (dispatch) => {
     }),
   });
 
-  console.log(response.json())
-
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
