@@ -4,8 +4,8 @@ from wtforms.validators import DataRequired, ValidationError
 
 def title_length(form, field):
   title = field.data
-  if len(title) > 80:
-    raise ValidationError('Title must be 80 characters or less.')
+  if len(title) > 50:
+    raise ValidationError('Title must be 50 characters or less.')
 
 def description_length(form, field):
   description = field.data
@@ -14,23 +14,23 @@ def description_length(form, field):
 
 def address_length(form, field):
   address = field.data
-  if len(address) > 125:
-    raise ValidationError('Address must be 125 characters or less.')
+  if len(address) > 60:
+    raise ValidationError('Address must be 60 characters or less.')
 
 def city_length(form, field):
   city = field.data
-  if len(city) > 115:
-    raise ValidationError('City must be 115 characters or less.')
+  if len(city) > 40:
+    raise ValidationError('City must be 40 characters or less.')
 
 def state_length(form, field):
   state = field.data
-  if len(state) > 50:
-    raise ValidationError('State must be 50 characters or less.')
+  if len(state) > 40:
+    raise ValidationError('State must be 40 characters or less.')
 
 def country_length(form, field):
   state = field.data
-  if len(state) > 115:
-    raise ValidationError('Country must be 115 characters or less.')
+  if len(state) > 40:
+    raise ValidationError('Country must be 40 characters or less.')
 
 def price_non_zero(form, field):
   price = field.data

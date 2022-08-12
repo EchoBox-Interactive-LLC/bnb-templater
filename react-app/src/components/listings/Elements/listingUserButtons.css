@@ -21,3 +21,9 @@
 .cool-button:hover {
     background-color: rgb(244, 244, 244);
 }
+
+@media only screen and (max-width: 670px) {
+    .listing-buttons-flexbox {
+        height: 250px;
+    }
+}

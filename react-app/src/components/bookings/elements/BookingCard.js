@@ -47,7 +47,7 @@ function BookingCard({ listing, reviews, rating }) {
           <div className="fee">
             <p>Service Fee</p>
           </div>
-          <div>${serviceFee}</div>
+          <div className="service-fee">${serviceFee}</div>
         </div>
         <div className="total-booking-section">
           <div id="total-fee">

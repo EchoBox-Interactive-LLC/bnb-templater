@@ -19,6 +19,10 @@
   align-items: center;
 }
 
+.listing-rating {
+  min-width: 60px;
+}
+
 .listing-link {
   text-decoration: none !important;
 }
