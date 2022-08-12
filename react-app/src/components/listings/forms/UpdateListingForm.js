@@ -139,12 +139,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
             <div className="input-label">
-              <label id="title-label-update-listing">Title</label>
+              <label id="title-label-update-listing">Title (Required)</label>
             </div>
             <input
               id="title-error-box"
               className="input-field"
-              placeholder="Title (Required)"
+              placeholder="Title"
               name="title"
               type="text"
               value={title}
@@ -153,13 +153,13 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="description-label-update-listing">Description</label>
+              <label id="description-label-update-listing">Description (Required)</label>
             </div>
             <textarea
               id="description-error-box"
               className="input-field"
               rows="4"
-              placeholder="Listing Description (Required)"
+              placeholder="Listing Description"
               name="description"
               type="text"
               value={description}
@@ -168,12 +168,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="address-label-update-listing">Address</label>
+              <label id="address-label-update-listing">Address (Required)</label>
             </div>
             <input
               id="address-error-box"
               className="input-field"
-              placeholder="Address (Required)"
+              placeholder="Address"
               name="address"
               type="text"
               value={address}
@@ -182,12 +182,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="city-label-update-listing">City</label>
+              <label id="city-label-update-listing">City (Required)</label>
             </div>
             <input
               id="city-error-box"
               className="input-field"
-              placeholder="City (Required)"
+              placeholder="City"
               name="city"
               type="text"
               value={city}
@@ -196,12 +196,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="state-label-update-listing">State</label>
+              <label id="state-label-update-listing">State (Required)</label>
             </div>
             <input
               id="state-error-box"
               className="input-field"
-              placeholder="State (Required)"
+              placeholder="State"
               name="state"
               type="text"
               value={state}
@@ -210,12 +210,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="country-label-update-listing">Country</label>
+              <label id="country-label-update-listing">Country (Required)</label>
             </div>
             <input
               id="country-error-box"
               className="input-field"
-              placeholder="Country (Required)"
+              placeholder="Country"
               name="country"
               type="text"
               value={country}
@@ -224,12 +224,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="price-label-update-listing">Price</label>
+              <label id="price-label-update-listing">Price (Required)</label>
             </div>
             <input
               id="price-error-box"
               className="input-field"
-              placeholder="Price (Required)"
+              placeholder="Price"
               name="price"
               type="number"
               value={price}

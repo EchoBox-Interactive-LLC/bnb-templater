@@ -117,13 +117,13 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="username-label-signup">Username</label>
+          <label id="username-label-signup">Username (Required)</label>
         </div>
         <input
           id="username-error-box"
           className="input-field"
           type="text"
-          placeholder="Username (Required)"
+          placeholder="Username"
           name="username"
           onChange={updateUsername}
           value={username}
@@ -131,12 +131,12 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="email-label-signup">Email</label>
+          <label id="email-label-signup">Email (Required)</label>
         </div>
         <input
           id="email-error-box"
           className="input-field"
-          placeholder="Email (Required)"
+          placeholder="Email"
           type="text"
           name="email"
           onChange={updateEmail}
@@ -145,12 +145,12 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="password-label-signup">Password</label>
+          <label id="password-label-signup">Password (Required)</label>
         </div>
         <input
           id="password-error-box"
           className="input-field"
-          placeholder="Password (Required)"
+          placeholder="Password"
           type="password"
           name="password"
           onChange={updatePassword}
@@ -159,12 +159,12 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="confirm-password-label-signup">Password</label>
+          <label id="confirm-password-label-signup">Confirm Password (Required)</label>
         </div>
         <input
           id="confirm-password-error-box"
           className="input-field"
-          placeholder="Confirm Password (Required)"
+          placeholder="Confirm Password"
           type="password"
           name="repeat_password"
           onChange={updateRepeatPassword}

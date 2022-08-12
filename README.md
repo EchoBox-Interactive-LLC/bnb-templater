@@ -39,7 +39,7 @@ Checkout Urbnb and make it to an event near you at https://urbnb.herokuapp.com/
 # Starting this app locally
 ** If you have an Apple with and M1 chip please skip to the next section
 
-1. Clone the starter from this repo from https://github.com/jvos415/AirBnB-Clone
+1. Clone this project from https://github.com/jvos415/AirBnB-Clone
 
 2. Run pipenv install
 

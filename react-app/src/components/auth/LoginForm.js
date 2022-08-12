@@ -81,28 +81,28 @@ const LoginForm = ({ setShowLoginModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="email-label-login">Email</label>
+          <label id="email-label-login">Email (Required)</label>
         </div>
         <input
           id="email-error-box"
           className="input-field"
           name="email"
           type="text"
-          placeholder="Email (Required)"
+          placeholder="Email"
           value={email}
           onChange={updateEmail}
         />
       </div>
       <div>
         <div className="input-label">
-          <label id="password-label-login">Password</label>
+          <label id="password-label-login">Password (Required)</label>
         </div>
         <input
           id="password-error-box"
           className="input-field"
           name="password"
           type="password"
-          placeholder="Password (Required)"
+          placeholder="Password"
           value={password}
           onChange={updatePassword}
         />

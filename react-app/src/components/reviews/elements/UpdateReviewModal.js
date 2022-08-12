@@ -96,13 +96,13 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="review-label-update-review">Review</label>
+              <label id="review-label-update-review">Review (Required)</label>
             </div>
             <textarea
               id="review-error-box"
               className="input-field"
               rows="4"
-              placeholder="Write your review here (Required)"
+              placeholder="Write your review here"
               name="review"
               type="text"
               value={review}
@@ -111,12 +111,12 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="rating-label-update-review">Rating</label>
+              <label id="rating-label-update-review">Rating (Required)</label>
             </div>
             <input
               id="rating-error-box"
               className="input-field"
-              placeholder="Rating (Required)"
+              placeholder="Rating"
               name="rating"
               type="number"
               value={rating}

@@ -155,12 +155,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
             <div className="input-label">
-              <label id="title-label-create-listing">Title</label>
+              <label id="title-label-create-listing">Title (Required)</label>
             </div>
             <input
               id="title-error-box"
               className="input-field"
-              placeholder="Title (Required)"
+              placeholder="Title"
               name="title"
               type="text"
               value={title}
@@ -169,12 +169,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
             <div className="input-label">
-              <label id="description-label-create-listing">Description</label>
+              <label id="description-label-create-listing">Description (Required)</label>
             </div>
             <textarea
               id="description-error-box"
               className="input-field"
-              placeholder="Listing Description (Required)"
+              placeholder="Listing Description"
               rows="4"
               name="description"
               type="text"
@@ -184,12 +184,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="address-label-create-listing">Address</label>
+              <label id="address-label-create-listing">Address (Required)</label>
             </div>
             <input
               id="address-error-box"
               className="input-field"
-              placeholder="Address (Required)"
+              placeholder="Address"
               name="address"
               type="text"
               value={address}
@@ -198,12 +198,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="city-label-create-listing">City</label>
+              <label id="city-label-create-listing">City (Required)</label>
             </div>
             <input
               id="city-error-box"
               className="input-field"
-              placeholder="City (Required)"
+              placeholder="City"
               name="city"
               type="text"
               value={city}
@@ -212,12 +212,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="state-label-create-listing">State</label>
+              <label id="state-label-create-listing">State (Required)</label>
             </div>
             <input
               id="state-error-box"
               className="input-field"
-              placeholder="State (Required)"
+              placeholder="State"
               name="state"
               type="text"
               value={state}
@@ -226,12 +226,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="country-label-create-listing">Country</label>
+              <label id="country-label-create-listing">Country (Required)</label>
             </div>
             <input
               id="country-error-box"
               className="input-field"
-              placeholder="Country (Required)"
+              placeholder="Country"
               name="country"
               type="text"
               value={country}
@@ -240,12 +240,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
           <div className="input-label">
-              <label id="price-label-create-listing">Price</label>
+              <label id="price-label-create-listing">Price (Required)</label>
             </div>
             <input
               id="price-error-box"
               className="input-field"
-              placeholder="Price (Required)"
+              placeholder="Price"
               name="price"
               type="number"
               value={price}

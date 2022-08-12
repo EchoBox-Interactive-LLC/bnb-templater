@@ -82,12 +82,12 @@ function CreateImageModal({ setShowCreateImageModal }) {
           </div>
           <div>
             <div className="input-label">
-              <label id="url-label-create-image">Title</label>
+              <label id="url-label-create-image">Image Url (Required)</label>
             </div>
             <input
               id="url-error-box"
               className="input-field"
-              placeholder="Image Url (Required)"
+              placeholder="Image Url"
               name="url"
               type="text"
               value={url}

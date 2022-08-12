@@ -94,13 +94,13 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             </button>
           </div>
           <div>
-          <div className="input-label">
-              <label id="review-label-create-review">Review</label>
+            <div className="input-label">
+              <label id="review-label-create-review">Review (Required)</label>
             </div>
             <textarea
               id="review-error-box"
               className="input-field"
-              placeholder="Write your review here (Required)"
+              placeholder="Write your review here"
               rows="4"
               name="review"
               type="text"
@@ -109,13 +109,13 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
-              <label id="rating-label-create-review">Rating</label>
+            <div className="input-label">
+              <label id="rating-label-create-review">Rating (Required)</label>
             </div>
             <input
               id="rating-error-box"
               className="input-field"
-              placeholder="Rating (Required)"
+              placeholder="Rating"
               name="rating"
               type="number"
               value={rating}
