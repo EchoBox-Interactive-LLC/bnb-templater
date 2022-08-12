@@ -24,14 +24,13 @@ function Listings() {
         <div className="splash-image">
           <div className="welcome-container">
             <h3 className="welcome">
-              Welcome to Urbnb! Scroll down to checkout all the listings and click on a
-              listing for listing details.
+              Welcome to Urbnb! Scroll down to checkout all listings, click on a
+              listing for the listing details.
               Feel free to log in and create a listing for other
               users to view! You will be able to add images to your listing,
-              update or listing and, if desired, delete your listing. A logged
+              update your listing and, if desired, delete your listing. A logged
               in user can leave a review and rating for any listing. Checkout the top right
-              corner of the page to get started or click on a listing to view
-              details.
+              corner of the page to get started!
             </h3>
           </div>
         </div>
