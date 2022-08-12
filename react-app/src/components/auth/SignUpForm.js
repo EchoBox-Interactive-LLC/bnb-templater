@@ -45,9 +45,15 @@ const SignUpForm = ({ setShowSignUpModal }) => {
             let usernameClassAdd =
               document.getElementById("username-error-box");
             usernameClassAdd.classList.add("input-field-error");
+            let usernameLabelClassAdd =
+              document.getElementById("username-label-signup");
+            usernameLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Email") {
             let emailClassAdd = document.getElementById("email-error-box");
             emailClassAdd.classList.add("input-field-error");
+            let emailLabelClassAdd =
+              document.getElementById("email-label-signup");
+            emailLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Password") {
             let passwordClassAdd =
               document.getElementById("password-error-box");
@@ -56,6 +62,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
               "confirm-password-error-box"
             );
             confirmPasswordClassAdd.classList.add("input-field-error");
+            let confirmPasswordLabelClassAdd =
+              document.getElementById("email-label-signup");
+            confirmPasswordLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -107,6 +116,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         <h3 className="modal-title">Sign up</h3>
       </div>
       <div>
+        <div className="input-label">
+          <label id="username-label-signup">Username</label>
+        </div>
         <input
           id="username-error-box"
           className="input-field"
@@ -118,6 +130,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
+        <div className="input-label">
+          <label id="email-label-signup">Email</label>
+        </div>
         <input
           id="email-error-box"
           className="input-field"
@@ -129,6 +144,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
+        <div className="input-label">
+          <label id="password-label-signup">Password</label>
+        </div>
         <input
           id="password-error-box"
           className="input-field"
@@ -140,6 +158,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         ></input>
       </div>
       <div>
+        <div className="input-label">
+          <label id="confirm-password-label-signup">Password</label>
+        </div>
         <input
           id="confirm-password-error-box"
           className="input-field"

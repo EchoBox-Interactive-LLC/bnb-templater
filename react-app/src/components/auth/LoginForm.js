@@ -34,13 +34,13 @@ const LoginForm = ({ setShowLoginModal }) => {
         if (errorTitle === "Email") {
           let emailClassAdd = document.getElementById("email-error-box");
           emailClassAdd.classList.add("input-field-error");
-          let emailAgainClassAdd = document.getElementById("email-label-login");
-          emailAgainClassAdd.classList.add("input-label-error");
+          let emailLabelClassAdd = document.getElementById("email-label-login");
+          emailLabelClassAdd.classList.add("input-label-error");
         } else if (errorTitle === "Password") {
           let passwordClassAdd = document.getElementById("password-error-box");
           passwordClassAdd.classList.add("input-field-error");
-          let passwordAgainClassAdd = document.getElementById("password-label-login");
-          passwordAgainClassAdd.classList.add("input-label-error");
+          let passwordLabelClassAdd = document.getElementById("password-label-login");
+          passwordLabelClassAdd.classList.add("input-label-error");
         }
       }
     }
