@@ -22,7 +22,7 @@ function Footer() {
         </div>
         <div className="footer-flex-right">
           <p id="language">English(US)</p>
-          <p className="footer-item">$ USD</p>
+          <p className="footer-item" id="currency">$ USD</p>
         </div>
       </div>
     </footer>

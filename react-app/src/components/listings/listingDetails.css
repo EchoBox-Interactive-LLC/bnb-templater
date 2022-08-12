@@ -181,6 +181,56 @@
     justify-content: space-around;
 }
 
+@media only screen and (max-width: 1200px) {
+    #image-three {
+        display: none;
+    }
+
+    #image-five {
+        display: none;
+    }
+
+    #image-two {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    #image-four {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    #image-one {
+        margin-left: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 960px) {
+    #image-three {
+        display: none;
+    }
+
+    #image-five {
+        display: none;
+    }
+
+    #image-two {
+        display: none;
+    }
+
+    #image-four {
+        display: none;
+    }
+
+    #image-one {
+        margin-left: 550px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+}
+
 @media only screen and (max-width: 670px) {
     .reviews-container {
         margin-top: 200px;
