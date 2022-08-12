@@ -112,15 +112,21 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             <div className="input-label">
               <label id="rating-label-create-review">Rating (Required)</label>
             </div>
-            <input
+            <select
               id="rating-error-box"
               className="input-field"
               placeholder="Rating"
               name="rating"
-              type="number"
               value={rating}
+              type="text"
               onChange={(e) => setRating(e.target.value)}
-            />
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
           <div className="error-container">
             {errorMessages.map((error, ind) => (
