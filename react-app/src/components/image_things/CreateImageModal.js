@@ -36,6 +36,10 @@ function CreateImageModal({ setShowCreateImageModal }) {
           if (errorTitle === "Url") {
             let urlClassAdd = document.getElementById("url-error-box");
             urlClassAdd.classList.add("input-field-error");
+            let urlLabelClassAdd = document.getElementById(
+              "url-label-create-image"
+            );
+            urlLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -77,6 +81,9 @@ function CreateImageModal({ setShowCreateImageModal }) {
             </button>
           </div>
           <div>
+            <div className="input-label">
+              <label id="url-label-create-image">Title</label>
+            </div>
             <input
               id="url-error-box"
               className="input-field"

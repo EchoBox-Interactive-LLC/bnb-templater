@@ -38,9 +38,17 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
           if (errorTitle === "Review") {
             let reviewClassAdd = document.getElementById("review-error-box");
             reviewClassAdd.classList.add("input-field-error");
+            let reviewLabelClassAdd = document.getElementById(
+              "review-label-create-review"
+            );
+            reviewLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Rating") {
             let ratingClassAdd = document.getElementById("rating-error-box");
             ratingClassAdd.classList.add("input-field-error");
+            let ratingLabelClassAdd = document.getElementById(
+              "rating-label-create-review"
+            );
+            ratingLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -86,6 +94,9 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             </button>
           </div>
           <div>
+          <div className="input-label">
+              <label id="review-label-create-review">Review</label>
+            </div>
             <textarea
               id="review-error-box"
               className="input-field"
@@ -98,6 +109,9 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             />
           </div>
           <div>
+          <div className="input-label">
+              <label id="rating-label-create-review">Rating</label>
+            </div>
             <input
               id="rating-error-box"
               className="input-field"

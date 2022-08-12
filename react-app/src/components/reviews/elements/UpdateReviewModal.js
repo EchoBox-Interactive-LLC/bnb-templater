@@ -41,9 +41,17 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
           if (errorTitle === "Review") {
             let reviewClassAdd = document.getElementById("review-error-box");
             reviewClassAdd.classList.add("input-field-error");
+            let reviewLabelClassAdd = document.getElementById(
+              "review-label-update-review"
+            );
+            reviewLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Rating") {
             let ratingClassAdd = document.getElementById("rating-error-box");
             ratingClassAdd.classList.add("input-field-error");
+            let ratingLabelClassAdd = document.getElementById(
+              "rating-label-update-review"
+            );
+            ratingLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -87,6 +95,9 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             </button>
           </div>
           <div>
+          <div className="input-label">
+              <label id="review-label-update-review">Review</label>
+            </div>
             <textarea
               id="review-error-box"
               className="input-field"
@@ -99,6 +110,9 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             />
           </div>
           <div>
+          <div className="input-label">
+              <label id="rating-label-update-review">Rating</label>
+            </div>
             <input
               id="rating-error-box"
               className="input-field"
