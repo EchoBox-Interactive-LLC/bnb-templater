@@ -53,12 +53,12 @@ function ListingDetails() {
             {listing && (
               <div className="page-container">
                 <div className="top-info">
-                  <h1 id="title">{listing.title}</h1>
+                  <h1 id="title-details-page">{listing.title}</h1>
                   <div className="flex-info">
                     <h3 id="rating">⭑ {rating} </h3>
                     <h3 id="num-of-reviews">• {reviews.length}</h3>
                     <h3 id="review-word">{reviewsContent}</h3>
-                    <h3 id="location">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
+                    <h3 id="location-deets-page">{`  • ${listing.city}, ${listing.state}, ${listing.country}`}</h3>
                   </div>
                 </div>
 

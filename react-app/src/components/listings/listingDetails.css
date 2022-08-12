@@ -6,6 +6,15 @@
     color: rgb(52, 52, 52);
 }
 
+#title-details-page {
+    font-weight: 500;
+    color: rgb(52, 52, 52);
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    width: 85%;
+}
+
 #location {
     font-size: 16px;
     font-weight: 400;
@@ -119,7 +128,6 @@
     justify-content: space-between;
     border-bottom: 1px solid rgb(209, 209, 209);
     grid-area: hosted-image-section;
-    
 }
 
 #host {
@@ -134,10 +142,21 @@
 }
 
 #description {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    width: 99%;
 }
+
+#location-deets-page {
+    font-size: 17px !important;
+    font-weight: 500;
+    color: black;
+    word-wrap: wrap !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    width: 75%;
+  }
 
 .description-section {
     display: flex;
@@ -188,6 +207,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
+    .image-container-main {
+        margin-bottom: 135px;
+    }
+
     #image-three {
         display: none;
     }
@@ -237,17 +260,6 @@
 
 }
 
-@media only screen and (max-width: 670px) {
-    .reviews-container {
-        margin-top: 200px;
-    }
-
-    .image-container-main {
-        margin-bottom: 135px;
-    }
-}
-
-
 @media only screen and (max-width: 900px) {
     .flex-info {
         display: flex;
@@ -263,4 +275,46 @@
         display: none;
     }
 }
+
+@media only screen and (max-width: 670px) {
+    .reviews-container {
+        margin-top: 200px;
+    }
+
+    .image-container-main {
+        margin-bottom: 200px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reviews-container {
+        margin-top: 250px;
+    }
+
+    .image-container-main {
+        margin-bottom: 250px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .reviews-container {
+        margin-top: 300px;
+    }
+
+    .image-container-main {
+        margin-bottom: 250px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .reviews-container {
+        margin-top: 350px;
+    }
+
+    .image-container-main {
+        margin-bottom: 315px;
+    }
+}
+
+
 
