@@ -31,6 +31,7 @@ function ListingDetails() {
 
   useEffect(() => {
     dispatch(retrieveListings());
+    window.scrollTo(0, 0);
   }, [dispatch, reviews.length, images]);
 
   useEffect(() => {
