@@ -114,7 +114,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
             </div>
             <select
               id="rating-error-box"
-              className="input-field"
+              className="input-field-select"
               placeholder="Rating"
               name="rating"
               value={rating}

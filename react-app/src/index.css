@@ -50,6 +50,21 @@
   border: 2px solid black;
 }
 
+.input-field-select {
+  margin: 10px 15px;
+  font-size: 18px;
+  width: 293px;
+  border-radius: 10px;
+  border: 1px solid rgb(208, 208, 208);
+  padding: 5px 15px;
+  resize: none;
+}
+
+.input-field-select:focus {
+  outline: none;
+  border: 2px solid black;
+}
+
 .input-label {
   font-size: 20px;
   margin: 0px 18px -10px 31px;

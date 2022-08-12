@@ -115,7 +115,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             </div>
             <select
               id="rating-error-box"
-              className="input-field"
+              className="input-field-select"
               placeholder="Rating"
               name="rating"
               value={rating}

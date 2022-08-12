@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
 
+
 def review_length(form, field):
   review = field.data
   if len(review) > 200:
