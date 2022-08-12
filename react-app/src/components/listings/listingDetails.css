@@ -240,3 +240,21 @@
         margin-bottom: 135px;
     }
 }
+
+
+@media only screen and (max-width: 900px) {
+    .flex-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    } 
+
+    #num-of-reviews {
+        display: none;
+    }
+    
+    #review-word {
+        display: none;
+    }
+}
+
