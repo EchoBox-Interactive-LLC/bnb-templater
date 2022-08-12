@@ -14,7 +14,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
   const { listingId } = useParams();
 
   const [review, setReview] = useState(reviewInfo.review || "");
-  const [rating, setRating] = useState(reviewInfo.rating || "");
+  const [rating, setRating] = useState(reviewInfo.rating || "1");
   const [errors, setErrors] = useState([]);
   const [errorMessages, setErrorMessages] = useState([]);
 
@@ -113,15 +113,21 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
           <div className="input-label">
               <label id="rating-label-update-review">Rating (Required)</label>
             </div>
-            <input
+            <select
               id="rating-error-box"
               className="input-field"
               placeholder="Rating"
               name="rating"
-              type="number"
               value={rating}
+              type="text"
               onChange={(e) => setRating(e.target.value)}
-            />
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
           <div className="error-container">
             {errorMessages.map((error, ind) => (
