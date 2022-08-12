@@ -32,8 +32,20 @@ def email_regex(form, field):
       raise ValidationError('Email must be a valid email address with an "@" and a "."') 
 
 
+def username_length(form, field):
+  username = field.data
+  if len(username) > 50:
+    raise ValidationError('Username must be 50 characters or less')
+
+
+def email_length(form, field):
+  email = field.data
+  if len(email) > 50:
+    raise ValidationError('Email must be 50 characters or less')    
+
+
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired("Username is required"), username_exists])
-    email = StringField('email', validators=[DataRequired("Email is required"), user_exists, email_regex])
+        'username', validators=[DataRequired("Username is required"), username_exists, username_length])
+    email = StringField('email', validators=[DataRequired("Email is required"), user_exists, email_regex, email_length])
     password = StringField('password', validators=[DataRequired("Password is required")])

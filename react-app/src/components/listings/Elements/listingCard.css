@@ -19,6 +19,7 @@
   align-items: center;
 }
 
+
 .listing-rating {
   min-width: 60px;
 }
@@ -40,7 +41,11 @@
 }
 
 #location {
-  font-size: 17px;
+  font-size: 17px !important;
   font-weight: 500;
   color: black;
+  word-wrap: wrap !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 315px;
 }
