@@ -6,11 +6,26 @@
   justify-content: center;
 }
 
+.splash-image {
+  margin-top: -20px;
+  background-image: url("https://i.insider.com/62bd175269fbfd0018ee0419?width=2000&format=jpeg&auto=webp");
+  background-size: cover;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
 .welcome-container {
+  padding-top: 20px;
   margin: 20px 12%;
 }
 
 .welcome {
-  font-size: 25px;
-  color: rgb(74, 74, 74)
+  position: absolute;
+  left: 20px;
+  width: 500px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
 }
