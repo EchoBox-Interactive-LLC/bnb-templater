@@ -11,7 +11,7 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
   const { listingId } = useParams();
 
   const [review, setReview] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState("1");
   const [errors, setErrors] = useState([]);
   const [errorMessages, setErrorMessages] = useState([]);
 
