@@ -37,6 +37,11 @@ def price_non_zero(form, field):
   if price <=  0:
     raise ValidationError('Price must be greater than 0.')
 
+def price_max(form, field):
+  price = field.data
+  if price >  20000:
+    raise ValidationError('Price cannot be greater than 20,000 per night.')    
+
 
 class ListingForm(FlaskForm):
   user_id = IntegerField('User_Id', validators=[DataRequired()])
@@ -46,7 +51,7 @@ class ListingForm(FlaskForm):
   city = StringField('City', validators=[DataRequired("A city is required"), city_length])
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
-  price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero])
+  price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
   updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
@@ -58,5 +63,5 @@ class UpdateListingForm(FlaskForm):
   city = StringField('City', validators=[DataRequired("A city is required"), city_length])
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
-  price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero])
+  price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
   updated_at = StringField('Update_At', validators=[DataRequired()])

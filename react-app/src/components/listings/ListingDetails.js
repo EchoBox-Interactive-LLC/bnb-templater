@@ -140,7 +140,7 @@ function ListingDetails() {
                     </div>
                     {listing && (
                       <div className="description-section">
-                        <div>{listing.description}</div>
+                        <div id="description">{listing.description}</div>
                       </div>
                     )}
                     <div className="listing-buttons-section">

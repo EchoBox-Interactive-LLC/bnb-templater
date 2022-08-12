@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     contain: content;
+    max-width: 375px;
 }
 
 .top-booking-section {
@@ -63,4 +64,12 @@
 
 #total-fee {
     font-size: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+    .booking-card-container {
+        height: 350px;
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
 }
