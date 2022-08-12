@@ -6,7 +6,7 @@ Welcome to Urbnb! Urbnb is a clone of Airbnb with limited funtionality at this t
 
 This Airbnb clone was built using PostgreSQL, Flask, SQLAlchemy, React, Javascript, Redux and Python.
 
-Checkout Urbnb and make it to an event near you at https://clone-bnb-app.herokuapp.com/
+Checkout Urbnb and make it to an event near you at https://urbnb.herokuapp.com/
 
 # Gibhub Wiki Links:
 
