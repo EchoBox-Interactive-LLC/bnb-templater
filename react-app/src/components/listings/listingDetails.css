@@ -133,6 +133,12 @@
     border-radius: 50%;
 }
 
+#description {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
 .description-section {
     display: flex;
     height: auto;

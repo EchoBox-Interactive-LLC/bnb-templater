@@ -91,7 +91,7 @@
 }
 
 .errors::before {
-  content: "⚠ ";
+  content: "⚠  ";
 }
 
 #sign-up-button {

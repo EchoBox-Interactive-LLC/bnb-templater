@@ -33,6 +33,9 @@
 
 #review-blurb {
   padding: 10px 2px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .little-button {
