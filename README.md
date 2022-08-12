@@ -20,6 +20,22 @@ Checkout Urbnb and make it to an event near you at https://clone-bnb-app.herokua
 
 [User Stories](https://github.com/jvos415/AirBnB-Clone/wiki/User-Stories)
 
+# Splash Page
+
+<img src="react-app/src/images/README-Images/Splash.png"/>
+
+# Splash Page - Listings Section
+
+<img src="react-app/src/images/README-Images/Listings.png"/>
+
+# Listing Details Page
+
+<img src="react-app/src/images/README-Images/Listing-Details.png"/>
+
+# Listing Details Page - Reviews Section
+
+<img src="react-app/src/images/README-Images/Reviews.png"/>
+
 # Starting this app locally
 ** If you have an Apple with and M1 chip please skip to the next section
 
@@ -42,12 +58,12 @@ Checkout Urbnb and make it to an event near you at https://clone-bnb-app.herokua
 
    flask run
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+6. To run the React App in development, checkout the README inside of the `react-app` directory.
 
 ***
 *IMPORTANT!*
    psycopg2-binary MUST remain a dev dependency because you can't install it on alpine-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
+   There is a layer in the Dockerfile that will install psycopg2 (not binary) for you.
 ***
 
 ### Dev Containers (For M1 Users)
@@ -55,9 +71,9 @@ The following instructions detail an *optional* development setup for M1 Mac use
 
 1. Make sure you have the [Microsoft Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed. 
 2. Make sure you have [Docker](https://www.docker.com/products/docker-desktop/) installed on your computer. 
-3. Clone the repository (only this branch)
+3. Clone the repository
 
-Clone the starter from this repo from https://github.com/jvos415/AirBnB-Clone
+Clone this project from this repo from https://github.com/jvos415/AirBnB-Clone
  
 4. Open the repo in VS Code. 
 5. Click "Open in Container" when VS Code prompts to open container in the bottom right hand corner. 
@@ -77,7 +93,7 @@ Clone the starter from this repo from https://github.com/jvos415/AirBnB-Clone
 
    flask run
 
-9. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+9. To run the front-end portion of this app, see the README located inside of the `react-app` directory.
 
 <br>
 

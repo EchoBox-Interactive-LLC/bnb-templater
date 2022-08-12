@@ -1,6 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Welcome to the frontend README for Urbnb (an Airbnb clone).
+Welcome to the front-end README for Urbnb (an Airbnb clone).
 
 To run locally, first remeber to change your directory to `react-app` and run `npm start`.
 
