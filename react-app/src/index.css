@@ -50,6 +50,16 @@
   border: 2px solid black;
 }
 
+.input-label {
+  font-size: 20px;
+  margin: 0px 18px -10px 31px;
+}
+
+.input-label-error::before {
+  content: "⚠ ";
+  color: red;
+}
+
 .input-field-error {
   border: 2px solid red;
 }
@@ -88,11 +98,10 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 290px;
+  margin: 0 12px;
+  font-size: 19px;
 }
 
-.errors::before {
-  content: "⚠  ";
-}
 
 #sign-up-button {
   padding: 10px 119px;

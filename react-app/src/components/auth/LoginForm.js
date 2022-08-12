@@ -34,9 +34,13 @@ const LoginForm = ({ setShowLoginModal }) => {
         if (errorTitle === "Email") {
           let emailClassAdd = document.getElementById("email-error-box");
           emailClassAdd.classList.add("input-field-error");
+          let emailAgainClassAdd = document.getElementById("email-label-login");
+          emailAgainClassAdd.classList.add("input-label-error");
         } else if (errorTitle === "Password") {
           let passwordClassAdd = document.getElementById("password-error-box");
           passwordClassAdd.classList.add("input-field-error");
+          let passwordAgainClassAdd = document.getElementById("password-label-login");
+          passwordAgainClassAdd.classList.add("input-label-error");
         }
       }
     }
@@ -76,6 +80,9 @@ const LoginForm = ({ setShowLoginModal }) => {
         <h3 className="modal-title">Log in</h3>
       </div>
       <div>
+        <div className="input-label">
+          <label id="email-label-login">Email</label>
+        </div>
         <input
           id="email-error-box"
           className="input-field"
@@ -87,6 +94,9 @@ const LoginForm = ({ setShowLoginModal }) => {
         />
       </div>
       <div>
+        <div className="input-label">
+          <label id="password-label-login">Password</label>
+        </div>
         <input
           id="password-error-box"
           className="input-field"
