@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import NavBar from "./components/navbar/NavBar";
 // import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -31,6 +31,7 @@ function App() {
         <Route path="/" exact={true}>
           <Listings />
         </Route>
+        <Redirect from="/listings/listings/:listingId" to="/listings/:listingId" />
         <Route path="/listings/:listingId" exact={true}>
           <ListingDetails />
         </Route>

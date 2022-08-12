@@ -95,6 +95,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
         updated_at
       )
     );
+
     if (listing.id) {
       history.push(`listings/${listing.id}`);
       setShowCreateListingModal(false);
