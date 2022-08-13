@@ -31,6 +31,11 @@
   font-size: 13px;
 }
 
+.review-single-rating {
+  margin-left:60%;
+  font-size: 18px;
+}
+
 #review-blurb {
   padding: 10px 2px;
   overflow-wrap: break-word;

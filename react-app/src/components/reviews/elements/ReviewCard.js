@@ -80,6 +80,9 @@ function ReviewCard({ review }) {
           </div>
           <p id="nice-date">{niceDate(review.updated_at)}</p>
         </div>
+        <div className="review-single-rating">
+          <div>⭑ {review.rating}</div>
+        </div>
       </div>
       <p id="review-blurb">{review.review}</p>
       {showUpdateButton && user && review && (
