@@ -9,7 +9,7 @@ class Review(db.Model):
     listing_id = db.Column(db.Integer, db.ForeignKey(
         'listings.id', ondelete="CASCADE"), nullable=False)
     review = db.Column(db.String(200), nullable=False)
-    rating = db.Column(db.String(2), nullable=False)
+    rating = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 
     # TO CREATE A DEFAULT VALUE, THIS WAY updated_at CAN BE TAKEN CARE OF BY THE BACK END ENTIERLY
