@@ -26,6 +26,7 @@
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
   hyphens: auto !important;
+  width: 95%;
 }
 
 #demo-user {
@@ -68,4 +69,10 @@
   width: 42px;
   height: auto;
   border-radius: 50%;
+}
+
+@media only screen and (max-width: 750px) {
+  .welcome-user {
+   display: none;
+  }
 }
