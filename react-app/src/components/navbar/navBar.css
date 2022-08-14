@@ -19,6 +19,16 @@
   height: auto;
 }
 
+.welcome-user {
+  padding: 10px 5px 0 5px;
+  padding: 12px 18px;
+  margin-right: 22px;
+  margin-left: 12px;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
 #demo-user {
   font-size: 15px;
   font-weight: 500;
@@ -26,7 +36,6 @@
   border: none;
   cursor: pointer;
   padding: 12px 18px;
-  margin-right: 22px;
 }
 
 #demo-user:hover {

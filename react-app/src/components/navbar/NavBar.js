@@ -126,6 +126,8 @@ const NavBar = () => {
             >
               New Listing
             </button>
+            {user && (
+            <div className="welcome-user">Welcome {user.username}!</div>)}
             {showCreateListingModal && (
             <Modal onClose={() => setShowCreateListingModal(false)}>
               <CreateListingForm user={user} setShowCreateListingModal={setShowCreateListingModal}/>
