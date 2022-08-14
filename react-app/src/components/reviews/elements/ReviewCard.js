@@ -81,7 +81,7 @@ function ReviewCard({ review }) {
           <p id="nice-date">{niceDate(review.updated_at)}</p>
         </div>
         <div className="review-single-rating">
-          <div>⭑ {review.rating}</div>
+          <div id="single-star-review">⭑ {review.rating}</div>
         </div>
       </div>
       <p id="review-blurb">{review.review}</p>

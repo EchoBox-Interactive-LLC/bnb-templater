@@ -5,7 +5,7 @@
 
 .review-heading {
   display: flex;
-  flex-wrap: wrap;
+  
   align-items: center;
 }
 
@@ -27,7 +27,7 @@
   word-wrap: break-all !important;
   overflow-wrap: break-word !important;
   hyphens: auto !important;
-  width: 99%;
+  width: 135px;
 }
 
 #nice-date {
@@ -36,8 +36,12 @@
 }
 
 .review-single-rating {
-  margin-left: 60%;
+  margin-left: 52%;
   font-size: 18px;
+}
+
+#single-star-review {
+  width: 34px;
 }
 
 #review-blurb {
