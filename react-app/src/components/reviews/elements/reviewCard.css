@@ -24,6 +24,10 @@
 #review-username {
   font-size: 18px;
   font-weight: 500;
+  word-wrap: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 99%;
 }
 
 #nice-date {
@@ -32,7 +36,7 @@
 }
 
 .review-single-rating {
-  margin-left:60%;
+  margin-left: 60%;
   font-size: 18px;
 }
 
@@ -56,4 +60,15 @@
 
 .little-button:hover {
   background-color: rgb(244, 244, 244);
+}
+
+@media only screen and (max-width: 550px) {
+  #review-username {
+    font-size: 18px;
+    font-weight: 500;
+    word-wrap: break-all !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    width: 220px;
+  }
 }
