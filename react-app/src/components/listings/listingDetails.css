@@ -1,331 +1,328 @@
 .page-container {
-    margin: 25px 85px;
+  margin: 25px 85px;
 }
 
 #title {
-    color: rgb(52, 52, 52);
+  color: rgb(52, 52, 52);
 }
 
 #title-details-page {
-    font-weight: 500;
-    color: rgb(52, 52, 52);
-    word-wrap: break-all !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    width: 85%;
+  font-weight: 500;
+  color: rgb(52, 52, 52);
+  word-wrap: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 85%;
 }
 
 #location {
-    font-size: 16px;
-    font-weight: 400;
-    color: black;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
 }
 
 .flex-info {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
 }
 
 .no-images {
-    margin: 50px 0 100px 0;
-    font-size: 30px;
+  margin: 50px 0 100px 0;
+  font-size: 30px;
 }
 
 .no-images-blurb {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
 #num-of-reviews {
-    font-size: 16px;
-    padding-left: 3px;
-    font-weight: 400;
+  font-size: 16px;
+  padding-left: 3px;
+  font-weight: 400;
 }
 
 #review-word {
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: 400;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 400;
 }
 
 #image-one {
-    width: 575px;
-    height: 450px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    object-fit: cover;
+  width: 575px;
+  height: 450px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  object-fit: cover;
 }
 
 .image-container-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 75px;
 }
 
 .image-container-right {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 270px 270px;
-    grid-template-rows: 230px 230px;
-    grid-template-areas: 
-      "image-two image-three"
-      "image-four image-five";
+  display: grid;
+  align-items: center;
+  grid-template-columns: 270px 270px;
+  grid-template-rows: 230px 230px;
+  grid-template-areas:
+    "image-two image-three"
+    "image-four image-five";
 }
 
 #image-two {
-    width: 258px;
-    height: 220px;
-    object-fit: cover;
-    grid-area: image-two;
+  width: 258px;
+  height: 220px;
+  object-fit: cover;
+  grid-area: image-two;
 }
 
 #image-three {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    width: 258px;
-    height: 220px;
-    object-fit: cover;
-    grid-area: image-three;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 258px;
+  height: 220px;
+  object-fit: cover;
+  grid-area: image-three;
 }
 
 #image-four {
-    width: 258px;
-    height: 220px;
-    object-fit: cover;
-    grid-area: image-four;
+  width: 258px;
+  height: 220px;
+  object-fit: cover;
+  grid-area: image-four;
 }
 
 #image-five {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    width: 258px;
-    height: 220px;
-    object-fit: cover;
-    grid-area: image-five;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 258px;
+  height: 220px;
+  object-fit: cover;
+  grid-area: image-five;
 }
 
 .listing-info {
-    max-width: 90%;
-    padding-top: 60px;
-    padding-bottom: 45px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 70% 40%;
-    grid-template-rows: 100px 100px;
-    grid-template-areas: 
-      "hosted-by-section booking-card-section"
-      "description-section booking-card-section";
+  max-width: 90%;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 70% 40%;
+  grid-template-rows: 100px 100px;
+  grid-template-areas:
+    "hosted-by-section booking-card-section"
+    "description-section booking-card-section";
 }
 
 .hosted-by-section {
-    display: flex;
-    height: auto;
-    padding: 12px 0;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgb(209, 209, 209);
-    grid-area: hosted-image-section;
+  display: flex;
+  height: auto;
+  padding: 12px 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  grid-area: hosted-image-section;
 }
 
 #host {
-    font-size: 20px;
-    font-weight: 500;
-    word-wrap: break-all !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    width: 99%;
+  font-size: 20px;
+  font-weight: 500;
+  word-wrap: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 550px;
 }
 
 #host-avatar {
-    width: 70px;
-    height: auto;
-    border-radius: 50%;
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
 }
 
 #description {
-    word-wrap: break-all !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    width: 99%;
+  word-wrap: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 99%;
 }
 
 #location-deets-page {
-    font-size: 17px !important;
-    font-weight: 500;
-    color: black;
-    word-wrap: break-all !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    width: 75%;
-  }
+  font-size: 17px !important;
+  font-weight: 500;
+  color: black;
+  word-wrap: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  width: 75%;
+}
 
 .description-section {
-    display: flex;
-    height: auto;
-    padding: 28px 0;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgb(209, 209, 209);
-    grid-area: description-section;
+  display: flex;
+  height: auto;
+  padding: 28px 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  grid-area: description-section;
 }
 
 .listing-buttons-section {
-    height: 150px;
+  height: 150px;
 }
 
 .booking-card-section {
-    grid-area: booking-card-section;
-    padding-left: 65px;
-    min-width: 150px;
-    margin-top: -80px;
+  grid-area: booking-card-section;
+  padding-left: 65px;
+  min-width: 150px;
+  margin-top: -80px;
 }
 
 .display-none {
-    display: none;
+  display: none;
 }
 
 .reviews-container {
-    margin: 0 6% 2% 6%;
-    padding-top: 20px;
-    border-top: 1px solid rgb(209, 209, 209);
+  margin: 0 6% 2% 6%;
+  padding-top: 20px;
+  border-top: 1px solid rgb(209, 209, 209);
 }
 
 .reviews-section-title {
-    display: flex;
-    align-items: center;
-    font-size: 22px;
-    padding: 0 50px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  padding: 0 50px;
 }
 
 #rating-title {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 .all-reviews-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 @media only screen and (max-width: 1200px) {
-    .image-container-main {
-        margin-bottom: 135px;
-    }
+  .image-container-main {
+    margin-bottom: 135px;
+  }
 
-    #image-three {
-        display: none;
-    }
+  #image-three {
+    display: none;
+  }
 
-    #image-five {
-        display: none;
-    }
+  #image-five {
+    display: none;
+  }
 
-    #image-two {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
+  #image-two {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 
-    #image-four {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
+  #image-four {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 
-    #image-one {
-        margin-left: 250px;
-    }
+  #image-one {
+    margin-left: 250px;
+  }
+}
 
+@media only screen and (max-width: 1075px) {
+  #host-avatar {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 960px) {
-    #image-three {
-        display: none;
-    }
+  #image-three {
+    display: none;
+  }
 
-    #image-five {
-        display: none;
-    }
+  #image-five {
+    display: none;
+  }
 
-    #image-two {
-        display: none;
-    }
+  #image-two {
+    display: none;
+  }
 
-    #image-four {
-        display: none;
-    }
+  #image-four {
+    display: none;
+  }
 
-    #image-one {
-        margin-left: 550px;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-
+  #image-one {
+    margin-left: 550px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
 @media only screen and (max-width: 900px) {
-    .flex-info {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    } 
+  .flex-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    #num-of-reviews {
-        display: none;
-    }
-    
-    #review-word {
-        display: none;
-    }
+  #num-of-reviews {
+    display: none;
+  }
 
-    #host-avatar {
-        display: none;
-    }
+  #review-word {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 720px) {
-    #host {
-        font-size: 15px;
-        width: 200px;
-    }
+  #host {
+    font-size: 15px;
+    width: 200px;
+  }
 }
 
 @media only screen and (max-width: 670px) {
-    .reviews-container {
-        margin-top: 200px;
-    }
+  .reviews-container {
+    margin-top: 200px;
+  }
 
-    .image-container-main {
-        margin-bottom: 150px;
-    }
+  .image-container-main {
+    margin-bottom: 150px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    .reviews-container {
-        margin-top: 250px;
-    }
+  .reviews-container {
+    margin-top: 250px;
+  }
 
-    .image-container-main {
-        margin-bottom: 250px;
-    }
+  .image-container-main {
+    margin-bottom: 250px;
+  }
 }
 
 @media only screen and (max-width: 475px) {
-    .reviews-container {
-        margin-top: 300px;
-    }
+  .reviews-container {
+    margin-top: 300px;
+  }
 
-    .image-container-main {
-        margin-bottom: 250px;
-    }
+  .image-container-main {
+    margin-bottom: 250px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
-    .reviews-container {
-        margin-top: 350px;
-    }
+  .reviews-container {
+    margin-top: 350px;
+  }
 }
-
-
-
