@@ -62,8 +62,11 @@ const SignUpForm = ({ setShowSignUpModal }) => {
               "confirm-password-error-box"
             );
             confirmPasswordClassAdd.classList.add("input-field-error");
+            let passwordLabelClassAdd =
+              document.getElementById("password-label-signup");
+            passwordLabelClassAdd.classList.add("input-label-error");
             let confirmPasswordLabelClassAdd =
-              document.getElementById("email-label-signup");
+              document.getElementById("confirm-password-label-signup");
             confirmPasswordLabelClassAdd.classList.add("input-label-error");
           }
         }
