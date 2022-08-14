@@ -4,8 +4,8 @@ from wtforms.validators import DataRequired, ValidationError
 
 def title_length(form, field):
   title = field.data
-  if len(title) > 50:
-    raise ValidationError('Title must be 50 characters or less.')
+  if len(title) > 40:
+    raise ValidationError('Title must be 40 characters or less.')
 
 def description_length(form, field):
   description = field.data

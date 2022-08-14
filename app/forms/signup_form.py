@@ -34,8 +34,8 @@ def email_regex(form, field):
 
 def username_length(form, field):
   username = field.data
-  if len(username) > 50:
-    raise ValidationError('Username must be 50 characters or less')
+  if len(username) > 20:
+    raise ValidationError('Username must be 20 characters or less')
 
 
 def email_length(form, field):

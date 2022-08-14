@@ -6,7 +6,7 @@ class Listing(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(
         'users.id',  ondelete="CASCADE"), nullable=False)
-    title = db.Column(db.String(50), nullable=False)
+    title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(200), nullable=False)
     address = db.Column(db.String(60), nullable=False)
     city = db.Column(db.String(40), nullable=False)
