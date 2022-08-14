@@ -102,3 +102,9 @@ footer {
     padding: 16px 5px;
   }
 }
+
+@media only screen and (max-width: 425px) {
+  footer {
+    margin-top: 130px;
+  }
+}

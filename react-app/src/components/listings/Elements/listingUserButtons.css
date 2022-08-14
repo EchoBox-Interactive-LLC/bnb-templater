@@ -25,6 +25,17 @@
 
 @media only screen and (max-width: 670px) {
     .listing-buttons-flexbox {
-        height: 250px;
+        height: 150px;
     }
+
+    .cool-button {
+        padding: 8px;
+        width: 110px;
+        height: 35px;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+   
 }
