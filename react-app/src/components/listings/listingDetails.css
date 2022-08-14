@@ -9,7 +9,7 @@
 #title-details-page {
     font-weight: 500;
     color: rgb(52, 52, 52);
-    word-wrap: break-word !important;
+    word-wrap: break-all !important;
     overflow-wrap: break-word !important;
     hyphens: auto !important;
     width: 85%;
@@ -142,7 +142,7 @@
 }
 
 #description {
-    word-wrap: break-word !important;
+    word-wrap: break-all !important;
     overflow-wrap: break-word !important;
     hyphens: auto !important;
     width: 99%;
@@ -152,7 +152,7 @@
     font-size: 17px !important;
     font-weight: 500;
     color: black;
-    word-wrap: wrap !important;
+    word-wrap: break-all !important;
     overflow-wrap: break-word !important;
     hyphens: auto !important;
     width: 75%;

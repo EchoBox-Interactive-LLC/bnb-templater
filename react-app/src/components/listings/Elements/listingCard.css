@@ -44,7 +44,7 @@
   font-size: 17px !important;
   font-weight: 500;
   color: black;
-  word-wrap: break-word !important;
+  word-wrap: break-all !important;
   overflow-wrap: break-word !important;
   hyphens: auto !important;
   width: 315px;
