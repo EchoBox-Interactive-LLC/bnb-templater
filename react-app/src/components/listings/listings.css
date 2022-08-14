@@ -29,14 +29,14 @@
 
 .welcome {
   position: absolute;
-  padding-top: 125px;
+  margin-top: 125px;
   left: 20vw;
   width: 60%;
   font-size: 24px;
   color: white;
   text-align: center;
-  /* background-color: rgba(79, 79, 79, 0.45); */
-  /* border-radius: 18px; */
+  /* background-color: rgba(79, 79, 79, 0.45); 
+  border-radius: 18px; */
 }
 
 @media only screen and (max-width: 900px) {
@@ -46,7 +46,7 @@
   }
   
   .welcome {
-    padding-top: 125px;
+    margin-top: 125px;
     left: 20vw;
     width: 60%;
     font-size: 18px;
@@ -59,7 +59,7 @@
   }
   
   .welcome {
-    padding-top: 80px;
+    margin-top: 80px;
     left: 20vw;
     width: 60%;
     font-size: 18px;
@@ -72,7 +72,7 @@
   }
   
   .welcome {
-    padding-top: 60px;
+    margin-top: 60px;
     left: 20vw;
     width: 60%;
     font-size: 17px;
