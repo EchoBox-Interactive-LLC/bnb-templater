@@ -35,7 +35,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
       });
       setErrorMessages(errorMsgs);
 
-      // Adding CSS to input fields that have errors
+      // Parsing out error titles
       if (errors.length > 0) {
         let errorTitles = errors.map((error) => {
           return error.split(":");
@@ -43,6 +43,54 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+        // Clear all CSS errors styles on each submit
+        let titleClassRemove = document.getElementById("title-error-box");
+        titleClassRemove.classList.remove("input-field-error");
+        let titleLabelClassRemove = document.getElementById(
+          "title-label-create-listing"
+        );
+        titleLabelClassRemove.classList.remove("input-label-error");
+        let descriptionClassRemove = document.getElementById(
+          "description-error-box"
+        );
+        descriptionClassRemove.classList.remove("input-field-error");
+        let descriptionLabelClassRemove = document.getElementById(
+          "description-label-create-listing"
+        );
+        descriptionLabelClassRemove.classList.remove("input-label-error");
+        let addressClassRemove = document.getElementById("address-error-box");
+        addressClassRemove.classList.remove("input-field-error");
+        let addressLabelClassRemove = document.getElementById(
+          "address-label-create-listing"
+        );
+        addressLabelClassRemove.classList.remove("input-label-error");
+        let cityClassRemove = document.getElementById("city-error-box");
+        cityClassRemove.classList.remove("input-field-error");
+        let cityLabelClassRemove = document.getElementById(
+          "city-label-create-listing"
+        );
+        cityLabelClassRemove.classList.remove("input-label-error");
+        let stateClassRemove = document.getElementById("state-error-box");
+        stateClassRemove.classList.remove("input-field-error");
+        let stateLabelClassRemove = document.getElementById(
+          "state-label-create-listing"
+        );
+        stateLabelClassRemove.classList.remove("input-label-error");
+        let countryClassRemove = document.getElementById("country-error-box");
+        countryClassRemove.classList.remove("input-field-error");
+        let countryLabelClassRemove = document.getElementById(
+          "country-label-create-listing"
+        );
+        countryLabelClassRemove.classList.remove("input-label-error");
+        let priceClassRemove = document.getElementById("price-error-box");
+        priceClassRemove.classList.remove("input-field-error");
+        let priceLabelClassRemove = document.getElementById(
+          "price-label-create-listing"
+        );
+        priceLabelClassRemove.classList.remove("input-label-error");
+
+        // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Title") {
             let titleClassAdd = document.getElementById("title-error-box");
@@ -169,7 +217,9 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           </div>
           <div>
             <div className="input-label">
-              <label id="description-label-create-listing">Description (Required)</label>
+              <label id="description-label-create-listing">
+                Description (Required)
+              </label>
             </div>
             <textarea
               id="description-error-box"
@@ -183,8 +233,10 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
-              <label id="address-label-create-listing">Address (Required)</label>
+            <div className="input-label">
+              <label id="address-label-create-listing">
+                Address (Required)
+              </label>
             </div>
             <input
               id="address-error-box"
@@ -197,7 +249,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
+            <div className="input-label">
               <label id="city-label-create-listing">City (Required)</label>
             </div>
             <input
@@ -211,7 +263,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
+            <div className="input-label">
               <label id="state-label-create-listing">State (Required)</label>
             </div>
             <input
@@ -225,8 +277,10 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
-              <label id="country-label-create-listing">Country (Required)</label>
+            <div className="input-label">
+              <label id="country-label-create-listing">
+                Country (Required)
+              </label>
             </div>
             <input
               id="country-error-box"
@@ -239,7 +293,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
             />
           </div>
           <div>
-          <div className="input-label">
+            <div className="input-label">
               <label id="price-label-create-listing">Price (Required)</label>
             </div>
             <input

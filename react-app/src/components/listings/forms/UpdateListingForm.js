@@ -32,7 +32,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
       });
       setErrorMessages(errorMsgs);
 
-      // Adding CSS to input fields that have errors
+       // Parsing out error titles
       if (errors.length > 0) {
         let errorTitles = errors.map((error) => {
           return error.split(":");
@@ -40,6 +40,54 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+         // Clear all CSS errors styles on each submit
+         let titleClassRemove = document.getElementById("title-error-box");
+         titleClassRemove.classList.remove("input-field-error");
+         let titleLabelClassRemove = document.getElementById(
+           "title-label-update-listing"
+         );
+         titleLabelClassRemove.classList.remove("input-label-error");
+         let descriptionClassRemove = document.getElementById(
+           "description-error-box"
+         );
+         descriptionClassRemove.classList.remove("input-field-error");
+         let descriptionLabelClassRemove = document.getElementById(
+           "description-label-update-listing"
+         );
+         descriptionLabelClassRemove.classList.remove("input-label-error");
+         let addressClassRemove = document.getElementById("address-error-box");
+         addressClassRemove.classList.remove("input-field-error");
+         let addressLabelClassRemove = document.getElementById(
+           "address-label-update-listing"
+         );
+         addressLabelClassRemove.classList.remove("input-label-error");
+         let cityClassRemove = document.getElementById("city-error-box");
+         cityClassRemove.classList.remove("input-field-error");
+         let cityLabelClassRemove = document.getElementById(
+           "city-label-update-listing"
+         );
+         cityLabelClassRemove.classList.remove("input-label-error");
+         let stateClassRemove = document.getElementById("state-error-box");
+         stateClassRemove.classList.remove("input-field-error");
+         let stateLabelClassRemove = document.getElementById(
+           "state-label-update-listing"
+         );
+         stateLabelClassRemove.classList.remove("input-label-error");
+         let countryClassRemove = document.getElementById("country-error-box");
+         countryClassRemove.classList.remove("input-field-error");
+         let countryLabelClassRemove = document.getElementById(
+           "country-label-update-listing"
+         );
+         countryLabelClassRemove.classList.remove("input-label-error");
+         let priceClassRemove = document.getElementById("price-error-box");
+         priceClassRemove.classList.remove("input-field-error");
+         let priceLabelClassRemove = document.getElementById(
+           "price-label-updaet-listing"
+         );
+         priceLabelClassRemove.classList.remove("input-label-error");
+
+         // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Title") {
             let titleClassAdd = document.getElementById("title-error-box");

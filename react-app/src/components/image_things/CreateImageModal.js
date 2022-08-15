@@ -24,7 +24,7 @@ function CreateImageModal({ setShowCreateImageModal }) {
       });
       setErrorMessages(errorMsgs);
 
-      // Adding CSS to input fields that have errors
+      // Parsing out error titles
       if (errors.length > 0) {
         let errorTitles = errors.map((error) => {
           return error.split(":");
@@ -32,6 +32,16 @@ function CreateImageModal({ setShowCreateImageModal }) {
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+        // Clear all CSS errors styles on each submit
+        let urlClassRemove = document.getElementById("url-error-box");
+        urlClassRemove.classList.remove("input-field-error");
+        let urlLabelClassRemove = document.getElementById(
+          "url-label-create-image"
+        );
+        urlLabelClassRemove.classList.remove("input-label-error");
+
+        // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Url") {
             let urlClassAdd = document.getElementById("url-error-box");
