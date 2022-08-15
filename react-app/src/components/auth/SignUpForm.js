@@ -33,20 +33,50 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         });
         setErrorMessages(errorMsgs);
 
-        // Adding CSS to input fields that have errors
+        // Parsing out error titles
         let errorTitles = errors.map((error) => {
           return error.split(":");
         });
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+        // Clear all CSS errors styles on each submit
+        let usernameClassRemove = document.getElementById("username-error-box");
+        usernameClassRemove.classList.remove("input-field-error");
+        let usernameLabelClassRemove = document.getElementById(
+          "username-label-signup"
+        );
+        usernameLabelClassRemove.classList.remove("input-label-error");
+        let emailClassRemove = document.getElementById("email-error-box");
+        emailClassRemove.classList.remove("input-field-error");
+        let emailLabelClassRemove =
+          document.getElementById("email-label-signup");
+        emailLabelClassRemove.classList.remove("input-label-error");
+        let passwordClassRemove = document.getElementById("password-error-box");
+        passwordClassRemove.classList.remove("input-field-error");
+        let confirmPasswordClassRemove = document.getElementById(
+          "confirm-password-error-box"
+        );
+        confirmPasswordClassRemove.classList.remove("input-field-error");
+        let passwordLabelClassRemove = document.getElementById(
+          "password-label-signup"
+        );
+        passwordLabelClassRemove.classList.remove("input-label-error");
+        let confirmPasswordLabelClassRemove = document.getElementById(
+          "confirm-password-label-signup"
+        );
+        confirmPasswordLabelClassRemove.classList.remove("input-label-error");
+
+        // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Username") {
             let usernameClassAdd =
               document.getElementById("username-error-box");
             usernameClassAdd.classList.add("input-field-error");
-            let usernameLabelClassAdd =
-              document.getElementById("username-label-signup");
+            let usernameLabelClassAdd = document.getElementById(
+              "username-label-signup"
+            );
             usernameLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Email") {
             let emailClassAdd = document.getElementById("email-error-box");
@@ -62,11 +92,13 @@ const SignUpForm = ({ setShowSignUpModal }) => {
               "confirm-password-error-box"
             );
             confirmPasswordClassAdd.classList.add("input-field-error");
-            let passwordLabelClassAdd =
-              document.getElementById("password-label-signup");
+            let passwordLabelClassAdd = document.getElementById(
+              "password-label-signup"
+            );
             passwordLabelClassAdd.classList.add("input-label-error");
-            let confirmPasswordLabelClassAdd =
-              document.getElementById("confirm-password-label-signup");
+            let confirmPasswordLabelClassAdd = document.getElementById(
+              "confirm-password-label-signup"
+            );
             confirmPasswordLabelClassAdd.classList.add("input-label-error");
           }
         }
@@ -162,7 +194,9 @@ const SignUpForm = ({ setShowSignUpModal }) => {
       </div>
       <div>
         <div className="input-label">
-          <label id="confirm-password-label-signup">Confirm Password (Required)</label>
+          <label id="confirm-password-label-signup">
+            Confirm Password (Required)
+          </label>
         </div>
         <input
           id="confirm-password-error-box"

@@ -23,13 +23,27 @@ const LoginForm = ({ setShowLoginModal }) => {
       });
       setErrorMessages(errorMsgs);
 
-      // Adding CSS to input fields that have errors
+      // Parsing out error titles
       let errorTitles = errors.map((error) => {
         return error.split(":");
       });
       errorTitles = errorTitles.map((error) => {
         return error[0];
       });
+
+      // Clear all CSS errors styles on each submit
+      let emailClassRemove = document.getElementById("email-error-box");
+      emailClassRemove.classList.remove("input-field-error");
+      let emailLabelClassRemove = document.getElementById("email-label-login");
+      emailLabelClassRemove.classList.remove("input-label-error");
+      let passwordClassRemove = document.getElementById("password-error-box");
+      passwordClassRemove.classList.remove("input-field-error");
+      let passwordLabelClassRemove = document.getElementById(
+        "password-label-login"
+      );
+      passwordLabelClassRemove.classList.remove("input-label-error");
+
+      // Set and/or Reset error CSS styles
       for (const errorTitle of errorTitles) {
         if (errorTitle === "Email") {
           let emailClassAdd = document.getElementById("email-error-box");
@@ -39,7 +53,9 @@ const LoginForm = ({ setShowLoginModal }) => {
         } else if (errorTitle === "Password") {
           let passwordClassAdd = document.getElementById("password-error-box");
           passwordClassAdd.classList.add("input-field-error");
-          let passwordLabelClassAdd = document.getElementById("password-label-login");
+          let passwordLabelClassAdd = document.getElementById(
+            "password-label-login"
+          );
           passwordLabelClassAdd.classList.add("input-label-error");
         }
       }
