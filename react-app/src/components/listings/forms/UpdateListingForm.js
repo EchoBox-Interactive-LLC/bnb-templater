@@ -83,7 +83,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
          let priceClassRemove = document.getElementById("price-error-box");
          priceClassRemove.classList.remove("input-field-error");
          let priceLabelClassRemove = document.getElementById(
-           "price-label-updaet-listing"
+           "price-label-update-listing"
          );
          priceLabelClassRemove.classList.remove("input-label-error");
 

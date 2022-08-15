@@ -29,7 +29,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
       });
       setErrorMessages(errorMsgs);
 
-      // Adding CSS to input fields that have errors
+      // Parsing out error titles
       if (errors.length > 0) {
         let errorTitles = errors.map((error) => {
           return error.split(":");
@@ -37,6 +37,22 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+        // Clear all CSS errors styles on each submit
+        let reviewClassRemove = document.getElementById("review-error-box");
+        reviewClassRemove.classList.remove("input-field-error");
+        let reviewLabelClassRemove = document.getElementById(
+          "review-label-update-review"
+        );
+        reviewLabelClassRemove.classList.remove("input-label-error");
+        let ratingClassRemove = document.getElementById("rating-error-box");
+        ratingClassRemove.classList.remove("input-field-error");
+        let ratingLabelClassRemove = document.getElementById(
+          "rating-label-update-review"
+        );
+        ratingLabelClassRemove.classList.remove("input-label-error");
+
+        // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Review") {
             let reviewClassAdd = document.getElementById("review-error-box");
@@ -95,7 +111,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             </button>
           </div>
           <div>
-          <div className="input-label">
+            <div className="input-label">
               <label id="review-label-update-review">Review (Required)</label>
             </div>
             <textarea
@@ -110,7 +126,7 @@ function UpdateReviewModal({ setShowUpdateReviewModal, reviewId }) {
             />
           </div>
           <div>
-          <div className="input-label">
+            <div className="input-label">
               <label id="rating-label-update-review">Rating (Required)</label>
             </div>
             <select

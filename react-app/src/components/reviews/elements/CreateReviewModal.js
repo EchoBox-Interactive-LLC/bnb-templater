@@ -27,13 +27,29 @@ function CreateReviewModal({ setShowCreateReviewModal }) {
         });
         setErrorMessages(errorMsgs);
 
-        // Adding CSS to input fields that have errors
+        // Parsing out error titles
         let errorTitles = errors.map((error) => {
           return error.split(":");
         });
         errorTitles = errorTitles.map((error) => {
           return error[0];
         });
+
+        // Clear all CSS errors styles on each submit
+        let reviewClassRemove = document.getElementById("review-error-box");
+        reviewClassRemove.classList.remove("input-field-error");
+        let reviewLabelClassRemove = document.getElementById(
+          "review-label-create-review"
+        );
+        reviewLabelClassRemove.classList.remove("input-label-error");
+        let ratingClassRemove = document.getElementById("rating-error-box");
+        ratingClassRemove.classList.remove("input-field-error");
+        let ratingLabelClassRemove = document.getElementById(
+          "rating-label-create-review"
+        );
+        ratingLabelClassRemove.classList.remove("input-label-error");
+
+        // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
           if (errorTitle === "Review") {
             let reviewClassAdd = document.getElementById("review-error-box");
