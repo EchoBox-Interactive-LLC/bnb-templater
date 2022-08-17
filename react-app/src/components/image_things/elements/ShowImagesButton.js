@@ -1,19 +1,19 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import dialPad from "../../../images/dial-pad.png";
 import "./showImagesButton.css"
 
-function ShowImagesButton({ listingId }) {
+function ShowImagesButton({ listing }) {
   const history = useHistory();
 
   const navToAllImages = () => {
-    history.push(`/listings/${listingId}/images`);
+    history.push(`/listings/${listing.id}/images`);
   };
 
   return (
     <div className="all-images-button-container">
       <button className="all-images-button show-images-button" onClick={navToAllImages}>
-        <img id="dial-pad-icon" src={dialPad}></img>
+        <img id="dial-pad-icon" src={dialPad} alt="dial pad icon"></img>
         <div>Show All Photos</div>
       </button>
     </div>

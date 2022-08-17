@@ -88,7 +88,7 @@ function ListingDetails() {
                           alt={listing.title}
                         />
                         <ShowImagesButton
-                          listingId={listingId}
+                          listing={listing}
                         ></ShowImagesButton>
                       </div>
                     )}

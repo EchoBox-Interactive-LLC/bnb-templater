@@ -6,6 +6,7 @@ import NavBar from "./components/navbar/NavBar";
 import { authenticate } from "./store/session";
 import Listings from "./components/listings/Listings";
 import ListingDetails from "./components/listings/ListingDetails";
+import ListingImages from "./components/listings/ListingImages";
 import Footer from "./components/footer/Footer";
 import FourOFour from "./components/404/FourOFour";
 
@@ -34,6 +35,9 @@ function App() {
         <Redirect from="/listings/listings/:listingId" to="/listings/:listingId" />
         <Route path="/listings/:listingId" exact={true}>
           <ListingDetails />
+        </Route>
+        <Route path="/listings/:listingId/images" exact={true}>
+          <ListingImages />
         </Route>
         <Route path="">
           <FourOFour />
