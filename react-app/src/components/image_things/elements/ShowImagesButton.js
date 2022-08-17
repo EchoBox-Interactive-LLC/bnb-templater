@@ -12,7 +12,7 @@ function ShowImagesButton({ listingId }) {
 
   return (
     <div className="all-images-button-container">
-      <button className="all-images-button" onClick={navToAllImages}>
+      <button className="all-images-button show-images-button" onClick={navToAllImages}>
         <img id="dial-pad-icon" src={dialPad}></img>
         <div>Show All Photos</div>
       </button>

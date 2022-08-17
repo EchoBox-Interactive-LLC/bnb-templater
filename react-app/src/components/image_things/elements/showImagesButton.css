@@ -15,19 +15,19 @@
     align-items: center;
 }
 
-.cool-button {
-    padding: 12px;
-    width: 150px;
-    height: 45px;
-    font-size: 15px;
-    font-weight: 500;
+.show-images-button {
+    padding: 12px 0 12px 12px;
+    width: 138px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: 400;
     background-color: white;
     border-radius: 8px;
     border: 1px solid black;
     cursor: pointer;
 }
 
-.cool-button:hover {
+.show-images-button:hover {
     background-color: rgb(244, 244, 244);
 }
 
@@ -40,7 +40,7 @@
 
 @media only screen and (max-width: 960px) {
     .all-images-button-container {
-        right: 12px;
-        bottom: 12px;
+        right: 14px;
+        bottom: 14px;
     }
 }
