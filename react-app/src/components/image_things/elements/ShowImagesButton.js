@@ -16,7 +16,6 @@ function ShowImagesButton({ listingId }) {
         <img id="dial-pad-icon" src={dialPad}></img>
         <div>Show All Photos</div>
       </button>
-      <Link to={`/listings/${listingId}/images`}></Link>
     </div>
   );
 }
