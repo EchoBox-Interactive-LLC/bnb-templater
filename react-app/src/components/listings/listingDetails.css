@@ -63,7 +63,6 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 75px;
-  position: relative;
 }
 
 .image-container-right {
@@ -106,6 +105,10 @@
   height: 220px;
   object-fit: cover;
   grid-area: image-five;
+}
+
+.show-all-images-container {
+  position: relative;
 }
 
 .listing-info {

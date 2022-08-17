@@ -76,19 +76,32 @@ function ListingDetails() {
                 {listing.images.length > 0 && (
                   <div className="image-container-main">
                     {listing.images[0] && (
-                      <img
-                        id="image-one"
-                        src={listing.images[0].url}
-                        onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
-                        alt={listing.title}
-                      />
+                      <div className="show-all-images-container">
+                        <img
+                          id="image-one"
+                          src={listing.images[0].url}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
+                          }}
+                          alt={listing.title}
+                        />
+                        <ShowImagesButton
+                          listingId={listingId}
+                        ></ShowImagesButton>
+                      </div>
                     )}
                     <div className="image-container-right">
                       {listing.images[1] && (
                         <img
                           id="image-two"
                           src={listing.images[1].url}
-                          onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
+                          }}
                           alt={listing.title}
                         />
                       )}
@@ -96,7 +109,11 @@ function ListingDetails() {
                         <img
                           id="image-three"
                           src={listing.images[2].url}
-                          onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
+                          }}
                           alt={listing.title}
                         />
                       )}
@@ -104,7 +121,11 @@ function ListingDetails() {
                         <img
                           id="image-four"
                           src={listing.images[3].url}
-                          onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
+                          }}
                           alt={listing.title}
                         />
                       )}
@@ -112,11 +133,14 @@ function ListingDetails() {
                         <img
                           id="image-five"
                           src={listing.images[4].url}
-                          onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
+                          }}
                           alt={listing.title}
                         />
                       )}
-                      <ShowImagesButton listingId={listingId}></ShowImagesButton>
                     </div>
                   </div>
                 )}

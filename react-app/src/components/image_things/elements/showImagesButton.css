@@ -5,12 +5,42 @@
 
 .all-images-button-container {
     position: absolute;
-    right: 240px;
-    top: 420px;
+    right: -525px;
+    bottom: 12px;
 }
 
 .all-images-button {
     display: flex;
     gap: 8px;
     align-items: center;
+}
+
+.cool-button {
+    padding: 12px;
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cool-button:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+@media only screen and (max-width: 1200px) {
+    .all-images-button-container {
+        right: -255px;
+        bottom: 12px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .all-images-button-container {
+        right: 12px;
+        bottom: 12px;
+    }
 }
