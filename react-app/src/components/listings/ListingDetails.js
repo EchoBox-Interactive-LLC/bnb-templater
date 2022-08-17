@@ -8,6 +8,7 @@ import BookingCard from "../bookings/elements/BookingCard";
 import ListingUserButtons from "./Elements/ListingUserButtons";
 import FourOFour from "../404/FourOFour";
 import "./listingDetails.css";
+import ShowImagesButton from "../image_things/elements/ShowImagesButton";
 
 function ListingDetails() {
   const dispatch = useDispatch();
@@ -115,6 +116,7 @@ function ListingDetails() {
                           alt={listing.title}
                         />
                       )}
+                      <ShowImagesButton listingId={listingId}></ShowImagesButton>
                     </div>
                   </div>
                 )}

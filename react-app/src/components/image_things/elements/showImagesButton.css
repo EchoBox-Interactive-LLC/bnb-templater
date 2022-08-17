@@ -1,0 +1,16 @@
+#dial-pad-icon {
+    width: 12px;
+    height: auto;
+}
+
+.all-images-button-container {
+    position: absolute;
+    right: 19%;
+    top: 620px;
+}
+
+.all-images-button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
