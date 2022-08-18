@@ -4,7 +4,8 @@
 
 .standard-image {
     width: 500px;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
 }
 
 .delete-image-button {

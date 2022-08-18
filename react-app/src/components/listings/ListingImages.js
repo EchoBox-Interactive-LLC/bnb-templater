@@ -3,21 +3,24 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ImageCard from "../image_things/elements/ImageCard";
 import { retrieveImage } from "../../store/images";
+import { retrieveListings } from "../../store/listings";
 import "./listingImages.css";
 
 function ListingImages() {
   const { listingId } = useParams();
   const dispatch = useDispatch();
-  // Need to dispact listings or a single listing in order to get access
-  // or dispatch the images but only for a single listing, second is prop more efficient
+
+
   const images = Object.values(useSelector((state) => state.images)).filter(
     (image) => {
       return image.listing_id === +listingId;
     }
   );
+  const listing = useSelector((state) => state.listings[listingId])
 
   useEffect(() => {
     dispatch(retrieveImage());
+    dispatch(retrieveListings())
   }, [dispatch]);
 
   return (
@@ -26,7 +29,7 @@ function ListingImages() {
         {images &&
           images.map((image) => {
             return (
-             <ImageCard image={image}/>
+             <ImageCard key={image.id} image={image} listing={listing}/>
             );
           })}
       </div>
