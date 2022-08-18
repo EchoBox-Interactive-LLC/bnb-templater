@@ -177,3 +177,21 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+#delete-image-modal-top {
+  width: 365px;
+  height: 100px;
+}
+
+#delete-image-title {
+  padding: 14px 40px;
+  margin-left: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#delete-image-button {
+  padding: 10px 45px;
+  display: flex;
+  flex-wrap: wrap;
+}
