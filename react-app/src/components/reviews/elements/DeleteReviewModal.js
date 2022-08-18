@@ -18,8 +18,8 @@ function DeleteReviewModal({ setShowDeleteReviewModal, review }) {
 
   return (
     <div>
-      <div id="delete-listing-modal-top" className="modal-top">
-        <h3 id="delete-listing-title" className="modal-title">
+      <div id="delete-review-modal-top" className="modal-top">
+        <h3 id="delete-review-title" className="modal-title">
           Are you sure you want to delete your review?
         </h3>
         <button
@@ -31,7 +31,7 @@ function DeleteReviewModal({ setShowDeleteReviewModal, review }) {
         </button>
       </div>
       <div className="submit-flex">
-        <button id="delete-listing-button" className="submit-button" onClick={deleteReview}>
+        <button id="delete-review-button" className="submit-button" onClick={deleteReview}>
           Delete Review
         </button>
       </div>
