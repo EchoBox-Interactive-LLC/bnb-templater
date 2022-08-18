@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import UpdateListingForm from "../forms/UpdateListingForm";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Modal } from "../../modal/modal";
-import { useHistory } from "react-router-dom";
+import DeleteListingModal from "./DeleteListingModal";
 import CreateReviewModal from "../../reviews/elements/CreateReviewModal";
-import { removeListing } from "../../../store/listings";
 import CreateImageModal from "../../image_things/CreateImageModal";
 import "./listingUserButtons.css";
 
 function ListingUserButton({ listing, listingId }) {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  
   const user = useSelector((state) => state.session.user);
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
   const [showCreateImageModal, setShowCreateImageModal] = useState(false);
   const [userCheck, setUserCheck] = useState(false);
@@ -38,10 +37,7 @@ function ListingUserButton({ listing, listingId }) {
     setShowUpdateForm(true);
   };
 
-  const deleteListing = () => {
-    dispatch(removeListing(listingId));
-    history.push(`/`);
-  };
+  
 
   const createReview = () => {
     setShowCreateReviewModal(true);
@@ -54,11 +50,27 @@ function ListingUserButton({ listing, listingId }) {
   return (
     <div className="listing-buttons-flexbox">
       {showUpdateButton && user && listing && (
-        <button className="cool-button" onClick={updateListing}>Update Listing</button>
+        <button className="cool-button" onClick={updateListing}>
+          Update Listing
+        </button>
       )}
 
       {showDeleteButton && user && listing && (
-        <button className="cool-button" onClick={deleteListing}>Delete Listing</button>
+        <button
+          className="cool-button"
+          onClick={() => setShowDeleteModal(true)}
+        >
+          Delete Listing
+        </button>
+      )}
+
+      {showDeleteModal && user && (
+        <Modal onClose={() => setShowDeleteModal(false)}>
+          <DeleteListingModal
+            setShowDeleteModal={setShowDeleteModal}
+            listingId={listingId}
+          />
+        </Modal>
       )}
 
       {showCreateReviewModal && user && (
@@ -68,7 +80,11 @@ function ListingUserButton({ listing, listingId }) {
           />
         </Modal>
       )}
-      {user && userCheck && <button className="cool-button" onClick={createImage}>Add an Image</button>}
+      {user && userCheck && (
+        <button className="cool-button" onClick={createImage}>
+          Add an Image
+        </button>
+      )}
       {showCreateImageModal && user && userCheck && (
         <Modal onClose={() => setShowCreateImageModal(false)}>
           <CreateImageModal setShowCreateImageModal={setShowCreateImageModal} />
@@ -82,7 +98,11 @@ function ListingUserButton({ listing, listingId }) {
           />
         </Modal>
       )}
-      {user && (<button className="cool-button" onClick={createReview}>Add Review</button>)}
+      {user && (
+        <button className="cool-button" onClick={createReview}>
+          Add Review
+        </button>
+      )}
     </div>
   );
 }
