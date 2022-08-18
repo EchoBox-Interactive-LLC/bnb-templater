@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { removeReview } from "../../../store/reviews";
 import { Modal } from "../../modal/modal";
 import UpdateReviewModal from "./UpdateReviewModal";
+import DeleteReviewModal from "./DeleteReviewModal";
 import "./reviewCard.css";
 
 function ReviewCard({ review }) {
@@ -14,6 +14,7 @@ function ReviewCard({ review }) {
 
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showDeleteReviewModal, setShowDeleteReviewModal] = useState(false);
   const [showUpdateReviewModal, setShowUpdateReviewModal] = useState(false);
 
   useEffect(() => {
@@ -63,11 +64,6 @@ function ReviewCard({ review }) {
     setShowUpdateReviewModal(true);
   };
 
-  const deleteReview = () => {
-    dispatch(removeReview(review.id));
-    history.push(`/listings/${review.listing_id}`);
-  };
-
   return (
     <div className="review-card-container">
       <div className="review-heading">
@@ -89,13 +85,21 @@ function ReviewCard({ review }) {
         <button className="little-button" onClick={updateReview}>Update Review</button>
       )}
       {showDeleteButton && user && review && (
-        <button className="little-button" onClick={deleteReview}>Delete Review</button>
+        <button className="little-button" onClick={() => setShowDeleteReviewModal(true)}>Delete Review</button>
       )}
       {showUpdateReviewModal && user && (
         <Modal onClose={() => setShowUpdateReviewModal(false)}>
           <UpdateReviewModal
             setShowUpdateReviewModal={setShowUpdateReviewModal}
             reviewId={reviewId}
+          />
+        </Modal>
+      )}
+       {showDeleteReviewModal && user && (
+        <Modal onClose={() => setShowDeleteReviewModal(false)}>
+          <DeleteReviewModal
+            setShowDeleteReviewModal={setShowDeleteReviewModal}
+            review={review}
           />
         </Modal>
       )}
