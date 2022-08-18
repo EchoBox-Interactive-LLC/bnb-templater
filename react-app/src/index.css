@@ -141,3 +141,21 @@
 #update-review-button {
   padding: 10px 86px;
 }
+
+#delete-listing-modal-top {
+  width: 355px;
+  height: 100px;
+}
+
+#delete-listing-title {
+  padding: 14px 40px;
+  margin-left: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#delete-listing-button {
+  padding: 10px 45px;
+  display: flex;
+  flex-wrap: wrap;
+}
