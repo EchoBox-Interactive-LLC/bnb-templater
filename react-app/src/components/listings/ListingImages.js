@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import ImageCard from "../image_things/elements/ImageCard";
 import { retrieveImage } from "../../store/images";
 import "./listingImages.css";
 
@@ -25,11 +26,7 @@ function ListingImages() {
         {images &&
           images.map((image) => {
             return (
-              <img
-                className="standard-image"
-                src={image.url}
-                alt="listing"
-              ></img>
+             <ImageCard image={image}/>
             );
           })}
       </div>

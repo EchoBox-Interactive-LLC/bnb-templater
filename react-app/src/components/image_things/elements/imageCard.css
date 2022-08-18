@@ -1,0 +1,14 @@
+.single-image-container {
+    position: relative;
+}
+
+.standard-image {
+    width: 500px;
+    height: auto;
+}
+
+.delete-image-button {
+    position: absolute;
+    right: 6px;
+    bottom: 10px;
+}
