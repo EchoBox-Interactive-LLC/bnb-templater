@@ -5,3 +5,26 @@
     flex-wrap: wrap;
     gap: 10px;
 }
+
+.back-arrow {
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px 10px;
+    font-weight: 500;
+    position: fixed;
+    left: 7px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  #back-arrow-img {
+    width: 30px;
+    height: auto;
+  }
+  
+  .back-arrow:hover {
+    background-color: rgb(242, 242, 242);
+  }
