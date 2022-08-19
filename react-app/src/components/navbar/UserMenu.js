@@ -34,7 +34,7 @@ const UserMenu = ({ user }) => {
               Manage listings
             </button>
           </div>
-          <div>
+          <div className="user-menu-div">
             <LogoutButton />
           </div>
         </div>

@@ -1,7 +1,7 @@
 .user-menu-container {
   background-color: white;
   width: 250px;
-  height: 120px;
+  height: 125px;
   position: absolute;
   border: 1px solid transparent;
   z-index: 1;
@@ -18,7 +18,7 @@
 .user-menu-container-two {
   background-color: white;
   width: 250px;
-  height: 190px;
+  height: 180px;
   position: absolute;
   border: 1px solid transparent;
   z-index: 1;
@@ -55,7 +55,6 @@
 #manage-listings {
   font-weight: 400;
 }
-
 
 .user-menu-div {
   height: 50px;
