@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ImageCard from "../image_things/elements/ImageCard";
+import backArrow from "../../images/chevron_left.png"
 import { retrieveImage } from "../../store/images";
 import { retrieveListings } from "../../store/listings";
 import "./listingImages.css";
@@ -32,7 +33,7 @@ function ListingImages() {
     <main>
       <div>
         <button className="back-arrow" onClick={backToListing} type="button">
-          <img id="back-arrow-img" src={`https://cdn-icons.flaticon.com/png/512/2722/premium/2722991.png?token=exp=1660882024~hmac=429688992dfe166d843b79540a533fbe`} alt="back arrow"/>
+          <img id="back-arrow-img" src={backArrow} alt="back arrow"/>
         </button>
       </div>
       <div className="all-images-container">
