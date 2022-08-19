@@ -14,6 +14,7 @@ function ListingUserButton({ listing, listingId }) {
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [showUpdateButton, setShowUpdateButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showReviewButton, setShowReviewButton] = useState(true);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showCreateReviewModal, setShowCreateReviewModal] = useState(false);
   const [showCreateImageModal, setShowCreateImageModal] = useState(false);
@@ -29,6 +30,7 @@ function ListingUserButton({ listing, listingId }) {
         setShowUpdateButton(true);
         setShowDeleteButton(true);
         setUserCheck(true);
+        setShowReviewButton(false);
       }
     }
   }, [listing, user]);
@@ -36,8 +38,6 @@ function ListingUserButton({ listing, listingId }) {
   const updateListing = () => {
     setShowUpdateForm(true);
   };
-
-  
 
   const createReview = () => {
     setShowCreateReviewModal(true);
@@ -98,7 +98,7 @@ function ListingUserButton({ listing, listingId }) {
           />
         </Modal>
       )}
-      {user && (
+      {showReviewButton && user && (
         <button className="cool-button" onClick={createReview}>
           Add Review
         </button>
