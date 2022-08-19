@@ -32,6 +32,7 @@ function App() {
         <Route path="/" exact={true}>
           <Listings />
         </Route>
+        <Redirect from="/listings/:anything/listings/:listingId" to="/listings/:listingId" />
         <Redirect from="/listings/listings/:listingId" to="/listings/:listingId" />
         <Route path="/listings/:listingId" exact={true}>
           <ListingDetails />
