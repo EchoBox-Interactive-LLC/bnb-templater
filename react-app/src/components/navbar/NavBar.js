@@ -49,6 +49,14 @@ const NavBar = () => {
       history.push("/")
     }
 
+    if (e.target.innerHTML === "Trips") {
+      history.push("/trips")
+    }
+
+    if (e.target.innerHTML === "Manage listings") {
+      history.push("/my-listings")
+    }
+
     if (
       e.target.classList.contains("user-menu") ||
       e.target.classList.contains("hamburger-icon") ||
