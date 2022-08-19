@@ -24,7 +24,19 @@ const UserMenu = ({ user }) => {
       {/* Logged IN user menu buttons */}
       {user && (
         <div className="user-menu-container-two">
-          <LogoutButton />
+          <div className="user-menu-div">
+            <button type="button" className="user-menu-item">
+              Trips
+            </button>
+          </div>
+          <div className="user-menu-div" id="manage-listings-container">
+            <button id="manage-listings" type="button" className="user-menu-item">
+              Manage listings
+            </button>
+          </div>
+          <div>
+            <LogoutButton />
+          </div>
         </div>
       )}
     </div>

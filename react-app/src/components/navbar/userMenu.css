@@ -18,7 +18,7 @@
 .user-menu-container-two {
   background-color: white;
   width: 250px;
-  height: 73px;
+  height: 190px;
   position: absolute;
   border: 1px solid transparent;
   z-index: 1;
@@ -43,6 +43,16 @@
 }
 
 #sign-up {
+  font-weight: 400;
+}
+
+#manage-listings-container {
+  border-top: 1px solid rgb(209, 209, 209);
+  border-bottom: 1px solid rgb(209, 209, 209);
+  width: 252px;
+}
+
+#manage-listings {
   font-weight: 400;
 }
 
