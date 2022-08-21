@@ -60,6 +60,23 @@ export const makeBooking =
     }
   };
 
+export const retrieveBookings = () => async (dispatch) => {
+  const response = await fetch("/api/bookings/");
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(readBooking(data));
+    return data;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
 export const editBooking =
   (booking_id, listing_id, user_id, start_date, end_date, updated_at) =>
   async (dispatch) => {
@@ -91,15 +108,40 @@ export const editBooking =
     }
   };
 
-export default removeBooking = (bookingId) => async (dispatch) => {
-    const response = await fetch(`/api/bookings/${bookingId}`, {
-        method: "DELETE"
-    });
+export const removeBooking = (bookingId) => async (dispatch) => {
+  const response = await fetch(`/api/bookings/${bookingId}`, {
+    method: "DELETE",
+  });
 
-    if (response.ok) {
-        dispatch(deleteBooking(bookingId));
-    }
+  if (response.ok) {
+    dispatch(deleteBooking(bookingId));
+  }
 };
-  
 
 /***************************** REDUCER ***************************************/
+
+const initialState = {};
+
+export default function reducer(state = initialState, action) {
+  let newState = { ...state };
+  switch (action.type) {
+    case CREATE_BOOKING:
+      const booking = action.payload;
+      newState[booking.id] = booking;
+      return newState;
+    case READ_BOOKING:
+      newState = {};
+      action.payload.bookings.forEach((booking) => {
+        newState[booking.id] = booking;
+      });
+      return newState;
+    case UPDATE_BOOKING:
+      newState[action.payload.id] = action.payload;
+      return newState;
+    case DELETE_BOOKING:
+      delete newState[action.payload];
+      return newState;
+    default:
+      return state;
+  }
+}
