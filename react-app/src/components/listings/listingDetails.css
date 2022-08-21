@@ -124,6 +124,19 @@
     "description-section booking-card-section";
 }
 
+.listing-info-no-booking-card {
+  max-width: 90%;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 95%;
+  grid-template-rows: 100px 100px;
+  grid-template-areas:
+    "hosted-by-section"
+    "description-section";
+}
+
 .hosted-by-section {
   display: flex;
   height: auto;

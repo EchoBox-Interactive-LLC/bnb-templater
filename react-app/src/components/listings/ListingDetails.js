@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { retrieveListings } from "../../store/listings";
@@ -14,6 +14,7 @@ function ListingDetails() {
   const dispatch = useDispatch();
 
   const { listingId } = useParams();
+  const user = useSelector((state) => state.session.user);
   const listing = useSelector((state) => state.listings[listingId]);
   const images = useSelector((state) => state.images);
   const reviews = Object.values(useSelector((state) => state.reviews)).filter(
@@ -30,6 +31,8 @@ function ListingDetails() {
     rating = "New";
   }
 
+  const [showBookingCard, setShowBookingCard] = useState(true);
+
   useEffect(() => {
     dispatch(retrieveListings());
     window.scrollTo(0, 0);
@@ -38,6 +41,17 @@ function ListingDetails() {
   useEffect(() => {
     dispatch(retrieveReviews());
   }, [dispatch, reviews.length]);
+
+  useEffect(() => {
+    if (user && listing) {
+      if (user.id === listing.user_id) {
+        setShowBookingCard(false)
+        let bookingCardSelector = document.getElementById("booking-card-selector");
+        bookingCardSelector.classList.remove("listing-info")
+        bookingCardSelector.classList.add("listing-info-no-booking-card")
+      }
+    }
+  }, [user, listing])
 
   let reviewsContent;
   if (reviews.length === 1) {
@@ -145,7 +159,8 @@ function ListingDetails() {
                   </div>
                 )}
 
-                <div className="listing-info">
+                 {/* everything under the images */}
+                <div id="booking-card-selector" className="listing-info">
                   <div>
                     <div className="hosted-by-section">
                       {listing.user && (
@@ -177,13 +192,14 @@ function ListingDetails() {
                       />
                     </div>
                   </div>
-                  <div className="booking-card-section">
+                 {showBookingCard && (
+                 <div className="booking-card-section">
                     <BookingCard
                       listing={listing}
                       reviews={reviews}
                       rating={rating}
                     />
-                  </div>
+                  </div>)}
                 </div>
               </div>
             )}
