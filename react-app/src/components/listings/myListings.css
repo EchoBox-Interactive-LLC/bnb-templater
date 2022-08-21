@@ -10,3 +10,13 @@
     hyphens: auto !important;
     width: 85%;
   }
+
+  #no-listings {
+    margin-top: 50px;
+    font-weight: 500;
+    color: rgb(52, 52, 52);
+    word-wrap: break-all !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    width: 85%;
+  }

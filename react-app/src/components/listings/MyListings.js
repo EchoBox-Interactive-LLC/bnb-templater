@@ -33,7 +33,7 @@ function MyListings() {
     <main>
         <div className="page-container">
       <h1 id="manage-your-listings">Manage Your Listings</h1>
-     {listings ? ( 
+     {listings.length > 0 ? ( 
         <div>
         {listings.length > 0 && (
           <div className="listing-container">
@@ -48,7 +48,7 @@ function MyListings() {
             })}
           </div>
         )}
-      </div>) : <h3>You Have No Listings Yet</h3>}
+      </div>) : <h2 id="no-listings">You do not have any listings yet... Create a new listing using the "New Listing" button in the navigation bar</h2>}
       </div>
     </main>
   );
