@@ -154,7 +154,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
     setErrors([]);
 
     if (!userId) {
-      setErrors(["You must be logged in to create a listing."]);
+      setErrors(["You must be logged in to create a listing"]);
       return;
     }
 
@@ -329,24 +329,3 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
 }
 
 export default CreateListingForm;
-
-
-
-// import React from "react";
-
-// function CreateBookingForm() {
-//   return (
-//     <form>
-//       <div>
-//         <label>Check-In</label>
-//         <input type="date"></input>
-//       </div>
-//       <div>
-//         <label>Check-In</label>
-//         <input type="date"></input>
-//       </div>
-//     </form>
-//   );
-// }
-
-// export default CreateBookingForm;

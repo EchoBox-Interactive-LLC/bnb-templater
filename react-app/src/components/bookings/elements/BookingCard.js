@@ -1,4 +1,5 @@
 import React from "react";
+import CreateBookingForm from "../forms/CreateBookingForm";
 import "./bookingCard.css";
 
 function BookingCard({ listing, reviews, rating }) {
@@ -37,7 +38,7 @@ function BookingCard({ listing, reviews, rating }) {
         </div>
       </div>
       <div>
-        
+        <CreateBookingForm listing={listing} />
       </div>
       <div>
         <div className="middle-booking-section">
