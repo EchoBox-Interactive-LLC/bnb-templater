@@ -13,7 +13,19 @@ def start_date_in_future(form, field):
 def end_date_in_future(form, field):
     end_date = field.data
     if datetime(end_date) < datetime.now():
-        raise ValidationError('End date cannot be in the past')        
+        raise ValidationError('End date cannot be in the past')     
+
+
+def min_guest_num(form, field):
+    guest_num = field.data
+    if (guest_num < 1):
+        raise ValidationError('There must be a least one guest')   
+
+
+def max_guest_num(form, field):
+    guest_num = field.data
+    if (guest_num > 15):
+        raise ValidationError('More than 15 guests are not allowed')                
 
 
 class BookingForm(FlaskForm):
@@ -21,6 +33,7 @@ class BookingForm(FlaskForm):
     user_id = IntegerField('User_Id', validators=[DataRequired()])
     start_date = StringField('Start_Date', validators=[DataRequired('Start date required'), start_date_in_future])
     end_date = StringField('End_Date', validators=[DataRequired('End date required'), end_date_in_future])
+    guest_num = IntegerField('Guest_Num', validators=[DataRequired('Guest number is required'), min_guest_num, max_guest_num])
     updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
@@ -29,6 +42,7 @@ class UpdateBookingForm(FlaskForm):
     user_id = IntegerField('User_Id', validators=[DataRequired()])
     start_date = StringField('Start_Date', validators=[DataRequired('Start date required'), start_date_in_future])
     end_date = StringField('End_Date', validators=[DataRequired('End date required'), end_date_in_future])
+    guest_num = IntegerField('Guest_Num', validators=[DataRequired('Guest number is required'), min_guest_num, max_guest_num])
     updated_at = StringField('Update_At', validators=[DataRequired()])
 
 

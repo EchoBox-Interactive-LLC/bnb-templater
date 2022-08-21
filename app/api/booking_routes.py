@@ -38,6 +38,7 @@ def create_booking():
             user_id=form.data['user_id'],
             start_date=form.data['start_date'],
             end_date=form.data['end_date'],
+            guest_num=form.data['guest_num'],
             updated_at=form.data['updated_at']
         )
 
@@ -63,6 +64,7 @@ def update_booking(id):
         booking.user_id = form.data['user_id'],
         booking.start_date=form.data['start_date'],
         booking.end_date=form.data['end_date'],
+        booking.guest_num=form.data['guest_num'],
         booking.updated_at=form.data['updated_at']
 
         db.session.commit()

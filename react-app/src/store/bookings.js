@@ -30,7 +30,7 @@ const deleteBooking = (bookingId) => ({
 /***************************** THUNKS ***************************************/
 
 export const makeBooking =
-  (listing_id, user_id, start_date, end_date, updated_at) =>
+  (listing_id, user_id, start_date, end_date, guest_num, updated_at) =>
   async (dispatch) => {
     const response = await fetch("/api/bookings/", {
       method: "POST",
@@ -42,7 +42,8 @@ export const makeBooking =
         user_id,
         start_date,
         end_date,
-        updated_at,
+        guest_num,
+        updated_at
       }),
     });
 
@@ -78,7 +79,7 @@ export const retrieveBookings = () => async (dispatch) => {
 };
 
 export const editBooking =
-  (booking_id, listing_id, user_id, start_date, end_date, updated_at) =>
+  (booking_id, listing_id, user_id, start_date, end_date, guest_num, updated_at) =>
   async (dispatch) => {
     const response = await fetch(`/api/bookings/${booking_id}`, {
       method: "PUT",
@@ -90,7 +91,8 @@ export const editBooking =
         user_id,
         start_date,
         end_date,
-        updated_at,
+        guest_num,
+        updated_at
       }),
     });
 
