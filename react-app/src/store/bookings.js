@@ -28,3 +28,38 @@ const deleteBooking = (bookingId) => ({
 });
 
 /***************************** THUNKS ***************************************/
+
+export const makeBooking = (
+    listing_id,
+    user_id,
+    start_date,
+    end_date,
+    updated_at
+) => async (dispatch) => {
+    const response = await fetch("/api/bookings/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            listing_id,
+            user_id,
+            start_date,
+            end_date,
+            updated_at
+        })
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(createBooking(data));
+        return data;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data.errors;
+        }
+    } else {
+        return ["An error occurred. Please try again."]
+    }
+};
