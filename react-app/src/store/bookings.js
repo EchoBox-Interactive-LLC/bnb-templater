@@ -8,58 +8,98 @@ const DELETE_BOOKING = "booking/DELETE_BOOKING";
 /********************** ACTION CREATORS **************************/
 
 const createBooking = (booking) => ({
-    type: CREATE_BOOKING,
-    payload: booking
+  type: CREATE_BOOKING,
+  payload: booking,
 });
 
 const readBooking = (bookings) => ({
-    type: READ_BOOKING,
-    payload: bookings
+  type: READ_BOOKING,
+  payload: bookings,
 });
 
 const updateBooking = (booking) => ({
-    type: UPDATE_BOOKING,
-    payload: booking
+  type: UPDATE_BOOKING,
+  payload: booking,
 });
 
 const deleteBooking = (bookingId) => ({
-    type: DELETE_BOOKING,
-    payload: bookingId
+  type: DELETE_BOOKING,
+  payload: bookingId,
 });
 
 /***************************** THUNKS ***************************************/
 
-export const makeBooking = (
-    listing_id,
-    user_id,
-    start_date,
-    end_date,
-    updated_at
-) => async (dispatch) => {
+export const makeBooking =
+  (listing_id, user_id, start_date, end_date, updated_at) =>
+  async (dispatch) => {
     const response = await fetch("/api/bookings/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            listing_id,
-            user_id,
-            start_date,
-            end_date,
-            updated_at
-        })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        listing_id,
+        user_id,
+        start_date,
+        end_date,
+        updated_at,
+      }),
     });
 
     if (response.ok) {
-        const data = await response.json();
-        dispatch(createBooking(data));
-        return data;
+      const data = await response.json();
+      dispatch(createBooking(data));
+      return data;
     } else if (response.status < 500) {
-        const data = await response.json();
-        if (data.errors) {
-            return data.errors;
-        }
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
     } else {
-        return ["An error occurred. Please try again."]
+      return ["An error occurred. Please try again."];
+    }
+  };
+
+export const editBooking =
+  (booking_id, listing_id, user_id, start_date, end_date, updated_at) =>
+  async (dispatch) => {
+    const response = await fetch(`/api/bookings/${booking_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        listing_id,
+        user_id,
+        start_date,
+        end_date,
+        updated_at,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(updateBooking(data));
+      return data;
+    } else if (response.status < 500) {
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
+    } else {
+      return ["An error occurred. Please try again."];
+    }
+  };
+
+export default removeBooking = (bookingId) => async (dispatch) => {
+    const response = await fetch(`/api/bookings/${bookingId}`, {
+        method: "DELETE"
+    });
+
+    if (response.ok) {
+        dispatch(deleteBooking(bookingId));
     }
 };
+  
+
+/***************************** REDUCER ***************************************/
