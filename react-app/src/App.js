@@ -8,6 +8,7 @@ import Listings from "./components/listings/Listings";
 import ListingDetails from "./components/listings/ListingDetails";
 import ListingImages from "./components/listings/ListingImages";
 import MyListings from "./components/listings/MyListings";
+import Trips from "./components/bookings/Trips";
 import Footer from "./components/footer/Footer";
 import FourOFour from "./components/404/FourOFour";
 
@@ -43,6 +44,9 @@ function App() {
         </Route>
         <Route path="/my-listings" exact={true}>
           <MyListings />
+        </Route>
+        <Route path="/trips" exact={true}>
+          <Trips />
         </Route>
         <Route path="">
           <FourOFour />
