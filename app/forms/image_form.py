@@ -8,7 +8,7 @@ def url_regex(form, field):
   regex = "^(https).*(jpe?g|png)$"
 
   if (url == None):
-      raise ValidationError('Image url cannot be empty.')
+      raise ValidationError('Image url cannot be empty')
 
   if not (re.search(regex, url)):
       raise ValidationError('Image url has to start with https and must end with .jpeg .jpg or .png')
@@ -16,7 +16,7 @@ def url_regex(form, field):
 def url_length(form, field):
   url = field.data
   if len(url) > 255:
-    raise ValidationError('Image url must be 255 characters or less.')
+    raise ValidationError('Image url must be 255 characters or less')
 
 class ImageForm(FlaskForm):
   listing_id = IntegerField('Listing_Id', validators=[DataRequired()])

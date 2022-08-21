@@ -10,7 +10,7 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if user:
-        raise ValidationError('Email address is already in use.')
+        raise ValidationError('Email address is already in use')
 
 
 def username_exists(form, field):
@@ -18,7 +18,7 @@ def username_exists(form, field):
     username = field.data
     user = User.query.filter(User.username == username).first()
     if user:
-        raise ValidationError('Username is already in use.')
+        raise ValidationError('Username is already in use')
 
 
 def email_regex(form, field):
@@ -26,7 +26,7 @@ def email_regex(form, field):
   regex = ".*@.*..*"
 
   if (email == None):
-      raise ValidationError('Email field cannot be empty.')
+      raise ValidationError('Email field cannot be empty')
 
   if not (re.search(regex, email)):
       raise ValidationError('Email must be a valid email address with an "@" and a "."') 

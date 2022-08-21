@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, ValidationError
 def review_length(form, field):
   review = field.data
   if len(review) > 200:
-    raise ValidationError('Review must be 200 characters or less.')
+    raise ValidationError('Review must be 200 characters or less')
 
 
 class ReviewForm(FlaskForm):
