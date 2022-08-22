@@ -44,15 +44,29 @@ function CreateBookingForm({ listing }) {
       <form onSubmit={submit}>
         <div>
           <label htmlFor="start-date">CHECK-IN</label>
-          <input name="start-date" type="date"></input>
+          <input
+            name="start-date"
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          ></input>
         </div>
         <div>
           <label htmlFor="end-date">CHECKOUT</label>
-          <input name="end-date" type="date"></input>
+          <input
+            name="end-date"
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          ></input>
         </div>
         <div>
           <label htmlFor="guests">GUESTS</label>
-          <select name="guests" type="range">
+          <select
+            name="guests"
+            value={guestNum}
+            onChange={(e) => setGuestNum(e.target.value)}
+          >
             <option value={1}>1 guest</option>
             <option value={2}>2 guests</option>
             <option value={3}>3 guests</option>
