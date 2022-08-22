@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeBooking } from "../../../store/bookings";
@@ -15,6 +15,19 @@ function CreateBookingForm({ listing }) {
   const [guestNum, setGuestNum] = useState(1);
   const [errors, setErrors] = useState([]);
   const [errorMessages, setErrorMessages] = useState([]);
+
+  useEffect(() => {
+    // Setting error messages
+    if (errors.length > 0) {
+      let errorMsgs = errors.map((error) => {
+        return error.split(":");
+      });
+      errorMsgs = errorMsgs.map((error) => {
+        return error[1];
+      });
+      setErrorMessages(errorMsgs);
+    }
+  }, [errors]);
 
   const submit = async (e) => {
     e.preventDefault();
