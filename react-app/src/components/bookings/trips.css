@@ -1,3 +1,21 @@
+#trips-title {
+    margin: 2% 9%;
+    font-weight: 500;
+    color: rgb(52, 52, 52);
+    word-wrap: break-all !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+}
+
 .no-trips-container {
     margin: 3% 9%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#no-trips-img {
+    width: 600px;
+    height: 400px;
+    object-fit: contain;
 }

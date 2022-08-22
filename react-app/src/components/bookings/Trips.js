@@ -25,7 +25,7 @@ function Trips() {
   return (
     <main>
       <div>
-        <h1>Trips</h1>
+        <h1 id="trips-title">Trips</h1>
       </div>
 
       {/* <div>User Id: {user.id}</div> */}
@@ -48,7 +48,7 @@ function Trips() {
             </p>
           </div>
           <div>
-            <img src={noTrips} alt="family on deck"/>
+            <img id="no-trips-img" src={noTrips} alt="family on deck"/>
           </div>
         </div>
       )}
