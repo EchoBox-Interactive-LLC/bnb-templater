@@ -39,7 +39,7 @@ function CreateBookingForm({ listing }) {
     }
 
     let booking = await dispatch(
-      makeBooking(userId, listingId, startDate, endDate, guestNum, updated_at)
+      makeBooking(listingId, userId, startDate, endDate, guestNum, updated_at)
     );
 
     if (booking.id) {

@@ -6,13 +6,13 @@ from datetime import datetime
 
 def start_date_in_future(form, field):
     start_date = field.data
-    if datetime(start_date) < datetime.now():
+    if start_date < datetime.today().strftime("%Y-%m-%d"):
         raise ValidationError('Start date cannot be in the past')
 
 
 def end_date_in_future(form, field):
     end_date = field.data
-    if datetime(end_date) < datetime.now():
+    if end_date < datetime.today().strftime("%Y-%m-%d"):
         raise ValidationError('End date cannot be in the past')     
 
 
