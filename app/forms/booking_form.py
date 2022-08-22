@@ -42,7 +42,7 @@ class UpdateBookingForm(FlaskForm):
     user_id = IntegerField('User_Id', validators=[DataRequired()])
     start_date = StringField('Start_Date', validators=[DataRequired('Start date required'), start_date_in_future])
     end_date = StringField('End_Date', validators=[DataRequired('End date required'), end_date_in_future])
-    guest_num = IntegerField('Guest_Num', validators=[DataRequired('Guest number is required'), min_guest_num, max_guest_num])
+    guest_num = IntegerField('Guest_Num', validators=[DataRequired('Number of guests is required'), min_guest_num, max_guest_num])
     updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
