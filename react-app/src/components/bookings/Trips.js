@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { retrieveBookings } from "../../store/bookings";
 import noTrips from "../../images/no_trips.webp";
+import wavingHand from "../../images/waving-hand.png";
 import "./trips.css"
 
 function Trips() {
@@ -22,6 +23,10 @@ function Trips() {
     dispatch(retrieveBookings());
   }, [dispatch, bookings.length]);
 
+  const goHome = () => {
+    history.push("/")
+  }
+
   return (
     <main>
       <div>
@@ -38,16 +43,17 @@ function Trips() {
       </div>
 
       {/* If there are no bookings */}
-
       {bookings.length === 0 && (
         <div className="no-trips-container">
-          <div>
+          <div className="no-trips-left">
+            <img id="waving-hand" src={wavingHand} alt="waving hand"/>
             <h3>No trips booked... yet!</h3>
             <p>
               Time to dust off your bags and start planning your next adventure
             </p>
+            <button className="start-searching-button" onClick={goHome}>Start Searching</button>
           </div>
-          <div>
+          <div className="no-trips-right">
             <img id="no-trips-img" src={noTrips} alt="family on deck"/>
           </div>
         </div>
