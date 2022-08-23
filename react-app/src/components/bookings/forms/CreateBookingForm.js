@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeBooking } from "../../../store/bookings";
 
@@ -7,7 +7,7 @@ function CreateBookingForm({ listing }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const listingId = listing.id;
-  const userId = listing.user_id;
+  const user = useSelector((state) => state.session.user);
   const updated_at = new Date().toDateString();
 
   const [startDate, setStartDate] = useState("");
@@ -33,13 +33,13 @@ function CreateBookingForm({ listing }) {
     e.preventDefault();
     setErrors([]);
 
-    if (!userId) {
+    if (!user.id) {
       setErrors(["You must be logged in to book a listing"]);
       return;
     }
 
     let booking = await dispatch(
-      makeBooking(listingId, userId, startDate, endDate, guestNum, updated_at)
+      makeBooking(listingId, user.id, startDate, endDate, guestNum, updated_at)
     );
 
     if (booking.id) {
