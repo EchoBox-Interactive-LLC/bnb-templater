@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { retrieveBookings } from "../../store/bookings";
+import TripCard from "./elements/TripCard";
 import noTrips from "../../images/no_trips.webp";
 import wavingHand from "../../images/waving-hand.png";
 import "./trips.css"
@@ -33,12 +34,13 @@ function Trips() {
         <h1 id="trips-title">Trips</h1>
       </div>
 
-      {/* <div>User Id: {user.id}</div> */}
-
+    {/* If there are bookings */}
       <div>
-        {bookings &&
+        {bookings.length > 0 &&
           bookings.map((booking) => {
-            return <div>Check-In:{booking.start_date}</div>;
+            return <div key={booking.id}>
+              <TripCard booking={booking}/>
+            </div>;
           })}
       </div>
 

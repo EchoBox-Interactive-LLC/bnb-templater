@@ -23,7 +23,7 @@ function Listings() {
       <div>
         <div className="splash-image">
           <div className="welcome-container">
-            <h3 className="welcome">
+            <div className="welcome">
               <span id="site-welcome">Welcome to Urbnb!</span>
               <h3>
               Scroll down to checkout all listings, click on a
@@ -34,7 +34,7 @@ function Listings() {
               in user can leave a review and rating for any listing. Checkout the top right
               corner of the page to get started!
                 </h3>
-            </h3>
+            </div>
           </div>
         </div>
         {listings.length > 0 && (

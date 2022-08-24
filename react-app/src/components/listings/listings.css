@@ -8,7 +8,6 @@
 
 .splash-image {
   margin-top: -20px;
-  /* background-image: url("https://i.insider.com/62bd175269fbfd0018ee0419?width=2000&format=jpeg&auto=webp"); */
   background-image: url("https://cdn3.iguzzini.com/getmedia/341d532e-a905-49c0-84f9-336fedcf120d/mollymook02?width=1200&height=788");
   background-size: cover;
   height: 90vh;
@@ -23,7 +22,8 @@
 }
 
 #site-welcome {
-  font-size: 100px;
+  font-size: 120px;
+  font-weight: 500;
   line-height: 100px;
 }
 
@@ -35,8 +35,6 @@
   font-size: 24px;
   color: white;
   text-align: center;
-  /* background-color: rgba(79, 79, 79, 0.45); 
-  border-radius: 18px; */
 }
 
 @media only screen and (max-width: 900px) {
