@@ -48,19 +48,24 @@
     font-weight: 400;
 }
 
+#through {
+    padding-left: 22px;
+}
+
 .booking-image-container {
     grid-area: trip-image;
     position: relative;
 }
 
 #booking-image {
-    height: 350px;
+    height: 352px;
     width: auto;
     object-fit: cover;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     position: absolute;
-    right: 0px;
+    right: -1px;
+    bottom: -1px;
 }
 
 #cancel-booking-button {
@@ -71,4 +76,23 @@
 
 .thin-text {
     font-weight: 400;
+}
+
+.cancel-booking-button {
+    padding: 12px 0 12px 0px;
+    width: 120px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-booking-button:hover {
+    background-color: rgb(244, 244, 244);
 }
