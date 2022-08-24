@@ -15,7 +15,7 @@ function TripCard({ booking }) {
       {listing && (
         <div className="city">
           <h1 id="city-title">{listing.city}</h1>
-          <h4>Entire home hosted by {listing.user[0].username}</h4>
+          <h4 className="thin-text">Entire home hosted by {listing.user[0].username}</h4>
         </div>
       )}
       {booking && (
