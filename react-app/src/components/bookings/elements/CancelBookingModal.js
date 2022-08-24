@@ -9,7 +9,7 @@ function CancelBookingModal({ setShowCancelBookingModal, bookingId }) {
 
   const cancelBooking = () => {
     dispatch(removeBooking(bookingId));
-    history.push(`/`);
+    history.push(`/trips`);
   };
 
   const dontCancelBooking = () => {

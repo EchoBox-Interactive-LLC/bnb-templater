@@ -17,8 +17,6 @@ function Trips() {
     (booking) => booking.user_id === user.id
   );
 
- 
-
   if (!user) {
     history.push("/");
   }
@@ -44,7 +42,7 @@ function Trips() {
       {/* If there are bookings */}
       {bookings.length > 0 && (
         <div>
-          <h2>Upcoming reservations</h2>
+          <h2 id="upcoming-trips">Upcoming reservations</h2>
         </div>
       )}
       {bookings.length > 0 &&
