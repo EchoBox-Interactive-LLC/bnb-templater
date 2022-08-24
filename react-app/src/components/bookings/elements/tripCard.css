@@ -59,7 +59,7 @@
 
 #booking-image {
     height: 352px;
-    width: auto;
+    width: 625px;
     object-fit: cover;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -96,3 +96,101 @@
 .cancel-booking-button:hover {
     background-color: rgb(244, 244, 244);
 }
+
+@media only screen and (max-width: 1250px) {
+    .trip-card-container {
+        width: 900px;
+        height: 350px;
+    }
+
+    #through {
+        padding-left: 0px;
+    }
+
+    #booking-image {
+        height: 352px;
+        width: 425px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .trip-card-container {
+        width: 700px;
+        height: 350px;
+        grid-template-columns: 25% 25% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+        " city-hosted-by city-hosted-by trip-image"
+        "dates address trip-image";
+    }
+
+    #booking-image {
+        height: 352px;
+        width: 375px;
+    }
+
+    .booking-dates {
+        font-size: 12px;
+    }
+
+    .booking-address {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .trip-card-container {
+        width: 500px;
+        height: 350px;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+        "city-hosted-by city-hosted-by"
+        "dates address";
+    }
+
+    #booking-image {
+        display: none;
+    }
+
+    #through {
+        padding-left: 15px;
+    }
+
+    .booking-dates {
+        align-items: flex-start;
+        margin: 35px 65px 35px 55px;
+        font-size: 12px;
+    }
+
+    .booking-address {
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .city {
+        grid-area: city-hosted-by;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: 1px solid rgb(217, 217, 217);
+        margin: 0 65px 0 35px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .trip-card-container {
+        width: 325px;
+        height: 400px;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: 
+        "city-hosted-by city-hosted-by"
+        "dates address";
+    }
+
+    #through {
+        padding: 10px 0px;
+    }
+ }
