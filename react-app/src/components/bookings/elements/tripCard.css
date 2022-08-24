@@ -193,4 +193,9 @@
     #through {
         padding: 10px 0px;
     }
+
+    .booking-address {
+        align-items: center;
+        font-size: 11px;
+    }
  }

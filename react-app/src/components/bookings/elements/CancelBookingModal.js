@@ -18,8 +18,8 @@ function CancelBookingModal({ setShowCancelBookingModal, bookingId }) {
 
   return (
     <div>
-      <div id="delete-listing-modal-top" className="modal-top">
-        <h3 id="delete-listing-title" className="modal-title">
+      <div id="cancel-booking-modal-top" className="modal-top">
+        <h3 id="cancel-booking-title" className="modal-title">
           Are you sure you want to cancel your booking?
         </h3>
         <button

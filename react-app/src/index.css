@@ -154,6 +154,19 @@
   flex-wrap: wrap;
 }
 
+#cancel-booking-modal-top {
+  width: 355px;
+  height: 100px;
+}
+
+#cancel-booking-title {
+  padding: 14px 40px;
+  margin-left: 8px;
+  font-size: 23px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #delete-listing-button {
   padding: 10px 45px;
   display: flex;
