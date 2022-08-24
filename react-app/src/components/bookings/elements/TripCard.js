@@ -14,7 +14,7 @@ function TripCard({ booking }) {
     <div className="trip-card-container">
       {listing && (
         <div className="city">
-          <h1>{listing.city}</h1>
+          <h1 id="city-title">{listing.city}</h1>
           <h4>Entire home hosted by {listing.user[0].username}</h4>
         </div>
       )}

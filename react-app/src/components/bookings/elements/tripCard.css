@@ -1,6 +1,6 @@
 .trip-card-container {
     border: 1px solid rgb(243, 243, 243);
-    box-shadow: 0 3px 5px rgb(212, 209, 209);
+    box-shadow: 0 0 9px 3px rgb(212, 209, 209);
     border-radius: 15px;
     width: 1200px;
     height: 350px;
@@ -15,14 +15,35 @@
 
 .city {
     grid-area: city-hosted-by;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(217, 217, 217);
+    margin: 0 65px 0 35px;
+}
+
+#city-title {
+    padding: 6px 0px;
 }
 
 .booking-dates {
     grid-area: dates;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 1px solid rgb(217, 217, 217);
+    margin: 35px 65px 35px 35px;
 }
 
 .booking-address {
     grid-area: address;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 35px 65px 35px 0px;
 }
 
 .booking-image-container {
