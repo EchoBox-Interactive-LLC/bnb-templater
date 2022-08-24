@@ -17,6 +17,8 @@ function Trips() {
     (booking) => booking.user_id === user.id
   );
 
+ 
+
   if (!user) {
     history.push("/");
   }
