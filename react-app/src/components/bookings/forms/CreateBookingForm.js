@@ -38,17 +38,28 @@ function CreateBookingForm({ listing }) {
       return;
     }
 
-    let booking = await dispatch(
-      makeBooking(listingId, user.id, startDate, endDate, guestNum, updated_at)
-    );
+    if (endDate > startDate) {
+      let booking = await dispatch(
+        makeBooking(
+          listingId,
+          user.id,
+          startDate,
+          endDate,
+          guestNum,
+          updated_at
+        )
+      );
 
-    if (booking.id) {
-      history.push(`/trips`);
-      return;
-    }
+      if (booking.id) {
+        history.push(`/trips`);
+        return;
+      }
 
-    if (Array.isArray(booking)) {
-      setErrors(booking);
+      if (Array.isArray(booking)) {
+        setErrors(booking);
+      }
+    } else {
+      setErrors(["End Date: The end date must be after the start date"]);
     }
   };
 
