@@ -34,8 +34,8 @@ function TripCard({ booking }) {
         </div>
       )}
       {listing && (
-        <div className="booking-image">
-          <img
+        <div className="booking-image-container">
+          <img id="booking-image"
             src={listing.images[0].url}
             onError={(e) => {
               e.target.onerror = null;
