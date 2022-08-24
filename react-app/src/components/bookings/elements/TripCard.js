@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "../../modal/modal";
 import CancelBookingModal from "./CancelBookingModal";
+import "./tripCard.css";
 
 function TripCard({ booking }) {
   const listing = useSelector((state) => state.listings[booking.listing_id]);
@@ -10,21 +11,21 @@ function TripCard({ booking }) {
   const [showCancelBookingModal, setShowCancelBookingModal] = useState(false);
 
   return (
-    <div>
+    <div className="trip-card-container">
       {listing && (
-        <div>
+        <div className="city">
           <h1>{listing.city}</h1>
           <h4>Entire home hosted by {listing.user[0].username}</h4>
         </div>
       )}
       {booking && (
-        <div>
+        <div className="booking-dates">
           <h3>{booking.start_date}</h3>
           <h3>{booking.end_date}</h3>
         </div>
       )}
       {listing && (
-        <div>
+        <div className="booking-address">
           <h3>{listing.address}</h3>
           <h3>
             {listing.city}, {listing.state}
@@ -33,7 +34,7 @@ function TripCard({ booking }) {
         </div>
       )}
       {listing && (
-        <div>
+        <div className="booking-image">
           <img
             src={listing.images[0].url}
             onError={(e) => {
@@ -43,7 +44,7 @@ function TripCard({ booking }) {
             }}
             alt={listing.title}
           />
-          <button onClick={() => setShowCancelBookingModal(true)}>Cancel Booking</button>
+          <button id="cancel-booking-button" onClick={() => setShowCancelBookingModal(true)}>Cancel Booking</button>
         </div>
       )}
        {showCancelBookingModal && (
