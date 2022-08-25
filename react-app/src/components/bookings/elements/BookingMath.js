@@ -55,6 +55,9 @@ function BookingMath({ listing, startDate, endDate }) {
       {user && (<div id="wont-be-charged">
         <p>You won't be charged yet</p>
       </div>)}
+      {!user && (<div id="sign-up-to-book">
+        <h4>Log in or sign up to book</h4>
+      </div>)}
       <div className="middle-booking-section">
         <div className="fee">
           <p>

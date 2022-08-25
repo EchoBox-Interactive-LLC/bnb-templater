@@ -46,6 +46,13 @@
     margin-top: -12px;
 }
 
+#sign-up-to-book {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
 .middle-booking-section {
     display: flex;
     flex-wrap: wrap;
