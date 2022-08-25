@@ -17,8 +17,8 @@ function CreateBookingForm({ listing }) {
   const [errorMessages, setErrorMessages] = useState([]);
 
   useEffect(() => {
-    // Setting error messages
     if (errors.length > 0) {
+      // Setting error messages
       let errorMsgs = errors.map((error) => {
         return error.split(":");
       });
@@ -26,6 +26,62 @@ function CreateBookingForm({ listing }) {
         return error[1];
       });
       setErrorMessages(errorMsgs);
+
+      // Parsing out error titles
+      let errorTitles = errors.map((error) => {
+        return error.split(":");
+      });
+      errorTitles = errorTitles.map((error) => {
+        return error[0];
+      });
+
+      // Clear all CSS errors styles on each submit
+      let startDateClassRemove = document.getElementById(
+        "start-date-error-box"
+      );
+      startDateClassRemove.classList.remove("input-field-error");
+      let startDateLabelClassRemove = document.getElementById(
+        "start-date-label-create-booking"
+      );
+      startDateLabelClassRemove.classList.remove("input-label-error");
+      let endDateClassRemove = document.getElementById("end-date-error-box");
+      endDateClassRemove.classList.remove("input-field-error");
+      let endDateLabelClassRemove = document.getElementById(
+        "end-date-label-create-booking"
+      );
+      endDateLabelClassRemove.classList.remove("input-label-error");
+      let guestsClassRemove = document.getElementById("guest-error-box");
+      guestsClassRemove.classList.remove("input-field-error");
+      let guestsLabelClassRemove = document.getElementById(
+        "guests-label-create-booking"
+      );
+      guestsLabelClassRemove.classList.remove("input-label-error");
+
+      // Set and/or Reset error CSS styles
+      for (const errorTitle of errorTitles) {
+        if (errorTitle === "Start_Date") {
+          let startDateClassAdd = document.getElementById("start-date-error-box");
+          startDateClassAdd.classList.add("input-field-error");
+          let startDateLabelClassAdd = document.getElementById(
+            "start-date-label-create-booking"
+          );
+          startDateLabelClassAdd.classList.add("input-label-error");
+        } else if (errorTitle === "End_Date") {
+          let endDateClassAdd = document.getElementById("end-date-error-box");
+          endDateClassAdd.classList.add("input-field-error");
+          let endDateLabelClassAdd = document.getElementById(
+            "end-date-label-create-booking"
+          );
+          endDateLabelClassAdd.classList.add("input-label-error");
+        } else if (errorTitle === "Guest_Num") {
+          let guestNumClassAdd = document.getElementById("guest-num-error-box");
+          guestNumClassAdd.classList.add("input-field-error");
+          let guestNumLabelClassAdd = document.getElementById(
+            "guest-num-label-create-booking"
+          );
+          guestNumLabelClassAdd.classList.add("input-label-error");
+        }
+      }
     }
   }, [errors]);
 
