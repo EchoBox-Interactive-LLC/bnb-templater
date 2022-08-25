@@ -187,13 +187,13 @@ function CreateBookingForm({ listing }) {
           ))}
         </div>
         <div className="submit-flex">
-          <button
+         {user && (<button
             className="submit-button"
             id="create-booking-button"
             type="submit"
           >
             Reserve
-          </button>
+          </button>)}
         </div>
       </form>
       <BookingMath listing={listing} startDate={startDate} endDate={endDate}/>

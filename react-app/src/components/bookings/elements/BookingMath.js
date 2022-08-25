@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import dayjs from 'dayjs'
 
 function BookingMath({ listing, startDate, endDate }) {
+  const user = useSelector((state) => state.session.user)
 
 // Calc for how many nights
     let nights = 1;
@@ -50,9 +52,9 @@ function BookingMath({ listing, startDate, endDate }) {
 
   return (
     <div>
-      <div id="wont-be-charged">
+      {user && (<div id="wont-be-charged">
         <p>You won't be charged yet</p>
-      </div>
+      </div>)}
       <div className="middle-booking-section">
         <div className="fee">
           <p>
