@@ -1,11 +1,24 @@
 import React from "react";
+import dayjs from 'dayjs'
 
 function BookingMath({ listing, startDate, endDate }) {
 
+// Calc for how many nights
+    let nights = 1;
   const howManyNights = () => {
-    let nights = 4;
-    console.log(startDate)
-    console.log(endDate)
+    if(!startDate) {
+       return nights = 1;
+    } else if (!endDate) {
+       return nights = 1;
+    } else if (!startDate && !endDate) {
+       return nights = 1;
+    }
+
+    const dateStart = dayjs(startDate)
+    const dateEnd = dayjs(endDate)
+
+    nights = dateEnd.diff(dateStart, 'day')
+
     return nights;
   }
 
@@ -15,8 +28,9 @@ function BookingMath({ listing, startDate, endDate }) {
      allNightsCost = listing.price * howManyNights();
    }
 
+   // Set night and/nights on booking card
   let numNightsContent;
-  if (1 === 1) {
+  if (nights === 1) {
     numNightsContent = " night";
   } else {
     numNightsContent = " nights";
