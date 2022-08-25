@@ -35,6 +35,8 @@ function CreateBookingForm({ listing }) {
         return error[0];
       });
 
+      console.log(errorTitles)
+
       // Clear all CSS errors styles on each submit
       let startDateClassRemove = document.getElementById(
         "start-date-error-box"
@@ -50,16 +52,16 @@ function CreateBookingForm({ listing }) {
         "end-date-label-create-booking"
       );
       endDateLabelClassRemove.classList.remove("input-label-error");
-      let guestsClassRemove = document.getElementById("guest-error-box");
+      let guestsClassRemove = document.getElementById("guest-num-error-box");
       guestsClassRemove.classList.remove("input-field-error");
       let guestsLabelClassRemove = document.getElementById(
-        "guests-label-create-booking"
+        "guest-num-label-create-booking"
       );
       guestsLabelClassRemove.classList.remove("input-label-error");
 
       // Set and/or Reset error CSS styles
       for (const errorTitle of errorTitles) {
-        if (errorTitle === "Start_Date") {
+        if (errorTitle === "Start_date") {
           let startDateClassAdd = document.getElementById("start-date-error-box");
           startDateClassAdd.classList.add("input-field-error");
           let startDateLabelClassAdd = document.getElementById(
@@ -125,9 +127,10 @@ function CreateBookingForm({ listing }) {
         <div>
           <div className="booking-inputs-container">
             <div className="input-label">
-              <label htmlFor="start-date">CHECK-IN (Required)</label>
+              <label id="start-date-label-create-booking" htmlFor="start-date">CHECK-IN (Required)</label>
             </div>
             <input
+              id="start-date-error-box"
               className="input-field"
               name="start-date"
               type="date"
@@ -137,9 +140,10 @@ function CreateBookingForm({ listing }) {
           </div>
           <div>
             <div className="input-label">
-              <label htmlFor="end-date">CHECKOUT (Required)</label>
+              <label id="end-date-label-create-booking" htmlFor="end-date">CHECKOUT (Required)</label>
             </div>
             <input
+              id="end-date-error-box"
               className="input-field"
               name="end-date"
               type="date"
@@ -149,9 +153,10 @@ function CreateBookingForm({ listing }) {
           </div>
           <div>
             <div className="input-label">
-              <label htmlFor="guests">GUESTS (Required)</label>
+              <label id="guest-num-label-create-booking" htmlFor="guests">GUESTS (Required)</label>
             </div>
             <select
+              id="guest-num-error-box"
               className="input-field-select"
               name="guests"
               value={guestNum}
