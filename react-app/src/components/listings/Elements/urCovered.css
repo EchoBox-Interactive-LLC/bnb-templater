@@ -1,0 +1,18 @@
+.urcovered-container {
+    border-top: 1px solid rgb(209, 209, 209);
+    margin-top: 330px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   justify-content: space-around;
+   padding: 10px 0;
+}
+
+.colored-span {
+    color: #FF385C
+}
+
+.urcovered-title {
+    font-size: 40px;
+}

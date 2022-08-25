@@ -6,6 +6,7 @@ import { retrieveReviews } from "../../store/reviews";
 import ReviewCard from "../reviews/elements/ReviewCard";
 import BookingCard from "../bookings/elements/BookingCard";
 import ListingUserButtons from "./Elements/ListingUserButtons";
+import UrCovered from "./Elements/UrCovered";
 import FourOFour from "../404/FourOFour";
 import "./listingDetails.css";
 import ShowImagesButton from "../image_things/elements/ShowImagesButton";
@@ -192,6 +193,7 @@ function ListingDetails() {
                       />
                     </div>
                   </div>
+                  <UrCovered />
                  {showBookingCard && (
                  <div className="booking-card-section">
                     <BookingCard

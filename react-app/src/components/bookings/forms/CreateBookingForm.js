@@ -68,7 +68,7 @@ function CreateBookingForm({ listing }) {
             "start-date-label-create-booking"
           );
           startDateLabelClassAdd.classList.add("input-label-error");
-        } else if (errorTitle === "End_Date") {
+        } else if (errorTitle === "End_Date" || errorTitle === "End_date" ) {
           let endDateClassAdd = document.getElementById("end-date-error-box");
           endDateClassAdd.classList.add("input-field-error");
           let endDateLabelClassAdd = document.getElementById(
