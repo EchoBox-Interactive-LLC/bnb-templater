@@ -1,15 +1,16 @@
 .booking-card-container {
-    height: 580px;
+    height: 520px;
     border: 1px solid  rgb(209, 209, 209);
     border-radius: 15px;
     box-shadow: 0 3px 5px rgb(212, 209, 209);
     padding: 18px 22px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 8px;
     contain: content;
     max-width: 375px;
-    margin-top: 270px;
+    margin-top: 10px;
+    overflow-y: scroll;
 }
 
 .top-booking-section {
