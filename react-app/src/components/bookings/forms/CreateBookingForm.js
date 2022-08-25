@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeBooking } from "../../../store/bookings";
+import BookingMath from "../elements/BookingMath";
 
 function CreateBookingForm({ listing }) {
   const dispatch = useDispatch();
@@ -195,6 +196,7 @@ function CreateBookingForm({ listing }) {
           </button>
         </div>
       </form>
+      <BookingMath listing={listing} startDate={startDate} endDate={endDate}/>
     </div>
   );
 }

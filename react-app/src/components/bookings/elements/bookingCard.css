@@ -39,6 +39,13 @@
     font-size: 15px;
 }
 
+#wont-be-charged {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin-top: -12px;
+}
+
 .middle-booking-section {
     display: flex;
     flex-wrap: wrap;
