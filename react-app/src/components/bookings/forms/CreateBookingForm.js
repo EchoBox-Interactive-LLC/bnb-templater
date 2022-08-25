@@ -35,8 +35,6 @@ function CreateBookingForm({ listing }) {
         return error[0];
       });
 
-      console.log(errorTitles)
-
       // Clear all CSS errors styles on each submit
       let startDateClassRemove = document.getElementById(
         "start-date-error-box"

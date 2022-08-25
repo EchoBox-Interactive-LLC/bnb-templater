@@ -33,6 +33,7 @@ function ListingDetails() {
   }
 
   const [showBookingCard, setShowBookingCard] = useState(true);
+  const [showUrcovered, setShowUrcovered] = useState(true);
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -46,13 +47,16 @@ function ListingDetails() {
   useEffect(() => {
     if (user && listing) {
       if (user.id === listing.user_id) {
-        setShowBookingCard(false)
-        let bookingCardSelector = document.getElementById("booking-card-selector");
-        bookingCardSelector.classList.remove("listing-info")
-        bookingCardSelector.classList.add("listing-info-no-booking-card")
+        setShowBookingCard(false);
+        setShowUrcovered(false);
+        let bookingCardSelector = document.getElementById(
+          "booking-card-selector"
+        );
+        bookingCardSelector.classList.remove("listing-info");
+        bookingCardSelector.classList.add("listing-info-no-booking-card");
       }
     }
-  }, [user, listing])
+  }, [user, listing]);
 
   let reviewsContent;
   if (reviews.length === 1) {
@@ -102,9 +106,7 @@ function ListingDetails() {
                           }}
                           alt={listing.title}
                         />
-                        <ShowImagesButton
-                          listing={listing}
-                        ></ShowImagesButton>
+                        <ShowImagesButton listing={listing}></ShowImagesButton>
                       </div>
                     )}
                     <div className="image-container-right">
@@ -160,7 +162,7 @@ function ListingDetails() {
                   </div>
                 )}
 
-                 {/* everything under the images */}
+                {/* everything under the images */}
                 <div id="booking-card-selector" className="listing-info">
                   <div>
                     <div className="hosted-by-section">
@@ -193,22 +195,28 @@ function ListingDetails() {
                       />
                     </div>
                   </div>
-                  <UrCovered />
-                 {showBookingCard && (
-                 <div className="booking-card-section">
-                    <BookingCard
-                      listing={listing}
-                      reviews={reviews}
-                      rating={rating}
-                    />
-                  </div>)}
+                  {showUrcovered && (
+                      <UrCovered />
+                  )}
+                  {showBookingCard && (
+                    <div className="booking-card-section">
+                      <BookingCard
+                        listing={listing}
+                        reviews={reviews}
+                        rating={rating}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             )}
 
             {/* this is the reviews section */}
             {reviews.length > 0 && (
-              <div className="reviews-container">
+              <div
+                id="reviews-container-selector"
+                className="reviews-container"
+              >
                 <div className="reviews-section-title">
                   <div id="rating-title">⭑ {rating}</div>
                   <div>
