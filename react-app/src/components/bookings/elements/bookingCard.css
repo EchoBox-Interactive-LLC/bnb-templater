@@ -1,86 +1,86 @@
 .booking-card-container {
-    height: 500px;
-    border: 1px solid  rgb(209, 209, 209);
-    border-radius: 15px;
-    box-shadow: 0 3px 5px rgb(212, 209, 209);
-    padding: 18px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    contain: content;
-    max-width: 375px;
-    min-width: 300px;
-    margin-top: 10px;
-    overflow-y: scroll;
+  height: 500px;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 15px;
+  box-shadow: 0 3px 5px rgb(212, 209, 209);
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  contain: content;
+  max-width: 375px;
+  min-width: 300px;
+  margin-top: 10px;
+  overflow-y: scroll;
 }
 
 .top-booking-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .booking-card-right {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 #rating {
-    font-size: 15px;
-    padding-right: 5px;
+  font-size: 15px;
+  padding-right: 5px;
 }
 
 #night-price > span {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #reviews-num {
-    display: flex;
-    font-size: 15px;
+  display: flex;
+  font-size: 15px;
 }
 
 #wont-be-charged {
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    margin-top: -12px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin-top: -12px;
 }
 
 #sign-up-to-book {
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    margin: 25px 0px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
 }
 
 .middle-booking-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .fee {
-    font-size: 15px;
-    padding: 7px 0;
+  font-size: 15px;
+  padding: 7px 0;
 }
 
 .service-fee {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2px 2px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px 2px;
 }
 
 .total-booking-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 1px solid  rgb(209, 209, 209);
-    padding: 25px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid rgb(209, 209, 209);
+  padding: 25px 0 10px 0;
 }
 
 #total-fee {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* @media only screen and (max-width: 850px) {
@@ -90,3 +90,9 @@
         margin-bottom: 60px;
     }
 } */
+
+@media only screen and (max-width: 470px) {
+  .booking-card-container {
+    margin-left: -58px;
+  }
+}

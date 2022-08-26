@@ -23,3 +23,11 @@
     padding: 10px 0px 40px 0px;
   }
 }
+
+@media only screen and (max-width: 470px) {
+  .urcovered-container {
+    height: 200px;
+    margin-top: 430px;
+    margin-bottom: 130px;
+  }
+}

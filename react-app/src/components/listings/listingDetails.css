@@ -344,9 +344,21 @@
 
 @media only screen and (max-width: 670px) {
   #image-one {
-    width: 400px;
+    width: 450px;
     height: 400px;
     object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  #image-one {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .image-container-main {
+    margin-bottom: 0px;
   }
 }
 
