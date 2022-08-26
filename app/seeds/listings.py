@@ -18,16 +18,16 @@ def seed_listings():
         user_id=2, title='South Lake Tahoe Home', description="Near Stateline and all the fun actitivies. Would be an incredible place to stay if you are looking for some fun night life! Also close to Heavenly.",
         address="4042 Sunrise Ln", city="South Lake Tahoe", state="California", country="USA", price=375.00, updated_at='Fri Aug 05 2022')
     listing6 = Listing(
-        user_id=3, title='Tahoe Dreaming', description="Enjoy this stylish Tahoe Cabin during your next vacation. Blah blah blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah.",
+        user_id=3, title='Tahoe Dreaming', description="Enjoy this stylish Tahoe Cabin during your next vacation. One of kind! Incredible views, close to town but very private. Come live your Tahoe dream!",
         address="4140 Cedar Ave", city="South Lake Tahoe", state="California", country="USA", price=300.00, updated_at='Fri Aug 05 2022')
     listing7 = Listing(
-        user_id=3, title='Los Angeles Views', description="A masterpiece in the heart of The Beverly Hills",
+        user_id=3, title='Los Angeles Views', description="A masterpiece in the heart of The Beverly Hills. A view of a life time. Come check it out!",
         address="513 N Bedford Dr", city="Beverly Hills", state="California", country="USA", price=990.00, updated_at='Fri Aug 05 2022')
     listing8 = Listing(
-        user_id=3, title="Modern Beach Home in Portland", description="Enjoy a perfect vacation in Maine",
+        user_id=3, title="Modern Beach Home in Portland", description="Enjoy a perfect vacation in Maine. Guarantee to find peace.... or your money back.",
         address="23 Maple Street", city="Portland", state="Maine", country="USA", price=290.00, updated_at='Fri Aug 05 2022')
     listing9 = Listing(
-        user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit",
+        user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit. Right across the river from NYC! Come visit and live the big city dream.",
         address="304 Thornton Ct", city="Edgewater", state="New Jersey", country="USA", price=290.00, updated_at='Fri Aug 05 2022')    
 
 
