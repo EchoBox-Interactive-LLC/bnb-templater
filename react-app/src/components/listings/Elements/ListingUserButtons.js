@@ -50,7 +50,7 @@ function ListingUserButton({ listing, listingId }) {
     <main>
       <div className="listing-buttons-flexbox">
         {!user && (<div>
-          <h2>Log in or sign up to write review!</h2>
+          <h2>Log in or sign up to write a review!</h2>
         </div>)}
         {showUpdateButton && user && listing && (
           <button className="cool-button" onClick={updateListing}>
