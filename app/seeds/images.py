@@ -94,7 +94,37 @@ def seed_images():
       image25 = Image(
           listing_id=9, url="https://images2.dwell.com/photos/6488407258118639616/6572030162906484736/original.jpg?auto=format&q=35&w=1920")
       image26 = Image(
-          listing_id=9, url="https://images.milledcdn.com/2019-12-08/O1siF4jxClB_hni7/ofHMnFT7eMjW.jpg")    
+          listing_id=9, url="https://images.milledcdn.com/2019-12-08/O1siF4jxClB_hni7/ofHMnFT7eMjW.jpg")
+      image47 = Image(
+          listing_id=10, url="https://images2.dwell.com/photos/6953791660823719936/6957379482825887744/original.jpg?auto=format&q=35&w=1920")          
+      image48 = Image(
+          listing_id=10, url="https://images2.dwell.com/photos/6953791660823719936/6957379588396199936/original.jpg?auto=format&q=35&w=1920")          
+      image49 = Image(
+          listing_id=10, url="https://images2.dwell.com/photos/6953791660823719936/6957379851759546368/original.jpg?auto=format&q=35&w=1920")          
+      image50 = Image(
+          listing_id=10, url="https://images2.dwell.com/photos/6953791660823719936/6957379761699282944/original.jpg?auto=format&q=35&w=1920")          
+      image51 = Image(
+          listing_id=10, url="https://images2.dwell.com/photos/6953791660823719936/6957379973859708928/original.jpg?auto=format&q=35&w=1920")          
+      image52 = Image(
+          listing_id=11, url="https://images2.dwell.com/photos/6954682352555810816/6955837202523439104/original.jpg?auto=format&q=35&w=1920")          
+      image53 = Image(
+          listing_id=11, url="https://images2.dwell.com/photos/6954682352555810816/6955837214700032000/original.jpg?auto=format&q=35&w=1920")          
+      image54 = Image(
+          listing_id=11, url="https://images2.dwell.com/photos/6954682352555810816/6955837207711584256/original.jpg?auto=format&q=35&w=1920")          
+      image55 = Image(
+          listing_id=11, url="https://images2.dwell.com/photos/6954682352555810816/6955837215508795392/original.jpg?auto=format&q=35&w=1920")          
+      image56 = Image(
+          listing_id=11, url="https://images2.dwell.com/photos/6954682352555810816/6955837406437289984/original.jpg?auto=format&q=35&w=1920")          
+      image57 = Image(
+          listing_id=12, url="https://images2.dwell.com/photos/6956030399836733440/6956030905202425856/original.jpg?auto=format&q=35&w=1920")          
+      image58 = Image(
+          listing_id=12, url="https://images2.dwell.com/photos/6956030399836733440/6956030944043810816/original.jpg?auto=format&q=35&w=1920")          
+      image59 = Image(
+          listing_id=12, url="https://images2.dwell.com/photos/6956030399836733440/6956030929900617728/original.jpg?auto=format&q=35&w=1920")          
+      image60 = Image(
+          listing_id=12, url="https://images2.dwell.com/photos/6956030399836733440/6956030962824585216/original.jpg?auto=format&q=35&w=1920")          
+      image61 = Image(
+          listing_id=12, url="https://images2.dwell.com/photos/6956030399836733440/6956030895996743680/original.jpg?auto=format&q=35&w=1920")          
       
 
       db.session.add(image1)
@@ -143,6 +173,21 @@ def seed_images():
       db.session.add(image44)
       db.session.add(image45)
       db.session.add(image46)
+      db.session.add(image47)
+      db.session.add(image48)
+      db.session.add(image49)
+      db.session.add(image50)
+      db.session.add(image51)
+      db.session.add(image52)
+      db.session.add(image53)
+      db.session.add(image54)
+      db.session.add(image55)
+      db.session.add(image56)
+      db.session.add(image57)
+      db.session.add(image58)
+      db.session.add(image59)
+      db.session.add(image60)
+      db.session.add(image61)
 
 
       db.session.commit()

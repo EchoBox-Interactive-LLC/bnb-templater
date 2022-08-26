@@ -29,6 +29,15 @@ def seed_listings():
     listing9 = Listing(
         user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit. Right across the river from NYC! Come visit and live the big city dream.",
         address="304 Thornton Ct", city="Edgewater", state="New Jersey", country="USA", price=290.00, updated_at='Fri Aug 05 2022')    
+    listing10 = Listing(
+        user_id=4, title='Moody and lovely', description="Recently remodeled and ready for visitors. This place is in a quite suburb ready for anyone seeking a relaxing vacation.",
+        address="6824 W Forest Lawn Rd", city="Three Oaks", state="Michigan", country="USA", price=180.00, updated_at='Wed Aug 10 2022')    
+    listing11 = Listing(
+        user_id=5, title='Remodeled Original Eichler', description="Recently remodeled original Eichler. This is a one of a kind experience. 20 minutes north of San Francisco located in Marin County.",
+        address="740 Bamboo Terrace", city="San Rafael", state="California", country="USA", price=320.00, updated_at='Wed Aug 10 2022')    
+    listing12 = Listing(
+        user_id=4, title='Patio House', description="Very special house for a special get away located in the one and only San Sebastián. There is no way that anyone could be dissapointed.",
+        address="412 Juárez Calle", city="San Sebastián", state="Jalisco", country="Mexico", price=280.00, updated_at='Wed Aug 10 2022')    
 
 
     db.session.add(listing1)
@@ -40,6 +49,9 @@ def seed_listings():
     db.session.add(listing7)
     db.session.add(listing8)
     db.session.add(listing9)
+    db.session.add(listing10)
+    db.session.add(listing11)
+    db.session.add(listing12)
 
 
     db.session.commit()
