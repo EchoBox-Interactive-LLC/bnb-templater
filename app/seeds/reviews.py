@@ -32,7 +32,7 @@ def seed_reviews():
     rating=5, updated_at='Wed Aug 10 2022'
   )
   review8 = Review(
-    user_id=2, listing_id=7, review="Not much to say about this one. You can tell that is in the best Urbnb of all time. We spent a week here visiting from the East Coast and we have decided, we are going to move! I guess its true, the West Coast is the best coast.",
+    user_id=2, listing_id=7, review="Not much to say about this one. You can tell that is in the best Urbnb of all time. We spent a week here visiting from the East Coast and we have decided, the West Coast is the best coast.",
     rating=5, updated_at='Wed Aug 10 2022'
   )
   review9 = Review(
@@ -40,7 +40,7 @@ def seed_reviews():
     rating=4, updated_at='Wed Aug 10 2022'
   )
   review10 = Review(
-    user_id=3, listing_id=9, review="The pictures make it look better than it really is. The city is prety far and hard to get to from this location. The place is nice and pretty sweet but if you are there to visit NYC, it might be better to stay somewhere else.",
+    user_id=3, listing_id=9, review="The pictures make it look better than it really is. The city is prety far and hard to get to from this location. The place is nice and pretty cute though.",
     rating=2, updated_at='Wed Aug 10 2022'
   )
   review11 = Review(
