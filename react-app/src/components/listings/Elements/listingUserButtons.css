@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 2px;
 }
 
 .cool-button {
@@ -36,6 +36,9 @@
     }
 }
 
-@media only screen and (max-width: 440px) {
-   
+@media only screen and (max-width: 800px) {
+    .listing-buttons-flexbox {
+        margin-top: -28px;
+    }
 }
+

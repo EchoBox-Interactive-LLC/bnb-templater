@@ -24,10 +24,35 @@
   }
 }
 
+@media only screen and (max-width: 575px) {
+  .urcovered-container {
+    height: 200px;
+    margin-top: 550px;
+    margin-bottom: 130px;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .urcovered-container {
+    height: 200px;
+    margin-top: 775px;
+    margin-bottom: 350px;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .urcovered-container {
+    height: 200px;
+    margin-top: 805px;
+    margin-bottom: 400px;
+  }
+
+}
+
 @media only screen and (max-width: 470px) {
   .urcovered-container {
     height: 200px;
-    margin-top: 430px;
-    margin-bottom: 130px;
+    margin-top: 805px;
+    margin-bottom: 400px;
   }
 }
