@@ -16,11 +16,13 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
   const [price, setPrice] = useState("");
+  const [cleaningFee, setCleaningFee] = useState("");
   const [errors, setErrors] = useState([]);
   const [errorMessages, setErrorMessages] = useState([]);
 
@@ -59,6 +61,14 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           "description-label-create-listing"
         );
         descriptionLabelClassRemove.classList.remove("input-label-error");
+        let categoryClassRemove = document.getElementById(
+          "category-error-box"
+        );
+        categoryClassRemove.classList.remove("input-field-error");
+        let categoryLabelClassRemove = document.getElementById(
+          "category-label-create-listing"
+        );
+        categoryLabelClassRemove.classList.remove("input-label-error");
         let addressClassRemove = document.getElementById("address-error-box");
         addressClassRemove.classList.remove("input-field-error");
         let addressLabelClassRemove = document.getElementById(
@@ -89,6 +99,12 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           "price-label-create-listing"
         );
         priceLabelClassRemove.classList.remove("input-label-error");
+        let cleaningFeeClassRemove = document.getElementById("cleaing-fee-error-box");
+        cleaningFeeClassRemove.classList.remove("input-field-error");
+        let cleaningFeeLabelClassRemove = document.getElementById(
+          "cleaning-fee-label-create-listing"
+        );
+        cleaningFeeLabelClassRemove.classList.remove("input-label-error");
 
         // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
@@ -108,6 +124,15 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
               "description-label-create-listing"
             );
             descriptionLabelClassAdd.classList.add("input-label-error");
+          } else if (errorTitle === "Category") {
+            let categoryClassAdd = document.getElementById(
+              "category-error-box"
+            );
+            categoryClassAdd.classList.add("input-field-error");
+            let categoryLabelClassAdd = document.getElementById(
+              "category-label-create-listing"
+            );
+            categoryLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Address") {
             let addressClassAdd = document.getElementById("address-error-box");
             addressClassAdd.classList.add("input-field-error");
@@ -143,6 +168,13 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
               "price-label-create-listing"
             );
             priceLabelClassAdd.classList.add("input-label-error");
+          } else if (errorTitle === "Cleaning Fee") {
+            let cleaningFeeClassAdd = document.getElementById("cleaning-fee-error-box");
+            cleaningFeeClassAdd.classList.add("input-field-error");
+            let cleaningFeeLabelClassAdd = document.getElementById(
+              "cleaning-fee-label-create-listing"
+            );
+            cleaningFeeLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -163,11 +195,13 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
         userId,
         title,
         description,
+        category,
         address,
         city,
         state,
         country,
         price,
+        cleaningFee,
         updated_at
       )
     );
@@ -231,6 +265,35 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
+          </div>
+          <div>
+            <div className="input-label">
+              <label id="category-label-create-listing">
+                Category (Required)
+              </label>
+            </div>
+            <select
+              id="category-error-box"
+              className="input-field-select"
+              placeholder="Category"
+              name="category"
+              type="text"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="A Frame">A Frame</option>
+              <option value="Amazing Pools">Amazing Pools</option>
+              <option value="Arctic">Arctic</option>
+              <option value="Beach">Beach</option>
+              <option value="Cabin">Cabin</option>
+              <option value="Camping">Camping</option>
+              <option value="Design">Design</option>
+              <option value="Islands">Islands</option>
+              <option value="Lake">Lake</option>
+              <option value="National Park">National Park</option>
+              <option value="OMG!">OMG!</option>
+              <option value="Tiny Home">Tiny Home</option>
+            </select>
           </div>
           <div>
             <div className="input-label">
@@ -303,6 +366,20 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
               name="price"
               type="number"
               value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
+          <div>
+            <div className="input-label">
+              <label id="cleaning-fee-label-create-listing">Cleaning Fee (Required)</label>
+            </div>
+            <input
+              id="cleaning-fee-error-box"
+              className="input-field"
+              placeholder="Cleaning Fee"
+              name="cleaning fee"
+              type="number"
+              value={cleaningFee}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
