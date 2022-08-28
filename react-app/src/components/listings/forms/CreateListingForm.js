@@ -99,7 +99,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
           "price-label-create-listing"
         );
         priceLabelClassRemove.classList.remove("input-label-error");
-        let cleaningFeeClassRemove = document.getElementById("cleaing-fee-error-box");
+        let cleaningFeeClassRemove = document.getElementById("cleaning-fee-error-box");
         cleaningFeeClassRemove.classList.remove("input-field-error");
         let cleaningFeeLabelClassRemove = document.getElementById(
           "cleaning-fee-label-create-listing"

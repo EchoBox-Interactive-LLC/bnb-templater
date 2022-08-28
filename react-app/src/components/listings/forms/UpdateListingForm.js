@@ -98,7 +98,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
            "price-label-update-listing"
          );
          priceLabelClassRemove.classList.remove("input-label-error");
-         let cleaningFeeClassRemove = document.getElementById("cleaing-fee-error-box");
+         let cleaningFeeClassRemove = document.getElementById("cleaning-fee-error-box");
         cleaningFeeClassRemove.classList.remove("input-field-error");
         let cleaningFeeLabelClassRemove = document.getElementById(
           "cleaning-fee-label-update-listing"
