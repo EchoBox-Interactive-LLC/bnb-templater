@@ -34,11 +34,13 @@ export const makeListing =
     user_id,
     title,
     description,
+    category,
     address,
     city,
     state,
     country,
     price,
+    cleaning_fee,
     updated_at
   ) =>
   async (dispatch) => {
@@ -51,11 +53,13 @@ export const makeListing =
         user_id,
         title,
         description,
+        category,
         address,
         city,
         state,
         country,
         price,
+        cleaning_fee,
         updated_at
       }),
     });
@@ -97,11 +101,13 @@ export const editListing =
     user_id,
     title,
     description,
+    category,
     address,
     city,
     state,
     country,
     price,
+    cleaning_fee,
     updated_at
   ) =>
   async (dispatch) => {
@@ -114,11 +120,13 @@ export const editListing =
         user_id,
         title,
         description,
+        category,
         address,
         city,
         state,
         country,
         price,
+        cleaning_fee,
         updated_at,
       }),
     });
