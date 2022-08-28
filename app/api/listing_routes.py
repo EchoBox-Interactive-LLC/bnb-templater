@@ -39,7 +39,7 @@ def create_listing():
             state=form.data['state'],
             country=form.data['country'],
             price=form.data['price'],
-            cleanging_fee=form.data['cleaning_fee'],
+            cleaning_fee=form.data['cleaning_fee'],
             updated_at=form.data['updated_at']
         )
 
@@ -69,7 +69,7 @@ def update_listing(id):
         listing.state=form.data['state'],
         listing.country=form.data['country'],
         listing.price=form.data['price'],
-        listing.cleanging_fee=form.data['cleaning_fee'],
+        listing.cleaning_fee=form.data['cleaning_fee'],
         listing.updated_at=form.data['updated_at']
 
         db.session.commit()
