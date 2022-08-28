@@ -33,11 +33,13 @@ def create_listing():
             user_id=form.data['user_id'],
             title=form.data['title'],
             description=form.data['description'],
+            category=form.data['category'],
             address=form.data['address'],
             city=form.data['city'],
             state=form.data['state'],
             country=form.data['country'],
             price=form.data['price'],
+            cleanging_fee=form.data['cleaning_fee'],
             updated_at=form.data['updated_at']
         )
 
@@ -61,11 +63,13 @@ def update_listing(id):
         listing.user_id = form.data['user_id'],
         listing.title=form.data['title'],
         listing.description=form.data['description'],
+        listing.category=form.data['category'],
         listing.address=form.data['address'],
         listing.city=form.data['city'],
         listing.state=form.data['state'],
         listing.country=form.data['country'],
         listing.price=form.data['price'],
+        listing.cleanging_fee=form.data['cleaning_fee'],
         listing.updated_at=form.data['updated_at']
 
         db.session.commit()
