@@ -380,7 +380,7 @@ function CreateListingForm({ user, setShowCreateListingModal }) {
               name="cleaning fee"
               type="number"
               value={cleaningFee}
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setCleaningFee(e.target.value)}
             />
           </div>
           <div className="error-container">

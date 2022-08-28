@@ -13,11 +13,15 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
   const [description, setDescription] = useState(
     (listing && listing.description) || ""
   );
+  const [category, setCategory] = useState(
+    (listing && listing.category) || ""
+  );
   const [address, setAddress] = useState((listing && listing.address) || "");
   const [city, setCity] = useState((listing && listing.city) || "");
   const [state, setState] = useState((listing && listing.state) || "");
   const [country, setCountry] = useState((listing && listing.country) || "");
   const [price, setPrice] = useState((listing && listing.price) || "");
+  const [cleaningFee, setCleaningFee] = useState((listing && listing.cleaning_fee) || "");
   const [errors, setErrors] = useState([]);
   const [errorMessages, setErrorMessages] = useState([]);
 
@@ -56,6 +60,14 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
            "description-label-update-listing"
          );
          descriptionLabelClassRemove.classList.remove("input-label-error");
+         let categoryClassRemove = document.getElementById(
+          "category-error-box"
+        );
+        categoryClassRemove.classList.remove("input-field-error");
+        let categoryLabelClassRemove = document.getElementById(
+          "category-label-update-listing"
+        );
+        categoryLabelClassRemove.classList.remove("input-label-error");
          let addressClassRemove = document.getElementById("address-error-box");
          addressClassRemove.classList.remove("input-field-error");
          let addressLabelClassRemove = document.getElementById(
@@ -86,6 +98,12 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
            "price-label-update-listing"
          );
          priceLabelClassRemove.classList.remove("input-label-error");
+         let cleaningFeeClassRemove = document.getElementById("cleaing-fee-error-box");
+        cleaningFeeClassRemove.classList.remove("input-field-error");
+        let cleaningFeeLabelClassRemove = document.getElementById(
+          "cleaning-fee-label-update-listing"
+        );
+        cleaningFeeLabelClassRemove.classList.remove("input-label-error");
 
          // Set and/or Reset error CSS styles
         for (const errorTitle of errorTitles) {
@@ -101,6 +119,15 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             descriptionClassAdd.classList.add("input-field-error");
             let descriptionLabelClassAdd = document.getElementById("description-label-update-listing");
             descriptionLabelClassAdd.classList.add("input-label-error");
+          } else if (errorTitle === "Category") {
+            let categoryClassAdd = document.getElementById(
+              "category-error-box"
+            );
+            categoryClassAdd.classList.add("input-field-error");
+            let categoryLabelClassAdd = document.getElementById(
+              "category-label-update-listing"
+            );
+            categoryLabelClassAdd.classList.add("input-label-error");
           } else if (errorTitle === "Address") {
             let addressClassAdd = document.getElementById("address-error-box");
             addressClassAdd.classList.add("input-field-error");
@@ -126,6 +153,13 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
             priceClassAdd.classList.add("input-field-error");
             let priceLabelClassAdd = document.getElementById("price-label-update-listing");
             priceLabelClassAdd.classList.add("input-label-error");
+          } else if (errorTitle === "Cleaning Fee") {
+            let cleaningFeeClassAdd = document.getElementById("cleaning-fee-error-box");
+            cleaningFeeClassAdd.classList.add("input-field-error");
+            let cleaningFeeLabelClassAdd = document.getElementById(
+              "cleaning-fee-label-update-listing"
+            );
+            cleaningFeeLabelClassAdd.classList.add("input-label-error");
           }
         }
       }
@@ -147,11 +181,13 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
         userId,
         title,
         description,
+        category,
         address,
         city,
         state,
         country,
         price,
+        cleaningFee,
         updated_at
       )
     );
@@ -213,6 +249,35 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
+          </div>
+          <div>
+            <div className="input-label">
+              <label id="category-label-update-listing">
+                Category (Required)
+              </label>
+            </div>
+            <select
+              id="category-error-box"
+              className="input-field-select"
+              placeholder="Category"
+              name="category"
+              type="text"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="A Frame">A Frame</option>
+              <option value="Amazing Pools">Amazing Pools</option>
+              <option value="Arctic">Arctic</option>
+              <option value="Beach">Beach</option>
+              <option value="Cabin">Cabin</option>
+              <option value="Camping">Camping</option>
+              <option value="Design">Design</option>
+              <option value="Islands">Islands</option>
+              <option value="Lake">Lake</option>
+              <option value="National Park">National Park</option>
+              <option value="OMG!">OMG!</option>
+              <option value="Tiny Home">Tiny Home</option>
+            </select>
           </div>
           <div>
           <div className="input-label">
@@ -282,6 +347,20 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
+          <div>
+            <div className="input-label">
+              <label id="cleaning-fee-label-update-listing">Cleaning Fee (Required)</label>
+            </div>
+            <input
+              id="cleaning-fee-error-box"
+              className="input-field"
+              placeholder="Cleaning Fee"
+              name="cleaning fee"
+              type="number"
+              value={cleaningFee}
+              onChange={(e) => setCleaningFee(e.target.value)}
             />
           </div>
           <div className="error-container">
