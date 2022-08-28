@@ -14,7 +14,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
     (listing && listing.description) || ""
   );
   const [category, setCategory] = useState(
-    (listing && listing.category) || ""
+    (listing && listing.category) || "A Frame"
   );
   const [address, setAddress] = useState((listing && listing.address) || "");
   const [city, setCity] = useState((listing && listing.city) || "");
