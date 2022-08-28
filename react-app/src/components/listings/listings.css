@@ -37,6 +37,26 @@
   text-align: center;
 }
 
+.category-container {
+  margin: 30px 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.single-category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+}
+
+.category-img {
+  width: 40px;
+  height: auto;
+}
+
 @media only screen and (max-width: 900px) {
   #site-welcome {
     font-size: 80px;

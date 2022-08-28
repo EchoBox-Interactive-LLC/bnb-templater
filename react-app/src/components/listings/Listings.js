@@ -52,53 +52,53 @@ function Listings() {
         </div>
 
         {/* Category section */}
-        <div>
-          <div>
-            <img src={aFrame} alt="A Frame Icon" />
+        <div className="category-container">
+          <div className="single-category-container">
+            <img className="category-img" src={aFrame} alt="A Frame Icon" />
             <h5>A Frame</h5>
           </div>
-          <div>
-            <img src={amazingPools} alt="Amazing Pools Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={amazingPools} alt="Amazing Pools Icon" />
             <h5>Amazing pools</h5>
           </div>
-          <div>
-            <img src={arctic} alt="Arctic Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={arctic} alt="Arctic Icon" />
             <h5>Arctic</h5>
           </div>
-          <div>
-            <img src={beach} alt="Beach Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={beach} alt="Beach Icon" />
             <h5>Beach</h5>
           </div>
-          <div>
-            <img src={cabin} alt="Cabin Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={cabin} alt="Cabin Icon" />
             <h5>Cabin</h5>
           </div>
-          <div>
-            <img src={camping} alt="Camping Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={camping} alt="Camping Icon" />
             <h5>Camping</h5>
           </div>
-          <div>
-            <img src={design} alt="Design Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={design} alt="Design Icon" />
             <h5>Design</h5>
           </div>
-          <div>
-            <img src={islands} alt="Islands Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={islands} alt="Islands Icon" />
             <h5>Islands</h5>
           </div>
-          <div>
-            <img src={lake} alt="Lake Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={lake} alt="Lake Icon" />
             <h5>Lake</h5>
           </div>
-          <div>
-            <img src={nationalPark} alt="National Park Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={nationalPark} alt="National Park Icon" />
             <h5>National park</h5>
           </div>
-          <div>
-            <img src={omg} alt="OMG! Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={omg} alt="OMG! Icon" />
             <h5>OMG!</h5>
           </div>
-          <div>
-            <img src={tinyHome} alt="Tiny Homes Icon" />
+          <div className="single-category-container">
+            <img className="category-img" src={tinyHome} alt="Tiny Homes Icon" />
             <h5>Tiny homes</h5>
           </div>
         </div>
