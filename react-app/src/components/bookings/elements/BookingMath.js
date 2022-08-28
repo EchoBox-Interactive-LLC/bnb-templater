@@ -39,6 +39,12 @@ function BookingMath({ listing, startDate, endDate }) {
   }
 
   // Service free calc, using 3% for now
+  let cleaningFee;
+  if (listing) {
+    cleaningFee = Math.round(listing.cleaning_fee);
+  }
+
+  // Service free calc, using 3% for now
   let serviceFee;
   if (listing) {
     serviceFee = Math.round(listing.price * howManyNights() * 0.03);
@@ -47,7 +53,7 @@ function BookingMath({ listing, startDate, endDate }) {
   // Calc for total amount
   let total;
   if (listing) {
-    total = serviceFee + 150 + (listing.price * howManyNights());
+    total = serviceFee + cleaningFee + (listing.price * howManyNights());
   }
 
   return (
@@ -70,7 +76,7 @@ function BookingMath({ listing, startDate, endDate }) {
         <div className="fee">
           <p>Cleaning Fee</p>
         </div>
-        <div id="rating">$150</div>
+        <div id="rating">${cleaningFee}</div>
       </div>
       <div className="middle-booking-section">
         <div className="fee">
