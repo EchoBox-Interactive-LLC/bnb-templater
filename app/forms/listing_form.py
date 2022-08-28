@@ -12,6 +12,11 @@ def description_length(form, field):
   if len(description) > 200:
     raise ValidationError('Description must be 200 characters or less')
 
+def valid_category(form, field):
+  category = field.data
+  if category != 'A Frame' or category != 'Amazing Pools' or category != 'Arctic' or category != 'Beach' or category != 'Cabin' or category != 'Camping' or category != 'Design' or category != 'Islands' or category != 'Lake' or category != 'National Park' or category != 'OMG!' or category != 'Tiny Home':
+    raise ValidationError('Category must be a valid selection')    
+
 def address_length(form, field):
   address = field.data
   if len(address) > 60:
@@ -42,16 +47,23 @@ def price_max(form, field):
   if price >  20000:
     raise ValidationError('Price cannot be greater than 20,000 per night.')    
 
+def cleaning_fee_max(form, field):
+  cleaning_fee = field.data
+  if cleaning_fee >  2500:
+    raise ValidationError('Cleaning fee cannot be greater than 2,500.')      
+
 
 class ListingForm(FlaskForm):
   user_id = IntegerField('User_Id', validators=[DataRequired()])
   title = StringField('Title', validators=[DataRequired("A title is required"), title_length])
   description = StringField('Description', validators=[DataRequired("A description is required"), description_length])
+  category = StringField('Description', validators=[DataRequired("A category is required"), valid_category])
   address = StringField('Address', validators=[DataRequired("An address is required"), address_length])
   city = StringField('City', validators=[DataRequired("A city is required"), city_length])
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
+  cleaning_fee = FloatField('Cleaning Fee', validators=[cleaning_fee_max])
   updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
@@ -59,9 +71,11 @@ class UpdateListingForm(FlaskForm):
   user_id = IntegerField('User_Id', validators=[DataRequired()])
   title = StringField('Title', validators=[DataRequired("A title is required"), title_length])
   description = StringField('Description', validators=[DataRequired("A description is required"), description_length])
+  category = StringField('Description', validators=[DataRequired("A category is required"), valid_category])
   address = StringField('Address', validators=[DataRequired("An address is required"), address_length])
   city = StringField('City', validators=[DataRequired("A city is required"), city_length])
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
+  cleaning_fee = FloatField('Cleaning Fee', validators=[cleaning_fee_max])
   updated_at = StringField('Update_At', validators=[DataRequired()])
