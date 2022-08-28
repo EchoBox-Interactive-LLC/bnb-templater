@@ -14,7 +14,7 @@ class Listing(db.Model):
     city = db.Column(db.String(40), nullable=False)
     state = db.Column(db.String(40), nullable=False)
     country = db.Column(db.String(40), nullable=False)
-    cleaning_fee = db.Column(db.Float, nullable=True)
+    cleaning_fee = db.Column(db.Float, nullable=False)
     price = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 

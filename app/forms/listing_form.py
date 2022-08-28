@@ -45,7 +45,12 @@ def price_non_zero(form, field):
 def price_max(form, field):
   price = field.data
   if price >  20000:
-    raise ValidationError('Price cannot be greater than 20,000 per night.')    
+    raise ValidationError('Price cannot be greater than 20,000 per night.')   
+
+def cleaning_fee_non_zero(form, field):
+  cleaning_fee = field.data
+  if cleaning_fee <=  0:
+    raise ValidationError('Cleaning fee must be greater than 0')     
 
 def cleaning_fee_max(form, field):
   cleaning_fee = field.data
@@ -63,7 +68,7 @@ class ListingForm(FlaskForm):
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
-  cleaning_fee = FloatField('Cleaning Fee', validators=[cleaning_fee_max])
+  cleaning_fee = FloatField('Cleaning Fee', validators=[DataRequired("A cleaning fee is required"), cleaning_fee_max, cleaning_fee_non_zero])
   updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
@@ -77,5 +82,5 @@ class UpdateListingForm(FlaskForm):
   state = StringField('State', validators=[DataRequired("A state is required"), state_length])
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
-  cleaning_fee = FloatField('Cleaning Fee', validators=[cleaning_fee_max])
+  cleaning_fee = FloatField('Cleaning Fee', validators=[DataRequired("A cleaning fee is required"), cleaning_fee_max, cleaning_fee_non_zero])
   updated_at = StringField('Update_At', validators=[DataRequired()])
