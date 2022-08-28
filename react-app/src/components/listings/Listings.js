@@ -73,6 +73,34 @@ function Listings() {
             <img src={cabin} alt="Cabin Icon" />
             <h5>Cabin</h5>
           </div>
+          <div>
+            <img src={camping} alt="Camping Icon" />
+            <h5>Camping</h5>
+          </div>
+          <div>
+            <img src={design} alt="Design Icon" />
+            <h5>Design</h5>
+          </div>
+          <div>
+            <img src={islands} alt="Islands Icon" />
+            <h5>Islands</h5>
+          </div>
+          <div>
+            <img src={lake} alt="Lake Icon" />
+            <h5>Lake</h5>
+          </div>
+          <div>
+            <img src={nationalPark} alt="National Park Icon" />
+            <h5>National park</h5>
+          </div>
+          <div>
+            <img src={omg} alt="OMG! Icon" />
+            <h5>OMG!</h5>
+          </div>
+          <div>
+            <img src={tinyHome} alt="Tiny Homes Icon" />
+            <h5>Tiny homes</h5>
+          </div>
         </div>
 
         {/* Listing section */}
