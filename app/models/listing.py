@@ -1,3 +1,4 @@
+from unicodedata import category
 from .db import db
 
 class Listing(db.Model):
@@ -8,10 +9,12 @@ class Listing(db.Model):
         'users.id',  ondelete="CASCADE"), nullable=False)
     title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(200), nullable=False)
+    category = db.Column(db.String(20), nullable=False)
     address = db.Column(db.String(60), nullable=False)
     city = db.Column(db.String(40), nullable=False)
     state = db.Column(db.String(40), nullable=False)
     country = db.Column(db.String(40), nullable=False)
+    cleaning_fee = db.Column(db.Float, nullable=True)
     price = db.Column(db.Float, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 
@@ -26,10 +29,12 @@ class Listing(db.Model):
             'user_id': self.user_id,
             'title': self.title,
             'description': self.description,
+            'category': self.category,
             'address': self.address,
             'city': self.city,
             'state': self.state,
             'country': self.country,
+            'cleaning_fee': self.cleaning_fee,
             'price': self.price,
             'updated_at': self.updated_at,
 
