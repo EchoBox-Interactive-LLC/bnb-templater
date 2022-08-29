@@ -64,6 +64,7 @@
   justify-content: flex-start;
   gap: 10px;
   margin-bottom: 75px;
+  margin-left: 3%
 }
 
 .image-container-right {
@@ -233,7 +234,7 @@
   justify-content: space-around;
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1485px) {
   #image-one {
     width: 575px;
     height: 450px;
