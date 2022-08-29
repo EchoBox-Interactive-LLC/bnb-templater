@@ -71,7 +71,7 @@
   align-items: center;
   gap: 12px;
   grid-template-columns:298px 298px;
-  grid-template-rows: 264px 264px;
+  grid-template-rows: 269px 269px;
   grid-template-areas:
     "image-two image-three"
     "image-four image-five";
@@ -79,7 +79,7 @@
 
 #image-two {
   width: 298px;
-  height: 264px;
+  height: 269px;
   object-fit: cover;
   grid-area: image-two;
 }
@@ -88,14 +88,14 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   width: 298px;
-  height: 264px;
+  height: 269px;
   object-fit: cover;
   grid-area: image-three;
 }
 
 #image-four {
   width: 298px;
-  height: 264px;
+  height: 269px;
   object-fit: cover;
   grid-area: image-four;
 }
@@ -104,7 +104,7 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   width: 298px;
-  height: 264px;
+  height: 269px;
   object-fit: cover;
   grid-area: image-five;
 }
