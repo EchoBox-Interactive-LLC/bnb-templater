@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, FloatField, BooleanField
+from wtforms import StringField, IntegerField, FloatField
 from wtforms.validators import DataRequired, ValidationError
 
 def title_length(form, field):
