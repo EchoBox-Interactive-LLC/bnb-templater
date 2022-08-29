@@ -14,7 +14,7 @@ def description_length(form, field):
 
 def valid_category(form, field):
   category = field.data
-  if (category != 'A Frame' and category != 'Amazing Pools' and category != 'Arctic' and category != 'Beach' and category != 'Cabin' and category != 'Camping' and category != 'Design' and category != 'Islands' and category != 'Lake' and category != 'National Park' and category != 'OMG!' and category != 'Tiny Home'):
+  if (category != 'A Frame' and category != 'Amazing Pools' and category != 'Arctic' and category != 'Beach' and category != 'Cabin' and category != 'Camping' and category != 'Design' and category != 'Islands' and category != 'Lake' and category != 'National Park' and category != 'OMG!' and category != 'Tiny Homes'):
     raise ValidationError('Category must be a valid selection')    
 
 def address_length(form, field):

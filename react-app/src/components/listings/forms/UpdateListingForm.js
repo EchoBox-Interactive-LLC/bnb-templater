@@ -276,7 +276,7 @@ function UpdateListingForm({ listing, setShowUpdateForm }) {
               <option value="Lake">Lake</option>
               <option value="National Park">National Park</option>
               <option value="OMG!">OMG!</option>
-              <option value="Tiny Home">Tiny Home</option>
+              <option value="Tiny Homes">Tiny Homes</option>
             </select>
           </div>
           <div>
