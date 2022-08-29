@@ -28,7 +28,7 @@ def seed_listings():
         user_id=3, title="Modern Beach Home in Portland", description="Enjoy a perfect vacation in Maine. Guarantee to find peace.... or your money back.", category="Beach",
         address="23 Maple Street", city="Portland", state="Maine", country="USA", price=290.00, cleaning_fee=100.00, updated_at='Fri Aug 05 2022')
     listing9 = Listing(
-        user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit. Right across the river from NYC! Come visit and live the big city dream.", category="Tiny Home",
+        user_id=3, title='Tiny home with a view', description="All you need for a stress free New York visit. Right across the river from NYC! Come visit and live the big city dream.", category="Tiny Homes",
         address="304 Thornton Ct", city="Edgewater", state="New Jersey", country="USA", price=290.00, cleaning_fee=25.00, updated_at='Fri Aug 05 2022')    
     listing10 = Listing(
         user_id=4, title='Moody and lovely', description="Recently remodeled and ready for visitors. This place is in a quite suburb ready for anyone seeking a relaxing vacation.", category="Design",
