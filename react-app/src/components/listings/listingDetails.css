@@ -50,8 +50,8 @@
 }
 
 #image-one {
-  width: 575px;
-  height: 450px;
+  width: 700px;
+  height: 550px;
   margin-top: 5px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -69,16 +69,16 @@
 .image-container-right {
   display: grid;
   align-items: center;
-  grid-template-columns: 270px 270px;
-  grid-template-rows: 230px 230px;
+  grid-template-columns: 325px 325px;
+  grid-template-rows: 275px 275px;
   grid-template-areas:
     "image-two image-three"
     "image-four image-five";
 }
 
 #image-two {
-  width: 258px;
-  height: 220px;
+  width: 300px;
+  height: 265px;
   object-fit: cover;
   grid-area: image-two;
 }
@@ -86,15 +86,15 @@
 #image-three {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  width: 258px;
-  height: 220px;
+  width: 300px;
+  height: 265px;
   object-fit: cover;
   grid-area: image-three;
 }
 
 #image-four {
-  width: 258px;
-  height: 220px;
+  width: 300px;
+  height: 265px;
   object-fit: cover;
   grid-area: image-four;
 }
@@ -102,8 +102,8 @@
 #image-five {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  width: 258px;
-  height: 220px;
+  width: 300px;
+  height: 265px;
   object-fit: cover;
   grid-area: image-five;
 }
@@ -249,6 +249,69 @@
   .booking-card-section {
     display: flex;
     justify-content: center;
+  }
+}
+
+
+
+@media only screen and (max-width: 1450px) {
+  #image-one {
+    width: 575px;
+    height: 450px;
+    margin-top: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    object-fit: cover;
+  }
+
+  .image-container-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 75px;
+  }
+
+  .image-container-right {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 270px 270px;
+    grid-template-rows: 230px 230px;
+    grid-template-areas:
+      "image-two image-three"
+      "image-four image-five";
+  }
+
+  #image-two {
+    width: 258px;
+    height: 220px;
+    object-fit: cover;
+    grid-area: image-two;
+  }
+  
+  #image-three {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 258px;
+    height: 220px;
+    object-fit: cover;
+    grid-area: image-three;
+  }
+  
+  #image-four {
+    width: 258px;
+    height: 220px;
+    object-fit: cover;
+    grid-area: image-four;
+  }
+  
+  #image-five {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 258px;
+    height: 220px;
+    object-fit: cover;
+    grid-area: image-five;
   }
 }
 
