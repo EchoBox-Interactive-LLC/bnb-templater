@@ -318,6 +318,7 @@ function Listings() {
         <div className="category-container">
           <div className="single-category-container">
             <button
+              id="a-frame-button"
               className="category-button"
               onClick={aFrameFunc}
             >
@@ -327,6 +328,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
             <button
+              id="amazing-pools-button"
               className="category-button"
               onClick={amazingPoolsFunc}
             >
@@ -340,6 +342,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="arctic-button"
               className="category-button"
               onClick={arcticFunc}
             >
@@ -349,6 +352,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="beach-button"
               className="category-button"
               onClick={beachFunc}
             >
@@ -358,6 +362,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="cabin-button"
               className="category-button"
               onClick={cabinFunc}
             >
@@ -367,6 +372,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="camping-button"
               className="category-button"
               onClick={campingFunc}
             >
@@ -376,6 +382,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="design-button"
               className="category-button"
               onClick={designFunc}
             >
@@ -385,6 +392,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="islands-button"
               className="category-button"
               onClick={islandsFunc}
             >
@@ -394,6 +402,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="lake-button"
               className="category-button"
               onClick={lakeFunc}
             >
@@ -403,6 +412,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="national-park-button"
               className="category-button"
               onClick={nationalParkFunc}
             >
@@ -416,6 +426,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="omg-button"
               className="category-button"
               onClick={omgFunc}
             >
@@ -425,6 +436,7 @@ function Listings() {
           </div>
           <div className="single-category-container">
           <button
+              id="tiny-homes-button"
               className="category-button"
               onClick={tinyHomesFunc}
             >
