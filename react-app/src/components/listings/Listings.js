@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { retrieveListings } from "../../store/listings";
 import { retrieveReviews } from "../../store/reviews";
@@ -21,6 +21,19 @@ function Listings() {
   const dispatch = useDispatch();
   const reviews = Object.values(useSelector((state) => state.reviews));
   const listings = Object.values(useSelector((state) => state.listings));
+
+  const [aFrameBool, setAFrameBool] = useState(false);
+  const [amazingPoolsBool, setAmazingPoolsBool] = useState(false);
+  const [arcticBool, setArcticBool] = useState(false);
+  const [beachBool, setBeachBool] = useState(false);
+  const [cabinBool, setCabinBool] = useState(false);
+  const [campingBool, setCampingBool] = useState(false);
+  const [designBool, setDesignBool] = useState(false);
+  const [islandsBool, setIslandsBool] = useState(false);
+  const [lakeBool, setLakeBool] = useState(false);
+  const [nationalParkBool, setNationalParkBool] = useState(false);
+  const [omgBool, setOmgBool] = useState(false);
+  const [tingHomeBool, setTingHomeBool] = useState(false);
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -54,52 +67,74 @@ function Listings() {
         {/* Category section */}
         <div className="category-container">
           <div className="single-category-container">
-            <img className="category-img" src={aFrame} alt="A Frame Icon" />
-            <h5>A Frame</h5>
+            <button
+              className="category-button"
+              onClick={() => setAFrameBool(!aFrameBool)}
+            >
+              <img className="category-img" src={aFrame} alt="A Frame Icon" />
+              <h5 className="category-title">A Frame</h5>
+            </button>
           </div>
           <div className="single-category-container">
-            <img className="category-img" src={amazingPools} alt="Amazing Pools Icon" />
-            <h5>Amazing pools</h5>
+            <button
+              className="category-button"
+              onClick={() => setAmazingPoolsBool(!amazingPoolsBool)}
+            >
+              <img
+                className="category-img"
+                src={amazingPools}
+                alt="Amazing Pools Icon"
+              />
+              <h5 className="category-title">Amazing pools</h5>
+            </button>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={arctic} alt="Arctic Icon" />
-            <h5>Arctic</h5>
+            <h5 className="category-title">Arctic</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={beach} alt="Beach Icon" />
-            <h5>Beach</h5>
+            <h5 className="category-title">Beach</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={cabin} alt="Cabin Icon" />
-            <h5>Cabin</h5>
+            <h5 className="category-title">Cabin</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={camping} alt="Camping Icon" />
-            <h5>Camping</h5>
+            <h5 className="category-title">Camping</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={design} alt="Design Icon" />
-            <h5>Design</h5>
+            <h5 className="category-title">Design</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={islands} alt="Islands Icon" />
-            <h5>Islands</h5>
+            <h5 className="category-title">Islands</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={lake} alt="Lake Icon" />
-            <h5>Lake</h5>
+            <h5 className="category-title">Lake</h5>
           </div>
           <div className="single-category-container">
-            <img className="category-img" src={nationalPark} alt="National Park Icon" />
-            <h5>National park</h5>
+            <img
+              className="category-img"
+              src={nationalPark}
+              alt="National Park Icon"
+            />
+            <h5 className="category-title">National park</h5>
           </div>
           <div className="single-category-container">
             <img className="category-img" src={omg} alt="OMG! Icon" />
-            <h5>OMG!</h5>
+            <h5 className="category-title">OMG!</h5>
           </div>
           <div className="single-category-container">
-            <img className="category-img" src={tinyHome} alt="Tiny Homes Icon" />
-            <h5>Tiny homes</h5>
+            <img
+              className="category-img"
+              src={tinyHome}
+              alt="Tiny Homes Icon"
+            />
+            <h5 className="category-title">Tiny homes</h5>
           </div>
         </div>
 
