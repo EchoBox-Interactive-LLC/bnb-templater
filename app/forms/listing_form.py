@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, FloatField
+from wtforms import StringField, IntegerField, FloatField, BooleanField
 from wtforms.validators import DataRequired, ValidationError
 
 def title_length(form, field):
@@ -69,6 +69,7 @@ class ListingForm(FlaskForm):
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
   cleaning_fee = FloatField('Cleaning Fee', validators=[DataRequired("A cleaning fee is required"), cleaning_fee_max, cleaning_fee_non_zero])
+  wishlist = BooleanField('Wishlist', validators=[DataRequired()])
   updated_at = StringField('Update_At', validators=[DataRequired()])
 
 
@@ -83,4 +84,5 @@ class UpdateListingForm(FlaskForm):
   country = StringField('Country', validators=[DataRequired("A country is required"), country_length])
   price = FloatField('Price', validators=[DataRequired("A price is required"), price_non_zero, price_max])
   cleaning_fee = FloatField('Cleaning Fee', validators=[DataRequired("A cleaning fee is required"), cleaning_fee_max, cleaning_fee_non_zero])
+  wishlist = BooleanField('Wishlist', validators=[DataRequired()])
   updated_at = StringField('Update_At', validators=[DataRequired()])

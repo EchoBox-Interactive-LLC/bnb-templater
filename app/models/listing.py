@@ -16,6 +16,7 @@ class Listing(db.Model):
     country = db.Column(db.String(40), nullable=False)
     cleaning_fee = db.Column(db.Float, nullable=False)
     price = db.Column(db.Float, nullable=False)
+    wishlist = db.Column(db.Boolean, default=False, nullable=False)
     updated_at = db.Column(db.String(255), nullable=False)
 
     user = db.relationship('User', back_populates='listings')
@@ -36,6 +37,7 @@ class Listing(db.Model):
             'country': self.country,
             'cleaning_fee': self.cleaning_fee,
             'price': self.price,
+            'wishlist': self.wishlist,
             'updated_at': self.updated_at,
 
             'images': [image.to_dict() for image in self.images],
