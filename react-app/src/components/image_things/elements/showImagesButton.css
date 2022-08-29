@@ -31,9 +31,16 @@
     background-color: rgb(244, 244, 244);
 }
 
+@media only screen and (max-width: 1450px) {
+    .all-images-button-container {
+        right: -550px;
+        bottom: 12px;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     .all-images-button-container {
-        right: -255px;
+        right: -270px;
         bottom: 12px;
     }
 }

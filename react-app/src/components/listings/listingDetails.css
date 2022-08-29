@@ -233,28 +233,6 @@
   justify-content: space-around;
 }
 
-@media only screen and (max-width: 1300px) {
-  .listing-info {
-    padding-top: 60px;
-    margin-bottom: -170px;
-    grid-template-columns: 100%;
-    grid-template-rows: 100px 100px 100px 100px 800px;
-    grid-template-areas:
-      "hosted-by-section"
-      "description-section"
-      "listing-buttons-section"
-      "urcovered-section"
-      "booking-card-section";
-  }
-
-  .booking-card-section {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-
-
 @media only screen and (max-width: 1450px) {
   #image-one {
     width: 575px;
@@ -275,17 +253,18 @@
 
   .image-container-right {
     display: grid;
+    gap: 12px;
     align-items: center;
     grid-template-columns: 270px 270px;
-    grid-template-rows: 230px 230px;
+    grid-template-rows: 219px 219px;
     grid-template-areas:
       "image-two image-three"
       "image-four image-five";
   }
 
   #image-two {
-    width: 258px;
-    height: 220px;
+    width: 270px;
+    height: 219px;
     object-fit: cover;
     grid-area: image-two;
   }
@@ -293,15 +272,15 @@
   #image-three {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    width: 258px;
-    height: 220px;
+    width: 270px;
+    height: 219px;
     object-fit: cover;
     grid-area: image-three;
   }
   
   #image-four {
-    width: 258px;
-    height: 220px;
+    width: 270px;
+    height: 219px;
     object-fit: cover;
     grid-area: image-four;
   }
@@ -309,10 +288,30 @@
   #image-five {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    width: 258px;
-    height: 220px;
+    width: 270px;
+    height: 219px;
     object-fit: cover;
     grid-area: image-five;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .listing-info {
+    padding-top: 60px;
+    margin-bottom: -170px;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 100px 100px 100px 800px;
+    grid-template-areas:
+      "hosted-by-section"
+      "description-section"
+      "listing-buttons-section"
+      "urcovered-section"
+      "booking-card-section";
+  }
+
+  .booking-card-section {
+    display: flex;
+    justify-content: center;
   }
 }
 
