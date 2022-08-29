@@ -50,7 +50,7 @@
 }
 
 #image-one {
-  width: 700px;
+  width: 750px;
   height: 550px;
   margin-top: 5px;
   border-top-left-radius: 15px;
@@ -61,7 +61,7 @@
 .image-container-main {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   margin-bottom: 75px;
 }
@@ -69,16 +69,17 @@
 .image-container-right {
   display: grid;
   align-items: center;
-  grid-template-columns: 325px 325px;
-  grid-template-rows: 275px 275px;
+  gap: 12px;
+  grid-template-columns:298px 298px;
+  grid-template-rows: 264px 264px;
   grid-template-areas:
     "image-two image-three"
     "image-four image-five";
 }
 
 #image-two {
-  width: 300px;
-  height: 265px;
+  width: 298px;
+  height: 264px;
   object-fit: cover;
   grid-area: image-two;
 }
@@ -86,15 +87,15 @@
 #image-three {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  width: 300px;
-  height: 265px;
+  width: 298px;
+  height: 264px;
   object-fit: cover;
   grid-area: image-three;
 }
 
 #image-four {
-  width: 300px;
-  height: 265px;
+  width: 298px;
+  height: 264px;
   object-fit: cover;
   grid-area: image-four;
 }
@@ -102,8 +103,8 @@
 #image-five {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  width: 300px;
-  height: 265px;
+  width: 298px;
+  height: 264px;
   object-fit: cover;
   grid-area: image-five;
 }
