@@ -33,7 +33,7 @@ function Listings() {
   const [lakeBool, setLakeBool] = useState(false);
   const [nationalParkBool, setNationalParkBool] = useState(false);
   const [omgBool, setOmgBool] = useState(false);
-  const [tingHomeBool, setTingHomeBool] = useState(false);
+  const [tinyHomesBool, setTinyHomesBool] = useState(false);
 
   useEffect(() => {
     dispatch(retrieveListings());
@@ -89,52 +89,102 @@ function Listings() {
             </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setArcticBool(!arcticBool)}
+            >
             <img className="category-img" src={arctic} alt="Arctic Icon" />
             <h5 className="category-title">Arctic</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setBeachBool(!beachBool)}
+            >
             <img className="category-img" src={beach} alt="Beach Icon" />
             <h5 className="category-title">Beach</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setCabinBool(!cabinBool)}
+            >
             <img className="category-img" src={cabin} alt="Cabin Icon" />
             <h5 className="category-title">Cabin</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setCampingBool(!campingBool)}
+            >
             <img className="category-img" src={camping} alt="Camping Icon" />
             <h5 className="category-title">Camping</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setDesignBool(!designBool)}
+            >
             <img className="category-img" src={design} alt="Design Icon" />
             <h5 className="category-title">Design</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setIslandsBool(!islandsBool)}
+            >
             <img className="category-img" src={islands} alt="Islands Icon" />
             <h5 className="category-title">Islands</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setLakeBool(!lakeBool)}
+            >
             <img className="category-img" src={lake} alt="Lake Icon" />
             <h5 className="category-title">Lake</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setNationalParkBool(!nationalParkBool)}
+            >
             <img
               className="category-img"
               src={nationalPark}
               alt="National Park Icon"
             />
             <h5 className="category-title">National park</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setOmgBool(!omgBool)}
+            >
             <img className="category-img" src={omg} alt="OMG! Icon" />
             <h5 className="category-title">OMG!</h5>
+            </button>
           </div>
           <div className="single-category-container">
+          <button
+              className="category-button"
+              onClick={() => setTinyHomesBool(!tinyHomesBool)}
+            >
             <img
               className="category-img"
               src={tinyHome}
               alt="Tiny Homes Icon"
             />
             <h5 className="category-title">Tiny homes</h5>
+            </button>
           </div>
         </div>
 
