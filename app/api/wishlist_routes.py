@@ -8,10 +8,10 @@ from app.forms.wishlist_form import WishlistForm
 wishlist_routes = Blueprint('wishlists', __name__)
 
 
-@wishlist_routes.route('/')
+@wishlist_routes.route('/user/<int:id>')
 @login_required
-def get_wishlist():
-    wishlists = Wishlist.query.all()
+def get_wishlist(id):
+    wishlists = Wishlist.query.filter(Wishlist.user_id == id)
     return {'wishlists': [wishlist.to_dict() for wishlist in wishlists]}
 
 
@@ -20,6 +20,8 @@ def get_wishlist():
 def create_wishlist():
     form = WishlistForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+
+    print("\n\n", form.data, "\n\n")
 
     if form.validate_on_submit():
 

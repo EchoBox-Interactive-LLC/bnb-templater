@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { retrieveListings } from "../../store/listings";
 import { retrieveReviews } from "../../store/reviews";
+import { retrieveWishlists } from "../../store/wishlists";
 import ListingCard from "../listings/Elements/ListingCard";
 import aFrame from "../../images/categories/aFrame.jpeg";
 import amazingPools from "../../images/categories/amazingPools.jpeg";
@@ -19,8 +20,9 @@ import "./listings.css";
 
 function Listings() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.session.user)
   const reviews = Object.values(useSelector((state) => state.reviews));
-
+  const wishlists = Object.values(useSelector((state) => state.wishlists));
   let listings = Object.values(useSelector((state) => state.listings));
 
   const [aFrameBool, setAFrameBool] = useState(false);
@@ -88,6 +90,10 @@ function Listings() {
   useEffect(() => {
     dispatch(retrieveReviews());
   }, [dispatch, reviews.length]);
+
+  useEffect(() => {
+    dispatch(retrieveWishlists(user.id));
+  }, [user, wishlists.length]);
 
   const removeSelectedButtonClasses = () => {
     let aFrameRemove = document.getElementById("a-frame-button");
@@ -809,6 +815,8 @@ function Listings() {
                   key={listing.id}
                   reviews={reviews}
                   listing={listing}
+                  user={user}
+                  wishlists={wishlists}
                 />
               );
             })}

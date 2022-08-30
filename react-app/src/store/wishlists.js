@@ -54,8 +54,8 @@ export const makeWishlist =
     }
   };
 
-export const retrieveWishlists = () => async (dispatch) => {
-    const response = await fetch("/api/wishlists/");
+export const retrieveWishlists = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/wishlists/user/${userId}`);
 
     if (response.ok) {
         const data = await response.json();
@@ -72,7 +72,7 @@ export const retrieveWishlists = () => async (dispatch) => {
 };
 
 export const removeWishlist = (wishlistId) => async (dispatch) => {
-    const response = await fetch(`/api/wishlist/${wishlistId}`, {
+    const response = await fetch(`/api/wishlists/${wishlistId}`, {
         method: "DELETE",
     });
 
