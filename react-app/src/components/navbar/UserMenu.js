@@ -29,6 +29,11 @@ const UserMenu = ({ user }) => {
               Trips
             </button>
           </div>
+          <div className="user-menu-div">
+            <button type="button" className="user-menu-item">
+              Wishlist
+            </button>
+          </div>
           <div className="user-menu-div" id="manage-listings-container">
             <button id="manage-listings" type="button" className="user-menu-item">
               Manage listings
