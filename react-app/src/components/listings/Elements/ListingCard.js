@@ -1,8 +1,10 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./listingCard.css";
 
 function ListingCard({ listing, reviews }) {
+  const user = useSelector((state) => state.session.user)
   const listingReviews = reviews.filter((review) => review.listing_id === listing.id)
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
@@ -11,11 +13,14 @@ function ListingCard({ listing, reviews }) {
     rating = "New"
   }
 
+  const wishlistFunc = () => {
+    console.log(listing.id, "yeah!")
+  }
+
   return (
     <div className="card-container">
-      <div>
-        <button>❤️</button>
-      </div>
+      {user && (<div className="heart-button" onClick={wishlistFunc}>
+      </div>)}
       <Link className="listing-link" to={`/listings/${listing.id}`}>
         {listing.images[0] && (
           <img

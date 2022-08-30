@@ -1,5 +1,6 @@
 .card-container {
   width: 375px;
+  position: relative;
 }
 
 .listing-img {
@@ -48,4 +49,72 @@
   overflow-wrap: break-word !important;
   hyphens: auto !important;
   width: 315px;
+}
+
+.heart-button-selected {
+  background-color: #ff385c;
+  display: inline-block;
+  height: 20px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.heart-button-selected:before,
+.heart-button-selected:after {
+  content: "";
+  background-color: #ff385c;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart-button-selected:before {
+  top: -9px;
+  left: 0;
+}
+
+.heart-button-selected:after {
+  left: 9px;
+  top: 0;
+}
+
+.heart-button {
+  background-color: white;
+  display: inline-block;
+  height: 20px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.heart-button:before,
+.heart-button:after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart-button:before {
+  top: -9px;
+  left: 0;
+}
+
+.heart-button:after {
+  left: 9px;
+  top: 0;
 }
