@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { makeWishlist, retrieveWishlists, removeWishList} from "../../../store/wishlists";
 import "./listingCard.css";
 
 function ListingCard({ listing, reviews }) {
@@ -14,12 +15,19 @@ function ListingCard({ listing, reviews }) {
   }
 
   const wishlistFunc = () => {
-    console.log(listing.id, "yeah!")
+    let wishlist = document.getElementById(`wishlist-${listing.id}`)
+    if (wishlist.classList[0] === "heart-button") {
+      wishlist.classList.remove("heart-button")
+      wishlist.classList.add("heart-button-selected")
+    } else {
+      wishlist.classList.remove("heart-button-selected")
+      wishlist.classList.add("heart-button")
+    }
   }
 
   return (
     <div className="card-container">
-      {user && (<div className="heart-button" onClick={wishlistFunc}>
+      {user && listing && (<div id={`wishlist-${listing.id}`} className="heart-button" onClick={wishlistFunc}>
       </div>)}
       <Link className="listing-link" to={`/listings/${listing.id}`}>
         {listing.images[0] && (

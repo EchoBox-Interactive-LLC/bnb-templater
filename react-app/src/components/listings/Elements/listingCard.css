@@ -62,7 +62,8 @@
   width: 17px;
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 25px;
+  cursor: pointer;
 }
 
 .heart-button-selected:before,
@@ -96,7 +97,10 @@
   width: 17px;
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 25px;
+  cursor: pointer;
+  /* border-left: 1px solid black;
+  border-bottom: 1px solid black; */
 }
 
 .heart-button:before,
@@ -112,9 +116,11 @@
 .heart-button:before {
   top: -9px;
   left: 0;
+  /* border-top: 1px solid black; */
 }
 
 .heart-button:after {
   left: 9px;
   top: 0;
+  /* border-right: 1px solid black; */
 }
