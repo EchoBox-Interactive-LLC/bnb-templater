@@ -1,4 +1,3 @@
-from unicodedata import category
 from .db import db
 
 class Listing(db.Model):

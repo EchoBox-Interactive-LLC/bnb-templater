@@ -4,3 +4,4 @@ from .listing import Listing
 from .image import Image
 from .review import Review
 from .booking import Booking
+from .wishlist import Wishlist
