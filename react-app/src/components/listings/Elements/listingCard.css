@@ -88,12 +88,12 @@
 .heart-button {
   background-color: white;
   display: inline-block;
-  height: 20px;
+  height: 15px;
   margin: 0 10px;
   position: relative;
   top: 0;
   transform: rotate(-45deg);
-  width: 20px;
+  width: 17px;
   position: absolute;
   right: 10px;
   top: 20px;
@@ -104,9 +104,9 @@
   content: "";
   background-color: white;
   border-radius: 50%;
-  height: 20px;
+  height: 15px;
   position: absolute;
-  width: 20px;
+  width: 15px;
 }
 
 .heart-button:before {
