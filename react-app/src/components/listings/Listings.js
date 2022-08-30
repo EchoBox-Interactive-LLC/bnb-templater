@@ -93,7 +93,7 @@ function Listings() {
 
   useEffect(() => {
     dispatch(retrieveWishlists(user.id));
-  }, [user, wishlists.length]);
+  }, [dispatch, user, wishlists.length]);
 
   const removeSelectedButtonClasses = () => {
     let aFrameRemove = document.getElementById("a-frame-button");

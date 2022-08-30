@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { makeWishlist, removeWishList} from "../../../store/wishlists";
+import { makeWishlist, removeWishlist} from "../../../store/wishlists";
 import "./listingCard.css";
 
 function ListingCard({ listing, reviews, user, wishlists }) {
   const dispatch = useDispatch();
+  wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id)
   const listingReviews = reviews.filter((review) => review.listing_id === listing.id)
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
@@ -15,13 +16,12 @@ function ListingCard({ listing, reviews, user, wishlists }) {
   }
 
   useEffect(() => {
-    wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id)
     if (wishlists.length > 0) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
       wishlistCSS.classList.remove("heart-button")
       wishlistCSS.classList.add("heart-button-selected")
     }
-  }, [user, wishlists.length]);
+  }, [user, wishlists.length, listing.id]);
 
   const wishlistFunc = async () => {
     let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
@@ -37,6 +37,13 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     } else {
       wishlistCSS.classList.remove("heart-button-selected")
       wishlistCSS.classList.add("heart-button")
+
+      console.log(wishlists[0].id)
+
+      await dispatch(
+        removeWishlist(
+          wishlists[0].id
+        ));
     }
   }
 
