@@ -53,6 +53,10 @@ const NavBar = () => {
       history.push("/trips")
     }
 
+    if (e.target.innerHTML === "Wishlist") {
+      history.push("/wishlist")
+    }
+
     if (e.target.innerHTML === "Manage listings") {
       history.push("/my-listings")
     }
