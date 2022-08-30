@@ -16,7 +16,7 @@ function ListingCard({ listing, reviews, user, wishlists }) {
   }
 
   useEffect(() => {
-    if (wishlists.length > 0) {
+    if (user && wishlists.length > 0) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
       wishlistCSS.classList.remove("heart-button")
       wishlistCSS.classList.add("heart-button-selected")
@@ -37,8 +37,6 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     } else {
       wishlistCSS.classList.remove("heart-button-selected")
       wishlistCSS.classList.add("heart-button")
-
-      console.log(wishlists[0].id)
 
       await dispatch(
         removeWishlist(

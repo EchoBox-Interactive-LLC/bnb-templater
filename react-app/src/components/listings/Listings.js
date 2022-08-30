@@ -92,7 +92,9 @@ function Listings() {
   }, [dispatch, reviews.length]);
 
   useEffect(() => {
-    dispatch(retrieveWishlists(user.id));
+    if (user) {
+      dispatch(retrieveWishlists(user.id));
+    }
   }, [dispatch, user, wishlists.length]);
 
   const removeSelectedButtonClasses = () => {

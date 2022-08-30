@@ -21,8 +21,6 @@ def create_wishlist():
     form = WishlistForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    print("\n\n", form.data, "\n\n")
-
     if form.validate_on_submit():
 
         wishlist = Wishlist(
