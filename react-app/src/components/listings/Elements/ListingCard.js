@@ -24,6 +24,12 @@ function ListingCard({ listing, reviews, user, wishlists }) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
       wishlistCSS.classList.remove("heart-button")
       wishlistCSS.classList.add("heart-button-selected")
+
+      // if (user.id === wishlists[0].user_id) {
+      //   let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
+      //   wishlistCSS.classList.remove("heart-button")
+      //   wishlistCSS.classList.remove("heart-button-selected")
+      // }
     }
   }, [user, wishlists.length, listing.id]);
 
