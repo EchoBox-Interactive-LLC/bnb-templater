@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeWishlist, removeWishlist} from "../../../store/wishlists";
@@ -19,17 +19,21 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     rating = "New";
   }
 
+  const [userCheck, setUserCheck] = useState(false);
+
+  useEffect(() => {
+    if (user && listing) {
+      if (user.id !== listing.user_id) {
+        setUserCheck(true);
+      }
+    }
+  },[user, listing]);
+
   useEffect(() => {
     if (user && wishlists.length > 0) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
       wishlistCSS.classList.remove("heart-button")
       wishlistCSS.classList.add("heart-button-selected")
-
-      // if (user.id === wishlists[0].user_id) {
-      //   let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
-      //   wishlistCSS.classList.remove("heart-button")
-      //   wishlistCSS.classList.remove("heart-button-selected")
-      // }
     }
   }, [user, wishlists.length, listing.id]);
 
@@ -57,7 +61,7 @@ function ListingCard({ listing, reviews, user, wishlists }) {
 
   return (
     <div className="card-container">
-      {user && listing && (<div id={`wishlist-${listing.id}`} className="heart-button" onClick={wishlistFunc}>
+      {user && listing && userCheck && (<div id={`wishlist-${listing.id}`} className="heart-button" onClick={wishlistFunc}>
       </div>)}
       <Link className="listing-link" to={`/listings/${listing.id}`}>
         {listing.images[0] && (
