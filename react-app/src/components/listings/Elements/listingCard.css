@@ -54,12 +54,12 @@
 .heart-button-selected {
   background-color: #ff385c;
   display: inline-block;
-  height: 20px;
+  height: 15px;
   margin: 0 10px;
   position: relative;
   top: 0;
   transform: rotate(-45deg);
-  width: 20px;
+  width: 17px;
   position: absolute;
   right: 10px;
   top: 20px;
@@ -70,9 +70,9 @@
   content: "";
   background-color: #ff385c;
   border-radius: 50%;
-  height: 20px;
+  height: 15px;
   position: absolute;
-  width: 20px;
+  width: 15px;
 }
 
 .heart-button-selected:before {
