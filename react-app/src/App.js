@@ -11,6 +11,7 @@ import MyListings from "./components/listings/MyListings";
 import Trips from "./components/bookings/Trips";
 import Footer from "./components/footer/Footer";
 import FourOFour from "./components/404/FourOFour";
+import WishlistPage from "./components/wishlists/WishlistPage";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,6 +48,9 @@ function App() {
         </Route>
         <Route path="/trips" exact={true}>
           <Trips />
+        </Route>
+        <Route path="/wishlist" exact={true}>
+          <WishlistPage />
         </Route>
         <Route path="">
           <FourOFour />
