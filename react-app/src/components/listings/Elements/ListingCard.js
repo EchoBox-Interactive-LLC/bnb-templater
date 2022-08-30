@@ -6,13 +6,17 @@ import "./listingCard.css";
 
 function ListingCard({ listing, reviews, user, wishlists }) {
   const dispatch = useDispatch();
-  wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id)
+  if (!wishlists) {
+    wishlists = [];
+  } else {
+    wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id);
+  }
   const listingReviews = reviews.filter((review) => review.listing_id === listing.id)
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
 
   if (rating === "NaN") {
-    rating = "New"
+    rating = "New";
   }
 
   useEffect(() => {
