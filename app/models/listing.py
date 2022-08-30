@@ -21,6 +21,7 @@ class Listing(db.Model):
     images = db.relationship('Image', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
     bookings = db.relationship('Booking', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
     reviews = db.relationship('Review', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
+    wishlists = db.relationship('Wishlist', back_populates='listing', cascade='all, delete-orphan', passive_deletes=True)
 
     def to_dict(self):
         return {

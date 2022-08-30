@@ -13,6 +13,9 @@ function ListingCard({ listing, reviews }) {
 
   return (
     <div className="card-container">
+      <div>
+        <button>❤️</button>
+      </div>
       <Link className="listing-link" to={`/listings/${listing.id}`}>
         {listing.images[0] && (
           <img
