@@ -5,13 +5,15 @@ import listings from './listings';
 import reviews from './reviews';
 import images from './images';
 import bookings from './bookings';
+import wishlists from './wishlists';
 
 const rootReducer = combineReducers({
   session,
   listings,
   reviews,
   images,
-  bookings
+  bookings,
+  wishlists
 });
 
 
