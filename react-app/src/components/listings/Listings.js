@@ -22,7 +22,7 @@ function Listings() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user)
   const reviews = Object.values(useSelector((state) => state.reviews));
-  const wishlists = Object.values(useSelector((state) => state.wishlists));
+  let wishlists = Object.values(useSelector((state) => state.wishlists));
   let listings = Object.values(useSelector((state) => state.listings));
 
   const [aFrameBool, setAFrameBool] = useState(false);

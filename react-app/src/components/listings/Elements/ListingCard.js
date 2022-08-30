@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeWishlist, removeWishList} from "../../../store/wishlists";
 import "./listingCard.css";
@@ -13,6 +13,15 @@ function ListingCard({ listing, reviews, user, wishlists }) {
   if (rating === "NaN") {
     rating = "New"
   }
+
+  useEffect(() => {
+    wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id)
+    if (wishlists.length > 0) {
+      let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
+      wishlistCSS.classList.remove("heart-button")
+      wishlistCSS.classList.add("heart-button-selected")
+    }
+  }, [user, wishlists.length]);
 
   const wishlistFunc = async () => {
     let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
