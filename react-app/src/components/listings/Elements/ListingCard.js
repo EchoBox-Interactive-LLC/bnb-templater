@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeWishlist, removeWishlist} from "../../../store/wishlists";
@@ -21,18 +21,6 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     rating = "New";
   }
 
-  // THIS WAS USED TO STOP THE HEARTS BEING RENDERED ON PEOPLE'S
-  // OWN POSTS BUT IT CAUSES A BUG
-  // const [userCheck, setUserCheck] = useState(false);
-
-  // useEffect(() => {
-  //   if (user && listing) {
-  //     if (user.id !== listing.user_id) {
-  //       setUserCheck(true);
-  //     }
-  //   }
-  // },[user, listing]);
-
   useEffect(() => {
     if (user && wishlists.length > 0) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
@@ -43,6 +31,12 @@ function ListingCard({ listing, reviews, user, wishlists }) {
       wishlistCSS?.classList.remove("heart-button-selected")
       wishlistCSS?.classList.add("heart-button")
     }
+
+    if (user && (user.id === listing.user_id)) {
+      let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
+      wishlistCSS.classList.remove("heart-button")
+          }
+      
   }, [user, wishlists, listing.id]);
 
   const wishlistFunc = async () => {
