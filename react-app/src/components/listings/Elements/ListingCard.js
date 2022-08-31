@@ -19,15 +19,16 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     rating = "New";
   }
 
-  const [userCheck, setUserCheck] = useState(false);
+  // THIS USED TO STOP THE HEARTS BEING RENDERED ON PEOPLE'S OWN POSTS
+  // const [userCheck, setUserCheck] = useState(false);
 
-  useEffect(() => {
-    if (user && listing) {
-      if (user.id !== listing.user_id) {
-        setUserCheck(true);
-      }
-    }
-  },[user, listing]);
+  // useEffect(() => {
+  //   if (user && listing) {
+  //     if (user.id !== listing.user_id) {
+  //       setUserCheck(true);
+  //     }
+  //   }
+  // },[user, listing]);
 
   useEffect(() => {
     if (user && wishlists.length > 0) {
@@ -61,7 +62,7 @@ function ListingCard({ listing, reviews, user, wishlists }) {
 
   return (
     <div className="card-container">
-      {user && listing && userCheck && (<div id={`wishlist-${listing.id}`} className="heart-button" onClick={wishlistFunc}>
+      {user && listing && (<div id={`wishlist-${listing.id}`} className="heart-button" onClick={wishlistFunc}>
       </div>)}
       <Link className="listing-link" to={`/listings/${listing.id}`}>
         {listing.images[0] && (
@@ -70,6 +71,14 @@ function ListingCard({ listing, reviews, user, wishlists }) {
             src={listing.images[0].url}
             onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
             alt={listing.title}
+          />
+        )}
+        {!listing.images[0] && (
+          <img
+            className="listing-img"
+            src={`https://artprojectsforkids.org/wp-content/uploads/2021/11/How-to-Draw-a-House.jpg.webp`}
+            onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1616555670626-09496d2eed9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJva2VuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"}}
+            alt="stock little house"
           />
         )}
         <div className="line-under-img">

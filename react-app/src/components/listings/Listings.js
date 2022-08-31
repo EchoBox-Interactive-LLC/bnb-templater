@@ -84,7 +84,7 @@ function Listings() {
     lakeBool,
     nationalParkBool,
     omgBool,
-    tinyHomesBool,
+    tinyHomesBool
   ]);
 
   useEffect(() => {
