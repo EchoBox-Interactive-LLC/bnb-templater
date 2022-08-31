@@ -6,11 +6,13 @@ import "./listingCard.css";
 
 function ListingCard({ listing, reviews, user, wishlists }) {
   const dispatch = useDispatch();
+
   if (!wishlists) {
     wishlists = [];
   } else {
     wishlists = wishlists.filter((wishlist) => wishlist.listing_id === listing.id);
   }
+
   const listingReviews = reviews.filter((review) => review.listing_id === listing.id)
   const ratings = listingReviews.map((rating) => (rating.rating))
   let rating = ((ratings.reduce((a, b) => a + b, 0))/(ratings.length)).toFixed(2);
@@ -36,8 +38,12 @@ function ListingCard({ listing, reviews, user, wishlists }) {
       let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
       wishlistCSS.classList.remove("heart-button")
       wishlistCSS.classList.add("heart-button-selected")
+    } else {
+      let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
+      wishlistCSS?.classList.remove("heart-button-selected")
+      wishlistCSS?.classList.add("heart-button")
     }
-  }, [user, wishlists.length, listing.id]);
+  }, [user, wishlists, listing.id]);
 
   const wishlistFunc = async () => {
     let wishlistCSS = document.getElementById(`wishlist-${listing.id}`)
