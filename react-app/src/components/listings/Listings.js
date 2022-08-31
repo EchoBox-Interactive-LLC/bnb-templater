@@ -662,9 +662,9 @@ function Listings() {
               <span id="site-welcome">Welcome to Urbnb!</span>
               <h3>
                 Scroll down to checkout all listings, click on a listing for the
-                listing details and the ability to book a stay there. Feel free
-                to log in and create a listing for other users to view, review
-                and book! You will be able to add images to your listing, update
+                listing details and the ability to book a stay there. Log in and create
+                a listing for other users to view, review, book and add to their wishlist!
+                You will be able to add images to your listing, update
                 your listing and, if desired, delete your listing. Checkout the
                 top right corner of the page to get started!
               </h3>

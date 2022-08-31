@@ -26,15 +26,28 @@ Checkout Urbnb and make it to an event near you at https://urbnb.herokuapp.com/
 
 # Splash Page - Listings Section
 
-<img src="react-app/src/images/README-Images/Listings.png"/>
+<img src="react-app/src/images/README-Images/All-Listings.png"/>
 
-# Listing Details Page
+# Listing Details Page - Images
 
-<img src="react-app/src/images/README-Images/Listing-Details.png"/>
+<img src="react-app/src/images/README-Images/Listing-Details-Img.png"/>
 
-# Listing Details Page - Reviews Section
+# Listing Details Page - Booking and Reviews Section
 
-<img src="react-app/src/images/README-Images/Reviews.png"/>
+<img src="react-app/src/images/README-Images/Bookings-and-Reviews.png"/>
+
+# Manage Listings Page
+
+<img src="react-app/src/images/README-Images/Manage-Listings.png"/>
+
+# Trips Page - Bookings
+
+<img src="react-app/src/images/README-Images/Trips.png"/>
+
+# Wishlist
+
+<img src="react-app/src/images/README-Images/Wishlist.png"/>
+
 
 # Starting this app locally
 ** If you have an Apple with and M1 chip please skip to the next section
@@ -99,8 +112,11 @@ Clone this project from this repo from https://github.com/jvos415/AirBnB-Clone
 
 # Future-To-Dos
 
-* All images page with delete images that you own
-* All Reviews page
-* Bookings
-* Filter by category
-* Wishlist
+* Ability to update bookings
+* AWS for uploading listing images
+* Ability to update images
+* Search Bar
+* Add avatar functionality
+* Add the ability to upload your own avatar image
+* Add the ability to create your own wishlists and add listings to specific wishlists
+* Google maps for listing locations
