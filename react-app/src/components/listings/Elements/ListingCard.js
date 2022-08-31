@@ -19,7 +19,8 @@ function ListingCard({ listing, reviews, user, wishlists }) {
     rating = "New";
   }
 
-  // THIS USED TO STOP THE HEARTS BEING RENDERED ON PEOPLE'S OWN POSTS
+  // THIS WAS USED TO STOP THE HEARTS BEING RENDERED ON PEOPLE'S
+  // OWN POSTS BUT IT CAUSES A BUG
   // const [userCheck, setUserCheck] = useState(false);
 
   // useEffect(() => {
