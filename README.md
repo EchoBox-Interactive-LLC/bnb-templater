@@ -1,4 +1,4 @@
-# Welcome to Urbnb! (an Aribnb clone)
+# Welcome to Urbnb! (an Airbnb clone)
 
 -----------------------------------------------------------------------------------------------------
 
