@@ -110,6 +110,25 @@ Clone this project from this repo from https://github.com/jvos415/AirBnB-Clone
 
 <br>
 
+# Using Alembic system for database changes
+[AutoGenerate](https://alembic.sqlalchemy.org/en/latest/autogenerate.html)
+
+## Using autogeneration
+1. Update models according to the supported auto generateable changes listed in the above link.
+2. `flask db revision --autogenerate -m "[Some description]"`
+   1. This will generate a new migration file to the path `migrations/verisons` and will populate with the changes you made to the models
+   2. This doesn't update the db only creates the migration file.
+3. `flask db upgrade`
+   1. This runs the upgrades that are pending on the db.
+
+## Using non autogeneration
+In certain instances, listed in the link above, autogeneration will not work and you will need to make a manual migration.
+1. `flask db revision -m "[some description]"
+   1. This will generate a new migration file to the path `migrations/verisons` and into this file you will need to make your manual updates.
+   2. This doesn't update the db only creates the migration file.
+2. `flask db upgrade`
+   1. This runs the upgrades that are pending on the db.
+
 # Future-To-Dos
 
 * Ability to update bookings
